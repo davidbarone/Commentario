@@ -23,6 +23,9 @@ public class MemberNode
     [XmlElement("exception")]
     public ExceptionNode Exception { get; set; }
 
+    [XmlElement("example")]
+    public string[] Examples { get; set; }
+
     public IDString ID
     {
         get

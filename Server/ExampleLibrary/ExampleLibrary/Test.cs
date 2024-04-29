@@ -67,7 +67,28 @@ public class Test
     /// This is a method that throws an exception.
     /// </summary>
     /// <exception cref="NotSupportedException">Throws a colourful exception.</exception>
-    public void MethodThatRaisesException() {
+    public void MethodThatRaisesException()
+    {
         throw new NotSupportedException("This is not supported!");
+    }
+
+    /// <summary>
+    /// This method has some examples.
+    /// </summary>
+    /// <example>
+    /// This is example #1:
+    /// <code>
+    /// This is some code #1.
+    /// </code>
+    /// </example>
+    /// <example>
+    /// This is example #2.
+    /// <code>
+    /// This is some code #2.
+    /// </code>
+    /// </example>
+    public void MethodWithExamples()
+    {
+
     }
 }
