@@ -10,7 +10,7 @@ namespace Dbarone.CommentarioServer;
 /// Represents the parts making up a comment document id, known as the 'ID string'.
 /// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
 /// </summary>
-internal class IdParts
+public class IDString
 {
     /// <summary>
     /// The full member id string. In format [MemberType]:[memberid]
@@ -63,10 +63,10 @@ internal class IdParts
     public string Name { get; set; } = default!;
 
     /// <summary>
-    /// constructor for IdParts class.
+    /// constructor for IDString class.
     /// </summary>
     /// <param name="id">The ID string.</param>
-    public IdParts(string id)
+    public IDString(string id)
     {
         Console.WriteLine($"Processing: {id}...");
         this.Id = id;

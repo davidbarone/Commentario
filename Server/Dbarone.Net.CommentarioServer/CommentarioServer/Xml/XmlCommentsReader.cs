@@ -1,5 +1,6 @@
 using System.Xml.Serialization;
 
+namespace Dbarone.Net.CommentarioServer;
 
 public class XmlCommentsReader
 {
@@ -14,46 +15,8 @@ public class XmlCommentsReader
             this.Document = (DocumentNode)serializer.Deserialize(reader);
         }
     }
-
 }
 
-[Serializable, XmlRoot(ElementName = "doc")]
-[XmlType("doc")]
-public class DocumentNode
-{
-    [XmlElement("assembly")]
-    public AssemblyNode Assembly { get; set; }
 
 
-    [XmlArray("members")]
-    [XmlArrayItem("member", typeof(MemberNode))]
-    public MemberNode[] Members { get; set; }
 
-}
-
-public class AssemblyNode
-{
-    [XmlElement("name")]
-    public string Name { get; set; }
-}
-
-public class MemberNode
-{
-
-    [XmlAttribute("name")]
-    public string Name { get; set; } 
-
-    [XmlElement("summary")]
-    public string Summary { get; set; }
-
-    [XmlArrayItem("Param")]
-    public ParamNode[] Params { get; set; }
-}
-
-public class ParamNode
-{
-    public string Name { get; set; }
-
-    [XmlText]
-    public string Description { get; set; }
-}

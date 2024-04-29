@@ -3,7 +3,7 @@ namespace Dbarone.CommentarioServer;
 /// <summary>
 /// The member type.
 /// </summary>
-internal enum MemberType : byte
+public enum MemberType : byte
 {
     Namespace,
     Type,

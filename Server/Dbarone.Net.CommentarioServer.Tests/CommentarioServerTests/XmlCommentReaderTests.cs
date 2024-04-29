@@ -2,7 +2,7 @@ using Xunit;
 
 namespace Dbarone.Net.CommentarioServer.Tests;
 
-public class XmlCOmmentReaderTests {
+public class XmlCommentReaderTests {
     
     [Fact]
     public void TestXmlCommentsParsing() {
