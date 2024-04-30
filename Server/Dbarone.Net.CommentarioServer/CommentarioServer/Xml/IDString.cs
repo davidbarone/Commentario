@@ -18,14 +18,31 @@ public class IDString
     public string Id { get; set; } = default!;
 
     /// <summary>
+    /// The id value after the initial ':' character.
+    /// </summary>
+    public string FullyQualifiedName { get; set; } = default!;
+
+    /// <summary>
     /// The member type.
     /// </summary>
     public MemberType MemberType { get; set; } = MemberType.ErrorString;
 
     /// <summary>
-    /// The id value after the initial ':' character.
+    /// The namespace name.
     /// </summary>
-    public string FullyQualifiedName { get; set; } = default!;
+    public string Namespace { get; set; } = default!;
+
+    /// <summary>
+    /// The name of the parent type. Used for members and nested types within a type.
+    /// </summary>
+    public string Parent { get; set; } = default!;
+
+    /// <summary>
+    /// The name of the type or member.
+    /// </summary>
+    public string Name { get; set; } = default!;
+
+
 
     /// <summary>
     /// Unique link tag based on fully qualified name. Used for generaing links for TOC etc.
@@ -47,20 +64,8 @@ public class IDString
     /// </summary>
     public string Arguments { get; set; } = "";
 
-    /// <summary>
-    /// The namespace name.
-    /// </summary>
-    public string Namespace { get; set; } = default!;
 
-    /// <summary>
-    /// The name of the parent.
-    /// </summary>
-    public string Parent { get; set; } = default!;
 
-    /// <summary>
-    /// The name of the member.
-    /// </summary>
-    public string Name { get; set; } = default!;
 
     /// <summary>
     /// constructor for IDString class.
@@ -90,43 +95,61 @@ public class IDString
             this.Arguments = fqnParts[1];
             this.Arguments = this.Arguments.Substring(0, this.Arguments.Length - 1);    // remove last ')'
         }
+
+        // Calculate namespace, parent, name
         var nameParts = fqnParts[0].Split('.');
-        this.Name = nameParts[nameParts.Length - 1];
-
-        // Check name for generics. (contains '``' characters)
-        var nameGenericSplits = this.Name.Split("``");
-        this.Name = nameGenericSplits[0];
-        if (nameGenericSplits.Length == 2)
+        if (nameParts.Length >= 4)
         {
-            this.TypeArguments = int.Parse(nameGenericSplits[1]);
+            throw new Exception($"Too many name parts for id: [{id}]: {nameParts.Length}.");
         }
-
-        if ("T" == splits[0])
+        else if (nameParts.Length >= 3)
         {
-            // check type member for generics
-            nameGenericSplits = this.Name.Split("`");
-            this.Name = nameGenericSplits[0];
-            if (nameGenericSplits.Length == 2)
-            {
-                this.TypeArguments = int.Parse(nameGenericSplits[1]);
-            }
-        }
-
-        if ("FPEM".Contains(splits[0]))
-        {
-            // For fields, properties, events, methods, the
-            // parent == containing type.
+            this.Namespace = nameParts[nameParts.Length - 3];
             this.Parent = nameParts[nameParts.Length - 2];
-            this.Namespace = string.Join('.', nameParts.Take(nameParts.Length - 2));
+            this.Name = nameParts[nameParts.Length - 1];
+        }
+        else if (nameParts.Length >= 2)
+        {
+            this.Namespace = nameParts[nameParts.Length - 2];
+            this.Parent = "";
+            this.Name = nameParts[nameParts.Length - 1];
+        }
+        else
+        {
+            this.Namespace = "";
+            this.Parent = "";
+            this.Name = nameParts[nameParts.Length - 1];
+        }
 
-            // Check type for generics (single '`' character)
-            var parentGenericsSplits = this.Parent.Split('`');
-            this.Parent = parentGenericsSplits[0];
-            if (parentGenericsSplits.Length == 2)
+        if (!string.IsNullOrEmpty(this.Parent))
+        {
+            // Check for generic type arguments on parent. This will type be a type, so check for ` character.
+            var arr = this.Parent.Split("`");
+            this.Parent = arr[0];
+            if (arr.Length == 2)
             {
-                this.ParentTypeArguments = int.Parse(parentGenericsSplits[1]);
+                this.ParentTypeArguments = int.Parse(arr[1]);
             }
         }
-        this.Namespace = string.Join('.', nameParts.Take(nameParts.Length - 1));
+
+        if (this.MemberType == MemberType.Type && !string.IsNullOrEmpty(this.Name))
+        {
+            var arr = this.Name.Split("`");
+            this.Name = arr[0];
+            if (arr.Length == 2)
+            {
+                this.TypeArguments = int.Parse(arr[1]);
+            }
+        }
+
+        if ("FPEM".Contains(splits[0]) && !string.IsNullOrEmpty(this.Name))
+        {
+            var arr = this.Name.Split("``");
+            this.Name = arr[0];
+            if (arr.Length == 2)
+            {
+                this.TypeArguments = int.Parse(arr[1]);
+            }
+        }
     }
 }

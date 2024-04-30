@@ -9,7 +9,7 @@ public class MemberNode
     public string Name { get; set; }
 
     [XmlElement("summary")]
-    public string Summary { get; set; }
+    public SummaryNode Summary { get; set; }
 
     [XmlElement("param", typeof(ParamNode))]
     public ParamNode[] Params { get; set; }
@@ -18,13 +18,13 @@ public class MemberNode
     public TypeParamNode[] TypeParams { get; set; }
 
     [XmlElement("returns")]
-    public string Returns { get; set; }
+    public ReturnsNode Returns { get; set; }
 
     [XmlElement("exception")]
     public ExceptionNode Exception { get; set; }
 
     [XmlElement("example")]
-    public string[] Examples { get; set; }
+    public ExampleNode[] Examples { get; set; }
 
     public IDString ID
     {
