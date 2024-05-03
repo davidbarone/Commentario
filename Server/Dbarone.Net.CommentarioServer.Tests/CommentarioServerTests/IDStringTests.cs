@@ -1,6 +1,15 @@
+using System.Reflection.Metadata.Ecma335;
 using Dbarone.CommentarioServer;
+using Dbarone.Net.CommentarioServer;
 using Xunit;
 
+/// <summary>
+/// A generic type.
+/// </summary>
+/// <typeparam name="T">The type parameter, 'T'.</typeparam>
+public class GenericType<T> {
+
+}
 public class IDStringTests
 {
 
@@ -23,5 +32,9 @@ public class IDStringTests
         Assert.Equal(expectedName, idString.Name);
         Assert.Equal(expectedParentTypeParameters, idString.ParentTypeArguments);
         Assert.Equal(expectedTypeParameters, idString.TypeArguments);
+
+        var a = typeof(GenericType<>);
+        var b = a.ToString();
+        var c = b;
     }
 }

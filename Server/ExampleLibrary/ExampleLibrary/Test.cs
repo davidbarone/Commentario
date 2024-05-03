@@ -1,3 +1,5 @@
+namespace ExampleLibrary;
+
 /// <summary>
 /// A test class.
 /// </summary>
