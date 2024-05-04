@@ -6,15 +6,19 @@ using System;
 /// <summary>
 /// Document generator tests. 
 /// </summary>
-public class DocumentGeneratorTests {
+[Collection("Sequential")]
+public class DocumentGeneratorTests
+{
 
     [Fact]
-    public void BasicTests() {
+    public void BasicTests()
+    {
         string xmlCommentsPath = @"..\..\..\..\ExampleLibrary\bin\Debug\net8.0\ExampleLibrary.xml";
         string assemblyPath = @"..\..\..\..\ExampleLibrary\bin\Debug\net8.0\ExampleLibrary.dll";
+        string readmePath = @"..\..\..\..\ExampleLibrary\readme.txt";
         string outputPath = @"..\..\..\..\..\ExampleLibrary.html";   // place in Commentario root folder, so gets checked into GitHub
 
-        DocumentGenerator dg = DocumentGenerator.Create(xmlCommentsPath, assemblyPath, outputPath, OutputType.Html);
+        DocumentGenerator dg = DocumentGenerator.Create(xmlCommentsPath, assemblyPath, readmePath, outputPath, OutputType.Html);
         dg.GenerateDocument();
     }
 }

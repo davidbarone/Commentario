@@ -2,6 +2,7 @@ using Xunit;
 
 namespace Dbarone.Net.CommentarioServer.Tests;
 
+[Collection("Sequential")]
 public class XmlCommentReaderTests {
     
     [Fact]

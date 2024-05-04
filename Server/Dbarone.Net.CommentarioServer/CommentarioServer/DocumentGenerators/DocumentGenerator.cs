@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Reflection.PortableExecutable;
 using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 
 namespace Dbarone.Net.CommentarioServer;
 
@@ -9,26 +10,7 @@ namespace Dbarone.Net.CommentarioServer;
 /// </summary>
 public abstract class DocumentGenerator
 {
-    public static DocumentGenerator Create(string xmlCommentsPath, string assemblyPath, string outputPath, OutputType outputType)
-    {
-        switch (outputType)
-        {
-            case OutputType.Html:
-                return new HtmlDocumentGenerator(xmlCommentsPath, assemblyPath, outputPath);
-            default:
-                throw new Exception($"Output type {outputType.ToString()} not supported.");
-        }
-    }
-
-    /// <summary>
-    /// Creates a new DocumentGenerator instance.
-    /// </summary>
-    internal DocumentGenerator(string xmlCommentsPath, string assemblyPath, string outputPath)
-    {
-        XmlCommentsPath = xmlCommentsPath;
-        AssemblyPath = assemblyPath;
-        OutputPath = outputPath;
-    }
+    #region Properties
 
     /// <summary>
     /// The document output format.
@@ -50,40 +32,149 @@ public abstract class DocumentGenerator
     /// </summary>
     public string OutputPath { get; set; } = default!;
 
-    public void Validation()
+    /// <summary>
+    /// Optional path to an assembly readme. The contents are included at the top of the documentation file. 
+    /// </summary>
+    public string ReadMePath { get; set; } = default!;
+
+    #endregion
+
+    #region Constructors
+
+    public static DocumentGenerator Create(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath, OutputType outputType)
+    {
+        switch (outputType)
+        {
+            case OutputType.Html:
+                return new HtmlDocumentGenerator(xmlCommentsPath, assemblyPath, readMePath, outputPath);
+            default:
+                throw new Exception($"Output type {outputType.ToString()} not supported.");
+        }
+    }
+
+    /// <summary>
+    /// Creates a new DocumentGenerator instance.
+    /// </summary>
+    internal DocumentGenerator(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath)
+    {
+        ReadMePath = readMePath;
+        XmlCommentsPath = xmlCommentsPath;
+        AssemblyPath = assemblyPath;
+        OutputPath = outputPath;
+    }
+
+    #endregion
+
+    #region Methods
+
+    private void Validation()
     {
         if (string.IsNullOrEmpty(this.AssemblyPath))
         {
             throw new Exception("AssemblyPath not set!");
         }
+
+        if (!string.IsNullOrEmpty(this.ReadMePath) && !File.Exists(this.ReadMePath))
+        {
+            throw new Exception($"ReadMe file [{this.ReadMePath}] not found!");
+        }
     }
 
-    private Type[] GetTypes()
+    #endregion
+
+    protected Type[] GetTypes()
     {
-        string inspectedAssembly = this.AssemblyPath;
-        var resolver = new PathAssemblyResolver(new string[] { inspectedAssembly, typeof(object).Assembly.Location });
+        // Use MetadataLoadContext to inspect types
+        // Need to provide all BCL libraries in search too.
+        string[] runtimeAssemblies = Directory.GetFiles(RuntimeEnvironment.GetRuntimeDirectory(), "*.dll");
+        var paths = new List<string>(runtimeAssemblies);
+        paths.Add(this.AssemblyPath);
+        var resolver = new PathAssemblyResolver(paths);
+
         var mlc = new MetadataLoadContext(resolver, typeof(object).Assembly.GetName().ToString());
 
         // Load assembly into MetadataLoadContext
-        Assembly assembly = mlc.LoadFromAssemblyPath(inspectedAssembly);
-        AssemblyName name = assembly.GetName();
+        Assembly assembly = mlc.LoadFromAssemblyPath(this.AssemblyPath);
 
         return assembly.GetTypes().OrderBy(t => t.Name).ToArray();
     }
 
-    private ConstructorInfo[] GetConstructors(Type type)
+    protected string GetTypeCategory(Type type)
     {
-        return type.GetConstructors();
+        if (type.IsClass)
+        {
+            return "Class";
+        }
+        else if (type.IsValueType)
+        {
+            return "Struct";
+        }
+        else if (type.IsInterface)
+        {
+            return "Interface";
+        }
+        else if (type.IsEnum)
+        {
+            return "Enum";
+        }
+        else
+        {
+            return "Other";
+        }
     }
 
-    private MethodInfo[] GetMethods(Type type)
+    protected Type[] GetClasses()
     {
-        return type.GetMethods();
+        var types = GetTypes();
+        return types.Where(t => t.IsClass).ToArray();
     }
 
-    private PropertyInfo[] GetProperties(Type type)
+    protected Type[] GetStructs()
     {
-        return type.GetProperties();
+        return GetTypes().Where(t => t.IsValueType).ToArray();
+    }
+
+    protected Type[] GetInterfaces()
+    {
+        return GetTypes().Where(t => t.IsInterface).ToArray();
+    }
+
+    protected Type[] GetEnums()
+    {
+        return GetTypes().Where(t => t.IsEnum).ToArray();
+    }
+
+    protected ConstructorInfo[] GetConstructors(Type type)
+    {
+        return type.GetConstructors(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+    }
+
+    protected MethodInfo[] GetMethods(Type type)
+    {
+        // ignore getter/setter methods.
+        return type.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static).Where(m => !m.IsSpecialName).ToArray();
+    }
+
+    protected PropertyInfo[] GetProperties(Type type)
+    {
+        return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+    }
+
+    protected EventInfo[] GetEvents(Type type)
+    {
+        return type.GetEvents(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+    }
+
+    protected string GetReadMe()
+    {
+        if (!string.IsNullOrEmpty(this.ReadMePath) && File.Exists(this.ReadMePath))
+        {
+            return File.ReadAllText(this.ReadMePath);
+        }
+        else
+        {
+            return "";
+        }
     }
 
     /// <summary>
@@ -92,9 +183,12 @@ public abstract class DocumentGenerator
     public void GenerateDocument()
     {
         Validation();
-        var contentCSSReset = GetCSSReset();
-        var contentTOC = RenderTOC(this.GetTypes());
         var contentTypes = "";
+
+        // Get documentation
+        var xmlDocument = new XmlCommentsReader(this.XmlCommentsPath).Document;
+
+
         foreach (var type in this.GetTypes())
         {
             contentTypes += RenderType(type);
@@ -109,13 +203,19 @@ public abstract class DocumentGenerator
     <meta http-equiv=""X-UA-Compatible"" content=""ie=edge"">
     <title>HTML 5 Boilerplate</title>
     {this.GetCSSStyles()}
-    <style type=""text/css"">
-        {this.GetCSSReset()}
-    </style>
   </head>
   <body>
-          {contentTOC}
-            {contentTypes}
+        <h1>{xmlDocument.Assembly.Name}</h1>
+        {this.GetReadMe()}
+
+        {this.RenderTOCSection("Classes", this.GetClasses())}
+        {this.RenderTOCSection("Structs", this.GetStructs())}
+        {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
+        {this.RenderTOCSection("Enums", this.GetEnums())}
+
+        <hr />
+
+        {contentTypes}
     </body>
 </html>
         ";
@@ -124,20 +224,321 @@ public abstract class DocumentGenerator
         File.WriteAllText(this.OutputPath, template);
     }
 
-    protected abstract string RenderTOC(Type[] types);
-
+    protected abstract string RenderTOCSection(string header, Type[] types);
     protected abstract string RenderType(Type type);
-
-    protected string GetCSSReset()
-    {
-        return @"/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
-/*# sourceMappingURL=normalize.min.css.map */";
-    }
+    protected abstract string RenderTypeTOCSection(Type type, MemberInfo[] members);
+    protected abstract string RenderTypeMember(MemberInfo member);
 
     protected string GetCSSStyles()
     {
-        // Uses Pico CSS framework
-        // https://picocss.com/
-        return @"<link rel=""stylesheet"" href=""https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css""/>";
+        var css = @"
+<style type=""text/css"">
+
+    /* -----------------------------------------------
+    Base Styles
+    -------------------------------------------------- */
+
+    body {
+        font-family: sans-serif, ""Helvetica Neue"", Helvetica, Arial;
+        color: #222;
+        overflow-y: scroll;
+    }
+
+    /* ------------------------------------
+    Typography
+    --------------------------------------- */
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 300;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    h1 {
+        font-size: 2.0em;
+        letter-spacing: -.05em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        letter-spacing: -.05em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+        letter-spacing: -.05em;
+    }
+
+    h4 {
+        font-size: 1.4em;
+        letter-spacing: -.025em;
+    }
+
+    h5 {
+        font-size: 1.2em;
+        letter-spacing: -.025em;
+    }
+
+    h6 {
+        font-size: 1.0em;
+        letter-spacing: 0;
+    }
+
+    /* -----------------------------------
+    Links
+    -------------------------------------- */
+
+    a {
+        color: #456789;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #123456;
+    }
+
+    /* ---------------------------------------------
+    definitions
+    ------------------------------------------------ */
+
+    dl {
+        border: 3px double #ccc;
+        padding: 0.5em;
+    }
+
+    dl * {
+        display: none;
+        float: left;
+    }
+
+    dl:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    dt {
+        visibility: visible;
+        width: 25%;
+        text-align: right;
+        font-weight: bold;
+        display: inline-block;
+        color: rgb(61, 79, 93);
+        box-sizing: border-box;
+        padding-right: 3px;
+        margin: 0px;
+    }
+
+    dt:after {
+        content: ':';
+    }
+
+    dd {
+        visibility:visible;
+        width: 75%;
+        text-align: left;
+        display: inline-block;
+        box-sizing: border-box;
+        padding-left: 3px;
+        margin: 0px;
+    }
+
+    /* ---------------------------------------------
+    Lists
+    ------------------------------------------------ */
+
+    ul {
+        list-style: disc inside;
+    }
+
+    ol {
+        list-style: decimal inside;
+    }
+
+    ol, ul {
+        padding-left: 0;
+        margin-top: 0.5em;
+    }
+
+    ul ul,
+    ul ol,
+    ol ol,
+    ol ul {
+        margin: 0.5em 0 0.5em 3em;
+        font-size: 90%;
+    }
+
+    li {
+        margin-bottom: 0.25em;
+    }
+
+    /* ---------------------------------------------
+    Code / Pre
+    ------------------------------------------------ */
+
+    code {
+        padding: .2em .5em;
+        margin: 0 .2em;
+        font-size: 90%;
+        white-space: nowrap;
+        background: #F1F1F1;
+        border: 1px solid #E1E1E1;
+        border-radius: 4px;
+    }
+
+    pre {
+        font-family: sans-serif, ""Helvetica Neue"", Helvetica, Arial;
+    }
+
+    pre > code {
+        display: block;
+        padding: 1em 1.5em;
+        white-space: pre;
+    }
+
+    /* ---------------------------------------------
+    Blockquote + cite
+    ------------------------------------------------ */
+
+    blockquote {
+        border-left: 10px solid rgb(61, 79, 93);
+        background: #f9f9f9;
+        font-family: Georgia, serif;
+        font-style: italic;
+        margin: 0.25em 0;
+        padding: 0.25em 60px;
+        line-height: 1.45;
+        position: relative;
+        color: #383838;
+    }
+
+    blockquote:before {
+        display: block;
+        content: ""\201C"";
+        font-size: 60px;
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        color: #7a7a7a;
+    }
+
+    blockquote cite {
+        color: #999999;
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+    
+    blockquote cite:before {
+        content: ""\2014 \2009"";
+    }
+
+    /* ---------------------------------------------
+    Tables
+    ------------------------------------------------ */
+
+    th,
+    td {
+        padding: 6px 24px;
+        text-align: left;
+        margin: 0px;
+    }
+
+    th {
+        background-color: #123;
+        color: white;
+        font-weight: 500;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #eee;  
+    }
+
+    /* ---------------------------------------------
+    Spacing
+    ------------------------------------------------ */
+
+    pre,
+    blockquote,
+    dl,
+    figure,
+    table,
+    p,
+    ul,
+    ol,
+    {
+        margin-bottom: .5em;
+    }
+
+    /* ---------------------------------------------
+    Utilities
+    ------------------------------------------------ */
+
+    .full-width {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .half-width {
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .third-width {
+        width: 33%;
+        box-sizing: border-box;
+    }
+
+    .quarter-width {
+        width: 25%;
+        box-sizing: border-box;
+    }
+
+    .tiny-width {
+        width: 50px;
+    }
+
+    .max-full-width {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pull-right {
+        float: right;
+    }
+
+    .pull-left {
+        float: left;
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    .center-block {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+
+    /* ---------------------------------------------
+    Misc
+    ------------------------------------------------ */
+
+    hr {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        border-width: 0;
+        border-top: 4px solid #123;
+    }
+
+</style>
+        ";
+
+        return css;
     }
 }

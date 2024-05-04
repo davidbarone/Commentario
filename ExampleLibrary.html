@@ -6,30 +6,389 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    <style type="text/css">
-        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
-/*# sourceMappingURL=normalize.min.css.map */
-    </style>
+    
+<style type="text/css">
+
+    /* -----------------------------------------------
+    Base Styles
+    -------------------------------------------------- */
+
+    body {
+        font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+        color: #222;
+        overflow-y: scroll;
+    }
+
+    /* ------------------------------------
+    Typography
+    --------------------------------------- */
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 300;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    h1 {
+        font-size: 2.0em;
+        letter-spacing: -.05em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        letter-spacing: -.05em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+        letter-spacing: -.05em;
+    }
+
+    h4 {
+        font-size: 1.4em;
+        letter-spacing: -.025em;
+    }
+
+    h5 {
+        font-size: 1.2em;
+        letter-spacing: -.025em;
+    }
+
+    h6 {
+        font-size: 1.0em;
+        letter-spacing: 0;
+    }
+
+    /* -----------------------------------
+    Links
+    -------------------------------------- */
+
+    a {
+        color: #456789;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #123456;
+    }
+
+    /* ---------------------------------------------
+    definitions
+    ------------------------------------------------ */
+
+    dl {
+        border: 3px double #ccc;
+        padding: 0.5em;
+    }
+
+    dl * {
+        display: none;
+        float: left;
+    }
+
+    dl:after {
+        content: ";
+        display: table;
+        clear: both;
+    }
+
+    dt {
+        visibility: visible;
+        width: 25%;
+        text-align: right;
+        font-weight: bold;
+        display: inline-block;
+        color: rgb(61, 79, 93);
+        box-sizing: border-box;
+        padding-right: 3px;
+        margin: 0px;
+    }
+
+    dt:after {
+        content: ':';
+    }
+
+    dd {
+        visibility:visible;
+        width: 75%;
+        text-align: left;
+        display: inline-block;
+        box-sizing: border-box;
+        padding-left: 3px;
+        margin: 0px;
+    }
+
+    /* ---------------------------------------------
+    Lists
+    ------------------------------------------------ */
+
+    ul {
+        list-style: disc inside;
+    }
+
+    ol {
+        list-style: decimal inside;
+    }
+
+    ol, ul {
+        padding-left: 0;
+        margin-top: 0.5em;
+    }
+
+    ul ul,
+    ul ol,
+    ol ol,
+    ol ul {
+        margin: 0.5em 0 0.5em 3em;
+        font-size: 90%;
+    }
+
+    li {
+        margin-bottom: 0.25em;
+    }
+
+    /* ---------------------------------------------
+    Code / Pre
+    ------------------------------------------------ */
+
+    code {
+        padding: .2em .5em;
+        margin: 0 .2em;
+        font-size: 90%;
+        white-space: nowrap;
+        background: #F1F1F1;
+        border: 1px solid #E1E1E1;
+        border-radius: 4px;
+    }
+
+    pre {
+        font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+    }
+
+    pre > code {
+        display: block;
+        padding: 1em 1.5em;
+        white-space: pre;
+    }
+
+    /* ---------------------------------------------
+    Blockquote + cite
+    ------------------------------------------------ */
+
+    blockquote {
+        border-left: 10px solid rgb(61, 79, 93);
+        background: #f9f9f9;
+        font-family: Georgia, serif;
+        font-style: italic;
+        margin: 0.25em 0;
+        padding: 0.25em 60px;
+        line-height: 1.45;
+        position: relative;
+        color: #383838;
+    }
+
+    blockquote:before {
+        display: block;
+        content: "\201C";
+        font-size: 60px;
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        color: #7a7a7a;
+    }
+
+    blockquote cite {
+        color: #999999;
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+    
+    blockquote cite:before {
+        content: "\2014 \2009";
+    }
+
+    /* ---------------------------------------------
+    Tables
+    ------------------------------------------------ */
+
+    th,
+    td {
+        padding: 6px 24px;
+        text-align: left;
+        margin: 0px;
+    }
+
+    th {
+        background-color: #123;
+        color: white;
+        font-weight: 500;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #eee;  
+    }
+
+    /* ---------------------------------------------
+    Spacing
+    ------------------------------------------------ */
+
+    pre,
+    blockquote,
+    dl,
+    figure,
+    table,
+    p,
+    ul,
+    ol,
+    {
+        margin-bottom: .5em;
+    }
+
+    /* ---------------------------------------------
+    Utilities
+    ------------------------------------------------ */
+
+    .full-width {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .half-width {
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .third-width {
+        width: 33%;
+        box-sizing: border-box;
+    }
+
+    .quarter-width {
+        width: 25%;
+        box-sizing: border-box;
+    }
+
+    .tiny-width {
+        width: 50px;
+    }
+
+    .max-full-width {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pull-right {
+        float: right;
+    }
+
+    .pull-left {
+        float: left;
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    .center-block {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+
+    /* ---------------------------------------------
+    Misc
+    ------------------------------------------------ */
+
+    hr {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        border-width: 0;
+        border-top: 4px solid #123;
+    }
+
+</style>
+        
   </head>
   <body>
-          
-<div class="overflow-auto">
-<table class="striped">
+        <h1>ExampleLibrary</h1>
+        The ExampleLibrary assembly is a dummy assembly that is used for testing the Commentario documenter, and also to provide an example of the output of Commentario.
+This paragraph is user-defined and can be configured in the Commentario configuration for a workspace.
+
+
+        
+<h2>Classes</h2>
+<div>
+<table>
     <thead>
         <tr>
-            <th>Class</th>
+            <th>Type</th>
             <th>Description</th>
         </tr>
     </thead>
     <tbody>
-        <tr><td>FooBarBazEnum</td><td></td></tr><tr><td>GenericType`1</td><td></td></tr><tr><td>ITestInterface</td><td></td></tr><tr><td>MultipartNamespace</td><td></td></tr><tr><td>MultpartNamespaceNestedClass</td><td></td></tr><tr><td>NoNamespace</td><td></td></tr><tr><td>NoNamespaceNestedClass</td><td></td></tr><tr><td>SubclassBar</td><td></td></tr><tr><td>SubclassBaz</td><td></td></tr><tr><td>SubclassFoo</td><td></td></tr><tr><td>Test</td><td></td></tr>
+        <tr><td>ConvertStringToIntDelegate</td><td></td></tr><tr><td>GenericType`1</td><td></td></tr><tr><td>MultipartNamespace</td><td></td></tr><tr><td>MultpartNamespaceNestedClass</td><td></td></tr><tr><td>NoNamespace</td><td></td></tr><tr><td>NoNamespaceNestedClass</td><td></td></tr><tr><td>SubclassBar</td><td></td></tr><tr><td>SubclassBaz</td><td></td></tr><tr><td>SubclassFoo</td><td></td></tr><tr><td>Test</td><td></td></tr>
     </tbody>
 </table>
 </div>
         
-            
-<h1>Class: FooBarBazEnum</h1>
+        
+<h2>Structs</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>FooBarBazEnum</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+        
+<h2>Interfaces</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>ITestInterface</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+        
+<h2>Enums</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>FooBarBazEnum</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+        <hr />
+
+        
+<h1>ConvertStringToIntDelegate Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -38,15 +397,47 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
 
 <h2>Methods</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>BeginInvoke</td><td></td></tr><tr><td>EndInvoke</td><td></td></tr><tr><td>Invoke</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: GenericType`1</h1>
+<h1>FooBarBazEnum Struct</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -55,15 +446,19 @@
 
 <h2>Constructors:</h2>
 
+
 <h2>Properties</h2>
+
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: ITestInterface</h1>
+<h1>GenericType`1 Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -72,15 +467,68 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: MultipartNamespace</h1>
+<h1>ITestInterface Interface</h1>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Constructors:</h2>
+
+
+<h2>Properties</h2>
+
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>FooBarBazType</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+<h2>Methods</h2>
+
+
+<h2>Events</h2>
+
+
+<hr />
+
+<h1>MultipartNamespace Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: foo.bar.baz</li>
@@ -89,15 +537,33 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: MultpartNamespaceNestedClass</h1>
+<h1>MultpartNamespaceNestedClass Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: foo.bar.baz</li>
@@ -106,15 +572,33 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: NoNamespace</h1>
+<h1>NoNamespace Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: </li>
@@ -123,15 +607,33 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: NoNamespaceNestedClass</h1>
+<h1>NoNamespaceNestedClass Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: </li>
@@ -140,15 +642,33 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: SubclassBar</h1>
+<h1>SubclassBar Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -157,15 +677,47 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>FooBarBazType</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: SubclassBaz</h1>
+<h1>SubclassBaz Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -174,15 +726,47 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>FooBarBazType</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: SubclassFoo</h1>
+<h1>SubclassFoo Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -191,15 +775,47 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>FooBarBazType</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
 
 <h2>Methods</h2>
 
+
 <h2>Events</h2>
+
 
 <hr />
 
-<h1>Class: Test</h1>
+<h1>Test Class</h1>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -208,11 +824,43 @@
 
 <h2>Constructors:</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>.ctor</td><td></td></tr><tr><td>.ctor</td><td></td></tr><tr><td>.ctor</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Properties</h2>
+
 
 <h2>Methods</h2>
 
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>GenericMethod</td><td></td></tr><tr><td>MethodThatRaisesException</td><td></td></tr><tr><td>MethodWithExamples</td><td></td></tr><tr><td>NothingFunction</td><td></td></tr><tr><td>ParameterWithMultipleParameters</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
 <h2>Events</h2>
+
 
 <hr />
 
