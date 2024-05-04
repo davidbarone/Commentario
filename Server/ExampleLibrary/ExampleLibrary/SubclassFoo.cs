@@ -1,7 +1,7 @@
 namespace ExampleLibrary;
 
 /// <summary>
-/// Subclass of ITestInterface.
+/// A class that implements an interface.
 /// </summary>
 public class SubclassFoo : ITestInterface
 {

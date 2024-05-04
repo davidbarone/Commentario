@@ -1,7 +1,7 @@
 namespace foo.bar.baz;
 
 /// <summary>
-/// This is a type in a multipart namespace.
+/// A test class that exists in a namespace with multiple parts.
 /// </summary>
 public class MultipartNamespace
 {

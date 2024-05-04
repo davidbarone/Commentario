@@ -28,21 +28,9 @@ public class IDString
     public MemberType MemberType { get; set; } = MemberType.ErrorString;
 
     /// <summary>
-    /// The namespace name.
-    /// </summary>
-    public string Namespace { get; set; } = default!;
-
-    /// <summary>
-    /// The name of the parent type. Used for members and nested types within a type.
-    /// </summary>
-    public string Parent { get; set; } = default!;
-
-    /// <summary>
-    /// The name of the type or member.
+    /// The name of the type or member. This optionally includes the namespace and the parent / enclosing type name. 
     /// </summary>
     public string Name { get; set; } = default!;
-
-
 
     /// <summary>
     /// Unique link tag based on fully qualified name. Used for generaing links for TOC etc.
@@ -97,59 +85,6 @@ public class IDString
         }
 
         // Calculate namespace, parent, name
-        var nameParts = fqnParts[0].Split('.');
-        if (nameParts.Length >= 4)
-        {
-            throw new Exception($"Too many name parts for id: [{id}]: {nameParts.Length}.");
-        }
-        else if (nameParts.Length >= 3)
-        {
-            this.Namespace = nameParts[nameParts.Length - 3];
-            this.Parent = nameParts[nameParts.Length - 2];
-            this.Name = nameParts[nameParts.Length - 1];
-        }
-        else if (nameParts.Length >= 2)
-        {
-            this.Namespace = nameParts[nameParts.Length - 2];
-            this.Parent = "";
-            this.Name = nameParts[nameParts.Length - 1];
-        }
-        else
-        {
-            this.Namespace = "";
-            this.Parent = "";
-            this.Name = nameParts[nameParts.Length - 1];
-        }
-
-        if (!string.IsNullOrEmpty(this.Parent))
-        {
-            // Check for generic type arguments on parent. This will type be a type, so check for ` character.
-            var arr = this.Parent.Split("`");
-            this.Parent = arr[0];
-            if (arr.Length == 2)
-            {
-                this.ParentTypeArguments = int.Parse(arr[1]);
-            }
-        }
-
-        if (this.MemberType == MemberType.Type && !string.IsNullOrEmpty(this.Name))
-        {
-            var arr = this.Name.Split("`");
-            this.Name = arr[0];
-            if (arr.Length == 2)
-            {
-                this.TypeArguments = int.Parse(arr[1]);
-            }
-        }
-
-        if ("FPEM".Contains(splits[0]) && !string.IsNullOrEmpty(this.Name))
-        {
-            var arr = this.Name.Split("``");
-            this.Name = arr[0];
-            if (arr.Length == 2)
-            {
-                this.TypeArguments = int.Parse(arr[1]);
-            }
-        }
+        this.Name = fqnParts[0];
     }
 }

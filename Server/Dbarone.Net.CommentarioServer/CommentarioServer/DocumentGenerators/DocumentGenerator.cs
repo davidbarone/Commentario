@@ -186,8 +186,7 @@ public abstract class DocumentGenerator
         var contentTypes = "";
 
         // Get documentation
-        var xmlDocument = new XmlCommentsReader(this.XmlCommentsPath).Document;
-
+        var comments = new XmlCommentsReader(this.XmlCommentsPath).Document;
 
         foreach (var type in this.GetTypes())
         {
@@ -204,14 +203,14 @@ public abstract class DocumentGenerator
     <title>HTML 5 Boilerplate</title>
     {this.GetCSSStyles()}
   </head>
-  <body>
-        <h1>{xmlDocument.Assembly.Name}</h1>
+  <body id=""top"">
+        <h1>{comments.Assembly.Name}</h1>
         {this.GetReadMe()}
 
-        {this.RenderTOCSection("Classes", this.GetClasses())}
-        {this.RenderTOCSection("Structs", this.GetStructs())}
-        {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
-        {this.RenderTOCSection("Enums", this.GetEnums())}
+        {this.RenderTOCSection("Classes", this.GetClasses(), comments)}
+        {this.RenderTOCSection("Structs", this.GetStructs(), comments)}
+        {this.RenderTOCSection("Interfaces", this.GetInterfaces(), comments)}
+        {this.RenderTOCSection("Enums", this.GetEnums(), comments)}
 
         <hr />
 
@@ -224,7 +223,7 @@ public abstract class DocumentGenerator
         File.WriteAllText(this.OutputPath, template);
     }
 
-    protected abstract string RenderTOCSection(string header, Type[] types);
+    protected abstract string RenderTOCSection(string header, Type[] types, DocumentNode comments);
     protected abstract string RenderType(Type type);
     protected abstract string RenderTypeTOCSection(Type type, MemberInfo[] members);
     protected abstract string RenderTypeMember(MemberInfo member);
@@ -295,6 +294,7 @@ public abstract class DocumentGenerator
 
     a:hover {
         color: #123456;
+        text-decoration: underline;
     }
 
     /* ---------------------------------------------
@@ -468,61 +468,6 @@ public abstract class DocumentGenerator
     ol,
     {
         margin-bottom: .5em;
-    }
-
-    /* ---------------------------------------------
-    Utilities
-    ------------------------------------------------ */
-
-    .full-width {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .half-width {
-        width: 50%;
-        box-sizing: border-box;
-    }
-
-    .third-width {
-        width: 33%;
-        box-sizing: border-box;
-    }
-
-    .quarter-width {
-        width: 25%;
-        box-sizing: border-box;
-    }
-
-    .tiny-width {
-        width: 50px;
-    }
-
-    .max-full-width {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .pull-right {
-        float: right;
-    }
-
-    .pull-left {
-        float: left;
-    }
-
-    .inline {
-        display: inline;
-    }
-
-    .center-block {
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-    }
-
-    .align-center {
-        text-align: center;
     }
 
     /* ---------------------------------------------

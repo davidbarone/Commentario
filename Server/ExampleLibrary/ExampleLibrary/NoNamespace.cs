@@ -1,5 +1,5 @@
 /// <summary>
-/// This type does not exist in a namespace.
+/// A class that does not have a namespace.
 /// </summary>
 public class NoNamespace
 {

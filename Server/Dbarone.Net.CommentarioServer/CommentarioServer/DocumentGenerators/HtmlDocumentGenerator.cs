@@ -5,9 +5,23 @@ public class HtmlDocumentGenerator : DocumentGenerator
 {
     public HtmlDocumentGenerator(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath) : base(xmlCommentsPath, assemblyPath, readMePath, outputPath) { }
 
-    protected override string RenderTOCSection(string header, Type[] types)
+    protected override string RenderTOCSection(string header, Type[] types, DocumentNode comments)
     {
-        var values = string.Join("", types.OrderBy(t => t.Name).Select(t => $"<tr><td>{t.Name}</td><td></td></tr>"));
+        var values = string.Join("", types.OrderBy(t => t.Name).Select(t =>
+        {
+            var commentText = "";
+            var commentMember = comments.GetDocumentForType(t);
+            if (commentMember is not null)
+            {
+                var commentSummary = commentMember.Summary;
+                if (commentSummary is not null)
+                {
+                    commentText = commentSummary.Text;
+                }
+            }
+            var str = $@"<tr><td><a href=""#{t.FullName}"">{t.Name}</a></td><td>{commentText}</td></tr>";
+            return str;
+        }));
 
         if (types is null || types.Length == 0)
         {
@@ -37,7 +51,8 @@ public class HtmlDocumentGenerator : DocumentGenerator
     protected override string RenderType(Type type)
     {
         var template = @$"
-<h1>{type.Name} {this.GetTypeCategory(type)}</h1>
+<h1 id=""{type.FullName}"">{type.Name} {this.GetTypeCategory(type)}</h1>
+<a href=""#top"">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: {type.Namespace}</li>

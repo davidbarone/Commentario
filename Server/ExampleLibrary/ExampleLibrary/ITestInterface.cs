@@ -1,7 +1,7 @@
 namespace ExampleLibrary;
 
 /// <summary>
-/// This is a test interface. 
+/// A test interface. 
 /// </summary>
 public interface ITestInterface
 {

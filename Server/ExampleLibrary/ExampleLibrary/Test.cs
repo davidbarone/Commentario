@@ -1,7 +1,7 @@
 namespace ExampleLibrary;
 
 /// <summary>
-/// A test class.
+/// A general-purpose test class that contains lots of various members to test documentation features.
 /// </summary>
 public class Test
 {

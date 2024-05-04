@@ -1,7 +1,7 @@
 namespace ExampleLibrary;
 
 /// <summary>
-/// Test enum representing values foo, bar, baz.
+/// A test enum type that contains the values foo, bar, and baz.
 /// </summary>
 public enum FooBarBazEnum
 {

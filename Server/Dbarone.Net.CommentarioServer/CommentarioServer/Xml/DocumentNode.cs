@@ -14,4 +14,8 @@ public class DocumentNode
     [XmlArrayItem("member", typeof(MemberNode))]
     public MemberNode[] Members { get; set; }
 
+    public MemberNode GetDocumentForType(Type type) {
+        var typeId = type.FullName;
+        return this.Members.FirstOrDefault(m => m.ID.Name == typeId);
+    }
 }

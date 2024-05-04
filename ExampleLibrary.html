@@ -70,6 +70,7 @@
 
     a:hover {
         color: #123456;
+        text-decoration: underline;
     }
 
     /* ---------------------------------------------
@@ -246,61 +247,6 @@
     }
 
     /* ---------------------------------------------
-    Utilities
-    ------------------------------------------------ */
-
-    .full-width {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .half-width {
-        width: 50%;
-        box-sizing: border-box;
-    }
-
-    .third-width {
-        width: 33%;
-        box-sizing: border-box;
-    }
-
-    .quarter-width {
-        width: 25%;
-        box-sizing: border-box;
-    }
-
-    .tiny-width {
-        width: 50px;
-    }
-
-    .max-full-width {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .pull-right {
-        float: right;
-    }
-
-    .pull-left {
-        float: left;
-    }
-
-    .inline {
-        display: inline;
-    }
-
-    .center-block {
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-    }
-
-    .align-center {
-        text-align: center;
-    }
-
-    /* ---------------------------------------------
     Misc
     ------------------------------------------------ */
 
@@ -314,7 +260,7 @@
 </style>
         
   </head>
-  <body>
+  <body id="top">
         <h1>ExampleLibrary</h1>
         The ExampleLibrary assembly is a dummy assembly that is used for testing the Commentario documenter, and also to provide an example of the output of Commentario.
 This paragraph is user-defined and can be configured in the Commentario configuration for a workspace.
@@ -331,7 +277,23 @@ This paragraph is user-defined and can be configured in the Commentario configur
         </tr>
     </thead>
     <tbody>
-        <tr><td>ConvertStringToIntDelegate</td><td></td></tr><tr><td>GenericType`1</td><td></td></tr><tr><td>MultipartNamespace</td><td></td></tr><tr><td>MultpartNamespaceNestedClass</td><td></td></tr><tr><td>NoNamespace</td><td></td></tr><tr><td>NoNamespaceNestedClass</td><td></td></tr><tr><td>SubclassBar</td><td></td></tr><tr><td>SubclassBaz</td><td></td></tr><tr><td>SubclassFoo</td><td></td></tr><tr><td>Test</td><td></td></tr>
+        <tr><td><a href="#ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate</a></td><td>
+            A test delegate class.
+            </td></tr><tr><td><a href="#ExampleLibrary.GenericType`1">GenericType`1</a></td><td>
+            A test generic type.
+            </td></tr><tr><td><a href="#foo.bar.baz.MultipartNamespace">MultipartNamespace</a></td><td>
+            A test class that exists in a namespace with multiple parts.
+            </td></tr><tr><td><a href="#foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass</a></td><td></td></tr><tr><td><a href="#NoNamespace">NoNamespace</a></td><td>
+            A class that does not have a namespace.
+            </td></tr><tr><td><a href="#NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass</a></td><td></td></tr><tr><td><a href="#ExampleLibrary.SubclassBar">SubclassBar</a></td><td>
+            A class that implements an interface.
+            </td></tr><tr><td><a href="#ExampleLibrary.SubclassBaz">SubclassBaz</a></td><td>
+            A class that implements an interface.
+            </td></tr><tr><td><a href="#ExampleLibrary.SubclassFoo">SubclassFoo</a></td><td>
+            A class that implements an interface.
+            </td></tr><tr><td><a href="#ExampleLibrary.Test">Test</a></td><td>
+            A general-purpose test class that contains lots of various members to test documentation features.
+            </td></tr>
     </tbody>
 </table>
 </div>
@@ -347,7 +309,9 @@ This paragraph is user-defined and can be configured in the Commentario configur
         </tr>
     </thead>
     <tbody>
-        <tr><td>FooBarBazEnum</td><td></td></tr>
+        <tr><td><a href="#ExampleLibrary.FooBarBazEnum">FooBarBazEnum</a></td><td>
+            A test enum type that contains the values foo, bar, and baz.
+            </td></tr>
     </tbody>
 </table>
 </div>
@@ -363,7 +327,9 @@ This paragraph is user-defined and can be configured in the Commentario configur
         </tr>
     </thead>
     <tbody>
-        <tr><td>ITestInterface</td><td></td></tr>
+        <tr><td><a href="#ExampleLibrary.ITestInterface">ITestInterface</a></td><td>
+            A test interface. 
+            </td></tr>
     </tbody>
 </table>
 </div>
@@ -379,7 +345,9 @@ This paragraph is user-defined and can be configured in the Commentario configur
         </tr>
     </thead>
     <tbody>
-        <tr><td>FooBarBazEnum</td><td></td></tr>
+        <tr><td><a href="#ExampleLibrary.FooBarBazEnum">FooBarBazEnum</a></td><td>
+            A test enum type that contains the values foo, bar, and baz.
+            </td></tr>
     </tbody>
 </table>
 </div>
@@ -388,7 +356,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
         <hr />
 
         
-<h1>ConvertStringToIntDelegate Class</h1>
+<h1 id="ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -437,7 +406,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>FooBarBazEnum Struct</h1>
+<h1 id="ExampleLibrary.FooBarBazEnum">FooBarBazEnum Struct</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -458,7 +428,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>GenericType`1 Class</h1>
+<h1 id="ExampleLibrary.GenericType`1">GenericType`1 Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -493,7 +464,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>ITestInterface Interface</h1>
+<h1 id="ExampleLibrary.ITestInterface">ITestInterface Interface</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -528,7 +500,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>MultipartNamespace Class</h1>
+<h1 id="foo.bar.baz.MultipartNamespace">MultipartNamespace Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: foo.bar.baz</li>
@@ -563,7 +536,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>MultpartNamespaceNestedClass Class</h1>
+<h1 id="foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: foo.bar.baz</li>
@@ -598,7 +572,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>NoNamespace Class</h1>
+<h1 id="NoNamespace">NoNamespace Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: </li>
@@ -633,7 +608,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>NoNamespaceNestedClass Class</h1>
+<h1 id="NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: </li>
@@ -668,7 +644,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>SubclassBar Class</h1>
+<h1 id="ExampleLibrary.SubclassBar">SubclassBar Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -717,7 +694,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>SubclassBaz Class</h1>
+<h1 id="ExampleLibrary.SubclassBaz">SubclassBaz Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -766,7 +744,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>SubclassFoo Class</h1>
+<h1 id="ExampleLibrary.SubclassFoo">SubclassFoo Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
@@ -815,7 +794,8 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
 <hr />
 
-<h1>Test Class</h1>
+<h1 id="ExampleLibrary.Test">Test Class</h1>
+<a href="#top">Back to top</a>
 <h2>Definition:</h2>
 <ul>
     <li>Namespace: ExampleLibrary</li>
