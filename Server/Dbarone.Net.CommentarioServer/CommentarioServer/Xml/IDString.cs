@@ -33,6 +33,11 @@ public class IDString
     public string Name { get; set; } = default!;
 
     /// <summary>
+    /// The member name. Only applies for members.
+    /// </summary>
+    public string MemberName { get; set; } = default!;
+
+    /// <summary>
     /// Unique link tag based on fully qualified name. Used for generaing links for TOC etc.
     /// </summary>
     public string FullyQualifiedNameLink { get; set; } = default!;
@@ -77,14 +82,33 @@ public class IDString
         }
         this.FullyQualifiedName = splits[1];
         this.FullyQualifiedNameLink = this.FullyQualifiedName.Replace(".", "").ToLower();
-        var fqnParts = this.FullyQualifiedName.Split('(');  // look for first '('. Required for Methods and properties with arguments.
-        if (fqnParts.Length == 2)
-        {
-            this.Arguments = fqnParts[1];
-            this.Arguments = this.Arguments.Substring(0, this.Arguments.Length - 1);    // remove last ')'
-        }
+        var bracketPos = this.FullyQualifiedName.IndexOf("(");
 
-        // Calculate namespace, parent, name
-        this.Name = fqnParts[0];
+        if (bracketPos > 0)
+        {
+            this.Arguments = this.FullyQualifiedName.Substring(bracketPos);
+            this.Name = this.FullyQualifiedName.Substring(0, bracketPos);
+
+            // Get member name
+            if ("FPEM".Contains(splits[0]))
+            {
+                var memberName = this.Name.Split(".").Reverse().First();
+                // Xml comments replace '.' in names with '#'
+                this.MemberName = $"{memberName}{this.Arguments}".Replace("#", ".");
+            }
+        }
+        else
+        {
+            this.Arguments = "";
+            this.Name = this.FullyQualifiedName;
+
+            // Get member name
+            if ("FPEM".Contains(splits[0]))
+            {
+                var memberName = this.Name.Split(".").Reverse().First();
+                // Xml comments replace '.' in names with '#'
+                this.MemberName = $"{memberName}{this.Arguments}".Replace("#", ".");
+            }
+        }
     }
 }

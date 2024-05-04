@@ -37,6 +37,11 @@ public abstract class DocumentGenerator
     /// </summary>
     public string ReadMePath { get; set; } = default!;
 
+    /// <summary>
+    /// The xml comments.
+    /// </summary>
+    public DocumentNode Comments { get; set; }
+
     #endregion
 
     #region Constructors
@@ -61,6 +66,9 @@ public abstract class DocumentGenerator
         XmlCommentsPath = xmlCommentsPath;
         AssemblyPath = assemblyPath;
         OutputPath = outputPath;
+
+        // Get documentation
+        Comments = new XmlCommentsReader(this.XmlCommentsPath).Document;
     }
 
     #endregion
@@ -185,9 +193,6 @@ public abstract class DocumentGenerator
         Validation();
         var contentTypes = "";
 
-        // Get documentation
-        var comments = new XmlCommentsReader(this.XmlCommentsPath).Document;
-
         foreach (var type in this.GetTypes())
         {
             contentTypes += RenderType(type);
@@ -204,13 +209,13 @@ public abstract class DocumentGenerator
     {this.GetCSSStyles()}
   </head>
   <body id=""top"">
-        <h1>{comments.Assembly.Name}</h1>
+        <h1>{Comments.Assembly.Name}</h1>
         {this.GetReadMe()}
 
-        {this.RenderTOCSection("Classes", this.GetClasses(), comments)}
-        {this.RenderTOCSection("Structs", this.GetStructs(), comments)}
-        {this.RenderTOCSection("Interfaces", this.GetInterfaces(), comments)}
-        {this.RenderTOCSection("Enums", this.GetEnums(), comments)}
+        {this.RenderTOCSection("Classes", this.GetClasses())}
+        {this.RenderTOCSection("Structs", this.GetStructs())}
+        {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
+        {this.RenderTOCSection("Enums", this.GetEnums())}
 
         <hr />
 
@@ -223,9 +228,9 @@ public abstract class DocumentGenerator
         File.WriteAllText(this.OutputPath, template);
     }
 
-    protected abstract string RenderTOCSection(string header, Type[] types, DocumentNode comments);
+    protected abstract string RenderTOCSection(string header, Type[] types);
     protected abstract string RenderType(Type type);
-    protected abstract string RenderTypeTOCSection(Type type, MemberInfo[] members);
+    protected abstract string RenderTypeTOCSection(Type type, string header, MemberInfo[] members);
     protected abstract string RenderTypeMember(MemberInfo member);
 
     protected string GetCSSStyles()

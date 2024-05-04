@@ -5,12 +5,12 @@ public class HtmlDocumentGenerator : DocumentGenerator
 {
     public HtmlDocumentGenerator(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath) : base(xmlCommentsPath, assemblyPath, readMePath, outputPath) { }
 
-    protected override string RenderTOCSection(string header, Type[] types, DocumentNode comments)
+    protected override string RenderTOCSection(string header, Type[] types)
     {
         var values = string.Join("", types.OrderBy(t => t.Name).Select(t =>
         {
             var commentText = "";
-            var commentMember = comments.GetDocumentForType(t);
+            var commentMember = Comments.GetDocumentForType(t);
             if (commentMember is not null)
             {
                 var commentSummary = commentMember.Summary;
@@ -59,26 +59,32 @@ public class HtmlDocumentGenerator : DocumentGenerator
     <li>Assembly: {type.Assembly.FullName}</li>
 </ul>
 
-<h2>Constructors:</h2>
-{this.RenderTypeTOCSection(type, this.GetConstructors(type))}
-
-<h2>Properties</h2>
-{this.RenderTypeTOCSection(type, this.GetProperties(type))}
-
-<h2>Methods</h2>
-{this.RenderTypeTOCSection(type, this.GetMethods(type))}
-
-<h2>Events</h2>
-{this.RenderTypeTOCSection(type, this.GetEvents(type))}
+{this.RenderTypeTOCSection(type, "Constructors", this.GetConstructors(type))}
+{this.RenderTypeTOCSection(type, "Properties", this.GetProperties(type))}
+{this.RenderTypeTOCSection(type, "Methods", this.GetMethods(type))}
+{this.RenderTypeTOCSection(type, "Events", this.GetEvents(type))}
 
 <hr />
 ";
         return template;
     }
 
-    protected override string RenderTypeTOCSection(Type type, MemberInfo[] members)
+    protected override string RenderTypeTOCSection(Type type, string header, MemberInfo[] members)
     {
-        var values = string.Join("", members.OrderBy(t => t.Name).Select(t => $"<tr><td>{t.Name}</td><td></td></tr>"));
+        var values = string.Join("", members.OrderBy(m => m.Name).Select(m =>
+        {
+            var memberCommentText = "";
+            var memberNode = Comments.GetDocumentForMember(m);
+            if (memberNode is not null)
+            {
+                var memberNodeSummary = memberNode.Summary;
+                if (memberNodeSummary is not null)
+                {
+                    memberCommentText = memberNodeSummary.Text;
+                }
+            }
+            return $"<tr><td>{m.ToString()}</td><td>{memberCommentText}</td></tr>";
+        }));
 
         if (members is null || members.Length == 0)
         {
@@ -88,10 +94,11 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {
             return @$"
 <div>
+<h2>{header}</h2>
 <table>
     <thead>
         <tr>
-            <th>Type</th>
+            <th>Name</th>
             <th>Description</th>
         </tr>
     </thead>
