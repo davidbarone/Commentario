@@ -1,4 +1,5 @@
 using System.Reflection;
+using Dbarone.CommentarioServer;
 using Dbarone.Net.CommentarioServer;
 
 public class HtmlDocumentGenerator : DocumentGenerator
@@ -19,7 +20,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                     commentText = commentSummary.Text;
                 }
             }
-            var str = $@"<tr><td><a href=""#{t.FullName}"">{t.Name}</a></td><td>{commentText}</td></tr>";
+            var str = $@"<tr><td><a href=""#{t.ToCommentId()}"">{t.Name}</a></td><td>{commentText}</td></tr>";
             return str;
         }));
 
@@ -35,7 +36,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 <table>
     <thead>
         <tr>
-            <th>Type</th>
+            <th>Name</th>
             <th>Description</th>
         </tr>
     </thead>
@@ -51,7 +52,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
     protected override string RenderType(Type type)
     {
         var template = @$"
-<h1 id=""{type.FullName}"">{type.Name} {this.GetTypeCategory(type)}</h1>
+<h1 id=""{type.ToCommentId()}"">{type.Name} {this.GetTypeCategory(type)}</h1>
 <a href=""#top"">Back to top</a>
 <h2>Definition:</h2>
 <ul>
@@ -83,7 +84,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                     memberCommentText = memberNodeSummary.Text;
                 }
             }
-            return $"<tr><td>{m.ToString()}</td><td>{memberCommentText}</td></tr>";
+            return $@"<tr><td><a href=""#{m.ToCommentId()}"">{m.ToString()}</a></td><td>{memberCommentText}</td></tr>";
         }));
 
         if (members is null || members.Length == 0)
@@ -113,6 +114,24 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
     protected override string RenderTypeMember(MemberInfo member)
     {
-        return "";
+        // Get type of member (Property, Method, Field etc.)
+        var memberType = member.GetType().Name.Replace("Info", "");
+
+        var declaringType = member.DeclaringType!;
+
+        var template = @$"
+<h1 id=""{member.ToCommentId()}"">{member.Name} {member.GetMemberTypeName()}</h1>
+<a href=""#{declaringType.ToCommentId()}"">Back to parent</a>
+<h2>Definition:</h2>
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+";
+        return template;
     }
 }

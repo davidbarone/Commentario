@@ -57,9 +57,6 @@ public class IDString
     /// </summary>
     public string Arguments { get; set; } = "";
 
-
-
-
     /// <summary>
     /// constructor for IDString class.
     /// </summary>

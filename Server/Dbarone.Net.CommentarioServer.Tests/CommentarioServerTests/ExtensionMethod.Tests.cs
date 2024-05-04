@@ -1,0 +1,35 @@
+using Xunit;
+using System;
+using System.Reflection;
+using System.Collections.Generic;
+
+namespace Dbarone.Net.CommentarioServer.Tests;
+
+public class ExtensionMethodTests
+{
+
+    [Theory]
+    [InlineData(typeof(DocumentNode), "T:Dbarone.Net.CommentarioServer.DocumentNode")]
+    public void TestTypeToCommentId(Type type, string expectedCommentId)
+    {
+        var actualCommentId = type.ToCommentId();
+        Assert.Equal(expectedCommentId, actualCommentId);
+    }
+
+    public static IEnumerable<object[]> TestMemberData()
+    {
+        Type type = typeof(DocumentNode);
+        MethodInfo miGetDocumentForType = type.GetMethod("GetDocumentForType")!;
+        PropertyInfo piAssembly = type.GetProperty("Assembly");
+        yield return new object[] { miGetDocumentForType, "M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForType(System.Type)" };
+        yield return new object[] { piAssembly, "P:Dbarone.Net.CommentarioServer.DocumentNode.Assembly" };
+    }
+
+    [Theory]
+    [MemberData(nameof(TestMemberData))]
+    public void TestMemberToCommentId(MemberInfo member, string expectedCommentId)
+    {
+        var actualCommentId = member.ToCommentId();
+        Assert.Equal(expectedCommentId, actualCommentId);
+    }
+}

@@ -152,6 +152,11 @@ public abstract class DocumentGenerator
         return GetTypes().Where(t => t.IsEnum).ToArray();
     }
 
+    protected MemberInfo[] GetMembers(Type type)
+    {
+        return type.GetMembers(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+    }
+
     protected ConstructorInfo[] GetConstructors(Type type)
     {
         return type.GetConstructors(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
@@ -192,10 +197,15 @@ public abstract class DocumentGenerator
     {
         Validation();
         var contentTypes = "";
+        var contentMembers = "";
 
         foreach (var type in this.GetTypes())
         {
             contentTypes += RenderType(type);
+            foreach (var member in GetMembers(type))
+            {
+                contentMembers += RenderTypeMember(member);
+            }
         }
 
         var template = @$"
@@ -220,6 +230,7 @@ public abstract class DocumentGenerator
         <hr />
 
         {contentTypes}
+        {contentMembers}
     </body>
 </html>
         ";
