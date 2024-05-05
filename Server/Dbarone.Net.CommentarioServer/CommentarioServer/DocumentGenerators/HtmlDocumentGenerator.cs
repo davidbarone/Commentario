@@ -181,14 +181,52 @@ public class HtmlDocumentGenerator : DocumentGenerator
     protected override string RenderTypeMember(MemberInfo member)
     {
         // Get type of member (Property, Method, Field etc.)
-        var memberType = member.GetType().Name.Replace("Info", "");
+        var memberType = member.GetMemberTypeName();
+
+        // Get signature
+        var signature = "";
+
+        if (memberType == "Method")
+        {
+            signature = (member as MethodInfo).GetSignature(false);
+        }
+        else if (memberType == "Constructor")
+        {
+            signature = (member as ConstructorInfo).GetSignature(false);
+        }
+
+        if (!string.IsNullOrEmpty(signature))
+        {
+            signature = @$"
+<h2>Signature</h2>
+<pre><code>{signature}</code></pre>
+            ";
+        }
+
+        // Summary
+        var node = Comments.GetDocumentForMember(member);
+        SummaryNode? summaryNode = null;
+        string summary = "";
+
+        if (node is not null)
+        {
+            summaryNode = node.Summary;
+            if (summaryNode is not null)
+            {
+                summary = summaryNode.Text;
+            }
+        }
 
         var declaringType = member.DeclaringType!;
 
         var template = @$"
 <h1 id=""{member.ToCommentId()}"">{member.Name} {member.GetMemberTypeName()}</h1>
 <a href=""#{declaringType.ToCommentId()}"">Back to parent</a>
-<h2>Definition:</h2>
+
+{signature}
+
+<h2>Summary</h2>
+{summary}
 
 Parameters
 

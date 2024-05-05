@@ -152,24 +152,12 @@
     Code / Pre
     ------------------------------------------------ */
 
-    code {
-        padding: .2em .5em;
-        margin: 0 .2em;
-        font-size: 90%;
-        white-space: nowrap;
-        background: #F1F1F1;
-        border: 1px solid #E1E1E1;
-        border-radius: 4px;
-    }
-
-    pre {
-        font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
-    }
-
     pre > code {
         display: block;
-        padding: 1em 1.5em;
         white-space: pre;
+        font-size: 100%;
+        border: 1px solid #123;
+        border-radius: 4px;
     }
 
     /* ---------------------------------------------
@@ -259,6 +247,13 @@
 
 </style>
         
+
+    <!-- highlight.js (use 'vs' theme) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js"></script>
+
   </head>
   <body id="top">
         <h1>ExampleLibrary</h1>
@@ -916,7 +911,14 @@ This paragraph is user-defined and can be configured in the Commentario configur
         
 <h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Invoke Method</h1>
 <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public int Invoke(string input)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -928,7 +930,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">BeginInvoke Method</h1>
 <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public System.IAsyncResult BeginInvoke(string input, System.AsyncCallback callback, object object)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -940,7 +949,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">EndInvoke Method</h1>
 <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public int EndInvoke(System.IAsyncResult result)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -952,7 +968,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public ConvertStringToIntDelegate(object object, nint method)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -964,7 +987,11 @@ Exceptions
 
 <h1 id="F:ExampleLibrary.FooBarBazEnum.value__">value__ Field</h1>
 <a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -976,7 +1003,13 @@ Exceptions
 
 <h1 id="F:ExampleLibrary.FooBarBazEnum.FOO">FOO Field</h1>
 <a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
+            Foo.
+            
 
 Parameters
 
@@ -988,7 +1021,13 @@ Exceptions
 
 <h1 id="F:ExampleLibrary.FooBarBazEnum.BAR">BAR Field</h1>
 <a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
+            Bar.
+            
 
 Parameters
 
@@ -1000,7 +1039,13 @@ Exceptions
 
 <h1 id="F:ExampleLibrary.FooBarBazEnum.BAZ">BAZ Field</h1>
 <a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
+            Baz.
+            
 
 Parameters
 
@@ -1012,7 +1057,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.GenericType`1.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.GenericType`1">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public GenericType`1()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1024,7 +1076,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.ITestInterface.get_FooBarBazType">get_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1036,7 +1095,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.ITestInterface.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1048,7 +1114,13 @@ Exceptions
 
 <h1 id="P:ExampleLibrary.ITestInterface.FooBarBazType">FooBarBazType Property</h1>
 <a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
+            The type of the object (foo, bar, baz).
+            
 
 Parameters
 
@@ -1060,7 +1132,14 @@ Exceptions
 
 <h1 id="M:foo.bar.baz.MultipartNamespace.#ctor">.ctor Constructor</h1>
 <a href="#T:foo.bar.baz.MultipartNamespace">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public MultipartNamespace()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1072,7 +1151,11 @@ Exceptions
 
 <h1 id=":foo.bar.baz.MultipartNamespace.foo#bar#baz#MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass </h1>
 <a href="#T:foo.bar.baz.MultipartNamespace">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1084,7 +1167,14 @@ Exceptions
 
 <h1 id="M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">.ctor Constructor</h1>
 <a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public MultpartNamespaceNestedClass()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1096,7 +1186,14 @@ Exceptions
 
 <h1 id="M:NoNamespace.#ctor">.ctor Constructor</h1>
 <a href="#T:NoNamespace">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public NoNamespace()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1108,7 +1205,11 @@ Exceptions
 
 <h1 id=":NoNamespace.NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass </h1>
 <a href="#T:NoNamespace">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1120,7 +1221,14 @@ Exceptions
 
 <h1 id="M:NoNamespace+NoNamespaceNestedClass.#ctor">.ctor Constructor</h1>
 <a href="#T:NoNamespace+NoNamespaceNestedClass">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public NoNamespaceNestedClass()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1132,7 +1240,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassBar.get_FooBarBazType">get_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1144,7 +1259,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassBar.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1156,7 +1278,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassBar.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public SubclassBar()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1168,7 +1297,13 @@ Exceptions
 
 <h1 id="P:ExampleLibrary.SubclassBar.FooBarBazType">FooBarBazType Property</h1>
 <a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
+            The type of the object (foo).
+            
 
 Parameters
 
@@ -1180,7 +1315,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassBaz.get_FooBarBazType">get_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1192,7 +1334,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassBaz.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1204,7 +1353,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassBaz.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public SubclassBaz()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1216,7 +1372,13 @@ Exceptions
 
 <h1 id="P:ExampleLibrary.SubclassBaz.FooBarBazType">FooBarBazType Property</h1>
 <a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
+            The type of the object (foo).
+            
 
 Parameters
 
@@ -1228,7 +1390,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassFoo.get_FooBarBazType">get_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1240,7 +1409,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassFoo.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1252,7 +1428,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.SubclassFoo.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public SubclassFoo()</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1264,7 +1447,13 @@ Exceptions
 
 <h1 id="P:ExampleLibrary.SubclassFoo.FooBarBazType">FooBarBazType Property</h1>
 <a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
-<h2>Definition:</h2>
+
+
+
+<h2>Summary</h2>
+
+            The type of the object (foo).
+            
 
 Parameters
 
@@ -1276,7 +1465,14 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.Test.GenericMethod[T](T)">GenericMethod Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public T GenericMethod<T>(T input)</code></pre>
+            
+
+<h2>Summary</h2>
+
 
 Parameters
 
@@ -1288,7 +1484,16 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.Test.NothingFunction">NothingFunction Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public void NothingFunction()</code></pre>
+            
+
+<h2>Summary</h2>
+
+            This function does nothing and doesn't return a value.
+            
 
 Parameters
 
@@ -1300,7 +1505,16 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">ParameterWithMultipleParameters Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public void ParameterWithMultipleParameters(int intValue, System.DateTime dateTimeValue, System.Guid guidValue)</code></pre>
+            
+
+<h2>Summary</h2>
+
+            An example method with multiple parameters.
+            
 
 Parameters
 
@@ -1312,7 +1526,16 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public void MethodThatRaisesException()</code></pre>
+            
+
+<h2>Summary</h2>
+
+            This is a method that throws an exception.
+            
 
 Parameters
 
@@ -1324,7 +1547,16 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public void MethodWithExamples()</code></pre>
+            
+
+<h2>Summary</h2>
+
+            This method has some examples.
+            
 
 Parameters
 
@@ -1336,7 +1568,16 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.Test.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public Test()</code></pre>
+            
+
+<h2>Summary</h2>
+
+            Default constructor.
+            
 
 Parameters
 
@@ -1348,7 +1589,16 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.Test.#ctor(System.Int32)">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public Test(int a)</code></pre>
+            
+
+<h2>Summary</h2>
+
+            Constructor with 1 parameter.
+            
 
 Parameters
 
@@ -1360,7 +1610,16 @@ Exceptions
 
 <h1 id="M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
-<h2>Definition:</h2>
+
+
+<h2>Signature</h2>
+<pre><code>public Test(int a, int b)</code></pre>
+            
+
+<h2>Summary</h2>
+
+            Constructor with 2 parameters.
+            
 
 Parameters
 
@@ -1369,6 +1628,10 @@ Returns
 Exceptions
 
 <hr />
+
+
+        <!-- highlight.js -->
+        <script type="text/javascript">hljs.highlightAll({ language: 'csharp' });</script>
 
     </body>
 </html>

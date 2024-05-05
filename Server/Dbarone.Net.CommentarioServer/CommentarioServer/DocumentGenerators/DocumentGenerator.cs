@@ -222,6 +222,13 @@ public abstract class DocumentGenerator
     <meta http-equiv=""X-UA-Compatible"" content=""ie=edge"">
     <title>HTML 5 Boilerplate</title>
     {this.GetCSSStyles()}
+
+    <!-- highlight.js (use 'vs' theme) -->
+    <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs.min.css"">
+    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js""></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js""></script>
+
   </head>
   <body id=""top"">
         <h1>{Comments.Assembly.Name}</h1>
@@ -236,6 +243,10 @@ public abstract class DocumentGenerator
 
         {contentTypes}
         {contentMembers}
+
+        <!-- highlight.js -->
+        <script type=""text/javascript"">hljs.highlightAll({{ language: 'csharp' }});</script>
+
     </body>
 </html>
         ";
@@ -405,24 +416,12 @@ public abstract class DocumentGenerator
     Code / Pre
     ------------------------------------------------ */
 
-    code {
-        padding: .2em .5em;
-        margin: 0 .2em;
-        font-size: 90%;
-        white-space: nowrap;
-        background: #F1F1F1;
-        border: 1px solid #E1E1E1;
-        border-radius: 4px;
-    }
-
-    pre {
-        font-family: sans-serif, ""Helvetica Neue"", Helvetica, Arial;
-    }
-
     pre > code {
         display: block;
-        padding: 1em 1.5em;
         white-space: pre;
+        font-size: 100%;
+        border: 1px solid #123;
+        border-radius: 4px;
     }
 
     /* ---------------------------------------------

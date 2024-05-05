@@ -81,4 +81,48 @@ public static class ExtensionMethods
         var typeArgs = type.GetGenericArguments();
         return typeArgs.Select(t => t.Name).ToArray();
     }
+
+    /// <summary>
+    /// Checks if a type is a generic type.
+    /// </summary>
+    /// <param name="type">The type to check.</param>
+    /// <returns>Returns true if the type is a generic type.</returns>
+    public static bool IsGeneric(this Type type)
+    {
+        return type.IsGenericType;
+    }
+
+    /// <summary>
+    /// Checks whether a type is a nullable type.
+    /// </summary>
+    /// <param name="type">The type to check.</param>
+    /// <param name="underlyingType">Returns true if the type is a nullable type.</param>
+    /// <returns></returns>
+    public static bool IsNullable(this Type type, out Type? underlyingType)
+    {
+        underlyingType = Nullable.GetUnderlyingType(type);
+        return underlyingType != null;
+    }
+
+    /// <summary>
+    /// Gets the signature for a method.
+    /// </summary>
+    /// <param name="method">The method to get the signature for.</param>
+    /// <param name="isInvokable"></param>
+    /// <returns>Returns a signature.</returns>
+    public static string GetSignature(this MethodInfo method, bool isInvokable)
+    {
+        return new MethodSignature().Build(method, isInvokable);
+    }
+
+    /// <summary>
+    /// Gets the signature for a constructor method.
+    /// </summary>
+    /// <param name="constructor">The constructor to get the signature for.</param>
+    /// <param name="isInvokable"></param>
+    /// <returns>Returns a signature.</returns>
+    public static string GetSignature(this ConstructorInfo constructor, bool isInvokable)
+    {
+        return new ConstructorMethodSignature().Build(constructor, isInvokable);
+    }
 }
