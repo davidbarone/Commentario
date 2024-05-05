@@ -49,8 +49,69 @@ public class HtmlDocumentGenerator : DocumentGenerator
         }
     }
 
+    protected override string RenderTypeGenericArguments(Type type)
+    {
+        var genericArgs = type.GetTypeGenericArguments();
+        if (genericArgs.Length == 0)
+        {
+            return "";
+        }
+        else
+        {
+            // Create a table
+            var values = string.Join("", genericArgs.Select(g =>
+            {
+                var commentText = "";
+                var commentMember = Comments.GetDocumentForType(type);
+                if (commentMember is not null)
+                {
+                    var commentTypeParams = commentMember.TypeParams;
+                    if (commentTypeParams is not null)
+                    {
+                        var commentTypeParamsNode = commentTypeParams.FirstOrDefault(p => p.Name.Equals(g));
+                        if (commentTypeParamsNode is not null)
+                        {
+                            commentText = commentTypeParamsNode.Description ?? "";
+                        }
+                    }
+                }
+                var str = $@"<tr><td>{g}</a></td><td>{commentText}</td></tr>";
+                return str;
+            }));
+            return @$"
+<h2>Type Parameters</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {values}
+    </tbody>
+</table>
+</div>";
+        }
+    }
+
+
     protected override string RenderType(Type type)
     {
+        var node = Comments.GetDocumentForType(type);
+        SummaryNode? summaryNode = null;
+        string summary = "";
+
+        if (node is not null)
+        {
+            summaryNode = node.Summary;
+            if (summaryNode is not null)
+            {
+                summary = summaryNode.Text;
+            }
+        }
+
         var template = @$"
 <h1 id=""{type.ToCommentId()}"">{type.Name} {this.GetTypeCategory(type)}</h1>
 <a href=""#top"">Back to top</a>
@@ -60,7 +121,12 @@ public class HtmlDocumentGenerator : DocumentGenerator
     <li>Assembly: {type.Assembly.FullName}</li>
 </ul>
 
+<h2>Summary</h2>
+{summary}
+
+{this.RenderTypeGenericArguments(type)}
 {this.RenderTypeTOCSection(type, "Constructors", this.GetConstructors(type))}
+{this.RenderTypeTOCSection(type, "Fields", this.GetFields(type))}
 {this.RenderTypeTOCSection(type, "Properties", this.GetProperties(type))}
 {this.RenderTypeTOCSection(type, "Methods", this.GetMethods(type))}
 {this.RenderTypeTOCSection(type, "Events", this.GetEvents(type))}

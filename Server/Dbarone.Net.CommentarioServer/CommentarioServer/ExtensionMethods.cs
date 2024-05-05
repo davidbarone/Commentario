@@ -4,7 +4,7 @@ using Dbarone.CommentarioServer;
 namespace Dbarone.Net.CommentarioServer;
 
 /// <summary>
-/// Useful extension methods.
+/// Useful extension methods. Primarily to provide reflection services.
 /// </summary>
 public static class ExtensionMethods
 {
@@ -69,5 +69,16 @@ public static class ExtensionMethods
     public static string ToCommentId(this Type type)
     {
         return $"T:{type.FullName}";
+    }
+
+    /// <summary>
+    /// Gets the type letter arguments for a generic type.
+    /// </summary>
+    /// <param name="type">A type. Must be a generic type.</param>
+    /// <returns>Returns an array of type parameter names.</returns>
+    public static string[] GetTypeGenericArguments(this Type type)
+    {
+        var typeArgs = type.GetGenericArguments();
+        return typeArgs.Select(t => t.Name).ToArray();
     }
 }

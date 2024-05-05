@@ -17,12 +17,14 @@ public class DocumentNode
     public MemberNode? GetDocumentForType(Type type)
     {
         var typeId = type.FullName;
+        MemberNode empty = new MemberNode();
         return this.Members.FirstOrDefault(m => m.ID.Name == typeId);
     }
 
     public MemberNode? GetDocumentForMember(MemberInfo member)
     {
         var commentId = member.ToCommentId();
+        MemberNode empty = new MemberNode();
         return this.Members.FirstOrDefault(m => m.ID.Id == commentId);
     }
 }

@@ -6,25 +6,25 @@ namespace Dbarone.Net.CommentarioServer;
 public class MemberNode
 {
     [XmlAttribute("name")]
-    public string Name { get; set; }
+    public string Name { get; set; } = default!;
 
     [XmlElement("summary")]
-    public SummaryNode Summary { get; set; }
+    public SummaryNode Summary { get; set; } = default!;
 
     [XmlElement("param", typeof(ParamNode))]
-    public ParamNode[] Params { get; set; }
+    public ParamNode[] Params { get; set; } = default!;
 
     [XmlElement("typeparam", typeof(TypeParamNode))]
-    public TypeParamNode[] TypeParams { get; set; }
+    public TypeParamNode[] TypeParams { get; set; } = default!;
 
     [XmlElement("returns")]
-    public ReturnsNode Returns { get; set; }
+    public ReturnsNode Returns { get; set; } = default!;
 
     [XmlElement("exception")]
-    public ExceptionNode Exception { get; set; }
+    public ExceptionNode Exception { get; set; } = default!;
 
     [XmlElement("example")]
-    public ExampleNode[] Examples { get; set; }
+    public ExampleNode[] Examples { get; set; } = default!;
 
     public IDString ID
     {

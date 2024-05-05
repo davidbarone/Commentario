@@ -168,6 +168,11 @@ public abstract class DocumentGenerator
         return type.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static).Where(m => !m.IsSpecialName).ToArray();
     }
 
+    protected FieldInfo[] GetFields(Type type)
+    {
+        return type.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+    }
+
     protected PropertyInfo[] GetProperties(Type type)
     {
         return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
@@ -243,6 +248,14 @@ public abstract class DocumentGenerator
     protected abstract string RenderType(Type type);
     protected abstract string RenderTypeTOCSection(Type type, string header, MemberInfo[] members);
     protected abstract string RenderTypeMember(MemberInfo member);
+
+    /// <summary>
+    /// Renders the type's generic arguments.
+    /// </summary>
+    /// <param name="type">The type to render.</param>
+    /// <returns>A string representing the generic arguments.</returns>
+
+    protected abstract string RenderTypeGenericArguments(Type type);
 
     protected string GetCSSStyles()
     {

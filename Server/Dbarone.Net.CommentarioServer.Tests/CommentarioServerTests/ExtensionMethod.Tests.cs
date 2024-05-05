@@ -5,6 +5,16 @@ using System.Collections.Generic;
 
 namespace Dbarone.Net.CommentarioServer.Tests;
 
+/// <summary>
+/// Test class for testing type parameters
+/// </summary>
+/// <typeparam name="TInput">The input type</typeparam>
+/// <typeparam name="TOutput">The output type</typeparam>
+class TestGenericClass<TInput, TOutput>
+{
+
+}
+
 public class ExtensionMethodTests
 {
 
@@ -31,5 +41,12 @@ public class ExtensionMethodTests
     {
         var actualCommentId = member.ToCommentId();
         Assert.Equal(expectedCommentId, actualCommentId);
+    }
+
+    [Fact]
+    public void TestGetTypeGenericArguments()
+    {
+        var actual = typeof(TestGenericClass<,>).GetTypeGenericArguments();
+        Assert.Equal(new string[] { "TInput", "TOutput" }, actual);
     }
 }
