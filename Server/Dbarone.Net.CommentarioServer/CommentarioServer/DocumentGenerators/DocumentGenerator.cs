@@ -410,7 +410,7 @@ public abstract class DocumentGenerator
     pre > code {
         display: inline-block;
         box-sizing: border-box;
-        padding: 2em 3em;
+        padding: 1em 2em;
         margin: 1em 0em;
         white-space: pre;
         font-size: 100%;

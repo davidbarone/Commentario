@@ -20,7 +20,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                     commentText = commentSummary.Text;
                 }
             }
-            var str = $@"<tr><td><a href=""#{t.ToCommentId()}"">{t.Name}</a></td><td>{commentText}</td></tr>";
+            var str = $@"<tr><td><a href=""#{t.ToCommentId()}"">{t.Name}</a></td><td>{t.Namespace}</td><td>{commentText}</td></tr>";
             return str;
         }));
 
@@ -37,6 +37,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
     <thead>
         <tr>
             <th>Name</th>
+            <th>Namespace</th>
             <th>Description</th>
         </tr>
     </thead>

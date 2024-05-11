@@ -49,6 +49,12 @@ public abstract class MethodBaseSignature
     public string BuildArguments(MethodBase method, bool invokable)
     {
         var isExtensionMethod = false;
+        var methodInfo = method as MethodInfo; 
+        
+        if (methodInfo is not null) {
+            isExtensionMethod = methodInfo.GetCustomAttributesData().Any(ca => ca.AttributeType == typeof(System.Runtime.CompilerServices.ExtensionAttribute));
+        }
+
         //var isExtensionMethod = method.IsDefined(typeof(System.Runtime.CompilerServices.ExtensionAttribute), false);
         var methodParameters = method.GetParameters().AsEnumerable();
 

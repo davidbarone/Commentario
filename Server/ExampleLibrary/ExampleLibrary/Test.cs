@@ -93,4 +93,22 @@ public class Test
     {
 
     }
+
+    /// <summary>
+    /// This is a test boolean property.
+    /// </summary>
+    public bool SomeFlag { get; set; }
+
+    /// <summary>
+    /// A generic method.
+    /// </summary>
+    /// <typeparam name="TInput">The input type parameter.</typeparam>
+    /// <typeparam name="TOutput">The output type parameter.</typeparam>
+    /// <param name="input">The input value.</param>
+    /// <param name="flag">A flag that can be set.</param>
+    /// <returns>Returns a value of type TOutput.</returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public TOutput GenericMethod<TInput,TOutput>(TInput input, bool flag) {
+        throw new NotImplementedException("This is not implemented");
+    }
 }
