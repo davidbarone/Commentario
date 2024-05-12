@@ -46,7 +46,7 @@ public abstract class DocumentGenerator
 
     #region Constructors
 
-    public static DocumentGenerator Create(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath, OutputType outputType)
+    public static DocumentGenerator Create(string assemblyPath, string outputPath, OutputType? outputType = OutputType.Html, string? xmlCommentsPath = null, string? readMePath = null)
     {
         switch (outputType)
         {

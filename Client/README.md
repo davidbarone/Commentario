@@ -6,19 +6,16 @@ This extension creates formatted documentation from C# xml comments.
 
 ## Known Issues
 
-None
+This extension is still very much in development. I use it for my own documentation at the moment. You are free to try out and let me know if any issues. I'm actively developing this so will happily investigate any problems. Don't recommend using this for any production purposes though.
 
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
 
-### 1.0.0
+### 0.0.1
 
-Initial release of Commentario
+Initial (preview) release of Commentario
 
-### 1.0.1
-
----
 
 ## Following extension guidelines
 
