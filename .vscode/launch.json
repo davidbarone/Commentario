@@ -6,9 +6,10 @@
     "configurations": [
         {
             "name": "C#: Dbarone.Net.CommentarioConsole Debug",
-            "type": "dotnet",
+            "type": "coreclr",
             "request": "launch",
-            "projectPath": "${workspaceFolder}\\Server\\Dbarone.Net.CommentarioConsole\\Dbarone.Net.CommentarioConsole.csproj"
+            "program": "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/bin/Debug/net8.0/Dbarone.Net.CommentarioConsole.dll",
+            "args": "-h"
         }
     ]
 }
