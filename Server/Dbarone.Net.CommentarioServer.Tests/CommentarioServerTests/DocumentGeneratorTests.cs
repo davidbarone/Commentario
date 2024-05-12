@@ -21,7 +21,7 @@ public class DocumentGeneratorTests
         DocumentGenerator dg = DocumentGenerator.Create(
             assemblyPath,
             outputPath,
-            OutputType.Html,
+            OutputType.html,
             xmlCommentsPath, readmePath);
         dg.GenerateDocument();
     }
@@ -37,7 +37,7 @@ public class DocumentGeneratorTests
         DocumentGenerator dg = DocumentGenerator.Create(
             assemblyPath,
             outputPath,
-            OutputType.Html,
+            OutputType.html,
             xmlCommentsPath,
             readmePath);
         dg.GenerateDocument();

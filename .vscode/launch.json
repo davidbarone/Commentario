@@ -9,7 +9,8 @@
             "type": "coreclr",
             "request": "launch",
             "program": "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/bin/Debug/net8.0/Dbarone.Net.CommentarioConsole.dll",
-            "args": "-h"
+            //"args": "-h"
+            "args": "${workspaceFolder}/Server/ExampleLibrary/bin/Debug/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt"
         }
     ]
 }

@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Dbarone.Net.CommentarioServer;
 
 namespace Dbarone.Net.CommentarioConsole;
@@ -34,9 +35,8 @@ public class Arguments
     /// <exception cref="Exception">Throws an exception if invalid arguments passed.</exception>
     public Arguments(string[] args)
     {
-        // Note that arg[0] is the executable file path.
-        int i = 1;
-        while (i <= args.Length)
+        int i = 0;
+        while (i < args.Length)
         {
             switch (args[i])
             {
@@ -73,7 +73,7 @@ public class Arguments
                     {
                         throw new Exception("Invalid arguments.");
                     }
-                    OutputType o = OutputType.Html;
+                    OutputType o = OutputType.html;
                     var result = Enum.TryParse<OutputType>(args[i], out o);
                     if (result)
                     {
@@ -138,5 +138,10 @@ public class Arguments
     /// <summary>
     /// The output type. Currently only Html output is supported.
     /// </summary>
-    public OutputType OutputType { get; set; } = OutputType.Html;
+    public OutputType OutputType { get; set; } = OutputType.html;
+
+    public override string ToString()
+    {
+        return JsonSerializer.Serialize(this);
+    }
 }

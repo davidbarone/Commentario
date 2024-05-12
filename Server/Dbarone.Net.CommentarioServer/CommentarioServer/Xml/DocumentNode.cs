@@ -21,7 +21,7 @@ public class DocumentNode
     /// </summary>
     [XmlArray("members")]
     [XmlArrayItem("member", typeof(MemberNode))]
-    public MemberNode[] Members { get; set; }
+    public MemberNode[] Members { get; set; } = new List<MemberNode>().ToArray();
 
     /// <summary>
     /// Gets the xml comment node for a specific type.

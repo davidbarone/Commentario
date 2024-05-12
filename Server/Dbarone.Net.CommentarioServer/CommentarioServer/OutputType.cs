@@ -10,16 +10,16 @@ public enum OutputType
         /// <summary>
         /// Markdown format.
         /// </summary>
-        Markdown,
+        markdown,
     */
     /// <summary>
     /// Html format.
     /// </summary>
-    Html,
+    html,
     /*
         /// <summary>
         /// Pdf format.
         /// </summary>
-        Pdf
+        pdf
     */
 }

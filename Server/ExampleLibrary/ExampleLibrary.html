@@ -1,0 +1,1626 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    
+<style type="text/css">
+
+    /* -----------------------------------------------
+    Base Styles
+    -------------------------------------------------- */
+
+    body {
+        font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+        color: #222;
+        overflow-y: scroll;
+    }
+
+    /* ------------------------------------
+    Typography
+    --------------------------------------- */
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 300;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    h1 {
+        font-size: 2.0em;
+        letter-spacing: -.05em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        letter-spacing: -.05em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+        letter-spacing: -.05em;
+    }
+
+    h4 {
+        font-size: 1.4em;
+        letter-spacing: -.025em;
+    }
+
+    h5 {
+        font-size: 1.2em;
+        letter-spacing: -.025em;
+    }
+
+    h6 {
+        font-size: 1.0em;
+        letter-spacing: 0;
+    }
+
+    /* -----------------------------------
+    Links
+    -------------------------------------- */
+
+    a {
+        color: #456789;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #123456;
+        text-decoration: underline;
+    }
+
+    /* ---------------------------------------------
+    definitions
+    ------------------------------------------------ */
+
+    dl {
+        border: 3px double #ccc;
+        padding: 0.5em;
+    }
+
+    dl * {
+        display: none;
+        float: left;
+    }
+
+    dl:after {
+        content: ";
+        display: table;
+        clear: both;
+    }
+
+    dt {
+        visibility: visible;
+        width: 25%;
+        text-align: right;
+        font-weight: bold;
+        display: inline-block;
+        color: rgb(61, 79, 93);
+        box-sizing: border-box;
+        padding-right: 3px;
+        margin: 0px;
+    }
+
+    dt:after {
+        content: ':';
+    }
+
+    dd {
+        visibility:visible;
+        width: 75%;
+        text-align: left;
+        display: inline-block;
+        box-sizing: border-box;
+        padding-left: 3px;
+        margin: 0px;
+    }
+
+    /* ---------------------------------------------
+    Lists
+    ------------------------------------------------ */
+
+    ul {
+        list-style: disc inside;
+    }
+
+    ol {
+        list-style: decimal inside;
+    }
+
+    ol, ul {
+        padding-left: 0;
+        margin-top: 0.5em;
+    }
+
+    ul ul,
+    ul ol,
+    ol ol,
+    ol ul {
+        margin: 0.5em 0 0.5em 3em;
+        font-size: 90%;
+    }
+
+    li {
+        margin-bottom: 0.25em;
+    }
+
+    /* ---------------------------------------------
+    Code / Pre
+    ------------------------------------------------ */
+
+    pre > code {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 1em 2em;
+        margin: 1em 0em;
+        white-space: pre;
+        font-size: 100%;
+        border: 1px solid #123;
+        border-radius: 4px;
+        background-color: #e0e8ef;
+    }
+
+    /* ---------------------------------------------
+    Blockquote + cite
+    ------------------------------------------------ */
+
+    blockquote {
+        border-left: 10px solid rgb(61, 79, 93);
+        background: #f9f9f9;
+        font-family: Georgia, serif;
+        font-style: italic;
+        margin: 0.25em 0;
+        padding: 0.25em 60px;
+        line-height: 1.45;
+        position: relative;
+        color: #383838;
+    }
+
+    blockquote:before {
+        display: block;
+        content: "\201C";
+        font-size: 60px;
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        color: #7a7a7a;
+    }
+
+    blockquote cite {
+        color: #999999;
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+    
+    blockquote cite:before {
+        content: "\2014 \2009";
+    }
+
+    /* ---------------------------------------------
+    Tables
+    ------------------------------------------------ */
+
+    th,
+    td {
+        padding: 6px 24px;
+        text-align: left;
+        margin: 0px;
+    }
+
+    th {
+        background-color: #123;
+        color: white;
+        font-weight: 500;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #eee;  
+    }
+
+    /* ---------------------------------------------
+    Spacing
+    ------------------------------------------------ */
+
+    blockquote,
+    dl,
+    figure,
+    table,
+    p,
+    ul,
+    ol,
+    {
+        margin-bottom: .5em;
+    }
+
+    /* ---------------------------------------------
+    Misc
+    ------------------------------------------------ */
+
+    hr {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        border-width: 0;
+        border-top: 4px solid #123;
+    }
+
+</style>
+        
+
+  </head>
+  <body id="top">
+        <h1>ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</h1>
+        The ExampleLibrary assembly is a dummy assembly that is used for testing the Commentario documenter, and also to provide an example of the output of Commentario.
+This paragraph is user-defined and can be configured in the Commentario configuration for a workspace using the [ReadMePath] setting.
+
+
+        
+<h2>Classes</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Namespace</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.GenericType`1">GenericType`1</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:foo.bar.baz.MultipartNamespace">MultipartNamespace</a></td><td>foo.bar.baz</td><td></td></tr><tr><td><a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass</a></td><td>foo.bar.baz</td><td></td></tr><tr><td><a href="#T:NoNamespace">NoNamespace</a></td><td></td><td></td></tr><tr><td><a href="#T:NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass</a></td><td></td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassBar">SubclassBar</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassBaz">SubclassBaz</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassFoo">SubclassFoo</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.Test">Test</a></td><td>ExampleLibrary</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+        
+<h2>Structs</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Namespace</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#T:ExampleLibrary.FooBarBazEnum">FooBarBazEnum</a></td><td>ExampleLibrary</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+        
+<h2>Interfaces</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Namespace</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#T:ExampleLibrary.ITestInterface">ITestInterface</a></td><td>ExampleLibrary</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+        
+<h2>Enums</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Namespace</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#T:ExampleLibrary.FooBarBazEnum">FooBarBazEnum</a></td><td>ExampleLibrary</td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+        <hr />
+
+        
+<h1 id="T:ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">System.Void .ctor(System.Object, System.IntPtr)</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+<div>
+<h2>Methods</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">System.IAsyncResult BeginInvoke(System.String, System.AsyncCallback, System.Object)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">System.Int32 EndInvoke(System.IAsyncResult)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">System.Int32 Invoke(System.String)</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+<hr />
+
+<h1 id="T:ExampleLibrary.FooBarBazEnum">FooBarBazEnum Struct</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+
+<div>
+<h2>Fields</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.BAR">ExampleLibrary.FooBarBazEnum BAR</a></td><td></td></tr><tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.BAZ">ExampleLibrary.FooBarBazEnum BAZ</a></td><td></td></tr><tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.FOO">ExampleLibrary.FooBarBazEnum FOO</a></td><td></td></tr><tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.value__">System.Int32 value__</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+
+<hr />
+
+<h1 id="T:ExampleLibrary.GenericType`1">GenericType`1 Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+<h2>Type Parameters</h2>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>T</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:ExampleLibrary.GenericType`1.#ctor">System.Void .ctor()</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+
+
+<hr />
+
+<h1 id="T:ExampleLibrary.ITestInterface">ITestInterface Interface</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+
+
+<div>
+<h2>Properties</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#P:ExampleLibrary.ITestInterface.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+<hr />
+
+<h1 id="T:foo.bar.baz.MultipartNamespace">MultipartNamespace Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: foo.bar.baz</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:foo.bar.baz.MultipartNamespace.#ctor">System.Void .ctor()</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+
+
+<hr />
+
+<h1 id="T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: foo.bar.baz</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">System.Void .ctor()</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+
+
+<hr />
+
+<h1 id="T:NoNamespace">NoNamespace Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: </li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:NoNamespace.#ctor">System.Void .ctor()</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+
+
+<hr />
+
+<h1 id="T:NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: </li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:NoNamespace+NoNamespaceNestedClass.#ctor">System.Void .ctor()</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+
+
+<hr />
+
+<h1 id="T:ExampleLibrary.SubclassBar">SubclassBar Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:ExampleLibrary.SubclassBar.#ctor">System.Void .ctor()</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+<div>
+<h2>Properties</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#P:ExampleLibrary.SubclassBar.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+<hr />
+
+<h1 id="T:ExampleLibrary.SubclassBaz">SubclassBaz Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:ExampleLibrary.SubclassBaz.#ctor">System.Void .ctor()</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+<div>
+<h2>Properties</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#P:ExampleLibrary.SubclassBaz.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+<hr />
+
+<h1 id="T:ExampleLibrary.SubclassFoo">SubclassFoo Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:ExampleLibrary.SubclassFoo.#ctor">System.Void .ctor()</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+<div>
+<h2>Properties</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#P:ExampleLibrary.SubclassFoo.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+
+<hr />
+
+<h1 id="T:ExampleLibrary.Test">Test Class</h1>
+<a href="#top">Back to top</a>
+<h2>Definition:</h2>
+<ul>
+    <li>Namespace: ExampleLibrary</li>
+    <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+</ul>
+
+<h2>Summary</h2>
+
+
+
+
+<div>
+<h2>Constructors</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:ExampleLibrary.Test.#ctor">System.Void .ctor()</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.#ctor(System.Int32)">System.Void .ctor(System.Int32)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">System.Void .ctor(System.Int32, System.Int32)</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+<div>
+<h2>Properties</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#P:ExampleLibrary.Test.SomeFlag">System.Boolean SomeFlag</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+<div>
+<h2>Methods</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#M:ExampleLibrary.Test.GenericMethod[T](T)">T GenericMethod[T](T)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod[TInput,TOutput](TInput,System.Boolean)">TOutput GenericMethod[TInput,TOutput](TInput, System.Boolean)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesException">System.Void MethodThatRaisesException()</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodWithExamples">System.Void MethodWithExamples()</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.NothingFunction">System.Void NothingFunction()</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">System.Void ParameterWithMultipleParameters(System.Int32, System.DateTime, System.Guid)</a></td><td></td></tr>
+    </tbody>
+</table>
+</div>
+        
+
+
+<hr />
+
+        
+<h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Invoke Method</h1>
+<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public int Invoke(string input)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">BeginInvoke Method</h1>
+<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public System.IAsyncResult BeginInvoke(string input, System.AsyncCallback callback, object object)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">EndInvoke Method</h1>
+<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public int EndInvoke(System.IAsyncResult result)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">.ctor Constructor</h1>
+<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public ConvertStringToIntDelegate(object object, nint method)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="F:ExampleLibrary.FooBarBazEnum.value__">value__ Field</h1>
+<a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="F:ExampleLibrary.FooBarBazEnum.FOO">FOO Field</h1>
+<a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="F:ExampleLibrary.FooBarBazEnum.BAR">BAR Field</h1>
+<a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="F:ExampleLibrary.FooBarBazEnum.BAZ">BAZ Field</h1>
+<a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.GenericType`1.#ctor">.ctor Constructor</h1>
+<a href="#T:ExampleLibrary.GenericType`1">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public GenericType`1()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.ITestInterface.get_FooBarBazType">get_FooBarBazType Method</h1>
+<a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.ITestInterface.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
+<a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="P:ExampleLibrary.ITestInterface.FooBarBazType">FooBarBazType Property</h1>
+<a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:foo.bar.baz.MultipartNamespace.#ctor">.ctor Constructor</h1>
+<a href="#T:foo.bar.baz.MultipartNamespace">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public MultipartNamespace()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id=":foo.bar.baz.MultipartNamespace.foo#bar#baz#MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass </h1>
+<a href="#T:foo.bar.baz.MultipartNamespace">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">.ctor Constructor</h1>
+<a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public MultpartNamespaceNestedClass()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:NoNamespace.#ctor">.ctor Constructor</h1>
+<a href="#T:NoNamespace">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public NoNamespace()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id=":NoNamespace.NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass </h1>
+<a href="#T:NoNamespace">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:NoNamespace+NoNamespaceNestedClass.#ctor">.ctor Constructor</h1>
+<a href="#T:NoNamespace+NoNamespaceNestedClass">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public NoNamespaceNestedClass()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassBar.get_FooBarBazType">get_FooBarBazType Method</h1>
+<a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassBar.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
+<a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassBar.#ctor">.ctor Constructor</h1>
+<a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public SubclassBar()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="P:ExampleLibrary.SubclassBar.FooBarBazType">FooBarBazType Property</h1>
+<a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassBaz.get_FooBarBazType">get_FooBarBazType Method</h1>
+<a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassBaz.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
+<a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassBaz.#ctor">.ctor Constructor</h1>
+<a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public SubclassBaz()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="P:ExampleLibrary.SubclassBaz.FooBarBazType">FooBarBazType Property</h1>
+<a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassFoo.get_FooBarBazType">get_FooBarBazType Method</h1>
+<a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassFoo.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
+<a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.SubclassFoo.#ctor">.ctor Constructor</h1>
+<a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public SubclassFoo()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="P:ExampleLibrary.SubclassFoo.FooBarBazType">FooBarBazType Property</h1>
+<a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.GenericMethod[T](T)">GenericMethod Method</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public T GenericMethod<T>(T input)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.NothingFunction">NothingFunction Method</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void NothingFunction()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">ParameterWithMultipleParameters Method</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void ParameterWithMultipleParameters(int intValue, System.DateTime dateTimeValue, System.Guid guidValue)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException Method</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void MethodThatRaisesException()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples Method</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void MethodWithExamples()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.get_SomeFlag">get_SomeFlag Method</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public bool get_SomeFlag()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.set_SomeFlag(System.Boolean)">set_SomeFlag Method</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public void set_SomeFlag(bool value)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.GenericMethod[TInput,TOutput](TInput,System.Boolean)">GenericMethod Method</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public TOutput GenericMethod<TInput, TOutput>(TInput input, bool flag)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.#ctor">.ctor Constructor</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public Test()</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.#ctor(System.Int32)">.ctor Constructor</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public Test(int a)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">.ctor Constructor</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+<h2>Signature</h2>
+<pre><code>public Test(int a, int b)</code></pre>
+            
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+<h1 id="P:ExampleLibrary.Test.SomeFlag">SomeFlag Property</h1>
+<a href="#T:ExampleLibrary.Test">Back to parent</a>
+
+
+
+<h2>Summary</h2>
+
+
+Parameters
+
+Returns
+
+Exceptions
+
+<hr />
+
+
+    </body>
+</html>
+        

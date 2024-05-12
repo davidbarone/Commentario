@@ -46,11 +46,11 @@ public abstract class DocumentGenerator
 
     #region Constructors
 
-    public static DocumentGenerator Create(string assemblyPath, string outputPath, OutputType? outputType = OutputType.Html, string? xmlCommentsPath = null, string? readMePath = null)
+    public static DocumentGenerator Create(string assemblyPath, string outputPath, OutputType? outputType = OutputType.html, string? xmlCommentsPath = null, string? readMePath = null)
     {
         switch (outputType)
         {
-            case OutputType.Html:
+            case OutputType.html:
                 return new HtmlDocumentGenerator(xmlCommentsPath, assemblyPath, readMePath, outputPath);
             default:
                 throw new Exception($"Output type {outputType.ToString()} not supported.");
@@ -90,7 +90,7 @@ public abstract class DocumentGenerator
 
     #endregion
 
-    protected Type[] GetTypes()
+    private Assembly GetAssembly()
     {
         // Use MetadataLoadContext to inspect types
         // Need to provide all BCL libraries in search too.
@@ -103,7 +103,17 @@ public abstract class DocumentGenerator
 
         // Load assembly into MetadataLoadContext
         Assembly assembly = mlc.LoadFromAssemblyPath(this.AssemblyPath);
+        return assembly;
 
+    }
+
+    protected string GetAssemblyName() {
+        return GetAssembly().GetName().Name;
+    }
+
+    protected Type[] GetTypes()
+    {
+        var assembly = GetAssembly();
         return assembly.GetTypes().OrderBy(t => t.Name).ToArray();
     }
 
@@ -225,7 +235,7 @@ public abstract class DocumentGenerator
 
   </head>
   <body id=""top"">
-        <h1>{Comments.Assembly.Name}</h1>
+        <h1>{GetAssembly()}</h1>
         {this.GetReadMe()}
 
         {this.RenderTOCSection("Classes", this.GetClasses())}

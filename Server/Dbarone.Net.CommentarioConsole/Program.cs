@@ -7,7 +7,7 @@ namespace Dbarone.Net.CommentarioConsole
         static void Main(string[] args)
         {
             // process args
-            var arguments = GetArguments(Environment.GetCommandLineArgs());
+            var arguments = GetArguments(args);
 
             if (arguments.DisplayHelp)
             {
