@@ -1,16 +1,17 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "C#: Dbarone.Net.CommentarioConsole Debug",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/bin/Debug/net8.0/Dbarone.Net.CommentarioConsole.dll",
-            //"args": "-h"
-            "args": "${workspaceFolder}/Server/ExampleLibrary/bin/Debug/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt"
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C#: Dbarone.Net.CommentarioConsole Debug",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/bin/Debug/net8.0/Dbarone.Net.CommentarioConsole.dll",
+      //"args": "-h"
+      "args": "${workspaceFolder}/Server/ExampleLibrary/bin/Debug/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt",
+      "preLaunchTask": "Build: debug"
+    }
+  ]
 }
