@@ -37,6 +37,8 @@ export function activate(context: vscode.ExtensionContext) {
 			outputPath = outputPath.replace('${workspaceFolder}', workspaceFolderString);
 		}
 
+		var allowOverwrite: string | undefined = vscode.workspace.getConfiguration().get("commentario.allowOverwrite");
+
 		var readMePath: string | undefined = vscode.workspace.getConfiguration().get("commentario.readMePath");
 		if (readMePath !== undefined) {
 			readMePath = readMePath.replace('${workspaceFolder}', workspaceFolderString);
@@ -56,6 +58,7 @@ export function activate(context: vscode.ExtensionContext) {
 		outputChannel.appendLine("----------------------------");
 		outputChannel.appendLine(`commentario.assemblyPath: ${assemblyPath}`);
 		outputChannel.appendLine(`commentario.outputPath: ${outputPath}`);
+		outputChannel.appendLine(`commentario.allowOverwrite: ${allowOverwrite}`);
 		outputChannel.appendLine(`commentario.xmlCommentsPath: ${xmlCommentsPath}`);
 		outputChannel.appendLine(`commentario.readMePath: ${readMePath}`);
 		outputChannel.appendLine(`commentario.outputType: ${outputType}`);
@@ -76,6 +79,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 		if (outputType !== undefined) {
 			cmd = `${cmd} -t ${outputType}`;
+		}
+
+		if (allowOverwrite !== undefined) {
+			cmd = `${cmd} -o ${allowOverwrite}`;
 		}
 
 		outputChannel.appendLine("");

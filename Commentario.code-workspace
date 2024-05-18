@@ -5,9 +5,6 @@
 		},
 		{
 			"path": "Client"
-		},
-		{
-			"path": "Server/Dbarone.Net.CommentarioConsole"
 		}
 	],
 	"settings": {}

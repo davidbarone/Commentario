@@ -41,21 +41,27 @@
         "commentario.assemblyPath": {
           "type": "string",
           "description": "Path to the .NET assembly to document.",
-          "default": "${workspaceFolder}/bin/debug/net8.0/<assembly>.dll"
+          "default": "${workspaceFolder}/bin/debug/net8.0/example.dll"
         },
         "commentario.outputPath": {
           "type": "string",
           "description": "Path to the output documentation file.",
-          "default": "${workspaceFolder}/<document>.html"
+          "default": "${workspaceFolder}/example.html"
+        },
+        "commentario.allowOverwrite": {
+          "type": "boolean",
+          "description": "If set and the output file exists, the target file will be overwritten. If not set, and the target file exists, the step will fail.",
+          "default": false
         },
         "commentario.xmlCommentsPath": {
           "type": "string",
           "description": "Path to an optional C# xml comments file.",
-          "default": "${workspaceFolder}/bin/debug/net8.0/<assembly>.xml"
+          "default": "${workspaceFolder}/bin/debug/net8.0/example.xml"
         },
         "commentario.readMePath": {
           "type": "string",
-          "description": "Path to an optional readme file to place at the start of the document. Must be in html format."
+          "description": "Path to an optional readme file to place at the start of the document. Must be in html format.",
+          "default": "${workspaceFolder}/readme.html"
         },
         "commentario.outputType": {
           "type": "string",

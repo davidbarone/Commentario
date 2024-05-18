@@ -30,6 +30,7 @@ public class Arguments
     /// -c  --comments &lt;xml comments path&gt;    Path to optional comments.
     /// -r  --readme &lt;readme path&gt;            Path to optional readme file.
     /// -t  --type Html                             Output type (currently only Html supported, and is default).
+    /// -o  --overwrite                             Allows the output file to be overwritten if it exists.
     /// </summary>
     /// <param name="args">The command arguments.</param>
     /// <exception cref="Exception">Throws an exception if invalid arguments passed.</exception>
@@ -47,6 +48,10 @@ public class Arguments
                 case "-d":
                 case "--debug":
                     this.DebugMode = true;
+                    break;
+                case "-o":
+                case "--overwrite":
+                    this.AllowOverwrite = true;
                     break;
                 case "-c":
                 case "--comments":
@@ -140,8 +145,13 @@ public class Arguments
     /// </summary>
     public OutputType OutputType { get; set; } = OutputType.html;
 
+    /// <summary>
+    /// If set to true, the the output file will be overwritten if it exists. Otherwise, an error will be thrown if the output file exists.
+    /// </summary>
+    public bool AllowOverwrite { get; set; } = false;
+
     public override string ToString()
     {
-        return JsonSerializer.Serialize(this);
+        return JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
     }
 }

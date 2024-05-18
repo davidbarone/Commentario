@@ -11,13 +11,16 @@ namespace Dbarone.Net.CommentarioConsole
             {
                 Console.Out.WriteLine("Starting Dbarone.Net.CommentarioConsole server...");
                 var arguments = GetArguments(args);
+                Console.Out.WriteLine("Getting arguments...");
+                Console.Out.WriteLine(arguments.ToString());
 
                 if (arguments.DisplayHelp)
                 {
                     DisplayHelp();
                 }
                 else
-                {/*
+                {
+                    /*
                     DocumentGenerator docGen = DocumentGenerator.Create(
                         arguments.AssemblyPath,
                         arguments.OutputPath,
@@ -25,7 +28,7 @@ namespace Dbarone.Net.CommentarioConsole
                         arguments.XmlCommentsPath,
                         arguments.ReadMePath);
                     docGen.GenerateDocument();
-                */
+                    */
                 }
                 Console.Out.WriteLine("Exiting Dbarone.Net.CommentarioConsole server...");
                 Environment.Exit(0);

@@ -39,6 +39,8 @@ Before publishing, you'll need to compile `Dbarone.Net.CommentarioConsole` in re
 
 The extension can be easily built using `vsce package`.
 
+## Testing the published extension.
+Once the .vsix file is created, you can easily add it into your extensions. There is an `Install from VSIX...` option you can use.
 
 ## Example
 For an example of the output documentation, refer to: [ExampleLibrary.html](https://html-preview.github.io/?url=https://github.com/davidbarone/Commentario/blob/main/ExampleLibrary.html).
