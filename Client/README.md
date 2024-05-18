@@ -7,7 +7,7 @@ a target assembly. An optional xml comments file can be used to create enhanced 
 
 Commentario creates html documentation for a .NET assembly.Currently only html format is supported - an example of the output is shown below:
 
-\!\[Example\]\(./example.png\)
+![Example](./example.png)
 
 The extension adds a single command contribution point:
 - `commentario.createDocumentation`: Creates the documentation.

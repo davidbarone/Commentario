@@ -40,7 +40,7 @@ function activate(context) {
     let disposable = vscode.commands.registerCommand('commentario.createDocumentation', () => {
         // The code you place here will be executed every time your command is executed
         // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World from commentarioxxx!');
+        vscode.window.showInformationMessage('dbarone.commentario is running.');
         // Get configuration
         let workspaceFolder;
         let workspaceFolderString = "";
@@ -64,27 +64,43 @@ function activate(context) {
         if (xmlCommentsPath !== undefined) {
             xmlCommentsPath = xmlCommentsPath.replace('${workspaceFolder}', workspaceFolderString);
         }
+        var outputType = vscode.workspace.getConfiguration().get("commentario.outputType");
+        var debugMode = vscode.workspace.getConfiguration().get("commentario.debugMode");
         var outputChannel = vscode.window.createOutputChannel("commentario");
         outputChannel.show();
+        outputChannel.appendLine("Commentario Client Debugging");
+        outputChannel.appendLine("----------------------------");
         outputChannel.appendLine(`commentario.assemblyPath: ${assemblyPath}`);
         outputChannel.appendLine(`commentario.outputPath: ${outputPath}`);
         outputChannel.appendLine(`commentario.xmlCommentsPath: ${xmlCommentsPath}`);
         outputChannel.appendLine(`commentario.readMePath: ${readMePath}`);
+        outputChannel.appendLine(`commentario.outputType: ${outputType}`);
+        outputChannel.appendLine(`commentario.debugMode: ${debugMode}`);
         // Call external server
-        var extPath = vscode.extensions.getExtension('Dbarone.Commentario').extensionUri.fsPath;
+        var extPath = vscode.extensions.getExtension('dbarone.commentario').extensionUri.fsPath;
         var consolePath = "/out/server/Dbarone.Net.CommentarioConsole.exe";
         consolePath = `${extPath}${consolePath}`;
         outputChannel.appendLine("");
         outputChannel.appendLine(`extension path: ${consolePath}`);
-        const terminal = vscode.window.createTerminal("Open Terminal");
-        terminal.show();
-        terminal.sendText(`${extPath}\\out\\server\\server.exe Meh`, true); // your command as a string here
-        cp.exec(`${extPath}\\out\\server\\server.exe Meh`, (err, stdout, stderr) => {
-            vscode.window.showInformationMessage(stdout);
-            console.log('stdout: ' + stdout);
-            console.log('stderr: ' + stderr);
+        // Calculate the command
+        var cmd = `${consolePath} ${assemblyPath} ${outputPath}`;
+        if (xmlCommentsPath !== undefined) {
+            cmd = `${cmd} -x ${xmlCommentsPath}`;
+        }
+        if (outputType !== undefined) {
+            cmd = `${cmd} -t ${outputType}`;
+        }
+        outputChannel.appendLine("");
+        outputChannel.appendLine(`Executing command: ${cmd}`);
+        //const terminal = vscode.window.createTerminal("Open Terminal");
+        //terminal.show();
+        //terminal.sendText("Command:\n", false);
+        //terminal.sendText("--------\n", false);
+        //terminal.sendText(`${cmd}\n`, false);
+        cp.exec(`${cmd}`, (err, stdout, stderr) => {
+            outputChannel.appendLine(stdout);
             if (err) {
-                console.log('error: ' + err);
+                outputChannel.appendLine(stderr);
             }
         });
     });

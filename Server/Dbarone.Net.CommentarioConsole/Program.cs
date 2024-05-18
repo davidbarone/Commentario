@@ -7,21 +7,34 @@ namespace Dbarone.Net.CommentarioConsole
         static void Main(string[] args)
         {
             // process args
-            var arguments = GetArguments(args);
+            try
+            {
+                Console.Out.WriteLine("Starting Dbarone.Net.CommentarioConsole server...");
+                var arguments = GetArguments(args);
 
-            if (arguments.DisplayHelp)
-            {
-                DisplayHelp();
+                if (arguments.DisplayHelp)
+                {
+                    DisplayHelp();
+                }
+                else
+                {/*
+                    DocumentGenerator docGen = DocumentGenerator.Create(
+                        arguments.AssemblyPath,
+                        arguments.OutputPath,
+                        arguments.OutputType,
+                        arguments.XmlCommentsPath,
+                        arguments.ReadMePath);
+                    docGen.GenerateDocument();
+                */
+                }
+                Console.Out.WriteLine("Exiting Dbarone.Net.CommentarioConsole server...");
+                Environment.Exit(0);
             }
-            else
+            catch (Exception ex)
             {
-                DocumentGenerator docGen = DocumentGenerator.Create(
-                    arguments.AssemblyPath,
-                    arguments.OutputPath,
-                    arguments.OutputType,
-                    arguments.XmlCommentsPath,
-                    arguments.ReadMePath);
-                docGen.GenerateDocument();
+                Console.Error.WriteLine("An error has occurred:");
+                Console.Error.WriteLine(ex.Message);
+                Environment.Exit(1);
             }
         }
 
@@ -58,7 +71,6 @@ Options
 
 ";
             Console.Write(help);
-            Environment.Exit(0);
         }
     }
 }

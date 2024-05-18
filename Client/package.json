@@ -1,6 +1,7 @@
 {
   "name": "commentario",
   "displayName": "Commentario",
+  "publisher": "Dbarone",
   "description": "Creates documentation for .NET assemblies.",
   "version": "0.0.1",
   "author": {
@@ -40,17 +41,17 @@
         "commentario.assemblyPath": {
           "type": "string",
           "description": "Path to the .NET assembly to document.",
-          "default": "${workspaceFolder}/<path to assembly>.dll"
+          "default": "${workspaceFolder}/bin/debug/net8.0/<assembly>.dll"
         },
         "commentario.outputPath": {
           "type": "string",
           "description": "Path to the output documentation file.",
-          "default": "${workspaceFolder}/<path to document>.html"
+          "default": "${workspaceFolder}/<document>.html"
         },
         "commentario.xmlCommentsPath": {
           "type": "string",
           "description": "Path to an optional C# xml comments file.",
-          "default": "${workspaceFolder}/<path to comments>.xml"
+          "default": "${workspaceFolder}/bin/debug/net8.0/<assembly>.xml"
         },
         "commentario.readMePath": {
           "type": "string",
