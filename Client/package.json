@@ -3,6 +3,21 @@
   "displayName": "Commentario",
   "description": "Creates documentation for .NET assemblies.",
   "version": "0.0.1",
+  "author": {
+    "name": "David Barone"
+  },
+  "contributors": [
+    {
+      "name": "David Barone"
+    }
+  ],
+  "keywords": [
+    "Documentation",
+    ".NET"
+  ],
+  "repository": {
+    "url": "https://github.com/davidbarone/Commentario"
+  },
   "engines": {
     "vscode": "^1.89.0"
   },
@@ -15,31 +30,33 @@
     "menus": {
       "commandPalette": [
         {
-          "command": "commentario.extension.createDocumentation",
+          "command": "commentario.createDocumentation",
           "when": "isWindows"
         }
       ]
     },
     "configuration": {
       "properties": {
-        "Commentario.assemblyPath": {
+        "commentario.assemblyPath": {
           "type": "string",
           "description": "Path to the .NET assembly to document.",
-          "default": "${workspaceRoot}/<path to assembly>.dll"
+          "default": "${workspaceFolder}/<path to assembly>.dll"
         },
-        "Commentario.outputPath": {
+        "commentario.outputPath": {
           "type": "string",
-          "description": "Path to the output documentation file."
+          "description": "Path to the output documentation file.",
+          "default": "${workspaceFolder}/<path to document>.html"
         },
-        "Commentario.xmlCommentsPath": {
+        "commentario.xmlCommentsPath": {
           "type": "string",
-          "description": "Path to an optional C# xml comments file."
+          "description": "Path to an optional C# xml comments file.",
+          "default": "${workspaceFolder}/<path to comments>.xml"
         },
-        "Commentario.readMePath": {
+        "commentario.readMePath": {
           "type": "string",
           "description": "Path to an optional readme file to place at the start of the document. Must be in html format."
         },
-        "Commentario.outputType": {
+        "commentario.outputType": {
           "type": "string",
           "description": "The document format type.",
           "default": "html",
@@ -47,7 +64,7 @@
             "html"
           ]
         },
-        "Commentario.debugMode": {
+        "commentario.debugMode": {
           "type": "boolean",
           "description": "If set, includes debug warnings in documentation when comments are missing.",
           "default": false
@@ -56,8 +73,8 @@
     },
     "commands": [
       {
-        "command": "commentario.extension.createDocumentation",
-        "title": "Generates documentation from an assembly.",
+        "command": "commentario.createDocumentation",
+        "title": "Create Documentation",
         "category": "Commentario",
         "enablement": "isWindows"
       }

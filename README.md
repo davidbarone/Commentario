@@ -30,8 +30,14 @@ The extension uses the following contribution configuration points:
 This extension adds a single contribution comment:
 - `commentario.createDocumentation`: This command will create the documentation file.
 
-## Running the client
-To 
+## Running the Client
+The client can be tested by running the `Run Extension` launch configuration 
+
+## Publishing the Extension
+The following article explains how to publish an extension: https://code.visualstudio.com/api/working-with-extensions/publishing-extension.
+Before publishing, you'll need to compile `Dbarone.Net.CommentarioConsole` in release mode, and copy the output files into the `/out/server` folder of the client extension project.
+
+The extension can be easily built using `vsce package`.
 
 
 ## Example
