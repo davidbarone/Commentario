@@ -1,11 +1,10 @@
 {
   "name": "commentario",
-  "publisher": "dbarone",
   "displayName": "Commentario",
-  "description": "",
+  "description": "Creates documentation for .NET assemblies.",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.88.0"
+    "vscode": "^1.89.0"
   },
   "categories": [
     "Other"
@@ -13,73 +12,57 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "commentario.extension.createDocumentation",
+          "when": "isWindows"
+        }
+      ]
+    },
     "configuration": {
       "properties": {
-        "xmlCommentsPath": {
+        "Commentario.assemblyPath": {
           "type": "string",
-          "description": "Path to the C# xml comments file."
+          "description": "Path to the .NET assembly to document.",
+          "default": "${workspaceRoot}/<path to assembly>.dll"
         },
-        "assemblyPath": {
-          "type": "string",
-          "description": "Path to the assembly file."
-        },
-        "documentPath": {
+        "Commentario.outputPath": {
           "type": "string",
           "description": "Path to the output documentation file."
         },
-        "documentType": {
+        "Commentario.xmlCommentsPath": {
           "type": "string",
-          "description": "The document type",
+          "description": "Path to an optional C# xml comments file."
+        },
+        "Commentario.readMePath": {
+          "type": "string",
+          "description": "Path to an optional readme file to place at the start of the document. Must be in html format."
+        },
+        "Commentario.outputType": {
+          "type": "string",
+          "description": "The document format type.",
+          "default": "html",
           "enum": [
-            "markdown",
-            "html",
-            "pdf"
+            "html"
           ]
+        },
+        "Commentario.debugMode": {
+          "type": "boolean",
+          "description": "If set, includes debug warnings in documentation when comments are missing.",
+          "default": false
         }
       }
     },
     "commands": [
       {
-        "command": "commentario.helloWorld",
-        "title": "Hello World"
-      }
-    ],
-    "taskDefinitions": [
-      {
-        "type": "doDocument",
-        "properties": {
-          "xmlCommentsPath": {
-            "type": "string",
-            "description": "Path to the C# xml comments file."
-          },
-          "assemblyPath": {
-            "type": "string",
-            "description": "Path to the assembly file."
-          },
-          "documentPath": {
-            "type": "string",
-            "description": "Path to the output documentation file."
-          },
-          "documentType": {
-            "type": "string",
-            "description": "The document type",
-            "enum": [
-              "markdown",
-              "html",
-              "pdf"
-            ]
-          }
-        }
+        "command": "commentario.extension.createDocumentation",
+        "title": "Generates documentation from an assembly.",
+        "category": "Commentario",
+        "enablement": "isWindows"
       }
     ]
   },
-  "commands": [
-    {
-      "title": "Create Documentation",
-      "shortTitle": "Creates documentation from xml comments file.",
-      "command": "commentario.createDocumentation"
-    }
-  ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -89,14 +72,14 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.88.0",
+    "@types/vscode": "^1.89.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.57.0",
-    "typescript": "^5.3.3",
-    "@vscode/test-cli": "^0.0.8",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
     "@vscode/test-electron": "^2.3.9"
   }
 }

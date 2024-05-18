@@ -12,6 +12,14 @@
       //"args": "-h"
       "args": "${workspaceFolder}/Server/ExampleLibrary/bin/Debug/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt",
       "preLaunchTask": "Build: debug"
+    },
+    {
+      "name": "Run Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}/Client"],
+      "outFiles": ["${workspaceFolder}/Client/out/**/*.js"],
+      "preLaunchTask": "Extension PreBuild Task"
     }
   ]
 }

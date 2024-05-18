@@ -1,32 +1,37 @@
 # Commentario
-A VS Code extension to format C# xml comments.
+Commentario is a VS Code extension that formats C# xml comments. I created this project to learn more about VS code internals, and also as I have a number of other projects that I would like to maintain decent documentation for.
 
-I had two goals when creating this project:
-- Create an API documentation tool
-- Learn how to create CSVode extensions
-
-As far as an API documentation goes, I've got a number of libraries that I maintain, and I've always used the C# xml commenting to comment my code. Although I'm aware of a number of document formatting tools like Sandcastle and Doxygen.
-
-Sandcastle https://ewsoftware.github.io/SHFB/html/bd1ddb51-1c4f-434f-bb1a-ce2135d3a909.htm is a really old tool. I remember dabbling with it around 2008. To be honest, given its age, I've not looked at it in recent years
-
-Doxygen https://www.doxygen.nl/index.html looks like a useful tool. It appears to be a modern tool with nice output. I've not investigated this tool much either.
-
-I guess the main reason for this project is to understand VSCode extension building, and the documentation use case is purely an excuse to learn.
-
-## Getting Started
-
-Like most new projects, a bit of reading is required to get started with VSCode extension authoring. Some examples I used were:
+## Getting Started With VS Code Extension Development
+Like most new projects, a bit of reading was required to get started with VSCode extension authoring. Some useful starting points were:
 - https://www.digitalocean.com/community/tutorials/how-to-create-your-first-visual-studio-code-extension
 - https://code.visualstudio.com/api/get-started/your-first-extension
 
-VSCode extensions are generally written using Node, and there is a rich amount of functionality provided through the `vscode` JavaScript API to let you interact with various components of VSCode like the editor.
+VSCode extensions are generally written using JavaScript or TypeScript, and there is a rich amount of functionality provided through the `vscode` JavaScript API to let you interact with various components of VSCode like the editor.
 
-One issue I encountered immediately, was that the extension I am trying to build needs to reflect through an assembly's metadata to build the help. Therefore, this requires a .NET module.
+One issue I encountered immediately, was that the extension I am trying to build needs to reflect through an assembly's metadata to build the documentation. This requires a .NET module and so I needed to look at non-node solution. I've built this as a simple client-server. All the documentation is contained in a .NET class library, that has a very thin console application wrapper. This console app when executed, will reflect through the target assembly metadata, and create documentation using an additional xml comments file to supplement the documentation.
 
+The client part of the extension, simply takes the configuration values set in the workspace settings, and executes the console app.
 
+### Set up of Client
+The client project was set up using Yeoman: `npx --package yo --package generator-code -- yo code`
 
+![setup](./Images/setup.bmp)
 
+## Configuration
+The extension uses the following contribution configuration points:
+- `Commentario.assemblyPath`: The path to the target assembly you want documented.
+- `Commentario.outputPath`: The path to the output documentation file.
+- `Commentario.xmlCommentsPath`: The path to an optional C# xml comments file.
+- `Commentario.readMePath`: The path to an optional readme file. The contents will be included at the start of the documentation file. The contents of this file need to be in html format.
+- `Commentario.outputType`: The output document format type. Currently only html format is supported.
+- `Commentario.debugMode`: If set to true, the documentation will include warnings where xml comments are missing.
 
+## Commands
+This extension adds a single contribution comment:
+- `commentario.createDocumentation`: This command will create the documentation file.
+
+## Running the client
+To 
 
 
 ## Example

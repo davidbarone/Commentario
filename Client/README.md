@@ -1,20 +1,53 @@
 # commentario README
 
+This is the README for your extension "commentario". After writing up a brief description, we recommend including the following sections.
+
 ## Features
 
-This extension creates formatted documentation from C# xml comments.
+Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+
+For example if there is an image subfolder under your extension project workspace:
+
+\!\[feature X\]\(images/feature-x.png\)
+
+> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+
+## Requirements
+
+If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+
+## Extension Settings
+
+Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+
+For example:
+
+This extension contributes the following settings:
+
+* `myExtension.enable`: Enable/disable this extension.
+* `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
 
-This extension is still very much in development. I use it for my own documentation at the moment. You are free to try out and let me know if any issues. I'm actively developing this so will happily investigate any problems. Don't recommend using this for any production purposes though.
+Calling out known issues can help limit users opening duplicate issues against your extension.
 
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
 
-### 0.0.1
+### 1.0.0
 
-Initial (preview) release of Commentario. Works on my machine!
+Initial release of ...
+
+### 1.0.1
+
+Fixed issue #.
+
+### 1.1.0
+
+Added features X, Y, and Z.
+
+---
 
 ## Following extension guidelines
 
@@ -36,42 +69,3 @@ You can author your README using Visual Studio Code. Here are some useful editor
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
-
-
-# Creating Solution + Projects + References via solution file using dotnet / VSCode
-
-dotnet new sln
-dotnet new classlib -o Dbarone.Net.Extensions.String
-dotnet new xunit -o Dbarone.Net.Extensions.String.Tests
-dotnet sln add Dbarone.Net.Extensions.String
-dotnet sln add Dbarone.Net.Extensions.String.Tests
-dotnet add Dbarone.Net.Extensions.String.Tests reference Dbarone.Net.Extensions.String
-
-https://markheath.net/post/multiple-nuget-single-repo
-
-# Creating Unit Tests
-
-https://xunit.net/docs/getting-started/netfx/visual-studio
-
-# To test
-dotnet test
-
-# To build
-dotnet build
-
-# To pack
-- Add package metadata (.nuspec metadata) to csproj file
-- https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack
-- https://docs.microsoft.com/en-us/nuget/reference/nuspec
-- https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#pack-target
-
-# To push to Nuget
-- https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push
-- dotnet nuget push Dbarone.Net.Extensions.String.1.0.0.nupkg --api-key xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -s https://api.nuget.org/v3/index.json
-
-# Unlisting / Deleting a nuget package
-- https://docs.microsoft.com/en-us/nuget/nuget-org/policies/deleting-packages
-
-# Package Versioning
-- https://theroks.com/nuget-package-versioning/
-

@@ -1,27 +1,42 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Build: debug",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/Dbarone.Net.CommentarioConsole.csproj"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "Build: release",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/Dbarone.Net.CommentarioConsole.csproj",
-                "-c",
-                "Release"
-            ],
-            "problemMatcher": "$msCompile"
-        }        
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build: debug",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/Dbarone.Net.CommentarioConsole.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build: release",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/Dbarone.Net.CommentarioConsole.csproj",
+        "-c",
+        "Release"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Extension PreBuild Task",
+      "type": "npm",
+      "script": "watch",
+      "problemMatcher": "$tsc-watch",
+      "isBackground": true,
+      "options": { "cwd": "${workspaceFolder}/Client" },
+      "presentation": {
+        "reveal": "never"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
 }
