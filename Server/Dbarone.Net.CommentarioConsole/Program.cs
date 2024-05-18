@@ -10,9 +10,9 @@ namespace Dbarone.Net.CommentarioConsole
             try
             {
                 Console.Out.WriteLine("Starting Dbarone.Net.CommentarioConsole server...");
+                Console.Out.WriteLine($"args[]: {args.ToString()}");
+
                 var arguments = GetArguments(args);
-                Console.Out.WriteLine("Getting arguments...");
-                Console.Out.WriteLine(arguments.ToString());
 
                 if (arguments.DisplayHelp)
                 {
@@ -43,14 +43,22 @@ namespace Dbarone.Net.CommentarioConsole
 
         private static Arguments GetArguments(string[] args)
         {
+            Console.Out.WriteLine("GetArguments: BEGIN...");
+
             Arguments arguments = new Arguments();
             try
             {
                 arguments = new Arguments(args);
             }
-            catch
+            catch (Exception ex)
             {
+                Console.Error.WriteLine($"Error: {ex}");
                 arguments = new Arguments();
+            }
+            finally
+            {
+                Console.Out.WriteLine(arguments.ToString());
+                Console.Out.WriteLine("GetArguments: END...");
             }
             return arguments;
         }

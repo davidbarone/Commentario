@@ -74,15 +74,19 @@ export function activate(context: vscode.ExtensionContext) {
 		// Calculate the command
 		var cmd: string = `${consolePath} ${assemblyPath} ${outputPath}`;
 		if (xmlCommentsPath !== undefined) {
-			cmd = `${cmd} -x ${xmlCommentsPath}`;
+			cmd = `${cmd} -c ${xmlCommentsPath}`;
 		}
 
 		if (outputType !== undefined) {
 			cmd = `${cmd} -t ${outputType}`;
 		}
 
-		if (allowOverwrite !== undefined) {
-			cmd = `${cmd} -o ${allowOverwrite}`;
+		if (allowOverwrite === "true") {
+			cmd = `${cmd} -o`;
+		}
+
+		if (debugMode === "true") {
+			cmd = `${cmd} -d`;
 		}
 
 		outputChannel.appendLine("");

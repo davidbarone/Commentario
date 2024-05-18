@@ -1,6 +1,14 @@
 # Commentario
 Commentario is a VS Code extension that formats C# xml comments. I created this project to learn more about VS code internals, and also as I have a number of other projects that I would like to maintain decent documentation for.
 
+## Workspace Structure
+The Commentario workspace is set up as follows:
+- **client**: This is the VSCode extension. It's written in TypeScript.
+- **server/Dbarone.Net.CommentarioConsole**: This is the VSCode server. It does all the actual work, and is called by the client. The console app is a very thin wrapper around Dbarone.Net.CommentarioServer.
+- **server/Dbarone.Net.CommentarioServer**: The library contains the actual documentation code used by the console app.
+- **server/Dbarone.Net.CommentarioServer.Tests**: A test library to test the documentation code.
+- **Server/ExampleLibrary**: A small assembly used to test the various types of object allowed in an assembly that can be documented.
+
 ## Getting Started With VS Code Extension Development
 Like most new projects, a bit of reading was required to get started with VSCode extension authoring. Some useful starting points were:
 - https://www.digitalocean.com/community/tutorials/how-to-create-your-first-visual-studio-code-extension
@@ -38,6 +46,12 @@ The following article explains how to publish an extension: https://code.visuals
 Before publishing, you'll need to compile `Dbarone.Net.CommentarioConsole` in release mode, and copy the output files into the `/out/server` folder of the client extension project.
 
 The extension can be easily built using `vsce package`.
+
+### Getting a Personal Access Token
+To publish to the marketplace, I had to get a personal access token:
+
+- https://learn.microsoft.com/en-gb/azure/devops/organizations/accounts/create-organization?view=azure-devops
+- 
 
 ## Testing the published extension.
 Once the .vsix file is created, you can easily add it into your extensions. There is an `Install from VSIX...` option you can use.

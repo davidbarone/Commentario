@@ -87,13 +87,16 @@ function activate(context) {
         // Calculate the command
         var cmd = `${consolePath} ${assemblyPath} ${outputPath}`;
         if (xmlCommentsPath !== undefined) {
-            cmd = `${cmd} -x ${xmlCommentsPath}`;
+            cmd = `${cmd} -c ${xmlCommentsPath}`;
         }
         if (outputType !== undefined) {
             cmd = `${cmd} -t ${outputType}`;
         }
-        if (allowOverwrite !== undefined) {
-            cmd = `${cmd} -o ${allowOverwrite}`;
+        if (allowOverwrite === "true") {
+            cmd = `${cmd} -o`;
+        }
+        if (debugMode === "true") {
+            cmd = `${cmd} -d`;
         }
         outputChannel.appendLine("");
         outputChannel.appendLine(`Executing command: ${cmd}`);
