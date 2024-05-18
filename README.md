@@ -15,7 +15,7 @@ The client part of the extension, simply takes the configuration values set in t
 ### Set up of Client
 The client project was set up using Yeoman: `npx --package yo --package generator-code -- yo code`
 
-![setup](./Images/setup.bmp)
+![setup](https://raw.githubusercontent.com/davidbarone/Commentario/main/Images/setup.bmp)
 
 ## Configuration
 The extension uses the following contribution configuration points:

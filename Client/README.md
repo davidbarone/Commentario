@@ -1,13 +1,13 @@
-# Commentario README
+# Commentario
 
 Commentario is an extension for creating formatted documentation for .NET / C# assemblies. The documentation is built by reflecting over
 a target assembly. An optional xml comments file can be used to create enhanced documentation.
 
+You can view an example of the output here: https://html-preview.github.io/?url=https://github.com/davidbarone/Commentario/blob/main/ExampleLibrary.html
+
 ## Features
 
-Commentario creates html documentation for a .NET assembly.Currently only html format is supported - an example of the output is shown below:
-
-![Example](./example.png)
+Commentario creates html documentation for a .NET assembly.Currently only html format is supported.
 
 The extension adds a single command contribution point:
 - `commentario.createDocumentation`: Creates the documentation.
