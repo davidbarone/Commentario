@@ -9,6 +9,12 @@ The Commentario workspace is set up as follows:
 - **server/Dbarone.Net.CommentarioServer.Tests**: A test library to test the documentation code.
 - **Server/ExampleLibrary**: A small assembly used to test the various types of object allowed in an assembly that can be documented.
 
+## Dbarone.Net.CommentarioServer
+This project is the workhorse of commentario. All the documentation logic occurs here. In order to test, I've created a small project called `ExampleLibrary`. The purpose of this dummy project is to provide an example of each documentation type possible.
+
+### Testing Dbarone.Net.CommentarioServer
+A test project `Dbarone.Net.CommentatioServer.Tests` contains a number of test methods. You can execute this by running `dotnet test` from the `./server` folder. Alternatively, there's a launch configuration: `C#: Run Tests` which you can run.
+
 ## Getting Started With VS Code Extension Development
 Like most new projects, a bit of reading was required to get started with VSCode extension authoring. Some useful starting points were:
 - https://www.digitalocean.com/community/tutorials/how-to-create-your-first-visual-studio-code-extension
@@ -16,9 +22,11 @@ Like most new projects, a bit of reading was required to get started with VSCode
 
 VSCode extensions are generally written using JavaScript or TypeScript, and there is a rich amount of functionality provided through the `vscode` JavaScript API to let you interact with various components of VSCode like the editor.
 
-One issue I encountered immediately, was that the extension I am trying to build needs to reflect through an assembly's metadata to build the documentation. This requires a .NET module and so I needed to look at non-node solution. I've built this as a simple client-server. All the documentation is contained in a .NET class library, that has a very thin console application wrapper. This console app when executed, will reflect through the target assembly metadata, and create documentation using an additional xml comments file to supplement the documentation.
+One issue I encountered immediately, was that the extension I am trying to build needs to reflect through an assembly's metadata to build the documentation. This requires a .NET module and so I needed to look at non-JavaScript solution. I've built this as a client-server solution. All the documentation functionality is contained in a .NET class library, that has a very thin console application wrapper. This console application when executed, will reflect through the target assembly metadata, and create documentation using an additional xml comments file to supplement the documentation.
 
 The client part of the extension, simply takes the configuration values set in the workspace settings, and executes the console app.
+
+**Note that this assembly will install binary files into your local VSCode extensions folder, and will be disabled for workspaces that are opened in restricted mode.**
 
 ### Set up of Client
 The client project was set up using Yeoman: `npx --package yo --package generator-code -- yo code`
@@ -35,7 +43,7 @@ The extension uses the following contribution configuration points:
 - `Commentario.debugMode`: If set to true, the documentation will include warnings where xml comments are missing.
 
 ## Commands
-This extension adds a single contribution comment:
+This extension adds a single contribution command:
 - `commentario.createDocumentation`: This command will create the documentation file.
 
 ## Running the Client
@@ -51,10 +59,9 @@ The extension can be easily built using `vsce package`.
 To publish to the marketplace, I had to get a personal access token:
 
 - https://learn.microsoft.com/en-gb/azure/devops/organizations/accounts/create-organization?view=azure-devops
-- 
 
 ## Testing the published extension.
-Once the .vsix file is created, you can easily add it into your extensions. There is an `Install from VSIX...` option you can use.
+Once the .vsix file is created, you can easily add it into your extensions. There is an `Install from VSIX...` option you can use. This allows the extension to be installed locally, rather than from the extension marketplace.
 
 ## Example
 For an example of the output documentation, refer to: [ExampleLibrary.html](https://html-preview.github.io/?url=https://github.com/davidbarone/Commentario/blob/main/ExampleLibrary.html).

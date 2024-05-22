@@ -21,6 +21,17 @@
       //"args": "-h"
       "args": "${workspaceFolder}/Server/ExampleLibrary/bin/release/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt",
       "preLaunchTask": "Build Dbarone.Net.CommentarioConsole: release"
+    },
+    {
+      "name": "C#: Run Tests",
+      "type": "coreclr",
+      "console": "integratedTerminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/Server",
+      "program": "dotnet.exe",
+      "args": "test",
+      "preLaunchTask": "Build Dbarone.Net.CommentarioConsole: debug"
     }    
+
   ]
 }
