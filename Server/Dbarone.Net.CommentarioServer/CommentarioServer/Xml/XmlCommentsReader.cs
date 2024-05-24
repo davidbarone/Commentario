@@ -5,6 +5,17 @@ namespace Dbarone.Net.CommentarioServer;
 public class XmlCommentsReader
 {
     public DocumentNode Document { get; set; }
+
+    public XmlCommentsReader(Stream stream)
+    {
+        if (stream is null)
+        {
+            throw new Exception("Stream is null!");
+        }
+        XmlSerializer serializer = new XmlSerializer(typeof(DocumentNode));
+        this.Document = (DocumentNode)serializer.Deserialize(stream)!;
+    }
+
     public XmlCommentsReader(string? path)
     {
         if (string.IsNullOrEmpty(path))
@@ -21,7 +32,7 @@ public class XmlCommentsReader
             using (Stream reader = new FileStream(path, FileMode.Open))
             {
                 // Call the Deserialize method to restore the object's state.
-                this.Document = (DocumentNode)serializer.Deserialize(reader);
+                this.Document = (DocumentNode)serializer.Deserialize(reader)!;
             }
         }
     }
