@@ -10,7 +10,7 @@ public class MemberNode
 
     [XmlElement("summary")]
     public SummaryNode Summary { get; set; } = default!;
-    
+
     [XmlElement("remarks")]
     public RemarkNode Remarks { get; set; } = default!;
 
@@ -24,7 +24,7 @@ public class MemberNode
     public ReturnsNode Returns { get; set; } = default!;
 
     [XmlElement("exception")]
-    public ExceptionNode Exception { get; set; } = default!;
+    public ExceptionNode[] Exceptions { get; set; } = default!;
 
     [XmlElement("example")]
     public ExampleNode[] Examples { get; set; } = default!;

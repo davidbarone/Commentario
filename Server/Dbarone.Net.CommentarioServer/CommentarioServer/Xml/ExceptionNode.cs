@@ -8,6 +8,7 @@ public class ExceptionNode
     [XmlAttribute("cref")]
     public string Name { get; set; }
 
-    [XmlText]
-    public string Description { get; set; }
+    [XmlText(typeof(string))]
+    [XmlElement("see", typeof(SeeNode))]
+    public object[] Items { get; set; }
 }

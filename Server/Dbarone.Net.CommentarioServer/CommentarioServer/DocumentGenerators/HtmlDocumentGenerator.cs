@@ -241,6 +241,13 @@ public class HtmlDocumentGenerator : DocumentGenerator
             returns = this.RenderReturns(node.Returns);
         }
 
+        // Exceptions
+        var exceptions = "";
+        if (node is not null)
+        {
+            exceptions = this.RenderExceptions(node.Exceptions);
+        }
+
         var template = @$"
 <h1 id=""{member.ToCommentId()}"">{member.Name} {member.GetMemberTypeName()}</h1>
 <a href=""#{declaringType.ToCommentId()}"">Back to parent</a>
@@ -250,14 +257,13 @@ public class HtmlDocumentGenerator : DocumentGenerator
 <h2>Summary</h2>
 {summary}
 
-
 {remarks}
 
 Parameters
 
 {returns}
 
-Exceptions
+{exceptions}
 
 <hr />
 ";
@@ -337,5 +343,29 @@ Exceptions
 {RenderItems(node.Items)}";
         }
         return returns;
+    }
+
+    protected override string RenderExceptions(ExceptionNode[] nodes)
+    {
+        var exceptions = "";
+        if (nodes is not null && nodes.Length > 0)
+        {
+            exceptions = $@"<h2>Exceptions</h2>{string.Join("", nodes.Select(n => RenderException(n)))}";
+        }
+        return exceptions;
+    }
+
+    protected override string RenderException(ExceptionNode node)
+    {
+        var exception = "";
+        if (node is not null)
+        {
+            exception = $@"<div><b>{node.Name}</b></div>";
+            if (node.Items is not null)
+            {
+                exception += $@"{this.RenderItems(node.Items)}";
+            }
+        }
+        return exception;
     }
 }

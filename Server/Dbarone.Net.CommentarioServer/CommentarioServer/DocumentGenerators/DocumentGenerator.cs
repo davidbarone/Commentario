@@ -107,7 +107,8 @@ public abstract class DocumentGenerator
 
     }
 
-    protected string GetAssemblyName() {
+    protected string GetAssemblyName()
+    {
         return GetAssembly().GetName().Name;
     }
 
@@ -274,6 +275,9 @@ public abstract class DocumentGenerator
     protected abstract string RenderSee(SeeNode node);
 
     protected abstract string RenderReturns(ReturnsNode node);
+
+    protected abstract string RenderExceptions(ExceptionNode[] nodes);
+    protected abstract string RenderException(ExceptionNode node);
 
     /// <summary>
     /// Renders the type's generic arguments.
