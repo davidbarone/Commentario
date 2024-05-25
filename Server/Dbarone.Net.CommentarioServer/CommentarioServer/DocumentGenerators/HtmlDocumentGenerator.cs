@@ -218,7 +218,28 @@ public class HtmlDocumentGenerator : DocumentGenerator
             }
         }
 
+        // Remarks
+        RemarkNode? remarksNode = null;
+        string remarks = "";
+
+        if (node is not null)
+        {
+            remarksNode = node.Remarks;
+            if (remarksNode is not null)
+            {
+                remarks = $@"<h2>Remarks</h2>
+{RenderItems(remarksNode.Items)}";
+            }
+        }
+
         var declaringType = member.DeclaringType!;
+
+        // Returns
+        var returns = "";
+        if (node is not null)
+        {
+            returns = this.RenderReturns(node.Returns);
+        }
 
         var template = @$"
 <h1 id=""{member.ToCommentId()}"">{member.Name} {member.GetMemberTypeName()}</h1>
@@ -229,9 +250,12 @@ public class HtmlDocumentGenerator : DocumentGenerator
 <h2>Summary</h2>
 {summary}
 
+
+{remarks}
+
 Parameters
 
-Returns
+{returns}
 
 Exceptions
 
@@ -280,7 +304,8 @@ Exceptions
 
     protected override string RenderExample(ExampleNode node)
     {
-        return $"{this.RenderItems(node.Items)}";
+        return $@"<h2>Example</h2>
+{this.RenderItems(node.Items)}";
     }
 
     protected override string RenderCode(CodeNode node)
@@ -301,5 +326,16 @@ Exceptions
     protected override string RenderSee(SeeNode node)
     {
         return $"<a href='{node.Member}'>{node.Description}</a>";
+    }
+
+    protected override string RenderReturns(ReturnsNode node)
+    {
+        var returns = "";
+        if (node is not null && node.Items is not null)
+        {
+            returns = $@"<h2>Returns</h2>
+{RenderItems(node.Items)}";
+        }
+        return returns;
     }
 }

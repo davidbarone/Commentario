@@ -273,6 +273,8 @@ public abstract class DocumentGenerator
 
     protected abstract string RenderSee(SeeNode node);
 
+    protected abstract string RenderReturns(ReturnsNode node);
+
     /// <summary>
     /// Renders the type's generic arguments.
     /// </summary>
@@ -294,6 +296,7 @@ public abstract class DocumentGenerator
         font-family: sans-serif, ""Helvetica Neue"", Helvetica, Arial;
         color: #222;
         overflow-y: scroll;
+        font-size: 0.8em;
     }
 
     /* ------------------------------------

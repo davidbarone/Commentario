@@ -4,7 +4,7 @@ namespace Dbarone.Net.CommentarioServer;
 
 public class SimpleNode
 {
-    [XmlText]
+    [XmlText(typeof(string))]
     public string Text { get; set; }
 }
 public class CodeNode : SimpleNode { }
@@ -19,4 +19,10 @@ public class SummaryNode
     public object[] Items { get; set; }
 }
 
-public class ReturnsNode : SimpleNode { }
+public class ReturnsNode
+{
+    [XmlText(typeof(string))]
+    [XmlElement("see", typeof(SeeNode))]
+    public object[] Items { get; set; }
+
+}

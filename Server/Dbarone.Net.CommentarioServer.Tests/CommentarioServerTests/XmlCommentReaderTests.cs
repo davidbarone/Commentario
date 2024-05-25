@@ -72,7 +72,7 @@ public class XmlCommentReaderTests
             Assert.Equal("The type parameter 'T'.", reader.Document.Members.First().TypeParams.First().Description);
             Assert.Equal("a", reader.Document.Members.First().Params.First().Name);
             Assert.Equal("First param.", reader.Document.Members.First().Params.First().Description);
-            Assert.Equal("Return value.", reader.Document.Members.First().Returns.Text);
+            Assert.Equal("Return value.", reader.Document.Members.First().Returns.Items[0]);
         }
     }
 
@@ -147,6 +147,11 @@ public class XmlCommentReaderTests
             Assert.Equal("M:ExampleLibrary.Test.GenericMethod()", reader.Document.Members.First().Name);
             // above comments have 6 children in the remarks section.
             Assert.Equal(6, reader.Document.Members.First().Remarks.Items.Count());
+
+            // Check the code node
+            var codeNode = reader.Document.Members.First().Remarks.Items[2];
+            Assert.IsType<CodeNode>(codeNode);
+            Assert.Equal("This is some code.", (codeNode as CodeNode)!.Text);
         }
     }
 
