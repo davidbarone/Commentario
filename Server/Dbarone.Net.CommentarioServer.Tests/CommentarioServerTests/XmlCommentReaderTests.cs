@@ -25,7 +25,7 @@ public class XmlCommentReaderTests
         var xmlText = @"<?xml version=""1.0""?>
 <doc>
     <assembly>
-        <name>f
+        <name>
             ExampleLibrary
         </name>
     </assembly>
@@ -49,7 +49,7 @@ public class XmlCommentReaderTests
         var xmlText = @"<?xml version=""1.0""?>
 <doc>
     <assembly>
-        <name>f
+        <name>
             ExampleLibrary
         </name>
     </assembly>
@@ -82,7 +82,7 @@ public class XmlCommentReaderTests
         var xmlText = @"<?xml version=""1.0""?>
 <doc>
     <assembly>
-        <name>f
+        <name>
             ExampleLibrary
         </name>
     </assembly>
@@ -113,6 +113,40 @@ public class XmlCommentReaderTests
             Assert.Equal(2, reader.Document.Members.First().Examples.First().Items.Count());
             Assert.IsType<string>(reader.Document.Members.First().Examples.First().Items.First());
             Assert.IsType<CodeNode>(reader.Document.Members.First().Examples.First().Items.Last());
+        }
+    }
+
+    [Fact]
+    public void LoadCommentsWithSingleMemberCommentWithRemark()
+    {
+        var xmlText = @"<?xml version=""1.0""?>
+<doc>
+    <assembly>
+        <name>
+            ExampleLibrary
+        </name>
+    </assembly>
+    <members>
+        <member name=""M:ExampleLibrary.Test.GenericMethod()"">
+            <summary>A method.</summary>
+            <remarks>
+                <para>First paragraph.</para>
+                <para>Second paragraph.</para>
+                <code>This is some code.</code>
+                This is some plain text.
+                <see cref=""test""/>
+                This is some more text.
+            </remarks>
+        </member>
+    </members>
+</doc>";
+        using (MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(xmlText)))
+        {
+            XmlCommentsReader reader = new XmlCommentsReader(ms);
+            Assert.Single(reader.Document.Members);
+            Assert.Equal("M:ExampleLibrary.Test.GenericMethod()", reader.Document.Members.First().Name);
+            // above comments have 6 children in the remarks section.
+            Assert.Equal(6, reader.Document.Members.First().Remarks.Items.Count());
         }
     }
 

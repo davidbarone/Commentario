@@ -10,6 +10,9 @@ public class MemberNode
 
     [XmlElement("summary")]
     public SummaryNode Summary { get; set; } = default!;
+    
+    [XmlElement("remarks")]
+    public RemarkNode Remarks { get; set; } = default!;
 
     [XmlElement("param", typeof(ParamNode))]
     public ParamNode[] Params { get; set; } = default!;

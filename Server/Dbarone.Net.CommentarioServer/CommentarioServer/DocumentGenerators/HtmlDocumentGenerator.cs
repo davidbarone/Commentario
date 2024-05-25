@@ -17,7 +17,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                 var commentSummary = commentMember.Summary;
                 if (commentSummary is not null)
                 {
-                    commentText = commentSummary.Text;
+                    commentText = RenderItems(commentSummary.Items);
                 }
             }
             var str = $@"<tr><td><a href=""#{t.ToCommentId()}"">{t.Name}</a></td><td>{t.Namespace}</td><td>{commentText}</td></tr>";
@@ -109,7 +109,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
             summaryNode = node.Summary;
             if (summaryNode is not null)
             {
-                summary = summaryNode.Text;
+                summary = RenderItems(summaryNode.Items);
             }
         }
 
@@ -148,7 +148,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                 var memberNodeSummary = memberNode.Summary;
                 if (memberNodeSummary is not null)
                 {
-                    memberCommentText = memberNodeSummary.Text;
+                    memberCommentText = RenderItems(memberNodeSummary.Items);
                 }
             }
             return $@"<tr><td><a href=""#{m.ToCommentId()}"">{m.ToString()}</a></td><td>{memberCommentText}</td></tr>";
@@ -214,7 +214,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
             summaryNode = node.Summary;
             if (summaryNode is not null)
             {
-                summary = summaryNode.Text;
+                summary = RenderItems(summaryNode.Items);
             }
         }
 
@@ -238,5 +238,68 @@ Exceptions
 <hr />
 ";
         return template;
+    }
+
+
+    protected override string RenderItems(object[] items)
+    {
+        List<string> results = new List<string>();
+        foreach (var item in items)
+        {
+            if (item.GetType() == typeof(string))
+            {
+                results.Add((string)item);
+            }
+            else if (item.GetType() == typeof(ExampleNode))
+            {
+                results.Add(RenderExample((ExampleNode)item));
+            }
+            else if (item.GetType() == typeof(CNode))
+            {
+                results.Add(RenderC((CNode)item));
+            }
+            else if (item.GetType() == typeof(CodeNode))
+            {
+                results.Add(RenderCode((CodeNode)item));
+            }
+            else if (item.GetType() == typeof(ParaNode))
+            {
+                results.Add(RenderPara((ParaNode)item));
+            }
+            else if (item.GetType() == typeof(SeeNode))
+            {
+                results.Add(RenderSee((SeeNode)item));
+            }
+            else
+            {
+                results.Add(item.ToString());
+            }
+        }
+        return string.Join("", results);
+    }
+
+    protected override string RenderExample(ExampleNode node)
+    {
+        return $"{this.RenderItems(node.Items)}";
+    }
+
+    protected override string RenderCode(CodeNode node)
+    {
+        return $"<pre><code>{node.Text}</code></pre>";
+    }
+
+    protected override string RenderC(CNode node)
+    {
+        return $"<pre><code>{node.Text}</code></pre>";
+    }
+
+    protected override string RenderPara(ParaNode node)
+    {
+        return $"<p>{this.RenderItems(node.Items)}</p>";
+    }
+
+    protected override string RenderSee(SeeNode node)
+    {
+        return $"<a href='{node.Member}'>{node.Description}</a>";
     }
 }

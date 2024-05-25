@@ -17,7 +17,7 @@ public class DocumentNode
     public AssemblyNode Assembly { get; set; }
 
     /// <summary>
-    /// The collection of members. All documentation nodes whether for Type documentation or Member documentation are included in this collection.
+    /// The collection of members. Members can describe .NET types and members.
     /// </summary>
     [XmlArray("members")]
     [XmlArrayItem("member", typeof(MemberNode))]

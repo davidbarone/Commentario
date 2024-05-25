@@ -9,6 +9,14 @@ public class SimpleNode
 }
 public class CodeNode : SimpleNode { }
 
-public class SummaryNode : SimpleNode { }
+/// <summary>
+/// Every class and member should have a one sentence summary describing its purpose.
+/// </summary>
+public class SummaryNode
+{
+    [XmlText(typeof(string))]
+    [XmlElement("see", typeof(SeeNode))]
+    public object[] Items { get; set; }
+}
 
 public class ReturnsNode : SimpleNode { }

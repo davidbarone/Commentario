@@ -261,6 +261,18 @@ public abstract class DocumentGenerator
     protected abstract string RenderTypeTOCSection(Type type, string header, MemberInfo[] members);
     protected abstract string RenderTypeMember(MemberInfo member);
 
+    protected abstract string RenderItems(object[] items);
+
+    protected abstract string RenderExample(ExampleNode node);
+
+    protected abstract string RenderCode(CodeNode node);
+
+    protected abstract string RenderC(CNode node);
+
+    protected abstract string RenderPara(ParaNode node);
+
+    protected abstract string RenderSee(SeeNode node);
+
     /// <summary>
     /// Renders the type's generic arguments.
     /// </summary>
