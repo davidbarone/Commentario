@@ -76,6 +76,45 @@ public class XmlCommentReaderTests
         }
     }
 
+    [Fact]
+    public void LoadCommentsWithSingleMemberCommentWithExamples()
+    {
+        var xmlText = @"<?xml version=""1.0""?>
+<doc>
+    <assembly>
+        <name>f
+            ExampleLibrary
+        </name>
+    </assembly>
+    <members>
+        <member name=""M:ExampleLibrary.Test.GenericMethod()"">
+            <summary>A method.</summary>
+            <example>
+                This is example #1:
+                <code>
+                This is some code #1.
+                </code>
+            </example>
+            <example>
+                This is example #2.
+                <code>
+                This is some code #2.
+                </code>
+            </example>
+        </member>
+    </members>
+</doc>";
+        using (MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(xmlText)))
+        {
+            XmlCommentsReader reader = new XmlCommentsReader(ms);
+            Assert.Single(reader.Document.Members);
+            Assert.Equal("M:ExampleLibrary.Test.GenericMethod()", reader.Document.Members.First().Name);
+            Assert.Equal(2, reader.Document.Members.First().Examples.Count());
+            Assert.Equal(2, reader.Document.Members.First().Examples.First().Items.Count());
+            Assert.IsType<string>(reader.Document.Members.First().Examples.First().Items.First());
+            Assert.IsType<CodeNode>(reader.Document.Members.First().Examples.First().Items.Last());
+        }
+    }
 
     [Fact]
     public void TestXmlCommentsParsing()
