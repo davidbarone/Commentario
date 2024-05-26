@@ -206,6 +206,19 @@ public abstract class DocumentGenerator
         }
     }
 
+    protected ParameterInfo[] GetMemberParameters(MemberInfo member)
+    {
+        var method = member as MethodInfo;
+        if (method is not null)
+        {
+            return method.GetParameters();
+        }
+        else
+        {
+            return new ParameterInfo[0];
+        }
+    }
+
     /// <summary>
     /// Generates document.
     /// </summary>
@@ -278,6 +291,7 @@ public abstract class DocumentGenerator
 
     protected abstract string RenderExceptions(ExceptionNode[] nodes);
     protected abstract string RenderException(ExceptionNode node);
+    protected abstract string RenderParam(ParamNode? node);
 
     /// <summary>
     /// Renders the type's generic arguments.

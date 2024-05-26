@@ -71,7 +71,7 @@ public class XmlCommentReaderTests
             Assert.Equal("T", reader.Document.Members.First().TypeParams.First().Name);
             Assert.Equal("The type parameter 'T'.", reader.Document.Members.First().TypeParams.First().Description);
             Assert.Equal("a", reader.Document.Members.First().Params.First().Name);
-            Assert.Equal("First param.", reader.Document.Members.First().Params.First().Description);
+            Assert.Equal("First param.", reader.Document.Members.First().Params.First().Items[0].ToString());
             Assert.Equal("Return value.", reader.Document.Members.First().Returns.Items[0]);
         }
     }

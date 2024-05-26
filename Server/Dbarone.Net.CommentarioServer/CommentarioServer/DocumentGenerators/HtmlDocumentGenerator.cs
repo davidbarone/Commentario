@@ -234,6 +234,33 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
         var declaringType = member.DeclaringType!;
 
+        // Parameters
+        var parameters = "";
+        var parameterInfos = this.GetMemberParameters(member);
+        if (parameterInfos is not null && parameterInfos.Length > 0)
+        {
+            parameters = $@"
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {string.Join("", parameterInfos.Select(
+                p =>
+                @$"
+<tr>
+    <td>{p.Name}</td>
+    <td>{p.ParameterType}</td
+    <td>{(node is not null && node.Params is not null ? this.RenderParam(node.Params.FirstOrDefault(n => n.Name.Equals(p.Name, StringComparison.Ordinal))) : "")}</td>
+</tr>"))}
+    </tbody>
+</table>";
+        }
+
         // Returns
         var returns = "";
         if (node is not null)
@@ -259,7 +286,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
 {remarks}
 
-Parameters
+{parameters}
 
 {returns}
 
@@ -367,5 +394,14 @@ Parameters
             }
         }
         return exception;
+    }
+
+    protected override string RenderParam(ParamNode? node)
+    {
+        if (node is null || node.Items is null) { return ""; }
+        else
+        {
+            return this.RenderItems(node.Items);
+        }
     }
 }
