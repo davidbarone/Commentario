@@ -118,6 +118,16 @@ public abstract class DocumentGenerator
         return assembly.GetTypes().OrderBy(t => t.Name).ToArray();
     }
 
+    public Type? GetInheritedType(Type type)
+    {
+        return type.BaseType;
+    }
+
+    public Type[] GetInterfacesImplemented(Type type)
+    {
+        return type.GetInterfaces();
+    }
+
     protected string GetTypeCategory(Type type)
     {
         if (type.IsClass)

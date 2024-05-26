@@ -113,6 +113,26 @@ public class HtmlDocumentGenerator : DocumentGenerator
             }
         }
 
+        // Inherits
+        var inherits = "";
+        var inheritedType = this.GetInheritedType(type);
+        if (inheritedType is not null)
+        {
+            inherits = @$"
+<h2>Base Class</h2>
+{inheritedType.Name}";
+        }
+
+        // Implements
+        var implements = "";
+        var implementedTypes = this.GetInterfacesImplemented(type);
+        if (implementedTypes is not null && implementedTypes.Length > 0)
+        {
+            implements = @$"
+<h2>Implemented Interfaces</h2>
+<ul>{string.Join("", implementedTypes.Select(i => $"<li>{i.Name}</li>"))}</ul>";
+        }
+
         var template = @$"
 <h1 id=""{type.ToCommentId()}"">{type.Name} {this.GetTypeCategory(type)}</h1>
 <a href=""#top"">Back to top</a>
@@ -121,6 +141,10 @@ public class HtmlDocumentGenerator : DocumentGenerator
     <li>Namespace: {type.Namespace}</li>
     <li>Assembly: {type.Assembly.FullName}</li>
 </ul>
+
+{inherits}
+
+{implements}
 
 <h2>Summary</h2>
 {summary}
