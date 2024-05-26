@@ -240,6 +240,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         if (parameterInfos is not null && parameterInfos.Length > 0)
         {
             parameters = $@"
+<h2>Parameters</h2>
 <table>
     <thead>
         <tr>
@@ -254,7 +255,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                 @$"
 <tr>
     <td>{p.Name}</td>
-    <td>{p.ParameterType}</td
+    <td>{p.ParameterType}</td>
     <td>{(node is not null && node.Params is not null ? this.RenderParam(node.Params.FirstOrDefault(n => n.Name.Equals(p.Name, StringComparison.Ordinal))) : "")}</td>
 </tr>"))}
     </tbody>
