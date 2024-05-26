@@ -69,7 +69,7 @@ public class XmlCommentReaderTests
             Assert.Single(reader.Document.Members);
             Assert.Equal("M:ExampleLibrary.Test.GenericMethod()", reader.Document.Members.First().Name);
             Assert.Equal("T", reader.Document.Members.First().TypeParams.First().Name);
-            Assert.Equal("The type parameter 'T'.", reader.Document.Members.First().TypeParams.First().Description);
+            Assert.Equal("The type parameter 'T'.", reader.Document.Members.First().TypeParams.First().Text);
             Assert.Equal("a", reader.Document.Members.First().Params.First().Name);
             Assert.Equal("First param.", reader.Document.Members.First().Params.First().Items[0].ToString());
             Assert.Equal("Return value.", reader.Document.Members.First().Returns.Items[0]);

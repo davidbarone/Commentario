@@ -262,12 +262,12 @@ public abstract class DocumentGenerator
         <h1>{GetAssembly()}</h1>
         {this.GetReadMe()}
 
-        {this.RenderTOCSection("Classes", this.GetClasses())}
-        {this.RenderTOCSection("Structs", this.GetStructs())}
-        {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
-        {this.RenderTOCSection("Enums", this.GetEnums())}
-
-        <hr />
+        <div class=""toc"">
+            {this.RenderTOCSection("Classes", this.GetClasses())}
+            {this.RenderTOCSection("Structs", this.GetStructs())}
+            {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
+            {this.RenderTOCSection("Enums", this.GetEnums())}
+        </div>
 
         {contentTypes}
         {contentMembers}
@@ -325,6 +325,31 @@ public abstract class DocumentGenerator
         color: #222;
         overflow-y: scroll;
         font-size: 0.8em;
+        background-color: #fbefcc
+    }
+
+    div.type {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 4px 4px;
+    }
+
+    div.member {
+        background-color: #daebe8;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 4px 4px;
+    }
+
+    div.toc {
+        background-color: #f9ccac;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 4px 4px;
     }
 
     /* ------------------------------------
@@ -333,7 +358,6 @@ public abstract class DocumentGenerator
 
     h1, h2, h3, h4, h5, h6 {
         font-weight: 300;
-        margin-top: 0.5em;
         margin-bottom: 0.5em;
     }
 

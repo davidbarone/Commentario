@@ -2,13 +2,14 @@ using System.Xml.Serialization;
 
 namespace Dbarone.Net.CommentarioServer;
 
-public class ExceptionNode
+/// <summary>
+/// A description of an exception that can be thrown.
+/// </summary>
+public class ExceptionNode : ItemsNode
 {
-
+    /// <summary>
+    /// The exception type name that is thrown.
+    /// </summary>
     [XmlAttribute("cref")]
     public string Name { get; set; }
-
-    [XmlText(typeof(string))]
-    [XmlElement("see", typeof(SeeNode))]
-    public object[] Items { get; set; }
 }

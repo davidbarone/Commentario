@@ -72,7 +72,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                         var commentTypeParamsNode = commentTypeParams.FirstOrDefault(p => p.Name.Equals(g));
                         if (commentTypeParamsNode is not null)
                         {
-                            commentText = commentTypeParamsNode.Description ?? "";
+                            commentText = commentTypeParamsNode.Text ?? "";
                         }
                     }
                 }
@@ -134,6 +134,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         }
 
         var template = @$"
+<div class=""type"">       
 <h1 id=""{type.ToCommentId()}"">{type.Name} {this.GetTypeCategory(type)}</h1>
 <a href=""#top"">Back to top</a>
 <h2>Definition:</h2>
@@ -156,7 +157,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 {this.RenderTypeTOCSection(type, "Methods", this.GetMethods(type))}
 {this.RenderTypeTOCSection(type, "Events", this.GetEvents(type))}
 
-<hr />
+</div>
 ";
         return template;
     }
@@ -301,6 +302,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         }
 
         var template = @$"
+<div class=""member"">
 <h1 id=""{member.ToCommentId()}"">{member.Name} {member.GetMemberTypeName()}</h1>
 <a href=""#{declaringType.ToCommentId()}"">Back to parent</a>
 
@@ -317,7 +319,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
 {exceptions}
 
-<hr />
+</div>
 ";
         return template;
     }
@@ -383,7 +385,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
     protected override string RenderSee(SeeNode node)
     {
-        return $"<a href='{node.Member}'>{node.Description}</a>";
+        return $"<a href='{node.Member}'>{node.Text}</a>";
     }
 
     protected override string RenderReturns(ReturnsNode node)

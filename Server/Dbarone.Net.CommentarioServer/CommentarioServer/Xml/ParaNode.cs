@@ -3,6 +3,6 @@ using System.Xml.Serialization;
 namespace Dbarone.Net.CommentarioServer;
 
 /// <summary>
-/// Denotes an example, typically code examples.
+/// Represents a paragraph of text in a description field.
 /// </summary>
-public class ExampleNode : ItemsNode { }
+public class ParaNode : ItemsNode { }

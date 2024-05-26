@@ -18,6 +18,31 @@
         color: #222;
         overflow-y: scroll;
         font-size: 0.8em;
+        background-color: #fbefcc
+    }
+
+    div.type {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 4px 4px;
+    }
+
+    div.member {
+        background-color: #daebe8;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 4px 4px;
+    }
+
+    div.toc {
+        background-color: #f9ccac;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 4px 4px;
     }
 
     /* ------------------------------------
@@ -26,7 +51,6 @@
 
     h1, h2, h3, h4, h5, h6 {
         font-weight: 300;
-        margin-top: 0.5em;
         margin-bottom: 0.5em;
     }
 
@@ -259,7 +283,8 @@
 This paragraph is user-defined and can be configured in the Commentario configuration for a workspace using the [ReadMePath] setting.
 
 
-        
+        <div class="toc">
+            
 <h2>Classes</h2>
 <div>
 <table>
@@ -294,7 +319,7 @@ This paragraph is user-defined and can be configured in the Commentario configur
 </table>
 </div>
         
-        
+            
 <h2>Structs</h2>
 <div>
 <table>
@@ -313,7 +338,7 @@ This paragraph is user-defined and can be configured in the Commentario configur
 </table>
 </div>
         
-        
+            
 <h2>Interfaces</h2>
 <div>
 <table>
@@ -332,7 +357,7 @@ This paragraph is user-defined and can be configured in the Commentario configur
 </table>
 </div>
         
-        
+            
 <h2>Enums</h2>
 <div>
 <table>
@@ -351,10 +376,10 @@ This paragraph is user-defined and can be configured in the Commentario configur
 </table>
 </div>
         
-
-        <hr />
+        </div>
 
         
+<div class="type">       
 <h1 id="T:ExampleLibrary.ComplexComments">ComplexComments Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -415,8 +440,9 @@ Object
         
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -475,8 +501,9 @@ MulticastDelegate
         
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.ExceptionA">ExceptionA Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -518,8 +545,9 @@ Exception
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.ExceptionB">ExceptionB Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -561,8 +589,9 @@ Exception
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.FooBarBazEnum">FooBarBazEnum Struct</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -612,8 +641,9 @@ Enum
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.GenericType`1">GenericType`1 Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -669,8 +699,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.ITestInterface">ITestInterface Interface</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -712,8 +743,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:foo.bar.baz.MultipartNamespace">MultipartNamespace Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -755,8 +787,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -796,8 +829,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:NoNamespace">NoNamespace Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -839,8 +873,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -880,8 +915,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.SubclassBar">SubclassBar Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -942,8 +978,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.SubclassBaz">SubclassBaz Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -1004,8 +1041,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.SubclassFoo">SubclassFoo Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -1066,8 +1104,9 @@ Object
 
 
 
-<hr />
+</div>
 
+<div class="type">       
 <h1 id="T:ExampleLibrary.Test">Test Class</h1>
 <a href="#top">Back to top</a>
 <h2>Definition:</h2>
@@ -1155,9 +1194,10 @@ Object
         
 
 
-<hr />
+</div>
 
         
+<div class="member">
 <h1 id="M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">MethodThatHasRemarks Method</h1>
 <a href="#T:ExampleLibrary.ComplexComments">Back to parent</a>
 
@@ -1184,8 +1224,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">MethodThatThrowsTwoExceptionTypes Method</h1>
 <a href="#T:ExampleLibrary.ComplexComments">Back to parent</a>
 
@@ -1230,8 +1271,9 @@ This method returns nothing.
 
 <h2>Exceptions</h2><div><b>T:ExampleLibrary.ExceptionA</b></div>This error is thrown if a is less than b.<div><b>T:ExampleLibrary.ExceptionB</b></div>This error is thrown in all other cases.
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ComplexComments.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.ComplexComments">Back to parent</a>
 
@@ -1251,8 +1293,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Invoke Method</h1>
 <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
 
@@ -1290,8 +1333,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">BeginInvoke Method</h1>
 <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
 
@@ -1339,8 +1383,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">EndInvoke Method</h1>
 <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
 
@@ -1378,8 +1423,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
 
@@ -1399,8 +1445,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ExceptionA.#ctor(System.String)">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.ExceptionA">Back to parent</a>
 
@@ -1420,8 +1467,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ExceptionB.#ctor(System.String)">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.ExceptionB">Back to parent</a>
 
@@ -1441,8 +1489,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="F:ExampleLibrary.FooBarBazEnum.value__">value__ Field</h1>
 <a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
 
@@ -1459,8 +1508,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="F:ExampleLibrary.FooBarBazEnum.FOO">FOO Field</h1>
 <a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
 
@@ -1479,8 +1529,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="F:ExampleLibrary.FooBarBazEnum.BAR">BAR Field</h1>
 <a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
 
@@ -1499,8 +1550,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="F:ExampleLibrary.FooBarBazEnum.BAZ">BAZ Field</h1>
 <a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
 
@@ -1519,8 +1571,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.GenericType`1.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.GenericType`1">Back to parent</a>
 
@@ -1540,8 +1593,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ITestInterface.get_FooBarBazType">get_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
 
@@ -1561,8 +1615,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.ITestInterface.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
 
@@ -1600,8 +1655,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="P:ExampleLibrary.ITestInterface.FooBarBazType">FooBarBazType Property</h1>
 <a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
 
@@ -1620,8 +1676,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:foo.bar.baz.MultipartNamespace.#ctor">.ctor Constructor</h1>
 <a href="#T:foo.bar.baz.MultipartNamespace">Back to parent</a>
 
@@ -1641,8 +1698,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id=":foo.bar.baz.MultipartNamespace.foo#bar#baz#MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass </h1>
 <a href="#T:foo.bar.baz.MultipartNamespace">Back to parent</a>
 
@@ -1659,8 +1717,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">.ctor Constructor</h1>
 <a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">Back to parent</a>
 
@@ -1680,8 +1739,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:NoNamespace.#ctor">.ctor Constructor</h1>
 <a href="#T:NoNamespace">Back to parent</a>
 
@@ -1701,8 +1761,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id=":NoNamespace.NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass </h1>
 <a href="#T:NoNamespace">Back to parent</a>
 
@@ -1719,8 +1780,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:NoNamespace+NoNamespaceNestedClass.#ctor">.ctor Constructor</h1>
 <a href="#T:NoNamespace+NoNamespaceNestedClass">Back to parent</a>
 
@@ -1740,8 +1802,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassBar.get_FooBarBazType">get_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
 
@@ -1761,8 +1824,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassBar.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
 
@@ -1800,8 +1864,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassBar.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
 
@@ -1821,8 +1886,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="P:ExampleLibrary.SubclassBar.FooBarBazType">FooBarBazType Property</h1>
 <a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
 
@@ -1841,8 +1907,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassBaz.get_FooBarBazType">get_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
 
@@ -1862,8 +1929,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassBaz.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
 
@@ -1901,8 +1969,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassBaz.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
 
@@ -1922,8 +1991,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="P:ExampleLibrary.SubclassBaz.FooBarBazType">FooBarBazType Property</h1>
 <a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
 
@@ -1942,8 +2012,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassFoo.get_FooBarBazType">get_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
 
@@ -1963,8 +2034,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassFoo.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
 <a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
 
@@ -2002,8 +2074,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.SubclassFoo.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
 
@@ -2023,8 +2096,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="P:ExampleLibrary.SubclassFoo.FooBarBazType">FooBarBazType Property</h1>
 <a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
 
@@ -2043,8 +2117,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.GenericMethod[T](T)">GenericMethod Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2082,8 +2157,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.NothingFunction">NothingFunction Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2105,8 +2181,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">ParameterWithMultipleParameters Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2156,8 +2233,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2179,8 +2257,9 @@ This method returns nothing.
 
 <h2>Exceptions</h2><div><b>T:System.NotSupportedException</b></div>Throws a colourful exception.
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2202,8 +2281,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.get_SomeFlag">get_SomeFlag Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2223,8 +2303,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.set_SomeFlag(System.Boolean)">set_SomeFlag Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2262,8 +2343,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.GenericMethod[TInput,TOutput](TInput,System.Boolean)">GenericMethod Method</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2306,8 +2388,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.#ctor">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2329,8 +2412,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.#ctor(System.Int32)">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2352,8 +2436,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">.ctor Constructor</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2375,8 +2460,9 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
+<div class="member">
 <h1 id="P:ExampleLibrary.Test.SomeFlag">SomeFlag Property</h1>
 <a href="#T:ExampleLibrary.Test">Back to parent</a>
 
@@ -2395,7 +2481,7 @@ This method returns nothing.
 
 
 
-<hr />
+</div>
 
 
     </body>

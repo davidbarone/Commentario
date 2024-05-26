@@ -7,6 +7,9 @@ namespace Dbarone.Net.CommentarioServer;
 /// </summary>
 public class AssemblyNode
 {
+    /// <summary>
+    /// The assembly name.
+    /// </summary>
     [XmlElement("name")]
     public string Name { get; set; }
 }

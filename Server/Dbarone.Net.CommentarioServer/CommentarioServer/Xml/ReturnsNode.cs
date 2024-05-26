@@ -2,7 +2,8 @@ using System.Xml.Serialization;
 
 namespace Dbarone.Net.CommentarioServer;
 
+
 /// <summary>
-/// Denotes an example, typically code examples.
+/// The ReturnsNode describes the return value of a method.
 /// </summary>
-public class ExampleNode : ItemsNode { }
+public class ReturnsNode : ItemsNode { }
