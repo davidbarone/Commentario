@@ -278,7 +278,18 @@
   </head>
   <body id="top">
         <h1>Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</h1>
-        This is the assembly information for CommentarioServer.
+        The CommentarioServer provides the main functionality for documenting .NET assemblies.
+
+<p>
+Documentation comes from 2 aspects:
+<ul>
+    <li>Reflecting over the assembly metadata</li>
+    <li>Additional descriptive information provided by the comments xml file</li>
+</ul>
+
+CommentarioServer merges the 2 sources of information to provide a fully documented picture of an assembly.
+</p>
+
 
         <div class="toc">
             <h2>Table of Contents</h2>
@@ -653,7 +664,9 @@ Object
         </tr>
     </thead>
     <tbody>
-        <tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,System.Nullable`1[Dbarone.Net.CommentarioServer.OutputType],System.String,System.String)">Dbarone.Net.CommentarioServer.DocumentGenerator Create(System.String, System.String, System.Nullable`1[Dbarone.Net.CommentarioServer.OutputType], System.String, System.String)</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GenerateDocument">System.Void GenerateDocument()</a></td><td>
+        <tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,System.Nullable{Dbarone.Net.CommentarioServer.OutputType},System.String,System.String)">Dbarone.Net.CommentarioServer.DocumentGenerator Create(System.String, System.String, System.Nullable`1[Dbarone.Net.CommentarioServer.OutputType], System.String, System.String)</a></td><td>
+            Static factory method to create a new DocumentGenerator instance. 
+            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GenerateDocument">System.Void GenerateDocument()</a></td><td>
             Generates document.
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInheritedType(System.Type)">System.Type GetInheritedType(System.Type)</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfacesImplemented(System.Type)">System.Type[] GetInterfacesImplemented(System.Type)</a></td><td></td></tr>
     </tbody>
@@ -1807,7 +1820,9 @@ Object
     </thead>
     <tbody>
         <tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.Build(System.Type)">System.String Build(System.Type)</a></td><td>
-            Get a fully qualified signature for </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable`1[System.Type])">System.String BuildGenerics(System.Collections.Generic.IEnumerable`1[System.Type])</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.GetQualifiedTypeName(System.Type)">System.String GetQualifiedTypeName(System.Type)</a></td><td>
+            Get a fully qualified signature for </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable{System.Type})">System.String BuildGenerics(System.Collections.Generic.IEnumerable`1[System.Type])</a></td><td>
+            Takes an <a href='T:System.Collections.Generic.IEnumerable`1'></a> and creates a generic type signature (<string, string> for example)
+            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.GetQualifiedTypeName(System.Type)">System.String GetQualifiedTypeName(System.Type)</a></td><td>
             Gets the fully qualified type name of .
             This will use any keywords in place of types where possible (string instead of System.String for example)
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.RemoveGenericTypeNameArgumentCount(System.String)">System.String RemoveGenericTypeNameArgumentCount(System.String)</a></td><td>
@@ -2552,7 +2567,7 @@ Object
 </div>
 
 <div class="member">
-<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,System.Nullable`1[Dbarone.Net.CommentarioServer.OutputType],System.String,System.String)">Method: Create</h1>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,System.Nullable{Dbarone.Net.CommentarioServer.OutputType},System.String,System.String)">Method: Create</h1>
 
 <h3>Declaring Type</h3>
 <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
@@ -2564,6 +2579,8 @@ Object
 
 <h3>Summary</h3>
 
+            Static factory method to create a new DocumentGenerator instance. 
+            
 
 
 
@@ -2582,34 +2599,35 @@ Object
 <tr>
     <td>assemblyPath</td>
     <td>System.String</td>
-    <td></td>
+    <td>The path to the assembly file.</td>
 </tr>
 <tr>
     <td>outputPath</td>
     <td>System.String</td>
-    <td></td>
+    <td>The path to the output documentation file.</td>
 </tr>
 <tr>
     <td>outputType</td>
     <td>System.Nullable`1[Dbarone.Net.CommentarioServer.OutputType]</td>
-    <td></td>
+    <td>The documentation format type.</td>
 </tr>
 <tr>
     <td>xmlCommentsPath</td>
     <td>System.String</td>
-    <td></td>
+    <td>The path to an xml comments file. This content will be merged with the reflected assembly information.</td>
 </tr>
 <tr>
     <td>readMePath</td>
     <td>System.String</td>
-    <td></td>
+    <td>The path to an optional readme file. This file should contain html content. If a file is specified, it will be included at the top of the documentation file.</td>
 </tr>
     </tbody>
 </table>
 
+<h3>Returns</h3>
+Returns a DocumentGenerator instance.
 
-
-
+<h3>Exceptions</h3><div><b>T:System.Exception</b></div>Throws an exception if invalid parameters are provided.
 
 </div>
 
@@ -2952,7 +2970,7 @@ Object
 </div>
 
 <div class="member">
-<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.set_Members(Dbarone.Net.CommentarioServer.MemberNode[])">Method: set_Members</h1>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.set_Members(Dbarone.Net.CommentarioServer.MemberNode{})">Method: set_Members</h1>
 
 <h3>Declaring Type</h3>
 <a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
@@ -4576,7 +4594,7 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h2 id="M:Dbarone.Net.CommentarioServer.ItemsNode.set_Items(System.Object[])">Method: set_Items</h1>
+<h2 id="M:Dbarone.Net.CommentarioServer.ItemsNode.set_Items(System.Object{})">Method: set_Items</h1>
 
 <h3>Declaring Type</h3>
 <a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Dbarone.Net.CommentarioServer.ItemsNode</a>
@@ -4887,7 +4905,7 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Params(Dbarone.Net.CommentarioServer.ParamNode[])">Method: set_Params</h1>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Params(Dbarone.Net.CommentarioServer.ParamNode{})">Method: set_Params</h1>
 
 <h3>Declaring Type</h3>
 <a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
@@ -4953,7 +4971,7 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_TypeParams(Dbarone.Net.CommentarioServer.TypeParamNode[])">Method: set_TypeParams</h1>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_TypeParams(Dbarone.Net.CommentarioServer.TypeParamNode{})">Method: set_TypeParams</h1>
 
 <h3>Declaring Type</h3>
 <a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
@@ -5085,7 +5103,7 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Exceptions(Dbarone.Net.CommentarioServer.ExceptionNode[])">Method: set_Exceptions</h1>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Exceptions(Dbarone.Net.CommentarioServer.ExceptionNode{})">Method: set_Exceptions</h1>
 
 <h3>Declaring Type</h3>
 <a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
@@ -5151,7 +5169,7 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Examples(Dbarone.Net.CommentarioServer.ExampleNode[])">Method: set_Examples</h1>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Examples(Dbarone.Net.CommentarioServer.ExampleNode{})">Method: set_Examples</h1>
 
 <h3>Declaring Type</h3>
 <a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
@@ -6406,7 +6424,7 @@ Fully qualified signature
 </div>
 
 <div class="member">
-<h2 id="M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable`1[System.Type])">Method: BuildGenerics</h1>
+<h2 id="M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable{System.Type})">Method: BuildGenerics</h1>
 
 <h3>Declaring Type</h3>
 <a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Dbarone.Net.CommentarioServer.TypeSignature</a>
@@ -6418,6 +6436,8 @@ Fully qualified signature
 
 <h3>Summary</h3>
 
+            Takes an <a href='T:System.Collections.Generic.IEnumerable`1'></a> and creates a generic type signature (<string, string> for example)
+            
 
 
 
@@ -6441,7 +6461,8 @@ Fully qualified signature
     </tbody>
 </table>
 
-
+<h3>Returns</h3>
+Generic type signature like <Type, ...>
 
 
 

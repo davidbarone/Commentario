@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Dbarone.CommentarioServer;
 
 namespace Dbarone.Net.CommentarioServer;
@@ -58,6 +59,12 @@ public static class ExtensionMethods
         // The xml comments exlude empty parentheses from methods, and have no spaces between parameters.
         // We need to make memberName consistent with this.
         memberName = memberName!.Replace("()", "").Replace(" ", "");
+
+        // Replace ` characters for generics
+        memberName = Regex.Replace(memberName, "`[0-9]+", "");
+        memberName = memberName.Replace("[", "{");
+        memberName = memberName.Replace("]", "}");
+
         return $"{member.GetMemberType()}:{memberName}";
     }
 

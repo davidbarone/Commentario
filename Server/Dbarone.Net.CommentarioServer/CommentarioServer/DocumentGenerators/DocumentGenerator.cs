@@ -46,6 +46,16 @@ public abstract class DocumentGenerator
 
     #region Constructors
 
+    /// <summary>
+    /// Static factory method to create a new DocumentGenerator instance. 
+    /// </summary>
+    /// <param name="assemblyPath">The path to the assembly file.</param>
+    /// <param name="outputPath">The path to the output documentation file.</param>
+    /// <param name="outputType">The documentation format type.</param>
+    /// <param name="xmlCommentsPath">The path to an xml comments file. This content will be merged with the reflected assembly information.</param>
+    /// <param name="readMePath">The path to an optional readme file. This file should contain html content. If a file is specified, it will be included at the top of the documentation file.</param>
+    /// <returns>Returns a DocumentGenerator instance.</returns>
+    /// <exception cref="Exception">Throws an exception if invalid parameters are provided.</exception>
     public static DocumentGenerator Create(string assemblyPath, string outputPath, OutputType? outputType = OutputType.html, string? xmlCommentsPath = null, string? readMePath = null)
     {
         switch (outputType)

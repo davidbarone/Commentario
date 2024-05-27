@@ -2,6 +2,7 @@ using Xunit;
 using System;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Dbarone.Net.CommentarioServer.Tests;
 
@@ -48,5 +49,18 @@ public class ExtensionMethodTests
     {
         var actual = typeof(TestGenericClass<,>).GetTypeGenericArguments();
         Assert.Equal(new string[] { "TInput", "TOutput" }, actual);
+    }
+
+    public static IEnumerable<object[]> CommentIdMemberData =>
+            new List<object[]>
+            {
+            new object[] {typeof(DocumentGenerator).GetMember("Create").First(), "M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,System.Nullable{Dbarone.Net.CommentarioServer.OutputType},System.String,System.String)" }
+            };
+
+    [Theory, MemberData(nameof(CommentIdMemberData))]
+    public void TestMemberCommentId(MemberInfo member, string expectedCommentId)
+    {
+        var actualCommentId = member.ToCommentId();
+        Assert.Equal(expectedCommentId, actualCommentId);
     }
 }
