@@ -31,7 +31,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         else
         {
             return @$"
-<h2>{header}</h2>
+<h3>{header}</h3>
 <div>
 <table>
     <thead>
@@ -80,7 +80,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                 return str;
             }));
             return @$"
-<h2>Type Parameters</h2>
+<h3>Type Parameters</h3>
 <div>
 <table>
     <thead>
@@ -119,7 +119,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         if (inheritedType is not null)
         {
             inherits = @$"
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 {inheritedType.Name}";
         }
 
@@ -129,15 +129,15 @@ public class HtmlDocumentGenerator : DocumentGenerator
         if (implementedTypes is not null && implementedTypes.Length > 0)
         {
             implements = @$"
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul>{string.Join("", implementedTypes.Select(i => $"<li>{i.Name}</li>"))}</ul>";
         }
 
         var template = @$"
 <div class=""type"">       
-<h1 id=""{type.ToCommentId()}"">{type.Name} {this.GetTypeCategory(type)}</h1>
+<h2 id=""{type.ToCommentId()}"">{this.GetTypeCategory(type)}: {type.Name}</h2>
 <a href=""#top"">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: {type.Namespace}</li>
     <li>Assembly: {type.Assembly.FullName}</li>
@@ -147,7 +147,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
 {implements}
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 {summary}
 
 {this.RenderTypeGenericArguments(type)}
@@ -187,7 +187,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {
             return @$"
 <div>
-<h2>{header}</h2>
+<h3>{header}</h3>
 <table>
     <thead>
         <tr>
@@ -224,7 +224,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         if (!string.IsNullOrEmpty(signature))
         {
             signature = @$"
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>{signature}</code></pre>
             ";
         }
@@ -252,7 +252,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
             remarksNode = node.Remarks;
             if (remarksNode is not null)
             {
-                remarks = $@"<h2>Remarks</h2>
+                remarks = $@"<h3>Remarks</h3>
 {RenderItems(remarksNode.Items)}";
             }
         }
@@ -265,7 +265,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         if (parameterInfos is not null && parameterInfos.Length > 0)
         {
             parameters = $@"
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -303,12 +303,14 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
         var template = @$"
 <div class=""member"">
-<h1 id=""{member.ToCommentId()}"">{member.Name} {member.GetMemberTypeName()}</h1>
-<a href=""#{declaringType.ToCommentId()}"">Back to parent</a>
+<h2 id=""{member.ToCommentId()}"">{member.GetMemberTypeName()}: {member.Name}</h1>
+
+<h3>Declaring Type</h3>
+<a href=""#{declaringType.ToCommentId()}"">{member.DeclaringType}</a>
 
 {signature}
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 {summary}
 
 {remarks}
@@ -364,7 +366,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
     protected override string RenderExample(ExampleNode node)
     {
-        return $@"<h2>Example</h2>
+        return $@"<h3>Example</h3>
 {this.RenderItems(node.Items)}";
     }
 
@@ -393,7 +395,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         var returns = "";
         if (node is not null && node.Items is not null)
         {
-            returns = $@"<h2>Returns</h2>
+            returns = $@"<h3>Returns</h3>
 {RenderItems(node.Items)}";
         }
         return returns;
@@ -404,7 +406,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         var exceptions = "";
         if (nodes is not null && nodes.Length > 0)
         {
-            exceptions = $@"<h2>Exceptions</h2>{string.Join("", nodes.Select(n => RenderException(n)))}";
+            exceptions = $@"<h3>Exceptions</h3>{string.Join("", nodes.Select(n => RenderException(n)))}";
         }
         return exceptions;
     }

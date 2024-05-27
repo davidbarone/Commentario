@@ -112,10 +112,21 @@ public abstract class DocumentGenerator
         return GetAssembly().GetName().Name;
     }
 
+    private bool IsCompilerGenerated(Type type)
+    {
+        var attr = type.CustomAttributes.Select(t => t.AttributeType).Where(t => t.Name == "CompilerGeneratedAttribute").ToArray();
+        return attr.Any();
+    }
+
     protected Type[] GetTypes()
     {
         var assembly = GetAssembly();
-        return assembly.GetTypes().OrderBy(t => t.Name).ToArray();
+        var types = assembly.GetTypes().OrderBy(t => t.Name).ToArray();
+
+        // remove compiler-generated / lambda classes
+        types = types.Where(t => !IsCompilerGenerated(t)).ToArray();
+
+        return types;
     }
 
     public Type? GetInheritedType(Type type)
@@ -263,6 +274,7 @@ public abstract class DocumentGenerator
         {this.GetReadMe()}
 
         <div class=""toc"">
+            <h2>Table of Contents</h2>
             {this.RenderTOCSection("Classes", this.GetClasses())}
             {this.RenderTOCSection("Structs", this.GetStructs())}
             {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
@@ -321,7 +333,7 @@ public abstract class DocumentGenerator
     -------------------------------------------------- */
 
     body {
-        font-family: sans-serif, ""Helvetica Neue"", Helvetica, Arial;
+        font-family: ""Helvetica Neue"", Helvetica, Arial, sans-serif;
         color: #222;
         overflow-y: scroll;
         font-size: 0.8em;
@@ -358,7 +370,8 @@ public abstract class DocumentGenerator
 
     h1, h2, h3, h4, h5, h6 {
         font-weight: 300;
-        margin-bottom: 0.5em;
+        margin: 0px;
+        padding: 0px;
     }
 
     h1 {
@@ -457,6 +470,8 @@ public abstract class DocumentGenerator
 
     ul {
         list-style: disc inside;
+        margin: 0px;
+        padding: 0px;
     }
 
     ol {
@@ -465,19 +480,15 @@ public abstract class DocumentGenerator
 
     ol, ul {
         padding-left: 0;
-        margin-top: 0.5em;
     }
 
     ul ul,
     ul ol,
     ol ol,
     ol ul {
-        margin: 0.5em 0 0.5em 3em;
-        font-size: 90%;
     }
 
     li {
-        margin-bottom: 0.25em;
     }
 
     /* ---------------------------------------------

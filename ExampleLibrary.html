@@ -14,7 +14,7 @@
     -------------------------------------------------- */
 
     body {
-        font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #222;
         overflow-y: scroll;
         font-size: 0.8em;
@@ -51,7 +51,8 @@
 
     h1, h2, h3, h4, h5, h6 {
         font-weight: 300;
-        margin-bottom: 0.5em;
+        margin: 0px;
+        padding: 0px;
     }
 
     h1 {
@@ -150,6 +151,8 @@
 
     ul {
         list-style: disc inside;
+        margin: 0px;
+        padding: 0px;
     }
 
     ol {
@@ -158,19 +161,15 @@
 
     ol, ul {
         padding-left: 0;
-        margin-top: 0.5em;
     }
 
     ul ul,
     ul ol,
     ol ol,
     ol ul {
-        margin: 0.5em 0 0.5em 3em;
-        font-size: 90%;
     }
 
     li {
-        margin-bottom: 0.25em;
     }
 
     /* ---------------------------------------------
@@ -279,13 +278,16 @@
   </head>
   <body id="top">
         <h1>ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</h1>
-        The ExampleLibrary assembly is a dummy assembly that is used for testing the Commentario documenter, and also to provide an example of the output of Commentario.
-This paragraph is user-defined and can be configured in the Commentario configuration for a workspace using the [ReadMePath] setting.
+        <p>The ExampleLibrary assembly is a dummy assembly that is used for testing the Commentario documenter,
+and also to provide an example of the output of Commentario.</p>
+
+<p>This section is user-defined and can be configured in the Commentario configuration for a workspace using the [ReadMePath] setting.</p>
 
 
         <div class="toc">
+            <h2>Table of Contents</h2>
             
-<h2>Classes</h2>
+<h3>Classes</h3>
 <div>
 <table>
     <thead>
@@ -320,7 +322,7 @@ This paragraph is user-defined and can be configured in the Commentario configur
 </div>
         
             
-<h2>Structs</h2>
+<h3>Structs</h3>
 <div>
 <table>
     <thead>
@@ -339,7 +341,7 @@ This paragraph is user-defined and can be configured in the Commentario configur
 </div>
         
             
-<h2>Interfaces</h2>
+<h3>Interfaces</h3>
 <div>
 <table>
     <thead>
@@ -358,7 +360,7 @@ This paragraph is user-defined and can be configured in the Commentario configur
 </div>
         
             
-<h2>Enums</h2>
+<h3>Enums</h3>
 <div>
 <table>
     <thead>
@@ -380,21 +382,21 @@ This paragraph is user-defined and can be configured in the Commentario configur
 
         
 <div class="type">       
-<h1 id="T:ExampleLibrary.ComplexComments">ComplexComments Class</h1>
+<h2 id="T:ExampleLibrary.ComplexComments">Class: ComplexComments</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             This class contains some members with more complex commentary.
             
@@ -402,7 +404,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -420,7 +422,7 @@ Object
 
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -443,23 +445,23 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate Class</h1>
+<h2 id="T:ExampleLibrary.ConvertStringToIntDelegate">Class: ConvertStringToIntDelegate</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 MulticastDelegate
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>ICloneable</li><li>ISerializable</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A test delegate class.
             
@@ -467,7 +469,7 @@ MulticastDelegate
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -485,7 +487,7 @@ MulticastDelegate
 
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -504,29 +506,29 @@ MulticastDelegate
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.ExceptionA">ExceptionA Class</h1>
+<h2 id="T:ExampleLibrary.ExceptionA">Class: ExceptionA</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Exception
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>ISerializable</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -548,29 +550,29 @@ Exception
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.ExceptionB">ExceptionB Class</h1>
+<h2 id="T:ExampleLibrary.ExceptionB">Class: ExceptionB</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Exception
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>ISerializable</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -592,23 +594,23 @@ Exception
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.FooBarBazEnum">FooBarBazEnum Struct</h1>
+<h2 id="T:ExampleLibrary.FooBarBazEnum">Struct: FooBarBazEnum</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Enum
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>IComparable</li><li>ISpanFormattable</li><li>IFormattable</li><li>IConvertible</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A test enum type that contains the values foo, bar, and baz.
             
@@ -617,7 +619,7 @@ Enum
 
 
 <div>
-<h2>Fields</h2>
+<h3>Fields</h3>
 <table>
     <thead>
         <tr>
@@ -644,27 +646,27 @@ Enum
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.GenericType`1">GenericType`1 Class</h1>
+<h2 id="T:ExampleLibrary.GenericType`1">Class: GenericType`1</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A test generic type.
             
 
 
-<h2>Type Parameters</h2>
+<h3>Type Parameters</h3>
 <div>
 <table>
     <thead>
@@ -680,7 +682,7 @@ Object
 </div>
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -702,9 +704,9 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.ITestInterface">ITestInterface Interface</h1>
+<h2 id="T:ExampleLibrary.ITestInterface">Interface: ITestInterface</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
@@ -714,7 +716,7 @@ Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A test interface. 
             
@@ -724,7 +726,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -746,21 +748,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:foo.bar.baz.MultipartNamespace">MultipartNamespace Class</h1>
+<h2 id="T:foo.bar.baz.MultipartNamespace">Class: MultipartNamespace</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: foo.bar.baz</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A test class that exists in a namespace with multiple parts.
             
@@ -768,7 +770,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -790,27 +792,27 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass Class</h1>
+<h2 id="T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">Class: MultpartNamespaceNestedClass</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: foo.bar.baz</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -832,21 +834,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:NoNamespace">NoNamespace Class</h1>
+<h2 id="T:NoNamespace">Class: NoNamespace</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: </li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A class that does not have a namespace.
             
@@ -854,7 +856,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -876,27 +878,27 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass Class</h1>
+<h2 id="T:NoNamespace+NoNamespaceNestedClass">Class: NoNamespaceNestedClass</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: </li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -918,23 +920,23 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.SubclassBar">SubclassBar Class</h1>
+<h2 id="T:ExampleLibrary.SubclassBar">Class: SubclassBar</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>ITestInterface</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A class that implements an interface.
             
@@ -942,7 +944,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -959,7 +961,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -981,23 +983,23 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.SubclassBaz">SubclassBaz Class</h1>
+<h2 id="T:ExampleLibrary.SubclassBaz">Class: SubclassBaz</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>ITestInterface</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A class that implements an interface.
             
@@ -1005,7 +1007,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1022,7 +1024,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1044,23 +1046,23 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.SubclassFoo">SubclassFoo Class</h1>
+<h2 id="T:ExampleLibrary.SubclassFoo">Class: SubclassFoo</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>ITestInterface</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A class that implements an interface.
             
@@ -1068,7 +1070,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1085,7 +1087,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1107,21 +1109,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:ExampleLibrary.Test">Test Class</h1>
+<h2 id="T:ExampleLibrary.Test">Class: Test</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: ExampleLibrary</li>
     <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A general-purpose test class that contains lots of various members to test documentation features.
             
@@ -1129,7 +1131,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1152,7 +1154,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1170,7 +1172,7 @@ Object
         
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -1198,28 +1200,30 @@ Object
 
         
 <div class="member">
-<h1 id="M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">MethodThatHasRemarks Method</h1>
-<a href="#T:ExampleLibrary.ComplexComments">Back to parent</a>
+<h2 id="M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">Method: MethodThatHasRemarks</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string MethodThatHasRemarks()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             This is a method that returns nothing.
             
 
-<h2>Remarks</h2>
-<p>This method returns nothing.</p><h2>Example</h2>
+<h3>Remarks</h3>
+<p>This method returns nothing.</p><h3>Example</h3>
 
             This is an example of calling this method.
             <pre><code>MethodThatHasRemarks();</code></pre><p>Did we say, this method returns nothing.</p>
 
 
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 This method returns nothing.
 
 
@@ -1227,15 +1231,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">MethodThatThrowsTwoExceptionTypes Method</h1>
-<a href="#T:ExampleLibrary.ComplexComments">Back to parent</a>
+<h2 id="M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">Method: MethodThatThrowsTwoExceptionTypes</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void MethodThatThrowsTwoExceptionTypes(int a, int b)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             This is a method that throws 2 possible exceptions.
             
@@ -1243,7 +1249,7 @@ This method returns nothing.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -1269,20 +1275,22 @@ This method returns nothing.
 
 
 
-<h2>Exceptions</h2><div><b>T:ExampleLibrary.ExceptionA</b></div>This error is thrown if a is less than b.<div><b>T:ExampleLibrary.ExceptionB</b></div>This error is thrown in all other cases.
+<h3>Exceptions</h3><div><b>T:ExampleLibrary.ExceptionA</b></div>This error is thrown if a is less than b.<div><b>T:ExampleLibrary.ExceptionB</b></div>This error is thrown in all other cases.
 
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ComplexComments.#ctor">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.ComplexComments">Back to parent</a>
+<h2 id="M:ExampleLibrary.ComplexComments.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ComplexComments()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1296,21 +1304,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Invoke Method</h1>
-<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
+<h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Method: Invoke</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public int Invoke(string input)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -1336,21 +1346,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">BeginInvoke Method</h1>
-<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
+<h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">Method: BeginInvoke</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public System.IAsyncResult BeginInvoke(string input, System.AsyncCallback callback, object object)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -1386,21 +1398,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">EndInvoke Method</h1>
-<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
+<h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">Method: EndInvoke</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public int EndInvoke(System.IAsyncResult result)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -1426,15 +1440,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">Back to parent</a>
+<h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ConvertStringToIntDelegate(object object, nint method)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1448,15 +1464,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ExceptionA.#ctor(System.String)">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.ExceptionA">Back to parent</a>
+<h2 id="M:ExampleLibrary.ExceptionA.#ctor(System.String)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ExceptionA">ExampleLibrary.ExceptionA</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ExceptionA(string message)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1470,15 +1488,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ExceptionB.#ctor(System.String)">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.ExceptionB">Back to parent</a>
+<h2 id="M:ExampleLibrary.ExceptionB.#ctor(System.String)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ExceptionB">ExampleLibrary.ExceptionB</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ExceptionB(string message)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1492,12 +1512,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="F:ExampleLibrary.FooBarBazEnum.value__">value__ Field</h1>
-<a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
+<h2 id="F:ExampleLibrary.FooBarBazEnum.value__">Field: value__</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1511,12 +1533,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="F:ExampleLibrary.FooBarBazEnum.FOO">FOO Field</h1>
-<a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
+<h2 id="F:ExampleLibrary.FooBarBazEnum.FOO">Field: FOO</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Foo.
             
@@ -1532,12 +1556,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="F:ExampleLibrary.FooBarBazEnum.BAR">BAR Field</h1>
-<a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
+<h2 id="F:ExampleLibrary.FooBarBazEnum.BAR">Field: BAR</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Bar.
             
@@ -1553,12 +1579,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="F:ExampleLibrary.FooBarBazEnum.BAZ">BAZ Field</h1>
-<a href="#T:ExampleLibrary.FooBarBazEnum">Back to parent</a>
+<h2 id="F:ExampleLibrary.FooBarBazEnum.BAZ">Field: BAZ</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Baz.
             
@@ -1574,15 +1602,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.GenericType`1.#ctor">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.GenericType`1">Back to parent</a>
+<h2 id="M:ExampleLibrary.GenericType`1.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.GenericType`1">ExampleLibrary.GenericType`1</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public GenericType`1()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1596,15 +1626,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ITestInterface.get_FooBarBazType">get_FooBarBazType Method</h1>
-<a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
+<h2 id="M:ExampleLibrary.ITestInterface.get_FooBarBazType">Method: get_FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1618,21 +1650,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.ITestInterface.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
-<a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
+<h2 id="M:ExampleLibrary.ITestInterface.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -1658,12 +1692,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="P:ExampleLibrary.ITestInterface.FooBarBazType">FooBarBazType Property</h1>
-<a href="#T:ExampleLibrary.ITestInterface">Back to parent</a>
+<h2 id="P:ExampleLibrary.ITestInterface.FooBarBazType">Property: FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The type of the object (foo, bar, baz).
             
@@ -1679,15 +1715,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:foo.bar.baz.MultipartNamespace.#ctor">.ctor Constructor</h1>
-<a href="#T:foo.bar.baz.MultipartNamespace">Back to parent</a>
+<h2 id="M:foo.bar.baz.MultipartNamespace.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:foo.bar.baz.MultipartNamespace">foo.bar.baz.MultipartNamespace</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public MultipartNamespace()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1701,12 +1739,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id=":foo.bar.baz.MultipartNamespace.foo#bar#baz#MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass </h1>
-<a href="#T:foo.bar.baz.MultipartNamespace">Back to parent</a>
+<h2 id=":foo.bar.baz.MultipartNamespace.foo#bar#baz#MultipartNamespace+MultpartNamespaceNestedClass">: MultpartNamespaceNestedClass</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:foo.bar.baz.MultipartNamespace">foo.bar.baz.MultipartNamespace</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1720,15 +1760,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">.ctor Constructor</h1>
-<a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">Back to parent</a>
+<h2 id="M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public MultpartNamespaceNestedClass()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1742,15 +1784,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:NoNamespace.#ctor">.ctor Constructor</h1>
-<a href="#T:NoNamespace">Back to parent</a>
+<h2 id="M:NoNamespace.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:NoNamespace">NoNamespace</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public NoNamespace()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1764,12 +1808,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id=":NoNamespace.NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass </h1>
-<a href="#T:NoNamespace">Back to parent</a>
+<h2 id=":NoNamespace.NoNamespace+NoNamespaceNestedClass">: NoNamespaceNestedClass</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:NoNamespace">NoNamespace</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1783,15 +1829,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:NoNamespace+NoNamespaceNestedClass.#ctor">.ctor Constructor</h1>
-<a href="#T:NoNamespace+NoNamespaceNestedClass">Back to parent</a>
+<h2 id="M:NoNamespace+NoNamespaceNestedClass.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:NoNamespace+NoNamespaceNestedClass">NoNamespace+NoNamespaceNestedClass</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public NoNamespaceNestedClass()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1805,15 +1853,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassBar.get_FooBarBazType">get_FooBarBazType Method</h1>
-<a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassBar.get_FooBarBazType">Method: get_FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1827,21 +1877,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassBar.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
-<a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassBar.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -1867,15 +1919,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassBar.#ctor">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassBar.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public SubclassBar()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1889,12 +1943,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="P:ExampleLibrary.SubclassBar.FooBarBazType">FooBarBazType Property</h1>
-<a href="#T:ExampleLibrary.SubclassBar">Back to parent</a>
+<h2 id="P:ExampleLibrary.SubclassBar.FooBarBazType">Property: FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The type of the object (foo).
             
@@ -1910,15 +1966,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassBaz.get_FooBarBazType">get_FooBarBazType Method</h1>
-<a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassBaz.get_FooBarBazType">Method: get_FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1932,21 +1990,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassBaz.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
-<a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassBaz.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -1972,15 +2032,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassBaz.#ctor">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassBaz.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public SubclassBaz()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1994,12 +2056,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="P:ExampleLibrary.SubclassBaz.FooBarBazType">FooBarBazType Property</h1>
-<a href="#T:ExampleLibrary.SubclassBaz">Back to parent</a>
+<h2 id="P:ExampleLibrary.SubclassBaz.FooBarBazType">Property: FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The type of the object (foo).
             
@@ -2015,15 +2079,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassFoo.get_FooBarBazType">get_FooBarBazType Method</h1>
-<a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassFoo.get_FooBarBazType">Method: get_FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -2037,21 +2103,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassFoo.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">set_FooBarBazType Method</h1>
-<a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassFoo.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -2077,15 +2145,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.SubclassFoo.#ctor">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
+<h2 id="M:ExampleLibrary.SubclassFoo.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public SubclassFoo()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -2099,12 +2169,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="P:ExampleLibrary.SubclassFoo.FooBarBazType">FooBarBazType Property</h1>
-<a href="#T:ExampleLibrary.SubclassFoo">Back to parent</a>
+<h2 id="P:ExampleLibrary.SubclassFoo.FooBarBazType">Property: FooBarBazType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The type of the object (foo).
             
@@ -2120,21 +2192,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.GenericMethod[T](T)">GenericMethod Method</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.GenericMethod[T](T)">Method: GenericMethod</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public T GenericMethod<T>(T input)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -2160,15 +2234,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.NothingFunction">NothingFunction Method</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.NothingFunction">Method: NothingFunction</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void NothingFunction()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             This function does nothing and doesn't return a value.
             
@@ -2184,15 +2260,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">ParameterWithMultipleParameters Method</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">Method: ParameterWithMultipleParameters</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void ParameterWithMultipleParameters(int intValue, System.DateTime dateTimeValue, System.Guid guidValue)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             An example method with multiple parameters.
             
@@ -2200,7 +2278,7 @@ This method returns nothing.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -2236,15 +2314,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException Method</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.MethodThatRaisesException">Method: MethodThatRaisesException</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void MethodThatRaisesException()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             This is a method that throws an exception.
             
@@ -2255,20 +2335,22 @@ This method returns nothing.
 
 
 
-<h2>Exceptions</h2><div><b>T:System.NotSupportedException</b></div>Throws a colourful exception.
+<h3>Exceptions</h3><div><b>T:System.NotSupportedException</b></div>Throws a colourful exception.
 
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples Method</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.MethodWithExamples">Method: MethodWithExamples</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void MethodWithExamples()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             This method has some examples.
             
@@ -2284,15 +2366,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.get_SomeFlag">get_SomeFlag Method</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.get_SomeFlag">Method: get_SomeFlag</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public bool get_SomeFlag()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -2306,21 +2390,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.set_SomeFlag(System.Boolean)">set_SomeFlag Method</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.set_SomeFlag(System.Boolean)">Method: set_SomeFlag</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_SomeFlag(bool value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -2346,21 +2432,23 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.GenericMethod[TInput,TOutput](TInput,System.Boolean)">GenericMethod Method</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.GenericMethod[TInput,TOutput](TInput,System.Boolean)">Method: GenericMethod</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public TOutput GenericMethod<TInput, TOutput>(TInput input, bool flag)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -2391,15 +2479,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.#ctor">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Test()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Default constructor.
             
@@ -2415,15 +2505,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.#ctor(System.Int32)">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.#ctor(System.Int32)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Test(int a)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Constructor with 1 parameter.
             
@@ -2439,15 +2531,17 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">.ctor Constructor</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Test(int a, int b)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Constructor with 2 parameters.
             
@@ -2463,12 +2557,14 @@ This method returns nothing.
 </div>
 
 <div class="member">
-<h1 id="P:ExampleLibrary.Test.SomeFlag">SomeFlag Property</h1>
-<a href="#T:ExampleLibrary.Test">Back to parent</a>
+<h2 id="P:ExampleLibrary.Test.SomeFlag">Property: SomeFlag</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             This is a test boolean property.
             

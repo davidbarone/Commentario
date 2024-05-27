@@ -14,7 +14,7 @@
     -------------------------------------------------- */
 
     body {
-        font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #222;
         overflow-y: scroll;
         font-size: 0.8em;
@@ -51,7 +51,8 @@
 
     h1, h2, h3, h4, h5, h6 {
         font-weight: 300;
-        margin-bottom: 0.5em;
+        margin: 0px;
+        padding: 0px;
     }
 
     h1 {
@@ -150,6 +151,8 @@
 
     ul {
         list-style: disc inside;
+        margin: 0px;
+        padding: 0px;
     }
 
     ol {
@@ -158,19 +161,15 @@
 
     ol, ul {
         padding-left: 0;
-        margin-top: 0.5em;
     }
 
     ul ul,
     ul ol,
     ol ol,
     ol ul {
-        margin: 0.5em 0 0.5em 3em;
-        font-size: 90%;
     }
 
     li {
-        margin-bottom: 0.25em;
     }
 
     /* ---------------------------------------------
@@ -282,8 +281,9 @@
         This is the assembly information for CommentarioServer.
 
         <div class="toc">
+            <h2>Table of Contents</h2>
             
-<h2>Classes</h2>
+<h3>Classes</h3>
 <div>
 <table>
     <thead>
@@ -294,7 +294,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td><a href="#T:HtmlDocumentGenerator+<>c"><>c</a></td><td></td><td></td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c"><>c</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c"><>c</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c"><>c</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0"><>c__DisplayClass1_0</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr><tr><td><a href="#T:HtmlDocumentGenerator+<>c__DisplayClass2_0"><>c__DisplayClass2_0</a></td><td></td><td></td></tr><tr><td><a href="#T:HtmlDocumentGenerator+<>c__DisplayClass2_1"><>c__DisplayClass2_1</a></td><td></td><td></td></tr><tr><td><a href="#T:HtmlDocumentGenerator+<>c__DisplayClass5_0"><>c__DisplayClass5_0</a></td><td></td><td></td></tr><tr><td><a href="#T:HtmlDocumentGenerator+<>c__DisplayClass5_1"><>c__DisplayClass5_1</a></td><td></td><td></td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass8_0"><>c__DisplayClass8_0</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass9_0"><>c__DisplayClass9_0</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.TypeSignature+<>O"><>O</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr><tr><td><a href="#T:<PrivateImplementationDetails>"><PrivateImplementationDetails></a></td><td></td><td></td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">AssemblyNode</a></td><td>Dbarone.Net.CommentarioServer</td><td>
+        <tr><td><a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">AssemblyNode</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             Represents the top level assembly node in the documentation.
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             Denotes text within a description should be marked as single-line code.
@@ -340,7 +340,7 @@
 </div>
         
             
-<h2>Structs</h2>
+<h3>Structs</h3>
 <div>
 <table>
     <thead>
@@ -362,7 +362,7 @@
         
             
             
-<h2>Enums</h2>
+<h3>Enums</h3>
 <div>
 <table>
     <thead>
@@ -386,717 +386,21 @@
 
         
 <div class="type">       
-<h1 id="T:HtmlDocumentGenerator+<>c"><>c Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.AssemblyNode">Class: AssemblyNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: </li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:HtmlDocumentGenerator+<>c.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:HtmlDocumentGenerator+<>c.<>9">HtmlDocumentGenerator+<>c <>9</a></td><td></td></tr><tr><td><a href="#F:HtmlDocumentGenerator+<>c.<>9__1_0">System.Func`2[System.Type,System.String] <>9__1_0</a></td><td></td></tr><tr><td><a href="#F:HtmlDocumentGenerator+<>c.<>9__3_0">System.Func`2[System.Type,System.String] <>9__3_0</a></td><td></td></tr><tr><td><a href="#F:HtmlDocumentGenerator+<>c.<>9__4_0">System.Func`2[System.Reflection.MemberInfo,System.String] <>9__4_0</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c"><>c Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9">Dbarone.Net.CommentarioServer.DocumentGenerator+<>c <>9</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__29_0">System.Func`2[System.Type,System.String] <>9__29_0</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__33_0">System.Func`2[System.Type,System.Boolean] <>9__33_0</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__34_0">System.Func`2[System.Type,System.Boolean] <>9__34_0</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__35_0">System.Func`2[System.Type,System.Boolean] <>9__35_0</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__36_0">System.Func`2[System.Type,System.Boolean] <>9__36_0</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__39_0">System.Func`2[System.Reflection.MethodInfo,System.Boolean] <>9__39_0</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c"><>c Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c.<>9">Dbarone.Net.CommentarioServer.ExtensionMethods+<>c <>9</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c.<>9__4_0">System.Func`2[System.Type,System.String] <>9__4_0</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c"><>c Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c.<>9">Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c <>9</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c.<>9__1_0">System.Func`2[System.Reflection.CustomAttributeData,System.Boolean] <>9__1_0</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0"><>c__DisplayClass1_0 Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0.invokable">System.Boolean invokable</a></td><td></td></tr><tr><td><a href="#F:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0.isExtensionMethod">System.Boolean isExtensionMethod</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:HtmlDocumentGenerator+<>c__DisplayClass2_0"><>c__DisplayClass2_0 Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: </li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:HtmlDocumentGenerator+<>c__DisplayClass2_0.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:HtmlDocumentGenerator+<>c__DisplayClass2_0.<>4__this">HtmlDocumentGenerator <>4__this</a></td><td></td></tr><tr><td><a href="#F:HtmlDocumentGenerator+<>c__DisplayClass2_0.type">System.Type type</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:HtmlDocumentGenerator+<>c__DisplayClass2_1"><>c__DisplayClass2_1 Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: </li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:HtmlDocumentGenerator+<>c__DisplayClass2_1.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:HtmlDocumentGenerator+<>c__DisplayClass2_1.g">System.String g</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:HtmlDocumentGenerator+<>c__DisplayClass5_0"><>c__DisplayClass5_0 Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: </li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:HtmlDocumentGenerator+<>c__DisplayClass5_0.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:HtmlDocumentGenerator+<>c__DisplayClass5_0.<>4__this">HtmlDocumentGenerator <>4__this</a></td><td></td></tr><tr><td><a href="#F:HtmlDocumentGenerator+<>c__DisplayClass5_0.node">Dbarone.Net.CommentarioServer.MemberNode node</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:HtmlDocumentGenerator+<>c__DisplayClass5_1"><>c__DisplayClass5_1 Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: </li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:HtmlDocumentGenerator+<>c__DisplayClass5_1.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:HtmlDocumentGenerator+<>c__DisplayClass5_1.p">System.Reflection.ParameterInfo p</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass8_0"><>c__DisplayClass8_0 Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass8_0.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass8_0.typeId">System.String typeId</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass9_0"><>c__DisplayClass9_0 Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-<div>
-<h2>Constructors</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass9_0.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass9_0.commentId">System.String commentId</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.TypeSignature+<>O"><>O Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-<div>
-<h2>Fields</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:Dbarone.Net.CommentarioServer.TypeSignature+<>O.<0>__Build">System.Func`2[System.Type,System.String] <0>__Build</a></td><td></td></tr>
-    </tbody>
-</table>
-</div>
-        
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:<PrivateImplementationDetails>"><PrivateImplementationDetails> Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: </li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.AssemblyNode">AssemblyNode Class</h1>
-<a href="#top">Back to top</a>
-<h2>Definition:</h2>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
-
-
-<h2>Base Class</h2>
-Object
-
-
-
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Represents the top level assembly node in the documentation.
             
@@ -1104,7 +408,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1121,7 +425,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1143,21 +447,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.CNode">CNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.CNode">Class: CNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 TextNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Denotes text within a description should be marked as single-line code.
             
@@ -1165,7 +469,7 @@ TextNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1187,21 +491,21 @@ TextNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.CodeNode">CodeNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.CodeNode">Class: CodeNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 TextNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Denotes a block of code in a descriptive text block.
             
@@ -1209,7 +513,7 @@ TextNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1231,27 +535,27 @@ TextNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">ConstructorMethodSignature Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">Class: ConstructorMethodSignature</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 MethodBaseSignature
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1269,7 +573,7 @@ MethodBaseSignature
 
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -1288,21 +592,21 @@ MethodBaseSignature
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.DocumentGenerator">DocumentGenerator Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.DocumentGenerator">Class: DocumentGenerator</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Main entry point to CommentarioServer. Generates documents from xml comments and the assembly file.
             
@@ -1312,7 +616,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1340,7 +644,7 @@ Object
         
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -1361,21 +665,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.DocumentNode">DocumentNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.DocumentNode">Class: DocumentNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Represents the root node of the xml comments file.
             
@@ -1383,7 +687,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1400,7 +704,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1420,7 +724,7 @@ Object
         
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -1443,21 +747,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ExampleNode">ExampleNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.ExampleNode">Class: ExampleNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 ItemsNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Denotes an example, typically code examples.
             
@@ -1465,7 +769,7 @@ ItemsNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1487,21 +791,21 @@ ItemsNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ExceptionNode">ExceptionNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.ExceptionNode">Class: ExceptionNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 ItemsNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A description of an exception that can be thrown.
             
@@ -1509,7 +813,7 @@ ItemsNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1526,7 +830,7 @@ ItemsNode
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1548,21 +852,21 @@ ItemsNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ExtensionMethods">ExtensionMethods Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.ExtensionMethods">Class: ExtensionMethods</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Useful extension methods. Primarily to provide reflection services.
             
@@ -1573,7 +877,7 @@ Object
 
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -1604,27 +908,27 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:HtmlDocumentGenerator">HtmlDocumentGenerator Class</h1>
+<h2 id="T:HtmlDocumentGenerator">Class: HtmlDocumentGenerator</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: </li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 DocumentGenerator
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1646,21 +950,21 @@ DocumentGenerator
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.CommentarioServer.IDString">IDString Class</h1>
+<h2 id="T:Dbarone.CommentarioServer.IDString">Class: IDString</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Represents the parts making up a comment document id, known as the 'ID string'.
             https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
@@ -1669,7 +973,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1688,7 +992,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1726,21 +1030,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ItemsNode">ItemsNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.ItemsNode">Class: ItemsNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             An items node is a node that can contain multiple types of child node.
             
@@ -1748,7 +1052,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1765,7 +1069,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1787,27 +1091,27 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.MemberNode">MemberNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.MemberNode">Class: MemberNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1824,7 +1128,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -1844,23 +1148,23 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.CommentarioServer.MemberType">MemberType Struct</h1>
+<h2 id="T:Dbarone.CommentarioServer.MemberType">Struct: MemberType</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Enum
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>IComparable</li><li>ISpanFormattable</li><li>IFormattable</li><li>IConvertible</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member type.
             
@@ -1869,7 +1173,7 @@ Enum
 
 
 <div>
-<h2>Fields</h2>
+<h3>Fields</h3>
 <table>
     <thead>
         <tr>
@@ -1904,21 +1208,21 @@ Enum
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.MethodBaseSignature">MethodBaseSignature Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.MethodBaseSignature">Class: MethodBaseSignature</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -1927,7 +1231,7 @@ Object
 
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -1946,27 +1250,27 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.MethodSignature">MethodSignature Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.MethodSignature">Class: MethodSignature</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 MethodBaseSignature
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -1984,7 +1288,7 @@ MethodBaseSignature
 
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -2003,23 +1307,23 @@ MethodBaseSignature
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.OutputType">OutputType Struct</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.OutputType">Struct: OutputType</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Enum
 
 
-<h2>Implemented Interfaces</h2>
+<h3>Implemented Interfaces</h3>
 <ul><li>IComparable</li><li>ISpanFormattable</li><li>IFormattable</li><li>IConvertible</li></ul>
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Specifies the output type for the documentation.
             
@@ -2028,7 +1332,7 @@ Enum
 
 
 <div>
-<h2>Fields</h2>
+<h3>Fields</h3>
 <table>
     <thead>
         <tr>
@@ -2051,21 +1355,21 @@ Enum
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ParamNode">ParamNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.ParamNode">Class: ParamNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 ItemsNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Comment for a parameter on a method. The items property stores the descriptions.
             
@@ -2073,7 +1377,7 @@ ItemsNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2090,7 +1394,7 @@ ItemsNode
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -2112,21 +1416,21 @@ ItemsNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ParaNode">ParaNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.ParaNode">Class: ParaNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 ItemsNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Represents a paragraph of text in a description field.
             
@@ -2134,7 +1438,7 @@ ItemsNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2156,21 +1460,21 @@ ItemsNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.RemarkNode">RemarkNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.RemarkNode">Class: RemarkNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 ItemsNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Expands on the summary sentence to provide more information for readers.
             
@@ -2178,7 +1482,7 @@ ItemsNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2200,21 +1504,21 @@ ItemsNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.ReturnsNode">Class: ReturnsNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 ItemsNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The ReturnsNode describes the return value of a method.
             
@@ -2222,7 +1526,7 @@ ItemsNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2244,21 +1548,21 @@ ItemsNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.SeeNode">SeeNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.SeeNode">Class: SeeNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 TextNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Allows you to specify a link from text.
             
@@ -2266,7 +1570,7 @@ TextNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2283,7 +1587,7 @@ TextNode
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -2303,21 +1607,21 @@ TextNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.SummaryNode">SummaryNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.SummaryNode">Class: SummaryNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 ItemsNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Every class and member should have a one sentence summary describing its purpose.
             
@@ -2325,7 +1629,7 @@ ItemsNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2347,21 +1651,21 @@ ItemsNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.TextNode">TextNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.TextNode">Class: TextNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             A text node represents a node in the xml comments that only has inner text.
             This text is not processed any further, and the literal value is used as is. 
@@ -2370,7 +1674,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2387,7 +1691,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -2409,21 +1713,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.TypeParamNode">TypeParamNode Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.TypeParamNode">Class: TypeParamNode</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 TextNode
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Represents a type parameter comment.
             
@@ -2431,7 +1735,7 @@ TextNode
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2448,7 +1752,7 @@ TextNode
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -2470,21 +1774,21 @@ TextNode
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.TypeSignature">TypeSignature Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.TypeSignature">Class: TypeSignature</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -2493,7 +1797,7 @@ Object
 
 
 <div>
-<h2>Methods</h2>
+<h3>Methods</h3>
 <table>
     <thead>
         <tr>
@@ -2518,21 +1822,21 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:XmlComments">XmlComments Class</h1>
+<h2 id="T:XmlComments">Class: XmlComments</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: </li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Class to process the xml comments file
             
@@ -2540,7 +1844,7 @@ Object
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2562,27 +1866,27 @@ Object
 </div>
 
 <div class="type">       
-<h1 id="T:Dbarone.Net.CommentarioServer.XmlCommentsReader">XmlCommentsReader Class</h1>
+<h2 id="T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Class: XmlCommentsReader</h2>
 <a href="#top">Back to top</a>
-<h2>Definition:</h2>
+<h3>Definition:</h3>
 <ul>
     <li>Namespace: Dbarone.Net.CommentarioServer</li>
     <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
 </ul>
 
 
-<h2>Base Class</h2>
+<h3>Base Class</h3>
 Object
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 <div>
-<h2>Constructors</h2>
+<h3>Constructors</h3>
 <table>
     <thead>
         <tr>
@@ -2599,7 +1903,7 @@ Object
 
 
 <div>
-<h2>Properties</h2>
+<h3>Properties</h3>
 <table>
     <thead>
         <tr>
@@ -2620,751 +1924,17 @@ Object
 
         
 <div class="member">
-<h1 id="M:HtmlDocumentGenerator+<>c.#ctor">.ctor Constructor</h1>
-<a href="#T:HtmlDocumentGenerator+<>c">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.AssemblyNode.get_Name">Method: get_Name</h1>
 
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">Dbarone.Net.CommentarioServer.AssemblyNode</a>
 
-<h2>Signature</h2>
-<pre><code>public <>c()</code></pre>
-            
 
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c.<>9"><>9 Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c.<>9__1_0"><>9__1_0 Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c.<>9__3_0"><>9__3_0 Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c.<>9__4_0"><>9__4_0 Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9"><>9 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__29_0"><>9__29_0 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__33_0"><>9__33_0 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__34_0"><>9__34_0 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__35_0"><>9__35_0 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__36_0"><>9__36_0 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c.<>9__39_0"><>9__39_0 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c.<>9"><>9 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c.<>9__4_0"><>9__4_0 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c.<>9"><>9 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c.<>9__1_0"><>9__1_0 Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c__DisplayClass1_0()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0.isExtensionMethod">isExtensionMethod Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0.invokable">invokable Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature+<>c__DisplayClass1_0">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:HtmlDocumentGenerator+<>c__DisplayClass2_0.#ctor">.ctor Constructor</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass2_0">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c__DisplayClass2_0()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c__DisplayClass2_0.<>4__this"><>4__this Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass2_0">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c__DisplayClass2_0.type">type Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass2_0">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:HtmlDocumentGenerator+<>c__DisplayClass2_1.#ctor">.ctor Constructor</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass2_1">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c__DisplayClass2_1()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c__DisplayClass2_1.g">g Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass2_1">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:HtmlDocumentGenerator+<>c__DisplayClass5_0.#ctor">.ctor Constructor</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass5_0">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c__DisplayClass5_0()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c__DisplayClass5_0.node">node Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass5_0">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c__DisplayClass5_0.<>4__this"><>4__this Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass5_0">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:HtmlDocumentGenerator+<>c__DisplayClass5_1.#ctor">.ctor Constructor</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass5_1">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c__DisplayClass5_1()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:HtmlDocumentGenerator+<>c__DisplayClass5_1.p">p Field</h1>
-<a href="#T:HtmlDocumentGenerator+<>c__DisplayClass5_1">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass8_0.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass8_0">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c__DisplayClass8_0()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass8_0.typeId">typeId Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass8_0">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass9_0.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass9_0">Back to parent</a>
-
-
-<h2>Signature</h2>
-<pre><code>public <>c__DisplayClass9_0()</code></pre>
-            
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass9_0.commentId">commentId Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode+<>c__DisplayClass9_0">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.TypeSignature+<>O.<0>__Build"><0>__Build Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature+<>O">Back to parent</a>
-
-
-
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.AssemblyNode.get_Name">get_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">Back to parent</a>
-
-
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Name()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3378,21 +1948,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.AssemblyNode.set_Name(System.String)">set_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.AssemblyNode.set_Name(System.String)">Method: set_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">Dbarone.Net.CommentarioServer.AssemblyNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -3418,15 +1990,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.AssemblyNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.AssemblyNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">Dbarone.Net.CommentarioServer.AssemblyNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public AssemblyNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3440,12 +2014,14 @@ Object
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.AssemblyNode.Name">Name Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.AssemblyNode.Name">Property: Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">Dbarone.Net.CommentarioServer.AssemblyNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The assembly name.
             
@@ -3461,15 +2037,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.CNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.CNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.CNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.CNode">Dbarone.Net.CommentarioServer.CNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public CNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3483,15 +2061,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.CodeNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.CodeNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.CodeNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.CodeNode">Dbarone.Net.CommentarioServer.CodeNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public CodeNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3505,21 +2085,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ConstructorMethodSignature.Build(System.Reflection.ConstructorInfo,System.Boolean)">Build Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ConstructorMethodSignature.Build(System.Reflection.ConstructorInfo,System.Boolean)">Method: Build</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">Dbarone.Net.CommentarioServer.ConstructorMethodSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string Build(System.Reflection.ConstructorInfo method, bool invokable)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -3550,15 +2132,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ConstructorMethodSignature.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ConstructorMethodSignature.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">Dbarone.Net.CommentarioServer.ConstructorMethodSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ConstructorMethodSignature()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3572,15 +2156,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_OutputType">get_OutputType Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_OutputType">Method: get_OutputType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.OutputType get_OutputType()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3594,21 +2180,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_OutputType(Dbarone.Net.CommentarioServer.OutputType)">set_OutputType Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_OutputType(Dbarone.Net.CommentarioServer.OutputType)">Method: set_OutputType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_OutputType(Dbarone.Net.CommentarioServer.OutputType value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -3634,15 +2222,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_XmlCommentsPath">get_XmlCommentsPath Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_XmlCommentsPath">Method: get_XmlCommentsPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_XmlCommentsPath()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3656,21 +2246,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_XmlCommentsPath(System.String)">set_XmlCommentsPath Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_XmlCommentsPath(System.String)">Method: set_XmlCommentsPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_XmlCommentsPath(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -3696,15 +2288,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_AssemblyPath">get_AssemblyPath Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_AssemblyPath">Method: get_AssemblyPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_AssemblyPath()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3718,21 +2312,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_AssemblyPath(System.String)">set_AssemblyPath Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_AssemblyPath(System.String)">Method: set_AssemblyPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_AssemblyPath(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -3758,15 +2354,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_OutputPath">get_OutputPath Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_OutputPath">Method: get_OutputPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_OutputPath()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3780,21 +2378,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_OutputPath(System.String)">set_OutputPath Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_OutputPath(System.String)">Method: set_OutputPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_OutputPath(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -3820,15 +2420,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_ReadMePath">get_ReadMePath Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_ReadMePath">Method: get_ReadMePath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_ReadMePath()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3842,21 +2444,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_ReadMePath(System.String)">set_ReadMePath Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_ReadMePath(System.String)">Method: set_ReadMePath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_ReadMePath(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -3882,15 +2486,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_Comments">get_Comments Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.get_Comments">Method: get_Comments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.DocumentNode get_Comments()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -3904,21 +2510,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_Comments(Dbarone.Net.CommentarioServer.DocumentNode)">set_Comments Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.set_Comments(Dbarone.Net.CommentarioServer.DocumentNode)">Method: set_Comments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Comments(Dbarone.Net.CommentarioServer.DocumentNode value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -3944,21 +2552,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,System.Nullable`1[Dbarone.Net.CommentarioServer.OutputType],System.String,System.String)">Create Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,System.Nullable`1[Dbarone.Net.CommentarioServer.OutputType],System.String,System.String)">Method: Create</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static Dbarone.Net.CommentarioServer.DocumentGenerator Create(string assemblyPath, string outputPath, System.Nullable<Dbarone.Net.CommentarioServer.OutputType> outputType, string xmlCommentsPath, string readMePath)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4004,21 +2614,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInheritedType(System.Type)">GetInheritedType Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInheritedType(System.Type)">Method: GetInheritedType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public System.Type GetInheritedType(System.Type type)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4044,21 +2656,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfacesImplemented(System.Type)">GetInterfacesImplemented Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfacesImplemented(System.Type)">Method: GetInterfacesImplemented</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public System.Type[] GetInterfacesImplemented(System.Type type)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4084,15 +2698,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GenerateDocument">GenerateDocument Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GenerateDocument">Method: GenerateDocument</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void GenerateDocument()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Generates document.
             
@@ -4108,12 +2724,14 @@ Object
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.OutputType">OutputType Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.OutputType">Property: OutputType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The document output format.
             
@@ -4129,12 +2747,14 @@ Object
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.XmlCommentsPath">XmlCommentsPath Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.XmlCommentsPath">Property: XmlCommentsPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The xml comments path.
             
@@ -4150,12 +2770,14 @@ Object
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.AssemblyPath">AssemblyPath Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.AssemblyPath">Property: AssemblyPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The assembly file path.
             
@@ -4171,12 +2793,14 @@ Object
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.OutputPath">OutputPath Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.OutputPath">Property: OutputPath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The documentation output path. 
             
@@ -4192,12 +2816,14 @@ Object
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.ReadMePath">ReadMePath Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.ReadMePath">Property: ReadMePath</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Optional path to an assembly readme. The contents are included at the top of the documentation file. 
             
@@ -4213,12 +2839,14 @@ Object
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.Comments">Comments Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.DocumentGenerator.Comments">Property: Comments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The xml comments.
             
@@ -4234,15 +2862,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode.get_Assembly">get_Assembly Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.get_Assembly">Method: get_Assembly</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.AssemblyNode get_Assembly()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -4256,21 +2886,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode.set_Assembly(Dbarone.Net.CommentarioServer.AssemblyNode)">set_Assembly Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.set_Assembly(Dbarone.Net.CommentarioServer.AssemblyNode)">Method: set_Assembly</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Assembly(Dbarone.Net.CommentarioServer.AssemblyNode value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4296,15 +2928,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode.get_Members">get_Members Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.get_Members">Method: get_Members</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.MemberNode[] get_Members()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -4318,21 +2952,23 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode.set_Members(Dbarone.Net.CommentarioServer.MemberNode[])">set_Members Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.set_Members(Dbarone.Net.CommentarioServer.MemberNode[])">Method: set_Members</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Members(Dbarone.Net.CommentarioServer.MemberNode[] value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4358,15 +2994,17 @@ Object
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForType(System.Type)">GetDocumentForType Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForType(System.Type)">Method: GetDocumentForType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.MemberNode GetDocumentForType(System.Type type)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Gets the xml comment node for a specific type.
             
@@ -4374,7 +3012,7 @@ Object
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4393,7 +3031,7 @@ Object
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 Returns the document node for the type.
 
 
@@ -4401,15 +3039,17 @@ Returns the document node for the type.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForMember(System.Reflection.MemberInfo)">GetDocumentForMember Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForMember(System.Reflection.MemberInfo)">Method: GetDocumentForMember</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.MemberNode GetDocumentForMember(System.Reflection.MemberInfo member)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Gets the xml comment node for the specific member.
             
@@ -4417,7 +3057,7 @@ Returns the document node for the type.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4436,7 +3076,7 @@ Returns the document node for the type.
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 Returns the document node for the member.
 
 
@@ -4444,15 +3084,17 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.DocumentNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.DocumentNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public DocumentNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -4466,12 +3108,14 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.DocumentNode.Assembly">Assembly Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.DocumentNode.Assembly">Property: Assembly</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The assembly node. Provides information about the assembly.
             
@@ -4487,12 +3131,14 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.DocumentNode.Members">Members Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.DocumentNode.Members">Property: Members</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">Dbarone.Net.CommentarioServer.DocumentNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The collection of members. Members can describe .NET types and members.
             
@@ -4508,15 +3154,17 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExampleNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExampleNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">Dbarone.Net.CommentarioServer.ExampleNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ExampleNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -4530,15 +3178,17 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExceptionNode.get_Name">get_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExceptionNode.get_Name">Method: get_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">Dbarone.Net.CommentarioServer.ExceptionNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Name()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -4552,21 +3202,23 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExceptionNode.set_Name(System.String)">set_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExceptionNode.set_Name(System.String)">Method: set_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">Dbarone.Net.CommentarioServer.ExceptionNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4592,15 +3244,17 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExceptionNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExceptionNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">Dbarone.Net.CommentarioServer.ExceptionNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ExceptionNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -4614,12 +3268,14 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.ExceptionNode.Name">Name Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.ExceptionNode.Name">Property: Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">Dbarone.Net.CommentarioServer.ExceptionNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The exception type name that is thrown.
             
@@ -4635,21 +3291,23 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetMemberType(System.Reflection.MemberInfo)">GetMemberType Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetMemberType(System.Reflection.MemberInfo)">Method: GetMemberType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string GetMemberType(System.Reflection.MemberInfo member)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4675,21 +3333,23 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetMemberTypeName(System.Reflection.MemberInfo)">GetMemberTypeName Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetMemberTypeName(System.Reflection.MemberInfo)">Method: GetMemberTypeName</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string GetMemberTypeName(System.Reflection.MemberInfo member)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4715,15 +3375,17 @@ Returns the document node for the member.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.ToCommentId(System.Reflection.MemberInfo)">ToCommentId Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.ToCommentId(System.Reflection.MemberInfo)">Method: ToCommentId</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string ToCommentId(System.Reflection.MemberInfo member)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Returns a comment id string for a given type member. Can be used to locate the comments from xml comments file. 
             
@@ -4731,7 +3393,7 @@ Returns the document node for the member.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4750,7 +3412,7 @@ Returns the document node for the member.
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 Returns a comment id string.
 
 
@@ -4758,15 +3420,17 @@ Returns a comment id string.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.ToCommentId(System.Type)">ToCommentId Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.ToCommentId(System.Type)">Method: ToCommentId</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string ToCommentId(System.Type type)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Returns a comment id string for a type which can be used to locate the type comments from the xml comments file
             
@@ -4774,7 +3438,7 @@ Returns a comment id string.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4800,15 +3464,17 @@ Returns a comment id string.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetTypeGenericArguments(System.Type)">GetTypeGenericArguments Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetTypeGenericArguments(System.Type)">Method: GetTypeGenericArguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static System.String[] GetTypeGenericArguments(System.Type type)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Gets the type letter arguments for a generic type.
             
@@ -4816,7 +3482,7 @@ Returns a comment id string.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4835,7 +3501,7 @@ Returns a comment id string.
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 Returns an array of type parameter names.
 
 
@@ -4843,15 +3509,17 @@ Returns an array of type parameter names.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.IsGeneric(System.Type)">IsGeneric Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.IsGeneric(System.Type)">Method: IsGeneric</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static bool IsGeneric(System.Type type)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Checks if a type is a generic type.
             
@@ -4859,7 +3527,7 @@ Returns an array of type parameter names.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4878,7 +3546,7 @@ Returns an array of type parameter names.
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 Returns true if the type is a generic type.
 
 
@@ -4886,21 +3554,23 @@ Returns true if the type is a generic type.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.IsNullable(System.Type,System.Type&)">IsNullable Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.IsNullable(System.Type,System.Type&)">Method: IsNullable</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static bool IsNullable(System.Type type, ref System.Type& underlyingType)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4931,15 +3601,17 @@ Returns true if the type is a generic type.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetSignature(System.Reflection.MethodInfo,System.Boolean)">GetSignature Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetSignature(System.Reflection.MethodInfo,System.Boolean)">Method: GetSignature</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string GetSignature(System.Reflection.MethodInfo method, bool isInvokable)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Gets the signature for a method.
             
@@ -4947,7 +3619,7 @@ Returns true if the type is a generic type.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -4971,7 +3643,7 @@ Returns true if the type is a generic type.
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 Returns a signature.
 
 
@@ -4979,15 +3651,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetSignature(System.Reflection.ConstructorInfo,System.Boolean)">GetSignature Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetSignature(System.Reflection.ConstructorInfo,System.Boolean)">Method: GetSignature</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">Dbarone.Net.CommentarioServer.ExtensionMethods</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string GetSignature(System.Reflection.ConstructorInfo constructor, bool isInvokable)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Gets the signature for a constructor method.
             
@@ -4995,7 +3669,7 @@ Returns a signature.
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5019,7 +3693,7 @@ Returns a signature.
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 Returns a signature.
 
 
@@ -5027,15 +3701,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:HtmlDocumentGenerator.#ctor(System.String,System.String,System.String,System.String)">.ctor Constructor</h1>
-<a href="#T:HtmlDocumentGenerator">Back to parent</a>
+<h2 id="M:HtmlDocumentGenerator.#ctor(System.String,System.String,System.String,System.String)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:HtmlDocumentGenerator">HtmlDocumentGenerator</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public HtmlDocumentGenerator(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5049,15 +3725,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_Id">get_Id Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_Id">Method: get_Id</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Id()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5071,21 +3749,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_Id(System.String)">set_Id Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_Id(System.String)">Method: set_Id</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Id(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5111,15 +3791,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_FullyQualifiedName">get_FullyQualifiedName Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_FullyQualifiedName">Method: get_FullyQualifiedName</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_FullyQualifiedName()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5133,21 +3815,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_FullyQualifiedName(System.String)">set_FullyQualifiedName Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_FullyQualifiedName(System.String)">Method: set_FullyQualifiedName</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_FullyQualifiedName(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5173,15 +3857,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_MemberType">get_MemberType Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_MemberType">Method: get_MemberType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.CommentarioServer.MemberType get_MemberType()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5195,21 +3881,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_MemberType(Dbarone.CommentarioServer.MemberType)">set_MemberType Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_MemberType(Dbarone.CommentarioServer.MemberType)">Method: set_MemberType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_MemberType(Dbarone.CommentarioServer.MemberType value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5235,15 +3923,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_Name">get_Name Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_Name">Method: get_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Name()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5257,21 +3947,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_Name(System.String)">set_Name Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_Name(System.String)">Method: set_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5297,15 +3989,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_MemberName">get_MemberName Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_MemberName">Method: get_MemberName</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_MemberName()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5319,21 +4013,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_MemberName(System.String)">set_MemberName Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_MemberName(System.String)">Method: set_MemberName</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_MemberName(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5359,15 +4055,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_FullyQualifiedNameLink">get_FullyQualifiedNameLink Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_FullyQualifiedNameLink">Method: get_FullyQualifiedNameLink</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_FullyQualifiedNameLink()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5381,21 +4079,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_FullyQualifiedNameLink(System.String)">set_FullyQualifiedNameLink Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_FullyQualifiedNameLink(System.String)">Method: set_FullyQualifiedNameLink</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_FullyQualifiedNameLink(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5421,15 +4121,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_ParentTypeArguments">get_ParentTypeArguments Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_ParentTypeArguments">Method: get_ParentTypeArguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public int get_ParentTypeArguments()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5443,21 +4145,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_ParentTypeArguments(System.Int32)">set_ParentTypeArguments Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_ParentTypeArguments(System.Int32)">Method: set_ParentTypeArguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_ParentTypeArguments(int value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5483,15 +4187,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_TypeArguments">get_TypeArguments Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_TypeArguments">Method: get_TypeArguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public int get_TypeArguments()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5505,21 +4211,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_TypeArguments(System.Int32)">set_TypeArguments Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_TypeArguments(System.Int32)">Method: set_TypeArguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_TypeArguments(int value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5545,15 +4253,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.get_Arguments">get_Arguments Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.get_Arguments">Method: get_Arguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Arguments()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5567,21 +4277,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.set_Arguments(System.String)">set_Arguments Method</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.set_Arguments(System.String)">Method: set_Arguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Arguments(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5607,15 +4319,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.CommentarioServer.IDString.#ctor(System.String)">.ctor Constructor</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="M:Dbarone.CommentarioServer.IDString.#ctor(System.String)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public IDString(string id)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             constructor for IDString class.
             
@@ -5631,12 +4345,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.Id">Id Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.Id">Property: Id</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The full member id string. In format [MemberType]:[memberid]
             
@@ -5652,12 +4368,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.FullyQualifiedName">FullyQualifiedName Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.FullyQualifiedName">Property: FullyQualifiedName</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The id value after the initial ':' character.
             
@@ -5673,12 +4391,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.MemberType">MemberType Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.MemberType">Property: MemberType</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member type.
             
@@ -5694,12 +4414,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.Name">Name Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.Name">Property: Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The name of the type or member. This optionally includes the namespace and the parent / enclosing type name. 
             
@@ -5715,12 +4437,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.MemberName">MemberName Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.MemberName">Property: MemberName</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member name. Only applies for members.
             
@@ -5736,12 +4460,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.FullyQualifiedNameLink">FullyQualifiedNameLink Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.FullyQualifiedNameLink">Property: FullyQualifiedNameLink</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Unique link tag based on fully qualified name. Used for generaing links for TOC etc.
             
@@ -5757,12 +4483,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.ParentTypeArguments">ParentTypeArguments Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.ParentTypeArguments">Property: ParentTypeArguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The number of generic type arguments on the parent type / class. 
             
@@ -5778,12 +4506,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.TypeArguments">TypeArguments Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.TypeArguments">Property: TypeArguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The number of generic type arguments on the current member. 
             
@@ -5799,12 +4529,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.CommentarioServer.IDString.Arguments">Arguments Property</h1>
-<a href="#T:Dbarone.CommentarioServer.IDString">Back to parent</a>
+<h2 id="P:Dbarone.CommentarioServer.IDString.Arguments">Property: Arguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.IDString">Dbarone.CommentarioServer.IDString</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Arguments (if exist for methods and properties).
             
@@ -5820,15 +4552,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ItemsNode.get_Items">get_Items Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ItemsNode.get_Items">Method: get_Items</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Dbarone.Net.CommentarioServer.ItemsNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public System.Object[] get_Items()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5842,21 +4576,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ItemsNode.set_Items(System.Object[])">set_Items Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ItemsNode.set_Items(System.Object[])">Method: set_Items</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Dbarone.Net.CommentarioServer.ItemsNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Items(System.Object[] value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5882,15 +4618,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ItemsNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ItemsNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Dbarone.Net.CommentarioServer.ItemsNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ItemsNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5904,12 +4642,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.ItemsNode.Items">Items Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.ItemsNode.Items">Property: Items</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ItemsNode">Dbarone.Net.CommentarioServer.ItemsNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The array of child item nodes. Multiple types of child item are permitted.
             
@@ -5925,15 +4665,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Name">get_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Name">Method: get_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Name()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -5947,21 +4689,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Name(System.String)">set_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Name(System.String)">Method: set_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -5987,15 +4731,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Summary">get_Summary Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Summary">Method: get_Summary</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.SummaryNode get_Summary()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6009,21 +4755,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Summary(Dbarone.Net.CommentarioServer.SummaryNode)">set_Summary Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Summary(Dbarone.Net.CommentarioServer.SummaryNode)">Method: set_Summary</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Summary(Dbarone.Net.CommentarioServer.SummaryNode value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6049,15 +4797,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Remarks">get_Remarks Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Remarks">Method: get_Remarks</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.RemarkNode get_Remarks()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6071,21 +4821,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Remarks(Dbarone.Net.CommentarioServer.RemarkNode)">set_Remarks Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Remarks(Dbarone.Net.CommentarioServer.RemarkNode)">Method: set_Remarks</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Remarks(Dbarone.Net.CommentarioServer.RemarkNode value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6111,15 +4863,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Params">get_Params Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Params">Method: get_Params</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.ParamNode[] get_Params()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6133,21 +4887,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Params(Dbarone.Net.CommentarioServer.ParamNode[])">set_Params Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Params(Dbarone.Net.CommentarioServer.ParamNode[])">Method: set_Params</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Params(Dbarone.Net.CommentarioServer.ParamNode[] value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6173,15 +4929,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_TypeParams">get_TypeParams Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_TypeParams">Method: get_TypeParams</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.TypeParamNode[] get_TypeParams()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6195,21 +4953,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_TypeParams(Dbarone.Net.CommentarioServer.TypeParamNode[])">set_TypeParams Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_TypeParams(Dbarone.Net.CommentarioServer.TypeParamNode[])">Method: set_TypeParams</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_TypeParams(Dbarone.Net.CommentarioServer.TypeParamNode[] value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6235,15 +4995,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Returns">get_Returns Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Returns">Method: get_Returns</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.ReturnsNode get_Returns()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6257,21 +5019,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Returns(Dbarone.Net.CommentarioServer.ReturnsNode)">set_Returns Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Returns(Dbarone.Net.CommentarioServer.ReturnsNode)">Method: set_Returns</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Returns(Dbarone.Net.CommentarioServer.ReturnsNode value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6297,15 +5061,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Exceptions">get_Exceptions Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Exceptions">Method: get_Exceptions</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.ExceptionNode[] get_Exceptions()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6319,21 +5085,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Exceptions(Dbarone.Net.CommentarioServer.ExceptionNode[])">set_Exceptions Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Exceptions(Dbarone.Net.CommentarioServer.ExceptionNode[])">Method: set_Exceptions</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Exceptions(Dbarone.Net.CommentarioServer.ExceptionNode[] value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6359,15 +5127,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Examples">get_Examples Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_Examples">Method: get_Examples</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.ExampleNode[] get_Examples()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6381,21 +5151,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Examples(Dbarone.Net.CommentarioServer.ExampleNode[])">set_Examples Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.set_Examples(Dbarone.Net.CommentarioServer.ExampleNode[])">Method: set_Examples</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Examples(Dbarone.Net.CommentarioServer.ExampleNode[] value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6421,15 +5193,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_ID">get_ID Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.get_ID">Method: get_ID</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.CommentarioServer.IDString get_ID()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6443,15 +5217,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MemberNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MemberNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public MemberNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6465,31 +5241,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.Name">Name Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.Name">Property: Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
 
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.Summary">Summary Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
-
-
-
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6503,31 +5262,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.Remarks">Remarks Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.Summary">Property: Summary</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
 
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.Params">Params Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
-
-
-
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6541,31 +5283,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.TypeParams">TypeParams Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.Remarks">Property: Remarks</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
 
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.Returns">Returns Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
-
-
-
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6579,31 +5304,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.Exceptions">Exceptions Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.Params">Property: Params</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
 
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.Examples">Examples Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
-
-
-
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6617,31 +5325,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.MemberNode.ID">ID Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.TypeParams">Property: TypeParams</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
 
-<h2>Summary</h2>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-<div class="member">
-<h1 id="F:Dbarone.CommentarioServer.MemberType.value__">value__ Field</h1>
-<a href="#T:Dbarone.CommentarioServer.MemberType">Back to parent</a>
-
-
-
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6655,12 +5346,119 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.CommentarioServer.MemberType.Namespace">Namespace Field</h1>
-<a href="#T:Dbarone.CommentarioServer.MemberType">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.Returns">Property: Returns</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="member">
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.Exceptions">Property: Exceptions</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
+
+
+
+<h3>Summary</h3>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="member">
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.Examples">Property: Examples</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
+
+
+
+<h3>Summary</h3>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="member">
+<h2 id="P:Dbarone.Net.CommentarioServer.MemberNode.ID">Property: ID</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MemberNode">Dbarone.Net.CommentarioServer.MemberNode</a>
+
+
+
+<h3>Summary</h3>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="member">
+<h2 id="F:Dbarone.CommentarioServer.MemberType.value__">Field: value__</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.MemberType">Dbarone.CommentarioServer.MemberType</a>
+
+
+
+<h3>Summary</h3>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="member">
+<h2 id="F:Dbarone.CommentarioServer.MemberType.Namespace">Field: Namespace</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.MemberType">Dbarone.CommentarioServer.MemberType</a>
+
+
+
+<h3>Summary</h3>
 
             The member is a namespace.
             
@@ -6676,12 +5474,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.CommentarioServer.MemberType.Type">Type Field</h1>
-<a href="#T:Dbarone.CommentarioServer.MemberType">Back to parent</a>
+<h2 id="F:Dbarone.CommentarioServer.MemberType.Type">Field: Type</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.MemberType">Dbarone.CommentarioServer.MemberType</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member is a type.
             
@@ -6697,12 +5497,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.CommentarioServer.MemberType.Field">Field Field</h1>
-<a href="#T:Dbarone.CommentarioServer.MemberType">Back to parent</a>
+<h2 id="F:Dbarone.CommentarioServer.MemberType.Field">Field: Field</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.MemberType">Dbarone.CommentarioServer.MemberType</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member is a field.
             
@@ -6718,12 +5520,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.CommentarioServer.MemberType.Property">Property Field</h1>
-<a href="#T:Dbarone.CommentarioServer.MemberType">Back to parent</a>
+<h2 id="F:Dbarone.CommentarioServer.MemberType.Property">Field: Property</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.MemberType">Dbarone.CommentarioServer.MemberType</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member is a property.
             
@@ -6739,12 +5543,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.CommentarioServer.MemberType.Method">Method Field</h1>
-<a href="#T:Dbarone.CommentarioServer.MemberType">Back to parent</a>
+<h2 id="F:Dbarone.CommentarioServer.MemberType.Method">Field: Method</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.MemberType">Dbarone.CommentarioServer.MemberType</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member is a method.
             
@@ -6760,12 +5566,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.CommentarioServer.MemberType.Event">Event Field</h1>
-<a href="#T:Dbarone.CommentarioServer.MemberType">Back to parent</a>
+<h2 id="F:Dbarone.CommentarioServer.MemberType.Event">Field: Event</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.MemberType">Dbarone.CommentarioServer.MemberType</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member is an event.
             
@@ -6781,12 +5589,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.CommentarioServer.MemberType.ErrorString">ErrorString Field</h1>
-<a href="#T:Dbarone.CommentarioServer.MemberType">Back to parent</a>
+<h2 id="F:Dbarone.CommentarioServer.MemberType.ErrorString">Field: ErrorString</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.CommentarioServer.MemberType">Dbarone.CommentarioServer.MemberType</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The member is an error?
             
@@ -6802,21 +5612,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MethodBaseSignature.BuildArguments(System.Reflection.MethodBase,System.Boolean)">BuildArguments Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MethodBaseSignature.BuildArguments(System.Reflection.MethodBase,System.Boolean)">Method: BuildArguments</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature">Dbarone.Net.CommentarioServer.MethodBaseSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string BuildArguments(System.Reflection.MethodBase method, bool invokable)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6847,21 +5659,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MethodBaseSignature.BuildGenerics(System.Reflection.MethodBase)">BuildGenerics Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MethodBaseSignature.BuildGenerics(System.Reflection.MethodBase)">Method: BuildGenerics</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MethodBaseSignature">Dbarone.Net.CommentarioServer.MethodBaseSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string BuildGenerics(System.Reflection.MethodBase method)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6887,21 +5701,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MethodSignature.Build(System.Reflection.MethodInfo,System.Boolean)">Build Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MethodSignature.Build(System.Reflection.MethodInfo,System.Boolean)">Method: Build</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MethodSignature">Dbarone.Net.CommentarioServer.MethodSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string Build(System.Reflection.MethodInfo method, bool invokable)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -6932,15 +5748,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.MethodSignature.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.MethodSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.MethodSignature.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.MethodSignature">Dbarone.Net.CommentarioServer.MethodSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public MethodSignature()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6954,12 +5772,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.OutputType.value__">value__ Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.OutputType">Back to parent</a>
+<h2 id="F:Dbarone.Net.CommentarioServer.OutputType.value__">Field: value__</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.OutputType">Dbarone.Net.CommentarioServer.OutputType</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -6973,12 +5793,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="F:Dbarone.Net.CommentarioServer.OutputType.html">html Field</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.OutputType">Back to parent</a>
+<h2 id="F:Dbarone.Net.CommentarioServer.OutputType.html">Field: html</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.OutputType">Dbarone.Net.CommentarioServer.OutputType</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Html format.
             
@@ -6994,15 +5816,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ParamNode.get_Name">get_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ParamNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ParamNode.get_Name">Method: get_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ParamNode">Dbarone.Net.CommentarioServer.ParamNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Name()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7016,21 +5840,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ParamNode.set_Name(System.String)">set_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ParamNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ParamNode.set_Name(System.String)">Method: set_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ParamNode">Dbarone.Net.CommentarioServer.ParamNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7056,15 +5882,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ParamNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ParamNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ParamNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ParamNode">Dbarone.Net.CommentarioServer.ParamNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ParamNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7078,12 +5906,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.ParamNode.Name">Name Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ParamNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.ParamNode.Name">Property: Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ParamNode">Dbarone.Net.CommentarioServer.ParamNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The name of the parameters.
             
@@ -7099,15 +5929,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ParaNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ParaNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ParaNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ParaNode">Dbarone.Net.CommentarioServer.ParaNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ParaNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7121,15 +5953,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.RemarkNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.RemarkNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.RemarkNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.RemarkNode">Dbarone.Net.CommentarioServer.RemarkNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public RemarkNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7143,15 +5977,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.ReturnsNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.ReturnsNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">Dbarone.Net.CommentarioServer.ReturnsNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public ReturnsNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7165,15 +6001,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.SeeNode.get_Member">get_Member Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.SeeNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.SeeNode.get_Member">Method: get_Member</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.SeeNode">Dbarone.Net.CommentarioServer.SeeNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Member()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7187,21 +6025,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.SeeNode.set_Member(System.String)">set_Member Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.SeeNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.SeeNode.set_Member(System.String)">Method: set_Member</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.SeeNode">Dbarone.Net.CommentarioServer.SeeNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Member(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7227,15 +6067,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.SeeNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.SeeNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.SeeNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.SeeNode">Dbarone.Net.CommentarioServer.SeeNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public SeeNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7249,12 +6091,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.SeeNode.Member">Member Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.SeeNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.SeeNode.Member">Property: Member</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.SeeNode">Dbarone.Net.CommentarioServer.SeeNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7268,15 +6112,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.SummaryNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.SummaryNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.SummaryNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.SummaryNode">Dbarone.Net.CommentarioServer.SummaryNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public SummaryNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7290,15 +6136,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TextNode.get_Text">get_Text Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TextNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TextNode.get_Text">Method: get_Text</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TextNode">Dbarone.Net.CommentarioServer.TextNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Text()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7312,21 +6160,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TextNode.set_Text(System.String)">set_Text Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TextNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TextNode.set_Text(System.String)">Method: set_Text</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TextNode">Dbarone.Net.CommentarioServer.TextNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Text(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7352,15 +6202,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TextNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TextNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TextNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TextNode">Dbarone.Net.CommentarioServer.TextNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public TextNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7374,12 +6226,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.TextNode.Text">Text Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TextNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.TextNode.Text">Property: Text</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TextNode">Dbarone.Net.CommentarioServer.TextNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The inner text value. This text is not processed any further.
             
@@ -7395,15 +6249,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TypeParamNode.get_Name">get_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeParamNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TypeParamNode.get_Name">Method: get_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TypeParamNode">Dbarone.Net.CommentarioServer.TypeParamNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public string get_Name()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7417,21 +6273,23 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TypeParamNode.set_Name(System.String)">set_Name Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeParamNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TypeParamNode.set_Name(System.String)">Method: set_Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TypeParamNode">Dbarone.Net.CommentarioServer.TypeParamNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7457,15 +6315,17 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TypeParamNode.#ctor">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeParamNode">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TypeParamNode.#ctor">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TypeParamNode">Dbarone.Net.CommentarioServer.TypeParamNode</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public TypeParamNode()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7479,12 +6339,14 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.TypeParamNode.Name">Name Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeParamNode">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.TypeParamNode.Name">Property: Name</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TypeParamNode">Dbarone.Net.CommentarioServer.TypeParamNode</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             The name of the type parameter.
             
@@ -7500,22 +6362,24 @@ Returns a signature.
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TypeSignature.Build(System.Type)">Build Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TypeSignature.Build(System.Type)">Method: Build</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Dbarone.Net.CommentarioServer.TypeSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string Build(System.Type type)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Get a fully qualified signature for 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7534,7 +6398,7 @@ Returns a signature.
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 Fully qualified signature
 
 
@@ -7542,21 +6406,23 @@ Fully qualified signature
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable`1[System.Type])">BuildGenerics Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable`1[System.Type])">Method: BuildGenerics</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Dbarone.Net.CommentarioServer.TypeSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string BuildGenerics(System.Collections.Generic.IEnumerable<System.Type> genericArgumentTypes)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7582,15 +6448,17 @@ Fully qualified signature
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TypeSignature.GetQualifiedTypeName(System.Type)">GetQualifiedTypeName Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TypeSignature.GetQualifiedTypeName(System.Type)">Method: GetQualifiedTypeName</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Dbarone.Net.CommentarioServer.TypeSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string GetQualifiedTypeName(System.Type type)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             Gets the fully qualified type name of .
             This will use any keywords in place of types where possible (string instead of System.String for example)
@@ -7599,7 +6467,7 @@ Fully qualified signature
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7618,7 +6486,7 @@ Fully qualified signature
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
 The fully qualified name for 
 
 
@@ -7626,15 +6494,17 @@ The fully qualified name for
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.TypeSignature.RemoveGenericTypeNameArgumentCount(System.String)">RemoveGenericTypeNameArgumentCount Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.TypeSignature.RemoveGenericTypeNameArgumentCount(System.String)">Method: RemoveGenericTypeNameArgumentCount</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">Dbarone.Net.CommentarioServer.TypeSignature</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public static string RemoveGenericTypeNameArgumentCount(string genericTypeSignature)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
             This removes the `{argumentcount} from a the signature of a generic type
             
@@ -7642,7 +6512,7 @@ The fully qualified name for
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7661,7 +6531,7 @@ The fully qualified name for
     </tbody>
 </table>
 
-<h2>Returns</h2>
+<h3>Returns</h3>
  without any argument count
 
 
@@ -7669,15 +6539,17 @@ The fully qualified name for
 </div>
 
 <div class="member">
-<h1 id="M:XmlComments.#ctor(System.String)">.ctor Constructor</h1>
-<a href="#T:XmlComments">Back to parent</a>
+<h2 id="M:XmlComments.#ctor(System.String)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:XmlComments">XmlComments</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public XmlComments(string path)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7691,15 +6563,17 @@ The fully qualified name for
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.XmlCommentsReader.get_Document">get_Document Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.XmlCommentsReader.get_Document">Method: get_Document</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Dbarone.Net.CommentarioServer.XmlCommentsReader</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public Dbarone.Net.CommentarioServer.DocumentNode get_Document()</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7713,21 +6587,23 @@ The fully qualified name for
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.XmlCommentsReader.set_Document(Dbarone.Net.CommentarioServer.DocumentNode)">set_Document Method</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.XmlCommentsReader.set_Document(Dbarone.Net.CommentarioServer.DocumentNode)">Method: set_Document</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Dbarone.Net.CommentarioServer.XmlCommentsReader</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public void set_Document(Dbarone.Net.CommentarioServer.DocumentNode value)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
 
 
-<h2>Parameters</h2>
+<h3>Parameters</h3>
 <table>
     <thead>
         <tr>
@@ -7753,15 +6629,17 @@ The fully qualified name for
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.XmlCommentsReader.#ctor(System.IO.Stream)">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.XmlCommentsReader.#ctor(System.IO.Stream)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Dbarone.Net.CommentarioServer.XmlCommentsReader</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public XmlCommentsReader(System.IO.Stream stream)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7775,15 +6653,17 @@ The fully qualified name for
 </div>
 
 <div class="member">
-<h1 id="M:Dbarone.Net.CommentarioServer.XmlCommentsReader.#ctor(System.String)">.ctor Constructor</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Back to parent</a>
+<h2 id="M:Dbarone.Net.CommentarioServer.XmlCommentsReader.#ctor(System.String)">Constructor: .ctor</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Dbarone.Net.CommentarioServer.XmlCommentsReader</a>
 
 
-<h2>Signature</h2>
+<h3>Signature</h3>
 <pre><code>public XmlCommentsReader(string path)</code></pre>
             
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
@@ -7797,12 +6677,14 @@ The fully qualified name for
 </div>
 
 <div class="member">
-<h1 id="P:Dbarone.Net.CommentarioServer.XmlCommentsReader.Document">Document Property</h1>
-<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Back to parent</a>
+<h2 id="P:Dbarone.Net.CommentarioServer.XmlCommentsReader.Document">Property: Document</h1>
+
+<h3>Declaring Type</h3>
+<a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Dbarone.Net.CommentarioServer.XmlCommentsReader</a>
 
 
 
-<h2>Summary</h2>
+<h3>Summary</h3>
 
 
 
