@@ -260,6 +260,22 @@ public class HtmlDocumentGenerator : DocumentGenerator
             }
         }
 
+        // Examples (note these normally in remarks section, but can be placed in member)
+        ExampleNode[]? exampleNodes = null;
+        string examples = "";
+
+        if (node is not null)
+        {
+            exampleNodes = node.Examples;
+            if (exampleNodes is not null)
+            {
+                examples = $@"<h3>Examples</h3>
+{string.Join("", exampleNodes.Select(e => RenderItems(e.Items)))}";
+            }
+        }
+
+
+
         var declaringType = member.DeclaringType!;
 
         // Parameters
@@ -317,6 +333,8 @@ public class HtmlDocumentGenerator : DocumentGenerator
 {summary}
 
 {remarks}
+
+{examples}
 
 {parameters}
 

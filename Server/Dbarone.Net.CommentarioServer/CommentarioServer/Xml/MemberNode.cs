@@ -25,7 +25,7 @@ public class MemberNode
     ///     }
     /// }
     /// </code>
-    /// The above method could generate a name of `M:ExampleLibrary.Test.Add(System.Int32,System.Int32)`
+    /// The above method could generate a name of <c>M:ExampleLibrary.Test.Add(System.Int32,System.Int32)</c>
     /// <para>
     /// Note that the return type is not included in the name.
     /// </para>
@@ -51,7 +51,7 @@ public class MemberNode
     [XmlElement("exception")]
     public ExceptionNode[] Exceptions { get; set; } = default!;
 
-    [XmlElement("example")]
+    [XmlElement("example", typeof(ExampleNode))]
     public ExampleNode[] Examples { get; set; } = default!;
 
     public IDString ID
