@@ -1,4 +1,4 @@
-namespace Dbarone.CommentarioServer;
+namespace Dbarone.Net.CommentarioServer;
 
 /// <summary>
 /// The member type.

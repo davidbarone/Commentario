@@ -1,7 +1,10 @@
 using System.Reflection;
-using Dbarone.CommentarioServer;
-using Dbarone.Net.CommentarioServer;
 
+namespace Dbarone.Net.CommentarioServer;
+
+/// <summary>
+/// Generates documentation in html format.
+/// </summary>
 public class HtmlDocumentGenerator : DocumentGenerator
 {
     public HtmlDocumentGenerator(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath) : base(xmlCommentsPath, assemblyPath, readMePath, outputPath) { }

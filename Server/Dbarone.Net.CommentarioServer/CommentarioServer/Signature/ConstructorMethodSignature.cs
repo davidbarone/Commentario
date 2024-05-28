@@ -7,6 +7,9 @@ using System.Text;
 
 namespace Dbarone.Net.CommentarioServer;
 
+/// <summary>
+/// Creates signatures for constructor methods.
+/// </summary>
 public class ConstructorMethodSignature : MethodBaseSignature
 {
     public string Build(ConstructorInfo method, bool invokable)

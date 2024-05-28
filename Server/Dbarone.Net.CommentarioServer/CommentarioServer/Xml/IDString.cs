@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Dynamic;
 
-namespace Dbarone.CommentarioServer;
+namespace Dbarone.Net.CommentarioServer;
 
 /// <summary>
 /// Represents the parts making up a comment document id, known as the 'ID string'.

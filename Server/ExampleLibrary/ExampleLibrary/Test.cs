@@ -37,6 +37,18 @@ public class Test
     }
 
     /// <summary>
+    /// This method takes 2 integers and adds them.
+    /// </summary>
+    /// <param name="a">The first integer.</param>
+    /// <param name="b">The second integer.</param>
+    /// <returns>Returns the sum of a and b.</returns>
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+
+    /// <summary>
     /// An example generic method.
     /// </summary>
     /// <typeparam name="T">The type parameter 'T'.</typeparam>
@@ -108,7 +120,8 @@ public class Test
     /// <param name="flag">A flag that can be set.</param>
     /// <returns>Returns a value of type TOutput.</returns>
     /// <exception cref="NotImplementedException"></exception>
-    public TOutput GenericMethod<TInput,TOutput>(TInput input, bool flag) {
+    public TOutput GenericMethod<TInput, TOutput>(TInput input, bool flag)
+    {
         throw new NotImplementedException("This is not implemented");
     }
 }
