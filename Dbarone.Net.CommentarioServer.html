@@ -331,7 +331,7 @@ CommentarioServer merges the 2 sources of information to provide a fully documen
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.ExtensionMethods">ExtensionMethods</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             Useful extension methods. Primarily to provide reflection services.
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator">HtmlDocumentGenerator</a></td><td>Dbarone.Net.CommentarioServer</td><td>
-            Generates documentation in html format.
+            Generates documentation in html format. Html implementation of <a href="T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>.
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.IDString">IDString</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             Represents the parts making up a comment document id, known as the 'ID string'.
             https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
@@ -770,6 +770,8 @@ Object
             Gets a list of interfaces for the source Assembly.
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfacesImplemented(System.Type)">System.Type[] GetInterfacesImplemented(System.Type)</a></td><td>
             Gets the interfaces implemented by a type.
+            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetLinkForType(System.Type)">System.String GetLinkForType(System.Type)</a></td><td>
+            Returns a hyperlink for a type.
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMemberParameters(System.Reflection.MemberInfo)">System.Reflection.ParameterInfo[] GetMemberParameters(System.Reflection.MemberInfo)</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMembers(System.Type)">System.Reflection.MemberInfo[] GetMembers(System.Type)</a></td><td>
             Gets public or protected members for a type.
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMethods(System.Type)">System.Reflection.MethodInfo[] GetMethods(System.Type)</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetProperties(System.Type)">System.Reflection.PropertyInfo[] GetProperties(System.Type)</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetReadMe">System.String GetReadMe()</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetStructs">System.Type[] GetStructs()</a></td><td>
@@ -1106,7 +1108,7 @@ DocumentGenerator
         
 <h3>Summary</h3>
 
-            Generates documentation in html format.
+            Generates documentation in html format. Html implementation of <a href="T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>.
             
 
         
@@ -1236,6 +1238,8 @@ Object
             The number of generic type arguments on the parent type / class. 
             </td></tr><tr><td><a href="#P:Dbarone.Net.CommentarioServer.IDString.TypeArguments">System.Int32 TypeArguments</a></td><td>
             The number of generic type arguments on the current member. 
+            </td></tr><tr><td><a href="#P:Dbarone.Net.CommentarioServer.IDString.TypeName">System.String TypeName</a></td><td>
+            Returns the type name if the member is a type.
             </td></tr>
         </tbody>
     </table>
@@ -2367,7 +2371,7 @@ Object
         <tbody>
             <tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.Build(System.Type)">System.String Build(System.Type)</a></td><td>
             Get a fully qualified signature for </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable{System.Type})">System.String BuildGenerics(System.Collections.Generic.IEnumerable`1[System.Type])</a></td><td>
-            Takes an <a href='T:System.Collections.Generic.IEnumerable`1'></a> and creates a generic type signature (<string, string> for example)
+            Takes an <a href="T:System.Collections.Generic.IEnumerable`1">System.Collections.Generic.IEnumerable`1</a> and creates a generic type signature (<string, string> for example)
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.GetQualifiedTypeName(System.Type)">System.String GetQualifiedTypeName(System.Type)</a></td><td>
             Gets the fully qualified type name of .
             This will use any keywords in place of types where possible (string instead of System.String for example)
@@ -2595,7 +2599,7 @@ Object
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -2754,12 +2758,12 @@ Object
             
     <tr>
         <td>method</td>
-        <td>System.Reflection.ConstructorInfo</td>
+        <td>ConstructorInfo</td>
         <td></td>
     </tr>
     <tr>
         <td>invokable</td>
-        <td>System.Boolean</td>
+        <td>Boolean</td>
         <td></td>
     </tr>
         </tbody>
@@ -2863,7 +2867,7 @@ Object
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.OutputType</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.OutputType">OutputType</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -2939,7 +2943,7 @@ Object
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -3015,7 +3019,7 @@ Object
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -3091,7 +3095,7 @@ Object
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -3167,7 +3171,7 @@ Object
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -3243,7 +3247,7 @@ Object
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.DocumentNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">DocumentNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -3293,27 +3297,27 @@ Object
             
     <tr>
         <td>assemblyPath</td>
-        <td>System.String</td>
+        <td>String</td>
         <td>The path to the assembly file.</td>
     </tr>
     <tr>
         <td>outputPath</td>
-        <td>System.String</td>
+        <td>String</td>
         <td>The path to the output documentation file.</td>
     </tr>
     <tr>
         <td>outputType</td>
-        <td>System.Nullable`1[Dbarone.Net.CommentarioServer.OutputType]</td>
+        <td>Nullable`1</td>
         <td>The documentation format type.</td>
     </tr>
     <tr>
         <td>xmlCommentsPath</td>
-        <td>System.String</td>
+        <td>String</td>
         <td>The path to an xml comments file. This content will be merged with the reflected assembly information.</td>
     </tr>
     <tr>
         <td>readMePath</td>
-        <td>System.String</td>
+        <td>String</td>
         <td>The path to an optional readme file. This file should contain html content. If a file is specified, it will be included at the top of the documentation file.</td>
     </tr>
         </tbody>
@@ -3321,7 +3325,7 @@ Object
 </div>
 
         <h3>Returns</h3>
-Returns a DocumentGenerator instance.
+Returns a <a href="T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a> instance.
 
         <h3>Exceptions</h3><div><b>T:System.Exception</b></div>Throws an exception if invalid parameters are provided.
 
@@ -3429,7 +3433,7 @@ Returns an array of <code>Type</code> objects.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>The type to check.</td>
     </tr>
         </tbody>
@@ -3480,7 +3484,7 @@ Returns the base type, or null.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>The type to check.</td>
     </tr>
         </tbody>
@@ -3531,7 +3535,7 @@ Returns an array of types that directly inherit from the specified type.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>The type to check.</td>
     </tr>
         </tbody>
@@ -3592,7 +3596,7 @@ Returns an array of interface types implemented by the specified type.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>The type to check.</td>
     </tr>
         </tbody>
@@ -3767,7 +3771,7 @@ Returns an array of enum types.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>The type to get members for.</td>
     </tr>
         </tbody>
@@ -3816,7 +3820,7 @@ Returns all public and protected members.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -3864,7 +3868,7 @@ Returns all public and protected members.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -3912,7 +3916,7 @@ Returns all public and protected members.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -3960,7 +3964,7 @@ Returns all public and protected members.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -4008,7 +4012,7 @@ Returns all public and protected members.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -4084,7 +4088,7 @@ Returns all public and protected members.
             
     <tr>
         <td>member</td>
-        <td>System.Reflection.MemberInfo</td>
+        <td>MemberInfo</td>
         <td></td>
     </tr>
         </tbody>
@@ -4190,12 +4194,12 @@ Returns all public and protected members.
             
     <tr>
         <td>header</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
     <tr>
         <td>types</td>
-        <td>System.Type[]</td>
+        <td>Type[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -4243,7 +4247,7 @@ Returns all public and protected members.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -4291,17 +4295,17 @@ Returns all public and protected members.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
     <tr>
         <td>header</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
     <tr>
         <td>members</td>
-        <td>System.Reflection.MemberInfo[]</td>
+        <td>MemberInfo[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -4349,7 +4353,7 @@ Returns all public and protected members.
             
     <tr>
         <td>member</td>
-        <td>System.Reflection.MemberInfo</td>
+        <td>MemberInfo</td>
         <td></td>
     </tr>
         </tbody>
@@ -4397,7 +4401,7 @@ Returns all public and protected members.
             
     <tr>
         <td>items</td>
-        <td>System.Object[]</td>
+        <td>Object[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -4445,7 +4449,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ExampleNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">ExampleNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4493,7 +4497,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.CodeNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.CodeNode">CodeNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4541,7 +4545,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.CNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4589,7 +4593,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ParaNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ParaNode">ParaNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4637,7 +4641,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.SeeNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.SeeNode">SeeNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4685,7 +4689,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ReturnsNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4733,7 +4737,7 @@ Returns all public and protected members.
             
     <tr>
         <td>nodes</td>
-        <td>Dbarone.Net.CommentarioServer.ExceptionNode[]</td>
+        <td>ExceptionNode[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -4781,7 +4785,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ExceptionNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">ExceptionNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4829,7 +4833,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ParamNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ParamNode">ParamNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4877,7 +4881,7 @@ Returns all public and protected members.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ListNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ListNode">ListNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -4927,7 +4931,7 @@ Returns all public and protected members.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>The type to render.</td>
     </tr>
         </tbody>
@@ -4962,6 +4966,56 @@ A string representing the generic arguments.
         
 
         
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetLinkForType(System.Type)">Method: GetLinkForType</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
+
+        
+<h3>Signature</h3>
+<pre><code>protected string GetLinkForType(System.Type type)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+            Returns a hyperlink for a type.
+            
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>type</td>
+        <td>Type</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
         
 
@@ -5274,7 +5328,7 @@ A string representing the generic arguments.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.AssemblyNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">AssemblyNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -5350,7 +5404,7 @@ A string representing the generic arguments.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.MemberNode[]</td>
+        <td>MemberNode[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -5400,7 +5454,7 @@ A string representing the generic arguments.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>The type to get document for.</td>
     </tr>
         </tbody>
@@ -5451,7 +5505,7 @@ Returns the document node for the type.
             
     <tr>
         <td>member</td>
-        <td>System.Reflection.MemberInfo</td>
+        <td>MemberInfo</td>
         <td>The member to get the document for.</td>
     </tr>
         </tbody>
@@ -5688,7 +5742,7 @@ Returns the document node for the member.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -5791,7 +5845,7 @@ Returns the document node for the member.
             
     <tr>
         <td>member</td>
-        <td>System.Reflection.MemberInfo</td>
+        <td>MemberInfo</td>
         <td></td>
     </tr>
         </tbody>
@@ -5839,7 +5893,7 @@ Returns the document node for the member.
             
     <tr>
         <td>member</td>
-        <td>System.Reflection.MemberInfo</td>
+        <td>MemberInfo</td>
         <td></td>
     </tr>
         </tbody>
@@ -5889,7 +5943,7 @@ Returns the document node for the member.
             
     <tr>
         <td>member</td>
-        <td>System.Reflection.MemberInfo</td>
+        <td>MemberInfo</td>
         <td>The MemberInfo object.</td>
     </tr>
         </tbody>
@@ -5940,7 +5994,7 @@ Returns a comment id string.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -5990,7 +6044,7 @@ Returns a comment id string.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>A type. Must be a generic type.</td>
     </tr>
         </tbody>
@@ -6041,7 +6095,7 @@ Returns an array of type parameter names.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td>The type to check.</td>
     </tr>
         </tbody>
@@ -6090,12 +6144,12 @@ Returns true if the type is a generic type.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
     <tr>
         <td>underlyingType</td>
-        <td>System.Type&</td>
+        <td>Type&</td>
         <td></td>
     </tr>
         </tbody>
@@ -6145,12 +6199,12 @@ Returns true if the type is a generic type.
             
     <tr>
         <td>method</td>
-        <td>System.Reflection.MethodInfo</td>
+        <td>MethodInfo</td>
         <td>The method to get the signature for.</td>
     </tr>
     <tr>
         <td>isInvokable</td>
-        <td>System.Boolean</td>
+        <td>Boolean</td>
         <td></td>
     </tr>
         </tbody>
@@ -6201,12 +6255,12 @@ Returns a signature.
             
     <tr>
         <td>constructor</td>
-        <td>System.Reflection.ConstructorInfo</td>
+        <td>ConstructorInfo</td>
         <td>The constructor to get the signature for.</td>
     </tr>
     <tr>
         <td>isInvokable</td>
-        <td>System.Boolean</td>
+        <td>Boolean</td>
         <td></td>
     </tr>
         </tbody>
@@ -6308,12 +6362,12 @@ Returns a signature.
             
     <tr>
         <td>header</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
     <tr>
         <td>types</td>
-        <td>System.Type[]</td>
+        <td>Type[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -6361,7 +6415,7 @@ Returns a signature.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -6409,7 +6463,7 @@ Returns a signature.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -6457,17 +6511,17 @@ Returns a signature.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
     <tr>
         <td>header</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
     <tr>
         <td>members</td>
-        <td>System.Reflection.MemberInfo[]</td>
+        <td>MemberInfo[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -6515,7 +6569,7 @@ Returns a signature.
             
     <tr>
         <td>member</td>
-        <td>System.Reflection.MemberInfo</td>
+        <td>MemberInfo</td>
         <td></td>
     </tr>
         </tbody>
@@ -6563,7 +6617,7 @@ Returns a signature.
             
     <tr>
         <td>items</td>
-        <td>System.Object[]</td>
+        <td>Object[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -6611,7 +6665,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ExampleNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">ExampleNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -6659,7 +6713,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.CodeNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.CodeNode">CodeNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -6707,7 +6761,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.CNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -6755,7 +6809,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ParaNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ParaNode">ParaNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -6803,7 +6857,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.SeeNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.SeeNode">SeeNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -6851,7 +6905,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ReturnsNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -6899,7 +6953,7 @@ Returns a signature.
             
     <tr>
         <td>nodes</td>
-        <td>Dbarone.Net.CommentarioServer.ExceptionNode[]</td>
+        <td>ExceptionNode[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -6947,7 +7001,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ExceptionNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">ExceptionNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -6995,7 +7049,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ParamNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ParamNode">ParamNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -7043,7 +7097,7 @@ Returns a signature.
             
     <tr>
         <td>node</td>
-        <td>Dbarone.Net.CommentarioServer.ListNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ListNode">ListNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -7272,7 +7326,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -7348,7 +7402,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -7424,7 +7478,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.MemberType</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.MemberType">MemberType</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -7500,7 +7554,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -7576,7 +7630,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -7652,7 +7706,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -7728,7 +7782,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.Int32</td>
+        <td>Int32</td>
         <td></td>
     </tr>
         </tbody>
@@ -7804,7 +7858,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.Int32</td>
+        <td>Int32</td>
         <td></td>
     </tr>
         </tbody>
@@ -7880,12 +7934,40 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
     </table>
 </div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:Dbarone.Net.CommentarioServer.IDString.get_TypeName">Method: get_TypeName</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.IDString">Dbarone.Net.CommentarioServer.IDString</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public string get_TypeName()</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
 
         
 
@@ -8168,6 +8250,33 @@ Returns a signature.
 </div>
 
 <div class="member">
+    <h2 id="P:Dbarone.Net.CommentarioServer.IDString.TypeName">Property: TypeName</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.IDString">Dbarone.Net.CommentarioServer.IDString</a>
+
+        
+
+        <h3>Summary</h3>
+        
+            Returns the type name if the member is a type.
+            
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
     <h2 id="M:Dbarone.Net.CommentarioServer.ItemsNode.get_Items">Method: get_Items</h1>
     <div class="member-inner">
 
@@ -8229,7 +8338,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.Object[]</td>
+        <td>Object[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -8360,7 +8469,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -8436,7 +8545,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -8590,7 +8699,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -8666,7 +8775,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.ListItemNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ListItemNode">ListItemNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -8742,7 +8851,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.ListItemNode[]</td>
+        <td>ListItemNode[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -8923,7 +9032,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -8999,7 +9108,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.SummaryNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.SummaryNode">SummaryNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -9075,7 +9184,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.RemarkNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.RemarkNode">RemarkNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -9151,7 +9260,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.ParamNode[]</td>
+        <td>ParamNode[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -9227,7 +9336,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.TypeParamNode[]</td>
+        <td>TypeParamNode[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -9303,7 +9412,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.ReturnsNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -9379,7 +9488,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.ExceptionNode[]</td>
+        <td>ExceptionNode[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -9455,7 +9564,7 @@ Returns a signature.
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.ExampleNode[]</td>
+        <td>ExampleNode[]</td>
         <td></td>
     </tr>
         </tbody>
@@ -10021,7 +10130,7 @@ Returns a signature.
             
     <tr>
         <td>method</td>
-        <td>System.Reflection.MethodBase</td>
+        <td>MethodBase</td>
         <td>The method</td>
     </tr>
         </tbody>
@@ -10070,12 +10179,12 @@ Returns the access modifier.
             
     <tr>
         <td>method</td>
-        <td>System.Reflection.MethodBase</td>
+        <td>MethodBase</td>
         <td></td>
     </tr>
     <tr>
         <td>invokable</td>
-        <td>System.Boolean</td>
+        <td>Boolean</td>
         <td></td>
     </tr>
         </tbody>
@@ -10123,7 +10232,7 @@ Returns the access modifier.
             
     <tr>
         <td>method</td>
-        <td>System.Reflection.MethodBase</td>
+        <td>MethodBase</td>
         <td></td>
     </tr>
         </tbody>
@@ -10249,12 +10358,12 @@ Returns the access modifier.
             
     <tr>
         <td>method</td>
-        <td>System.Reflection.MethodInfo</td>
+        <td>MethodInfo</td>
         <td></td>
     </tr>
     <tr>
         <td>invokable</td>
-        <td>System.Boolean</td>
+        <td>Boolean</td>
         <td></td>
     </tr>
         </tbody>
@@ -10410,7 +10519,7 @@ Returns the access modifier.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -10625,7 +10734,7 @@ Returns the access modifier.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -10782,7 +10891,7 @@ Returns the access modifier.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -10913,7 +11022,7 @@ Returns the access modifier.
             
     <tr>
         <td>value</td>
-        <td>System.String</td>
+        <td>String</td>
         <td></td>
     </tr>
         </tbody>
@@ -11017,8 +11126,8 @@ Returns the access modifier.
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
-        <td>Type. May be generic or <a href='T:System.Nullable`1'></a></td>
+        <td>Type</td>
+        <td>Type. May be generic or <a href="T:System.Nullable`1">System.Nullable`1</a></td>
     </tr>
         </tbody>
     </table>
@@ -11046,7 +11155,7 @@ Fully qualified signature
 
         <h3>Summary</h3>
         
-            Takes an <a href='T:System.Collections.Generic.IEnumerable`1'></a> and creates a generic type signature (<string, string> for example)
+            Takes an <a href="T:System.Collections.Generic.IEnumerable`1">System.Collections.Generic.IEnumerable`1</a> and creates a generic type signature (<string, string> for example)
             
 
         
@@ -11068,7 +11177,7 @@ Fully qualified signature
             
     <tr>
         <td>genericArgumentTypes</td>
-        <td>System.Collections.Generic.IEnumerable`1[System.Type]</td>
+        <td>IEnumerable`1</td>
         <td></td>
     </tr>
         </tbody>
@@ -11120,7 +11229,7 @@ Generic type signature like <Type, ...>
             
     <tr>
         <td>type</td>
-        <td>System.Type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -11171,7 +11280,7 @@ The fully qualified name for
             
     <tr>
         <td>genericTypeSignature</td>
-        <td>System.String</td>
+        <td>String</td>
         <td>Signature of a generic type</td>
     </tr>
         </tbody>
@@ -11301,7 +11410,7 @@ The fully qualified name for
             
     <tr>
         <td>value</td>
-        <td>Dbarone.Net.CommentarioServer.DocumentNode</td>
+        <td><a href="#T:Dbarone.Net.CommentarioServer.DocumentNode">DocumentNode</a></td>
         <td></td>
     </tr>
         </tbody>

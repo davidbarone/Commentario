@@ -3,7 +3,7 @@ using System.Reflection;
 namespace Dbarone.Net.CommentarioServer;
 
 /// <summary>
-/// Generates documentation in html format.
+/// Generates documentation in html format. Html implementation of <see cref="DocumentGenerator"/>.
 /// </summary>
 public class HtmlDocumentGenerator : DocumentGenerator
 {
@@ -374,7 +374,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                     @$"
     <tr>
         <td>{p.Name}</td>
-        <td>{p.ParameterType}</td>
+        <td>{GetLinkForType(p.ParameterType)}</td>
         <td>{(node is not null && node.Params is not null ? this.RenderParam(node.Params.FirstOrDefault(n => n.Name.Equals(p.Name, StringComparison.Ordinal))) : "")}</td>
     </tr>"))}
         </tbody>
@@ -480,7 +480,21 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
     protected override string RenderCode(CodeNode node)
     {
-        return $@"<pre><code class=""csharp"">{node.Text}</code></pre>";
+        // Need to remove extra tab characters - these are introduced by the xml comments formatter
+        var lines = node
+            .Text
+            .Split(Environment.NewLine)
+            .Select(l => (l[0] == '\t') ? l.Substring(1) : l);
+
+        // remove first and list rows.
+        if (lines.Count() >= 2 && string.IsNullOrEmpty(lines.First()) && string.IsNullOrEmpty(lines.Last()))
+        {
+            lines = lines
+                .Skip(1)
+                .Take(lines.Count() - 2);
+        }
+
+        return $@"<pre><code class=""csharp"">{string.Join(Environment.NewLine, lines)}</code></pre>";
     }
 
     protected override string RenderC(CNode node)
@@ -493,9 +507,19 @@ public class HtmlDocumentGenerator : DocumentGenerator
         return $"<p>{this.RenderItems(node.Items)}</p>";
     }
 
+    /// <summary>
+    /// Renders a see link.
+    /// </summary>
+    /// <remarks>
+    /// The inner text value is optional. If not set, then the type name will be determined from the cref value.
+    /// <param name="node">The <see cref="SeeNode"/> instance.</param>
+    /// <returns>Returns a hyperlink to the type.</returns>
     protected override string RenderSee(SeeNode node)
     {
-        return $"<a href='{node.Member}'>{node.Text}</a>";
+        var idString = new IDString(node.Member);
+        var typeName = node.Text ?? idString.TypeName;
+
+        return $@"<a href=""{node.Member}"">{typeName}</a>";
     }
 
     protected override string RenderReturns(ReturnsNode node)

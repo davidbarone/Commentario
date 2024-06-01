@@ -86,21 +86,23 @@ public class Test
         throw new NotSupportedException("This is not supported!");
     }
 
-    /// <summary>
-    /// This method has some examples.
-    /// </summary>
-    /// <example>
-    /// This is example #1:
-    /// <code>
-    /// This is some code #1.
-    /// </code>
-    /// </example>
-    /// <example>
-    /// This is example #2.
-    /// <code>
-    /// This is some code #2.
-    /// </code>
-    /// </example>
+    /**
+    <summary>
+    This method has some examples.
+    </summary>
+    <example>
+    This is example #1:
+    <code>
+<![CDATA[This is some code #1.]]>
+    </code>
+    </example>
+    <example>
+    This is example #2.
+    <code>
+<![CDATA[This is some code #2.]]>
+    </code>
+    </example>
+    */
     public void MethodWithExamples()
     {
 

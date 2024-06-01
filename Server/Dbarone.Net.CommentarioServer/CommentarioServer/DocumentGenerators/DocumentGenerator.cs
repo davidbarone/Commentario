@@ -58,7 +58,7 @@ public abstract class DocumentGenerator
     /// <param name="outputType">The documentation format type.</param>
     /// <param name="xmlCommentsPath">The path to an xml comments file. This content will be merged with the reflected assembly information.</param>
     /// <param name="readMePath">The path to an optional readme file. This file should contain html content. If a file is specified, it will be included at the top of the documentation file.</param>
-    /// <returns>Returns a DocumentGenerator instance.</returns>
+    /// <returns>Returns a <see cref="DocumentGenerator"/> instance.</returns>
     /// <exception cref="Exception">Throws an exception if invalid parameters are provided.</exception>
     public static DocumentGenerator Create(string assemblyPath, string outputPath, OutputType? outputType = OutputType.html, string? xmlCommentsPath = null, string? readMePath = null)
     {
@@ -676,5 +676,23 @@ public abstract class DocumentGenerator
         ";
 
         return css;
+    }
+
+    /// <summary>
+    /// Returns a hyperlink for a type.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    protected string GetLinkForType(Type type)
+    {
+        var types = this.GetTypes();
+        if (types.Select(t=>t.ToCommentId()).Contains(type.ToCommentId()))
+        {
+            return @$"<a href=""#{type.ToCommentId()}"">{type.Name}</a>";
+        }
+        else
+        {
+            return type.Name;
+        }
     }
 }

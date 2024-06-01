@@ -58,6 +58,11 @@ public class IDString
     public string Arguments { get; set; } = "";
 
     /// <summary>
+    /// Returns the type name if the member is a type.
+    /// </summary>
+    public string TypeName => MemberType == MemberType.Type ? this.Name.Replace("#", ".") : "";
+
+    /// <summary>
     /// constructor for IDString class.
     /// </summary>
     /// <param name="id">The ID string.</param>
