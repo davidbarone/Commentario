@@ -27,21 +27,23 @@ public class HtmlDocumentGenerator : DocumentGenerator
         var template = @$"
 <!DOCTYPE html>
 <html lang=""en"">
-  <head>
-    <meta charset=""UTF-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
-    <meta http-equiv=""X-UA-Compatible"" content=""ie=edge"">
-    <title>HTML 5 Boilerplate</title>
-    {this.GetCSSStyles()}
+    <head>
+        <meta charset=""UTF-8"">
+        <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+        <meta http-equiv=""X-UA-Compatible"" content=""ie=edge"">
+        <title>HTML 5 Boilerplate</title>
 
-    <!-- https://highlightjs.org/#usage -->
-    <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"">
-    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js""></script>
-    <!-- and it's easy to individually load additional languages -->
-    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js""></script>
+        {this.GetCSSStyles()}
 
-  </head>
-  <body id=""top"">
+        <!-- https://highlightjs.org/#usage -->
+        <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"">
+        <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js""></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js""></script>
+    </head>
+
+    <body id=""top"">
+
         <h1>{GetAssembly()}</h1>
         {this.GetReadMe()}
 
@@ -61,8 +63,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
     </body>
     <!-- https://highlightjs.org/#usage -->
     <script>hljs.highlightAll();</script>
-</html>
-        ";
+</html>";
 
         return template;
     }
@@ -106,8 +107,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
             {values}
         </tbody>
     </table>
-</div>
-        ";
+</div>";
         }
     }
 
@@ -170,9 +170,19 @@ public class HtmlDocumentGenerator : DocumentGenerator
             summaryNode = node.Summary;
             if (summaryNode is not null)
             {
-                summary = RenderItems(summaryNode.Items);
+                summary = @$"
+<h3>Summary</h3>
+{RenderItems(summaryNode.Items)}";
             }
         }
+
+        var definition = @$"
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: {type.Namespace}</li>
+            <li>Assembly: {type.Assembly.FullName}</li>
+        </ul>
+        ";
 
         // Inherits
         var inherits = "";
@@ -210,19 +220,15 @@ public class HtmlDocumentGenerator : DocumentGenerator
     <h2 id=""{type.ToCommentId()}"">{this.GetTypeCategory(type)}: {type.Name}</h2>
     <div class=""type-inner"">
         <a href=""#top"">Back to top</a>
-        <h3>Definition:</h3>
-        <ul>
-            <li>Namespace: {type.Namespace}</li>
-            <li>Assembly: {type.Assembly.FullName}</li>
-        </ul>
 
+        {definition}
+        
         {inherits}
 
         {implements}
 
         {subclasses}
 
-        <h3>Summary</h3>
         {summary}
 
         {this.RenderTypeGenericArguments(type)}
@@ -231,9 +237,8 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {this.RenderTypeTOCSection(type, "Properties", this.GetProperties(type))}
         {this.RenderTypeTOCSection(type, "Methods", this.GetMethods(type))}
         {this.RenderTypeTOCSection(type, "Events", this.GetEvents(type))}
-        </div>
-</div>
-";
+    </div>
+</div>";
         return template;
     }
 
@@ -274,8 +279,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
             {values}
         </tbody>
     </table>
-</div>
-        ";
+</div>";
         }
     }
 

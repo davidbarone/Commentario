@@ -237,22 +237,38 @@ public abstract class DocumentGenerator
         }
     }
 
+    /// <summary>
+    /// Gets a list of classes for the source Assembly.
+    /// </summary>
+    /// <returns>Returns an array of class types.</returns>
     protected Type[] GetClasses()
     {
         var types = GetTypes();
         return types.Where(t => t.IsClass).ToArray();
     }
 
+    /// <summary>
+    /// Gets a list of structs for the source Assembly.
+    /// </summary>
+    /// <returns>Returns an array of struct types.</returns>
     protected Type[] GetStructs()
     {
         return GetTypes().Where(t => t.IsValueType).ToArray();
     }
 
+    /// <summary>
+    /// Gets a list of interfaces for the source Assembly.
+    /// </summary>
+    /// <returns>Returns an array of interface types.</returns>
     protected Type[] GetInterfaces()
     {
         return GetTypes().Where(t => t.IsInterface).ToArray();
     }
 
+    /// <summary>
+    /// Gets a list of enums for the source Assembly.
+    /// </summary>
+    /// <returns>Returns an array of enum types.</returns>
     protected Type[] GetEnums()
     {
         return GetTypes().Where(t => t.IsEnum).ToArray();
