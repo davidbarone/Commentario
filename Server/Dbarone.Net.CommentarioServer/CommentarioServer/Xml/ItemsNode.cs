@@ -16,5 +16,6 @@ public class ItemsNode
     [XmlElement("c", typeof(CNode))]
     [XmlElement("see", typeof(SeeNode))]
     [XmlElement("example", typeof(ExampleNode))]
+    [XmlElement("list", typeof(ListNode))]
     public object[] Items { get; set; } = new object[] { };
 }

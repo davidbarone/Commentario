@@ -9,6 +9,64 @@ public class HtmlDocumentGenerator : DocumentGenerator
 {
     public HtmlDocumentGenerator(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath) : base(xmlCommentsPath, assemblyPath, readMePath, outputPath) { }
 
+
+    protected override string RenderDocument()
+    {
+        var contentTypes = "";
+        var contentMembers = "";
+
+        foreach (var type in this.GetTypes())
+        {
+            contentTypes += RenderType(type);
+            foreach (var member in GetMembers(type))
+            {
+                contentMembers += RenderTypeMember(member);
+            }
+        }
+
+        var template = @$"
+<!DOCTYPE html>
+<html lang=""en"">
+  <head>
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <meta http-equiv=""X-UA-Compatible"" content=""ie=edge"">
+    <title>HTML 5 Boilerplate</title>
+    {this.GetCSSStyles()}
+
+    <!-- https://highlightjs.org/#usage -->
+    <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"">
+    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js""></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js""></script>
+
+  </head>
+  <body id=""top"">
+        <h1>{GetAssembly()}</h1>
+        {this.GetReadMe()}
+
+        <div class=""toc"">
+            <h2>Table of Contents</h2>
+            <div class=""toc-inner"">
+                {this.RenderTOCSection("Classes", this.GetClasses())}
+                {this.RenderTOCSection("Structs", this.GetStructs())}
+                {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
+                {this.RenderTOCSection("Enums", this.GetEnums())}
+            </div>
+        </div>
+
+        {contentTypes}
+        {contentMembers}
+
+    </body>
+    <!-- https://highlightjs.org/#usage -->
+    <script>hljs.highlightAll();</script>
+</html>
+        ";
+
+        return template;
+    }
+
     protected override string RenderTOCSection(string header, Type[] types)
     {
         var values = string.Join("", types.OrderBy(t => t.Name).Select(t =>
@@ -126,6 +184,16 @@ public class HtmlDocumentGenerator : DocumentGenerator
 {inheritedType.Name}";
         }
 
+        // Subclasses
+        var subclasses = "";
+        var subclassTypes = this.GetSubClasses(type);
+        if (subclassTypes is not null && subclassTypes.Length > 0)
+        {
+            subclasses = @$"
+<h3>Sub Classes</h3>
+<ul>{string.Join("", subclassTypes.Select(s => $"<li>{s.Name}</li>"))}</ul>";
+        }
+
         // Implements
         var implements = "";
         var implementedTypes = this.GetInterfacesImplemented(type);
@@ -151,6 +219,8 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {inherits}
 
         {implements}
+
+        {subclasses}
 
         <h3>Summary</h3>
         {summary}
@@ -354,6 +424,11 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
     protected override string RenderItems(object[] items)
     {
+        if (items is null)
+        {
+            return "";
+        }
+
         List<string> results = new List<string>();
         foreach (var item in items)
         {
@@ -381,6 +456,10 @@ public class HtmlDocumentGenerator : DocumentGenerator
             {
                 results.Add(RenderSee((SeeNode)item));
             }
+            else if (item.GetType() == typeof(ListNode))
+            {
+                results.Add(RenderList((ListNode)item));
+            }
             else
             {
                 results.Add(item.ToString());
@@ -402,7 +481,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
     protected override string RenderC(CNode node)
     {
-        return $"<pre><code>{node.Text}</code></pre>";
+        return $"<code>{node.Text}</code>";
     }
 
     protected override string RenderPara(ParaNode node)
@@ -457,5 +536,21 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {
             return this.RenderItems(node.Items);
         }
+    }
+
+    protected override string RenderList(ListNode node)
+    {
+        // currently always renders as table
+        var str = @$"
+<div class=""table"">
+    <table>
+        <tr>
+            <th>{node.ListHeader.Term}</th>
+            <th>{node.ListHeader.Description}</th>
+        </tr>
+        {string.Join("", node.Items.Select(i => $"<tr><td><b>{i.Term}</b></td><td>{i.Description}</td></tr>"))}
+    </table>
+</div>";
+        return str;
     }
 }

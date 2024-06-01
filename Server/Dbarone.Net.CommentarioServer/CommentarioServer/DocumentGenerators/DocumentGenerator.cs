@@ -8,8 +8,12 @@ namespace Dbarone.Net.CommentarioServer;
 /// <summary>
 /// Main entry point to CommentarioServer. Generates documents from xml comments and the assembly file.
 /// </summary>
+/// <remarks>
+/// Note that this class is an abstract base class. Implementations are included in sub classes.
+/// </remarks>
 public abstract class DocumentGenerator
 {
+
     #region Properties
 
     /// <summary>
@@ -85,7 +89,7 @@ public abstract class DocumentGenerator
 
     #region Methods
 
-    private void Validation()
+    private void ValidateParameters()
     {
         if (string.IsNullOrEmpty(this.AssemblyPath))
         {
@@ -100,7 +104,14 @@ public abstract class DocumentGenerator
 
     #endregion
 
-    private Assembly GetAssembly()
+    /// <summary>
+    /// Gets the assembly referenced by the <c>AssemblyPath</c> parameter.
+    /// </summary>
+    /// <remarks>
+    /// Uses MetadataLoadContext to load assembly metadata only for inspection.
+    /// </remarks>
+    /// <returns>The Assembly object.</returns>
+    protected Assembly GetAssembly()
     {
         // Use MetadataLoadContext to inspect types
         // Need to provide all BCL libraries in search too.
@@ -117,17 +128,16 @@ public abstract class DocumentGenerator
 
     }
 
-    protected string GetAssemblyName()
-    {
-        return GetAssembly().GetName().Name;
-    }
-
     private bool IsCompilerGenerated(Type type)
     {
         var attr = type.CustomAttributes.Select(t => t.AttributeType).Where(t => t.Name == "CompilerGeneratedAttribute").ToArray();
         return attr.Any();
     }
 
+    /// <summary>
+    /// Gets all types in the source assembly.
+    /// </summary>
+    /// <returns>Returns an array of <c>Type</c> objects.</returns>
     protected Type[] GetTypes()
     {
         var assembly = GetAssembly();
@@ -139,16 +149,70 @@ public abstract class DocumentGenerator
         return types;
     }
 
-    public Type? GetInheritedType(Type type)
+    /// <summary>
+    /// Gets the inherited or base type, if any.
+    /// </summary>
+    /// <param name="type">The type to check.</param>
+    /// <returns>Returns the base type, or null.</returns>
+    protected Type? GetInheritedType(Type type)
     {
         return type.BaseType;
     }
 
-    public Type[] GetInterfacesImplemented(Type type)
+    /// <summary>
+    /// Gets the subclasses - types which directly inherit from the specified type.
+    /// </summary>
+    /// <param name="type">The type to check.</param>
+    /// <returns>Returns an array of types that directly inherit from the specified type.</returns>
+    protected Type[] GetSubClasses(Type type)
+    {
+        return this.GetTypes()
+            .Where(t => t.BaseType != null && (t.BaseType.Name == type.Name)).ToArray();
+    }
+
+    /// <summary>
+    /// Gets the interfaces implemented by a type.
+    /// </summary>
+    /// <param name="type">The type to check.</param>
+    /// <returns>Returns an array of interface types implemented by the specified type.</returns>
+    protected Type[] GetInterfacesImplemented(Type type)
     {
         return type.GetInterfaces();
     }
 
+    /// <summary>
+    /// Gets the category of a type.
+    /// </summary>
+    /// <remarks>
+    /// <list type="table">
+    /// <listheader>
+    /// <term>Category</term>
+    /// <description>Description</description>
+    /// </listheader>
+    /// <item>
+    /// <term>Class</term>
+    /// <description>The type is a class (reference type).</description>
+    /// </item>
+    /// <item>
+    /// <term>Struct</term>
+    /// <description>The type is a struct (value type).</description>
+    /// </item>
+    /// <item>
+    /// <term>Interface</term>
+    /// <description>The type is an interface.</description>
+    /// </item>
+    /// <item>
+    /// <term>Enum</term>
+    /// <description>The type is an enum.</description>
+    /// </item>
+    /// <item>
+    /// <term>Other</term>
+    /// <description>The type is unspecified.</description>
+    /// </item>
+    /// </list>
+    /// </remarks>
+    /// <param name="type">The type to check.</param>
+    /// <returns>Returns a string value to categorise the type:</returns>
     protected string GetTypeCategory(Type type)
     {
         if (type.IsClass)
@@ -194,35 +258,66 @@ public abstract class DocumentGenerator
         return GetTypes().Where(t => t.IsEnum).ToArray();
     }
 
+    private bool IsPrivate(MemberInfo member)
+    {
+        // returns true for public + protected members.
+        if (member.MemberType == MemberTypes.Method)
+        {
+            return (member as MethodBase).IsPrivate;
+        }
+        else if (member.MemberType == MemberTypes.Property)
+        {
+            return (member as PropertyInfo).GetMethod.IsPrivate;
+        }
+        else if (member.MemberType == MemberTypes.Constructor)
+        {
+            return (member as ConstructorInfo).IsPrivate;
+        }
+        else if (member.MemberType == MemberTypes.Field)
+        {
+            return (member as FieldInfo).IsPrivate;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Gets public or protected members for a type.
+    /// </summary>
+    /// <param name="type">The type to get members for.</param>
+    /// <returns>Returns all public and protected members.</returns>
     protected MemberInfo[] GetMembers(Type type)
     {
-        return type.GetMembers(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+        return type.GetMembers(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static)
+            .Where(m => !IsPrivate(m)).ToArray();
     }
 
     protected ConstructorInfo[] GetConstructors(Type type)
     {
-        return type.GetConstructors(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+        return type.GetConstructors(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
     }
 
     protected MethodInfo[] GetMethods(Type type)
     {
         // ignore getter/setter methods.
-        return type.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static).Where(m => !m.IsSpecialName).ToArray();
+        return type.GetMethods(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static).Where(m => !m.IsSpecialName).ToArray();
     }
 
     protected FieldInfo[] GetFields(Type type)
     {
-        return type.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+        return type.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
     }
 
     protected PropertyInfo[] GetProperties(Type type)
     {
-        return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+        return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
     }
 
     protected EventInfo[] GetEvents(Type type)
     {
-        return type.GetEvents(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
+        return type.GetEvents(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
     }
 
     protected string GetReadMe()
@@ -255,63 +350,13 @@ public abstract class DocumentGenerator
     /// </summary>
     public void GenerateDocument()
     {
-        Validation();
-        var contentTypes = "";
-        var contentMembers = "";
-
-        foreach (var type in this.GetTypes())
-        {
-            contentTypes += RenderType(type);
-            foreach (var member in GetMembers(type))
-            {
-                contentMembers += RenderTypeMember(member);
-            }
-        }
-
-        var template = @$"
-<!DOCTYPE html>
-<html lang=""en"">
-  <head>
-    <meta charset=""UTF-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
-    <meta http-equiv=""X-UA-Compatible"" content=""ie=edge"">
-    <title>HTML 5 Boilerplate</title>
-    {this.GetCSSStyles()}
-
-    <!-- https://highlightjs.org/#usage -->
-    <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"">
-    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js""></script>
-    <!-- and it's easy to individually load additional languages -->
-    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js""></script>
-
-  </head>
-  <body id=""top"">
-        <h1>{GetAssembly()}</h1>
-        {this.GetReadMe()}
-
-        <div class=""toc"">
-            <h2>Table of Contents</h2>
-            <div class=""toc-inner"">
-                {this.RenderTOCSection("Classes", this.GetClasses())}
-                {this.RenderTOCSection("Structs", this.GetStructs())}
-                {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
-                {this.RenderTOCSection("Enums", this.GetEnums())}
-            </div>
-        </div>
-
-        {contentTypes}
-        {contentMembers}
-
-    </body>
-    <!-- https://highlightjs.org/#usage -->
-    <script>hljs.highlightAll();</script>
-</html>
-        ";
+        ValidateParameters();
 
         // Save file
-        File.WriteAllText(this.OutputPath, template);
+        File.WriteAllText(this.OutputPath, RenderDocument());
     }
 
+    protected abstract string RenderDocument();
     protected abstract string RenderTOCSection(string header, Type[] types);
     protected abstract string RenderType(Type type);
     protected abstract string RenderTypeTOCSection(Type type, string header, MemberInfo[] members);
@@ -334,6 +379,8 @@ public abstract class DocumentGenerator
     protected abstract string RenderExceptions(ExceptionNode[] nodes);
     protected abstract string RenderException(ExceptionNode node);
     protected abstract string RenderParam(ParamNode? node);
+
+    protected abstract string RenderList(ListNode node);
 
     /// <summary>
     /// Renders the type's generic arguments.
@@ -548,6 +595,13 @@ public abstract class DocumentGenerator
         overflow: auto;
         overflow-x: auto;
         white-space: pre-wrap;
+        font-weight: 500;
+    }
+
+    code {
+        font-weight: bold;
+        background-color: var(--neutral-500);
+        padding: 2px;
     }
 
     /* ---------------------------------------------
