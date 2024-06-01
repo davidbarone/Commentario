@@ -35,19 +35,19 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {
             return @$"
 <h3>{header}</h3>
-<div>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Namespace</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        {values}
-    </tbody>
-</table>
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Namespace</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {values}
+        </tbody>
+    </table>
 </div>
         ";
         }
@@ -137,29 +137,31 @@ public class HtmlDocumentGenerator : DocumentGenerator
         }
 
         var template = @$"
+
 <div class=""type"">       
-<h2 id=""{type.ToCommentId()}"">{this.GetTypeCategory(type)}: {type.Name}</h2>
-<a href=""#top"">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: {type.Namespace}</li>
-    <li>Assembly: {type.Assembly.FullName}</li>
-</ul>
+    <h2 id=""{type.ToCommentId()}"">{this.GetTypeCategory(type)}: {type.Name}</h2>
+    <div class=""type-inner"">
+        <a href=""#top"">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: {type.Namespace}</li>
+            <li>Assembly: {type.Assembly.FullName}</li>
+        </ul>
 
-{inherits}
+        {inherits}
 
-{implements}
+        {implements}
 
-<h3>Summary</h3>
-{summary}
+        <h3>Summary</h3>
+        {summary}
 
-{this.RenderTypeGenericArguments(type)}
-{this.RenderTypeTOCSection(type, "Constructors", this.GetConstructors(type))}
-{this.RenderTypeTOCSection(type, "Fields", this.GetFields(type))}
-{this.RenderTypeTOCSection(type, "Properties", this.GetProperties(type))}
-{this.RenderTypeTOCSection(type, "Methods", this.GetMethods(type))}
-{this.RenderTypeTOCSection(type, "Events", this.GetEvents(type))}
-
+        {this.RenderTypeGenericArguments(type)}
+        {this.RenderTypeTOCSection(type, "Constructors", this.GetConstructors(type))}
+        {this.RenderTypeTOCSection(type, "Fields", this.GetFields(type))}
+        {this.RenderTypeTOCSection(type, "Properties", this.GetProperties(type))}
+        {this.RenderTypeTOCSection(type, "Methods", this.GetMethods(type))}
+        {this.RenderTypeTOCSection(type, "Events", this.GetEvents(type))}
+        </div>
 </div>
 ";
         return template;

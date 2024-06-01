@@ -285,10 +285,12 @@ public abstract class DocumentGenerator
 
         <div class=""toc"">
             <h2>Table of Contents</h2>
-            {this.RenderTOCSection("Classes", this.GetClasses())}
-            {this.RenderTOCSection("Structs", this.GetStructs())}
-            {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
-            {this.RenderTOCSection("Enums", this.GetEnums())}
+            <div class=""toc-inner"">
+                {this.RenderTOCSection("Classes", this.GetClasses())}
+                {this.RenderTOCSection("Structs", this.GetStructs())}
+                {this.RenderTOCSection("Interfaces", this.GetInterfaces())}
+                {this.RenderTOCSection("Enums", this.GetEnums())}
+            </div>
         </div>
 
         {contentTypes}
@@ -338,40 +340,87 @@ public abstract class DocumentGenerator
         var css = @"
 <style type=""text/css"">
 
+    :root {
+
+        /* Primary: Blue Blue */
+        --primary-100: #F3F2FF;
+        --primary-200: #C0C0FE;
+        --primary-300: #8B91F9;
+        --primary-400: #5565E9;
+        --primary-500: #233FCC;
+        --primary-600: #0C2EA3;
+        --primary-700: #032479;
+        --primary-800: #001B50;
+        --primary-900: #000F26;
+
+        /* Accent: Jaffa */
+        --accent-100: #FFF9F2;
+        --accent-200: #FFE4C8;
+        --accent-300: #FBC89D;
+        --accent-400: #F3A470;
+        --accent-500: #E37944;
+        --accent-600: #B44921;
+        --accent-700: #852A11;
+        --accent-800: #551509;
+        --accent-900: #260704;
+
+        /* Neutral */
+        --neutral-100: #FAFAFC;
+        --neutral-200: #EAEAEF;
+        --neutral-300: #DADAE2;
+        --neutral-400: #CACBD4;
+        --neutral-500: #BBBDC7;
+        --neutral-600: #94969F;
+        --neutral-700: #6D7077;
+        --neutral-800: #474A4E;
+        --neutral-900: #222426;
+    }
+
     /* -----------------------------------------------
     Base Styles
     -------------------------------------------------- */
 
     body {
         font-family: ""Helvetica Neue"", Helvetica, Arial, sans-serif;
-        color: #222;
+        color: var(--neutral-900);
         overflow-y: scroll;
         font-size: 0.8em;
-        background-color: #fbefcc
-    }
-
-    div.type {
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 4px;
-        margin: 4px 0px;
-        padding: 4px 4px;
-    }
-
-    div.member {
-        background-color: #daebe8;
-        border: 1px solid black;
-        border-radius: 4px;
-        margin: 4px 0px;
-        padding: 4px 4px;
     }
 
     div.toc {
-        background-color: #f9ccac;
-        border: 1px solid black;
+        background-color: var(--primary-200);
+        border: 1px solid var(--primary-500);
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 0px;
+    }
+
+    div.toc-inner {
+        margin: 4px;
+    }
+
+    div.type {
+        background-color: var(--accent-200);
+        border: 1px solid var(--accent-500);
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 0px;
+    }
+
+    div.type-inner {
+        margin: 4px;
+    }
+
+    div.member {
+        background-color: var(--primary-200);
+        border: 1px solid var(--primary-500);
         border-radius: 4px;
         margin: 4px 0px;
         padding: 4px 4px;
+    }
+
+    div.member-inner {
+        margin: 4px;
     }
 
     /* ------------------------------------
@@ -379,39 +428,50 @@ public abstract class DocumentGenerator
     --------------------------------------- */
 
     h1, h2, h3, h4, h5, h6 {
-        font-weight: 300;
-        margin: 0px;
-        padding: 0px;
+        font-weight: 500;
     }
 
     h1 {
         font-size: 2.0em;
-        letter-spacing: -.05em;
+        display: block;
+        background: var(--primary-300);
+        border: 1px solid var(--primary-700);
+        border-left: 2em solid var(--primary-700);
+        border-right: 2em solid var(--primary-700);
+        padding: 24px 6px;
+        border-radius: 4px;
     }
 
     h2 {
         font-size: 1.8em;
-        letter-spacing: -.05em;
     }
 
     h3 {
         font-size: 1.6em;
-        letter-spacing: -.05em;
     }
 
-    h4 {
-        font-size: 1.4em;
-        letter-spacing: -.025em;
+    div.toc h2  {
+        border-left: 2.0em solid var(--primary-500);
+        display: block;
+        padding: 12px 2px 12px 12px;
+        background-color: var(--primary-300);
+        margin: 0px;
     }
 
-    h5 {
-        font-size: 1.2em;
-        letter-spacing: -.025em;
+    div.toc h3 {
+        color: var(--primary-500);
     }
 
-    h6 {
-        font-size: 1.0em;
-        letter-spacing: 0;
+    div.type h2  {
+        border-left: 2.0em solid var(--accent-500);
+        display: block;
+        padding: 12px 2px 12px 12px;
+        background-color: var(--accent-300);
+        margin: 0px;
+    }
+
+    div.type h3 {
+        color: var(--accent-500);
     }
 
     /* -----------------------------------
@@ -508,13 +568,14 @@ public abstract class DocumentGenerator
     pre > code {
         display: inline-block;
         box-sizing: border-box;
-        padding: 1em 2em;
+        padding: 1em;
         margin: 1em 0em;
         white-space: pre;
         font-size: 100%;
-        border: 1px solid #123;
+        border: 1px solid var(--neutral-700);
         border-radius: 4px;
-        background-color: #e0e8ef;
+        background-color: var(--neutral-300);
+        color: var(--neutral-700)
     }
 
     /* ---------------------------------------------
@@ -558,6 +619,21 @@ public abstract class DocumentGenerator
     Tables
     ------------------------------------------------ */
 
+    div.table {
+        border: 1px solid var(--primary-700);
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        padding: 0px;
+    }
+
     th,
     td {
         padding: 6px 24px;
@@ -566,13 +642,13 @@ public abstract class DocumentGenerator
     }
 
     th {
-        background-color: #123;
-        color: white;
+        background-color: var(--primary-700);
+        color: var(--neutral-300);
         font-weight: 500;
     }
 
     tr:nth-child(odd) {
-        background-color: #eee;  
+        background-color: var(--neutral-100);  
     }
 
     /* ---------------------------------------------

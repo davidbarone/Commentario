@@ -9,40 +9,87 @@
     
 <style type="text/css">
 
+    :root {
+
+        /* Primary: Blue Blue */
+        --primary-100: #F3F2FF;
+        --primary-200: #C0C0FE;
+        --primary-300: #8B91F9;
+        --primary-400: #5565E9;
+        --primary-500: #233FCC;
+        --primary-600: #0C2EA3;
+        --primary-700: #032479;
+        --primary-800: #001B50;
+        --primary-900: #000F26;
+
+        /* Accent: Jaffa */
+        --accent-100: #FFF9F2;
+        --accent-200: #FFE4C8;
+        --accent-300: #FBC89D;
+        --accent-400: #F3A470;
+        --accent-500: #E37944;
+        --accent-600: #B44921;
+        --accent-700: #852A11;
+        --accent-800: #551509;
+        --accent-900: #260704;
+
+        /* Neutral */
+        --neutral-100: #FAFAFC;
+        --neutral-200: #EAEAEF;
+        --neutral-300: #DADAE2;
+        --neutral-400: #CACBD4;
+        --neutral-500: #BBBDC7;
+        --neutral-600: #94969F;
+        --neutral-700: #6D7077;
+        --neutral-800: #474A4E;
+        --neutral-900: #222426;
+    }
+
     /* -----------------------------------------------
     Base Styles
     -------------------------------------------------- */
 
     body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #222;
+        color: var(--neutral-900);
         overflow-y: scroll;
         font-size: 0.8em;
-        background-color: #fbefcc
-    }
-
-    div.type {
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 4px;
-        margin: 4px 0px;
-        padding: 4px 4px;
-    }
-
-    div.member {
-        background-color: #daebe8;
-        border: 1px solid black;
-        border-radius: 4px;
-        margin: 4px 0px;
-        padding: 4px 4px;
     }
 
     div.toc {
-        background-color: #f9ccac;
-        border: 1px solid black;
+        background-color: var(--primary-200);
+        border: 1px solid var(--primary-500);
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 0px;
+    }
+
+    div.toc-inner {
+        margin: 4px;
+    }
+
+    div.type {
+        background-color: var(--accent-200);
+        border: 1px solid var(--accent-500);
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 0px;
+    }
+
+    div.type-inner {
+        margin: 4px;
+    }
+
+    div.member {
+        background-color: var(--primary-200);
+        border: 1px solid var(--primary-500);
         border-radius: 4px;
         margin: 4px 0px;
         padding: 4px 4px;
+    }
+
+    div.member-inner {
+        margin: 4px;
     }
 
     /* ------------------------------------
@@ -50,39 +97,50 @@
     --------------------------------------- */
 
     h1, h2, h3, h4, h5, h6 {
-        font-weight: 300;
-        margin: 0px;
-        padding: 0px;
+        font-weight: 500;
     }
 
     h1 {
         font-size: 2.0em;
-        letter-spacing: -.05em;
+        display: block;
+        background: var(--primary-300);
+        border: 1px solid var(--primary-700);
+        border-left: 2em solid var(--primary-700);
+        border-right: 2em solid var(--primary-700);
+        padding: 24px 6px;
+        border-radius: 4px;
     }
 
     h2 {
         font-size: 1.8em;
-        letter-spacing: -.05em;
     }
 
     h3 {
         font-size: 1.6em;
-        letter-spacing: -.05em;
     }
 
-    h4 {
-        font-size: 1.4em;
-        letter-spacing: -.025em;
+    div.toc h2  {
+        border-left: 2.0em solid var(--primary-500);
+        display: block;
+        padding: 12px 2px 12px 12px;
+        background-color: var(--primary-300);
+        margin: 0px;
     }
 
-    h5 {
-        font-size: 1.2em;
-        letter-spacing: -.025em;
+    div.toc h3 {
+        color: var(--primary-500);
     }
 
-    h6 {
-        font-size: 1.0em;
-        letter-spacing: 0;
+    div.type h2  {
+        border-left: 2.0em solid var(--accent-500);
+        display: block;
+        padding: 12px 2px 12px 12px;
+        background-color: var(--accent-300);
+        margin: 0px;
+    }
+
+    div.type h3 {
+        color: var(--accent-500);
     }
 
     /* -----------------------------------
@@ -229,6 +287,21 @@
     Tables
     ------------------------------------------------ */
 
+    div.table {
+        border: 1px solid var(--primary-700);
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        padding: 0px;
+    }
+
     th,
     td {
         padding: 6px 24px;
@@ -237,13 +310,13 @@
     }
 
     th {
-        background-color: #123;
-        color: white;
+        background-color: var(--primary-700);
+        color: var(--neutral-300);
         font-weight: 500;
     }
 
     tr:nth-child(odd) {
-        background-color: #eee;  
+        background-color: var(--neutral-100);  
     }
 
     /* ---------------------------------------------
@@ -293,19 +366,20 @@ CommentarioServer merges the 2 sources of information to provide a fully documen
 
         <div class="toc">
             <h2>Table of Contents</h2>
-            
+            <div class="toc-inner">
+                
 <h3>Classes</h3>
-<div>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Namespace</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">AssemblyNode</a></td><td>Dbarone.Net.CommentarioServer</td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Namespace</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#T:Dbarone.Net.CommentarioServer.AssemblyNode">AssemblyNode</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             Represents the top level assembly node in the documentation.
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             Denotes text within a description should be marked as single-line code.
@@ -352,78 +426,81 @@ CommentarioServer merges the 2 sources of information to provide a fully documen
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.TypeSignature">TypeSignature</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr><tr><td><a href="#T:XmlComments">XmlComments</a></td><td></td><td>
             Class to process the xml comments file
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.XmlCommentsReader">XmlCommentsReader</a></td><td>Dbarone.Net.CommentarioServer</td><td></td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
-            
+                
 <h3>Structs</h3>
-<div>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Namespace</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#T:Dbarone.Net.CommentarioServer.MemberType">MemberType</a></td><td>Dbarone.Net.CommentarioServer</td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Namespace</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#T:Dbarone.Net.CommentarioServer.MemberType">MemberType</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             The member type.
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.OutputType">OutputType</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             Specifies the output type for the documentation.
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
-            
-            
+                
+                
 <h3>Enums</h3>
-<div>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Namespace</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#T:Dbarone.Net.CommentarioServer.MemberType">MemberType</a></td><td>Dbarone.Net.CommentarioServer</td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Namespace</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#T:Dbarone.Net.CommentarioServer.MemberType">MemberType</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             The member type.
             </td></tr><tr><td><a href="#T:Dbarone.Net.CommentarioServer.OutputType">OutputType</a></td><td>Dbarone.Net.CommentarioServer</td><td>
             Specifies the output type for the documentation.
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
+            </div>
         </div>
 
         
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.AssemblyNode">Class: AssemblyNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.AssemblyNode">Class: AssemblyNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Represents the top level assembly node in the documentation.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -439,8 +516,8 @@ Object
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -458,33 +535,35 @@ Object
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.CNode">Class: CNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.CNode">Class: CNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 TextNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Denotes text within a description should be marked as single-line code.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -500,35 +579,37 @@ TextNode
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.CodeNode">Class: CodeNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.CodeNode">Class: CodeNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 TextNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Denotes a block of code in a descriptive text block.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -544,35 +625,37 @@ TextNode
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">Class: ConstructorMethodSignature</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">Class: ConstructorMethodSignature</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 MethodBaseSignature
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Creates signatures for constructor methods.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -588,9 +671,9 @@ MethodBaseSignature
 </table>
 </div>
         
-
-
-
+        
+        
+        
 <div>
 <h3>Methods</h3>
 <table>
@@ -606,34 +689,36 @@ MethodBaseSignature
 </table>
 </div>
         
-
-
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.DocumentGenerator">Class: DocumentGenerator</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.DocumentGenerator">Class: DocumentGenerator</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Main entry point to CommentarioServer. Generates documents from xml comments and the assembly file.
             
 
-
-
-
-
+        
+        
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -661,7 +746,7 @@ Object
 </table>
 </div>
         
-
+        
 <div>
 <h3>Methods</h3>
 <table>
@@ -681,32 +766,34 @@ Object
 </table>
 </div>
         
-
-
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.DocumentNode">Class: DocumentNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.DocumentNode">Class: DocumentNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Represents the root node of the xml comments file.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -722,8 +809,8 @@ Object
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -743,7 +830,7 @@ Object
 </table>
 </div>
         
-
+        
 <div>
 <h3>Methods</h3>
 <table>
@@ -763,32 +850,34 @@ Object
 </table>
 </div>
         
-
-
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.ExampleNode">Class: ExampleNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.ExampleNode">Class: ExampleNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 ItemsNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Denotes an example, typically code examples.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -804,35 +893,37 @@ ItemsNode
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.ExceptionNode">Class: ExceptionNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.ExceptionNode">Class: ExceptionNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 ItemsNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             A description of an exception that can be thrown.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -848,8 +939,8 @@ ItemsNode
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -867,36 +958,38 @@ ItemsNode
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.ExtensionMethods">Class: ExtensionMethods</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.ExtensionMethods">Class: ExtensionMethods</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Useful extension methods. Primarily to provide reflection services.
             
 
-
-
-
-
-
+        
+        
+        
+        
+        
 <div>
 <h3>Methods</h3>
 <table>
@@ -924,32 +1017,34 @@ Object
 </table>
 </div>
         
-
-
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator">Class: HtmlDocumentGenerator</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator">Class: HtmlDocumentGenerator</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 DocumentGenerator
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Generates documentation in html format.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -965,36 +1060,38 @@ DocumentGenerator
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.IDString">Class: IDString</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.IDString">Class: IDString</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Represents the parts making up a comment document id, known as the 'ID string'.
             https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1012,8 +1109,8 @@ Object
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -1047,33 +1144,35 @@ Object
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.ItemsNode">Class: ItemsNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.ItemsNode">Class: ItemsNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             An items node is a node that can contain multiple types of child node.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1089,8 +1188,8 @@ Object
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -1108,33 +1207,35 @@ Object
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.MemberNode">Class: MemberNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.MemberNode">Class: MemberNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Describes a single member in the xml comments. A member can be either a .NET Type or a .NET member for a type (for example a method, property, field etc).
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1150,8 +1251,8 @@ Object
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -1169,36 +1270,38 @@ Object
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.MemberType">Struct: MemberType</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.MemberType">Struct: MemberType</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Enum
 
-
+        
 <h3>Implemented Interfaces</h3>
 <ul><li>IComparable</li><li>ISpanFormattable</li><li>IFormattable</li><li>IConvertible</li></ul>
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             The member type.
             
 
-
-
-
+        
+        
+        
 <div>
 <h3>Fields</h3>
 <table>
@@ -1228,35 +1331,37 @@ Enum
 </table>
 </div>
         
-
-
-
-
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.MethodBaseSignature">Class: MethodBaseSignature</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.MethodBaseSignature">Class: MethodBaseSignature</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
+        <h3>Summary</h3>
+        
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
 <div>
 <h3>Methods</h3>
 <table>
@@ -1272,30 +1377,32 @@ Object
 </table>
 </div>
         
-
-
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.MethodSignature">Class: MethodSignature</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.MethodSignature">Class: MethodSignature</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 MethodBaseSignature
 
+        
 
+        <h3>Summary</h3>
+        
 
-<h3>Summary</h3>
-
-
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1311,9 +1418,9 @@ MethodBaseSignature
 </table>
 </div>
         
-
-
-
+        
+        
+        
 <div>
 <h3>Methods</h3>
 <table>
@@ -1329,35 +1436,37 @@ MethodBaseSignature
 </table>
 </div>
         
-
-
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.OutputType">Struct: OutputType</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.OutputType">Struct: OutputType</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Enum
 
-
+        
 <h3>Implemented Interfaces</h3>
 <ul><li>IComparable</li><li>ISpanFormattable</li><li>IFormattable</li><li>IConvertible</li></ul>
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Specifies the output type for the documentation.
             
 
-
-
-
+        
+        
+        
 <div>
 <h3>Fields</h3>
 <table>
@@ -1375,34 +1484,36 @@ Enum
 </table>
 </div>
         
-
-
-
-
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.ParamNode">Class: ParamNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.ParamNode">Class: ParamNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 ItemsNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Comment for a parameter on a method. The items property stores the descriptions.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1418,8 +1529,8 @@ ItemsNode
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -1437,33 +1548,35 @@ ItemsNode
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.ParaNode">Class: ParaNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.ParaNode">Class: ParaNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 ItemsNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Represents a paragraph of text in a description field.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1479,35 +1592,37 @@ ItemsNode
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.RemarkNode">Class: RemarkNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.RemarkNode">Class: RemarkNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 ItemsNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Expands on the summary sentence to provide more information for readers.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1523,35 +1638,37 @@ ItemsNode
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.ReturnsNode">Class: ReturnsNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.ReturnsNode">Class: ReturnsNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 ItemsNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             The ReturnsNode describes the return value of a method.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1567,35 +1684,37 @@ ItemsNode
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.SeeNode">Class: SeeNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.SeeNode">Class: SeeNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 TextNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Allows you to specify a link from text.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1611,8 +1730,8 @@ TextNode
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -1628,33 +1747,35 @@ TextNode
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.SummaryNode">Class: SummaryNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.SummaryNode">Class: SummaryNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 ItemsNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Every class and member should have a one sentence summary describing its purpose.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1670,36 +1791,38 @@ ItemsNode
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.TextNode">Class: TextNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.TextNode">Class: TextNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             A text node represents a node in the xml comments that only has inner text.
             This text is not processed any further, and the literal value is used as is. 
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1715,8 +1838,8 @@ Object
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -1734,33 +1857,35 @@ Object
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.TypeParamNode">Class: TypeParamNode</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.TypeParamNode">Class: TypeParamNode</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 TextNode
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Represents a type parameter comment.
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1776,8 +1901,8 @@ TextNode
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -1795,34 +1920,36 @@ TextNode
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.TypeSignature">Class: TypeSignature</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.TypeSignature">Class: TypeSignature</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
+        <h3>Summary</h3>
+        
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
 <div>
 <h3>Methods</h3>
 <table>
@@ -1846,32 +1973,34 @@ Object
 </table>
 </div>
         
-
-
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:XmlComments">Class: XmlComments</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: </li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:XmlComments">Class: XmlComments</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: </li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Class to process the xml comments file
             
 
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1887,33 +2016,35 @@ Object
 </table>
 </div>
         
-
-
-
-
-
+        
+        
+        
+        
+        </div>
 </div>
 
+
 <div class="type">       
-<h2 id="T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Class: XmlCommentsReader</h2>
-<a href="#top">Back to top</a>
-<h3>Definition:</h3>
-<ul>
-    <li>Namespace: Dbarone.Net.CommentarioServer</li>
-    <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
-</ul>
+    <h2 id="T:Dbarone.Net.CommentarioServer.XmlCommentsReader">Class: XmlCommentsReader</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: Dbarone.Net.CommentarioServer</li>
+            <li>Assembly: Dbarone.Net.CommentarioServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
 
-
+        
 <h3>Base Class</h3>
 Object
 
+        
 
+        <h3>Summary</h3>
+        
 
-<h3>Summary</h3>
-
-
-
-
+        
+        
 <div>
 <h3>Constructors</h3>
 <table>
@@ -1929,8 +2060,8 @@ Object
 </table>
 </div>
         
-
-
+        
+        
 <div>
 <h3>Properties</h3>
 <table>
@@ -1946,9 +2077,9 @@ Object
 </table>
 </div>
         
-
-
-
+        
+        
+        </div>
 </div>
 
         
