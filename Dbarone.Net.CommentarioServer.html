@@ -9,6 +9,7 @@
     
 <style type="text/css">
 
+    /* https://goodpalette.io */
     :root {
 
         /* Primary: Blue Blue */
@@ -234,16 +235,20 @@
     Code / Pre
     ------------------------------------------------ */
 
-    pre > code {
+    pre code {
+        background-color: var(--neutral-200);
+        border: 1px solid var(--neutral-700);
+        border-left: 6px solid var(--accent-700);
+        color: var(--neutral-900);
+        page-break-inside: avoid;
+        font: "Courier New", Courier, Monospace;
+        max-width: 100%;
+        padding: 2em 1em;
         display: inline-block;
-        box-sizing: border-box;
-        padding: 1em 2em;
-        margin: 1em 0em;
-        white-space: pre;
-        font-size: 100%;
-        border: 1px solid #123;
-        border-radius: 4px;
-        background-color: #e0e8ef;
+        word-wrap: break-word;
+        overflow: auto;
+        overflow-x: auto;
+        white-space: pre-wrap;
     }
 
     /* ---------------------------------------------

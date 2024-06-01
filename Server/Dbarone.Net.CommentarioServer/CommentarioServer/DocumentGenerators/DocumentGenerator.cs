@@ -340,6 +340,7 @@ public abstract class DocumentGenerator
         var css = @"
 <style type=""text/css"">
 
+    /* https://goodpalette.io */
     :root {
 
         /* Primary: Blue Blue */
@@ -565,17 +566,20 @@ public abstract class DocumentGenerator
     Code / Pre
     ------------------------------------------------ */
 
-    pre > code {
-        display: inline-block;
-        box-sizing: border-box;
-        padding: 1em;
-        margin: 1em 0em;
-        white-space: pre;
-        font-size: 100%;
+    pre code {
+        background-color: var(--neutral-200);
         border: 1px solid var(--neutral-700);
-        border-radius: 4px;
-        background-color: var(--neutral-300);
-        color: var(--neutral-700)
+        border-left: 6px solid var(--accent-700);
+        color: var(--neutral-900);
+        page-break-inside: avoid;
+        font: ""Courier New"", Courier, Monospace;
+        max-width: 100%;
+        padding: 2em 1em;
+        display: inline-block;
+        word-wrap: break-word;
+        overflow: auto;
+        overflow-x: auto;
+        white-space: pre-wrap;
     }
 
     /* ---------------------------------------------
