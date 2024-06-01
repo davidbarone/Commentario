@@ -278,6 +278,12 @@ public abstract class DocumentGenerator
     <title>HTML 5 Boilerplate</title>
     {this.GetCSSStyles()}
 
+    <!-- https://highlightjs.org/#usage -->
+    <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"">
+    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js""></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js""></script>
+
   </head>
   <body id=""top"">
         <h1>{GetAssembly()}</h1>
@@ -297,6 +303,8 @@ public abstract class DocumentGenerator
         {contentMembers}
 
     </body>
+    <!-- https://highlightjs.org/#usage -->
+    <script>hljs.highlightAll();</script>
 </html>
         ";
 
@@ -375,6 +383,8 @@ public abstract class DocumentGenerator
         --neutral-700: #6D7077;
         --neutral-800: #474A4E;
         --neutral-900: #222426;
+
+        --white: #fff;
     }
 
     /* -----------------------------------------------
@@ -385,7 +395,7 @@ public abstract class DocumentGenerator
         font-family: ""Helvetica Neue"", Helvetica, Arial, sans-serif;
         color: var(--neutral-900);
         overflow-y: scroll;
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     div.toc {
@@ -413,8 +423,8 @@ public abstract class DocumentGenerator
     }
 
     div.member {
-        background-color: var(--primary-200);
-        border: 1px solid var(--primary-500);
+        background-color: var(--neutral-200);
+        border: 1px solid var(--neutral-500);
         border-radius: 4px;
         margin: 4px 0px;
         padding: 4px 4px;
@@ -449,6 +459,7 @@ public abstract class DocumentGenerator
 
     h3 {
         font-size: 1.6em;
+        margin: 1em 0em 0em 0em;
     }
 
     div.toc h2  {
@@ -475,91 +486,48 @@ public abstract class DocumentGenerator
         color: var(--accent-500);
     }
 
+    div.member h2  {
+        border-left: 2.0em solid var(--primary-500);
+        display: block;
+        padding: 12px 2px 12px 12px;
+        background-color: var(--primary-300);
+        margin: 0px;
+    }
+
+    div.member h3 {
+        color: var(--primary-500);
+    }
+
     /* -----------------------------------
     Links
     -------------------------------------- */
 
     a {
-        color: #456789;
+        color: var(--accent-700);
         text-decoration: none;
     }
 
     a:hover {
-        color: #123456;
+        color: var(--accent-700);
         text-decoration: underline;
-    }
-
-    /* ---------------------------------------------
-    definitions
-    ------------------------------------------------ */
-
-    dl {
-        border: 3px double #ccc;
-        padding: 0.5em;
-    }
-
-    dl * {
-        display: none;
-        float: left;
-    }
-
-    dl:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    dt {
-        visibility: visible;
-        width: 25%;
-        text-align: right;
-        font-weight: bold;
-        display: inline-block;
-        color: rgb(61, 79, 93);
-        box-sizing: border-box;
-        padding-right: 3px;
-        margin: 0px;
-    }
-
-    dt:after {
-        content: ':';
-    }
-
-    dd {
-        visibility:visible;
-        width: 75%;
-        text-align: left;
-        display: inline-block;
-        box-sizing: border-box;
-        padding-left: 3px;
-        margin: 0px;
     }
 
     /* ---------------------------------------------
     Lists
     ------------------------------------------------ */
 
+    ol, ul {
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 0.5em;
+    }
+
     ul {
         list-style: disc inside;
-        margin: 0px;
-        padding: 0px;
     }
 
     ol {
         list-style: decimal inside;
-    }
-
-    ol, ul {
-        padding-left: 0;
-    }
-
-    ul ul,
-    ul ol,
-    ol ol,
-    ol ul {
-    }
-
-    li {
     }
 
     /* ---------------------------------------------
@@ -567,7 +535,7 @@ public abstract class DocumentGenerator
     ------------------------------------------------ */
 
     pre code {
-        background-color: var(--neutral-200);
+        background-color: var(--white);
         border: 1px solid var(--neutral-700);
         border-left: 6px solid var(--accent-700);
         color: var(--neutral-900);
@@ -580,43 +548,6 @@ public abstract class DocumentGenerator
         overflow: auto;
         overflow-x: auto;
         white-space: pre-wrap;
-    }
-
-    /* ---------------------------------------------
-    Blockquote + cite
-    ------------------------------------------------ */
-
-    blockquote {
-        border-left: 10px solid rgb(61, 79, 93);
-        background: #f9f9f9;
-        font-family: Georgia, serif;
-        font-style: italic;
-        margin: 0.25em 0;
-        padding: 0.25em 60px;
-        line-height: 1.45;
-        position: relative;
-        color: #383838;
-    }
-
-    blockquote:before {
-        display: block;
-        content: ""\201C"";
-        font-size: 60px;
-        position: absolute;
-        left: 20px;
-        top: 0px;
-        color: #7a7a7a;
-    }
-
-    blockquote cite {
-        color: #999999;
-        font-size: 14px;
-        display: block;
-        margin-top: 5px;
-    }
-    
-    blockquote cite:before {
-        content: ""\2014 \2009"";
     }
 
     /* ---------------------------------------------
@@ -667,18 +598,8 @@ public abstract class DocumentGenerator
     ul,
     ol,
     {
+        margin-top: 0em;
         margin-bottom: .5em;
-    }
-
-    /* ---------------------------------------------
-    Misc
-    ------------------------------------------------ */
-
-    hr {
-        margin-top: 2em;
-        margin-bottom: 2em;
-        border-width: 0;
-        border-top: 4px solid #123;
     }
 
 </style>

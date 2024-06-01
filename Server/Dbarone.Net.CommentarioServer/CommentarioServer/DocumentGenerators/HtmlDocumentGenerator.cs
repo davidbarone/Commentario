@@ -84,18 +84,18 @@ public class HtmlDocumentGenerator : DocumentGenerator
             }));
             return @$"
 <h3>Type Parameters</h3>
-<div>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        {values}
-    </tbody>
-</table>
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {values}
+        </tbody>
+    </table>
 </div>";
         }
     }
@@ -191,19 +191,19 @@ public class HtmlDocumentGenerator : DocumentGenerator
         else
         {
             return @$"
-<div>
 <h3>{header}</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        {values}
-    </tbody>
-</table>
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {values}
+        </tbody>
+    </table>
 </div>
         ";
         }
@@ -276,8 +276,6 @@ public class HtmlDocumentGenerator : DocumentGenerator
             }
         }
 
-
-
         var declaringType = member.DeclaringType!;
 
         // Parameters
@@ -287,25 +285,27 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {
             parameters = $@"
 <h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        {string.Join("", parameterInfos.Select(
-                p =>
-                @$"
-<tr>
-    <td>{p.Name}</td>
-    <td>{p.ParameterType}</td>
-    <td>{(node is not null && node.Params is not null ? this.RenderParam(node.Params.FirstOrDefault(n => n.Name.Equals(p.Name, StringComparison.Ordinal))) : "")}</td>
-</tr>"))}
-    </tbody>
-</table>";
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {string.Join("", parameterInfos.Select(
+                    p =>
+                    @$"
+    <tr>
+        <td>{p.Name}</td>
+        <td>{p.ParameterType}</td>
+        <td>{(node is not null && node.Params is not null ? this.RenderParam(node.Params.FirstOrDefault(n => n.Name.Equals(p.Name, StringComparison.Ordinal))) : "")}</td>
+    </tr>"))}
+        </tbody>
+    </table>
+</div>";
         }
 
         // Returns
@@ -324,26 +324,28 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
         var template = @$"
 <div class=""member"">
-<h2 id=""{member.ToCommentId()}"">{member.GetMemberTypeName()}: {member.Name}</h1>
+    <h2 id=""{member.ToCommentId()}"">{member.GetMemberTypeName()}: {member.Name}</h1>
+    <div class=""member-inner"">
 
-<h3>Declaring Type</h3>
-<a href=""#{declaringType.ToCommentId()}"">{member.DeclaringType}</a>
+        <h3>Declaring Type</h3>
+        <a href=""#{declaringType.ToCommentId()}"">{member.DeclaringType}</a>
 
-{signature}
+        {signature}
 
-<h3>Summary</h3>
-{summary}
+        <h3>Summary</h3>
+        {summary}
 
-{remarks}
+        {remarks}
 
-{examples}
+        {examples}
 
-{parameters}
+        {parameters}
 
-{returns}
+        {returns}
 
-{exceptions}
+        {exceptions}
 
+    </div>
 </div>
 ";
         return template;
@@ -395,7 +397,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
     protected override string RenderCode(CodeNode node)
     {
-        return $"<pre><code>{node.Text}</code></pre>";
+        return $@"<pre><code class=""csharp"">{node.Text}</code></pre>";
     }
 
     protected override string RenderC(CNode node)

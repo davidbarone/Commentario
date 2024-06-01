@@ -44,6 +44,8 @@
         --neutral-700: #6D7077;
         --neutral-800: #474A4E;
         --neutral-900: #222426;
+
+        --white: #fff;
     }
 
     /* -----------------------------------------------
@@ -54,7 +56,7 @@
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: var(--neutral-900);
         overflow-y: scroll;
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     div.toc {
@@ -82,8 +84,8 @@
     }
 
     div.member {
-        background-color: var(--primary-200);
-        border: 1px solid var(--primary-500);
+        background-color: var(--neutral-200);
+        border: 1px solid var(--neutral-500);
         border-radius: 4px;
         margin: 4px 0px;
         padding: 4px 4px;
@@ -118,6 +120,7 @@
 
     h3 {
         font-size: 1.6em;
+        margin: 1em 0em 0em 0em;
     }
 
     div.toc h2  {
@@ -144,91 +147,48 @@
         color: var(--accent-500);
     }
 
+    div.member h2  {
+        border-left: 2.0em solid var(--primary-500);
+        display: block;
+        padding: 12px 2px 12px 12px;
+        background-color: var(--primary-300);
+        margin: 0px;
+    }
+
+    div.member h3 {
+        color: var(--primary-500);
+    }
+
     /* -----------------------------------
     Links
     -------------------------------------- */
 
     a {
-        color: #456789;
+        color: var(--accent-700);
         text-decoration: none;
     }
 
     a:hover {
-        color: #123456;
+        color: var(--accent-700);
         text-decoration: underline;
-    }
-
-    /* ---------------------------------------------
-    definitions
-    ------------------------------------------------ */
-
-    dl {
-        border: 3px double #ccc;
-        padding: 0.5em;
-    }
-
-    dl * {
-        display: none;
-        float: left;
-    }
-
-    dl:after {
-        content: ";
-        display: table;
-        clear: both;
-    }
-
-    dt {
-        visibility: visible;
-        width: 25%;
-        text-align: right;
-        font-weight: bold;
-        display: inline-block;
-        color: rgb(61, 79, 93);
-        box-sizing: border-box;
-        padding-right: 3px;
-        margin: 0px;
-    }
-
-    dt:after {
-        content: ':';
-    }
-
-    dd {
-        visibility:visible;
-        width: 75%;
-        text-align: left;
-        display: inline-block;
-        box-sizing: border-box;
-        padding-left: 3px;
-        margin: 0px;
     }
 
     /* ---------------------------------------------
     Lists
     ------------------------------------------------ */
 
+    ol, ul {
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 0.5em;
+    }
+
     ul {
         list-style: disc inside;
-        margin: 0px;
-        padding: 0px;
     }
 
     ol {
         list-style: decimal inside;
-    }
-
-    ol, ul {
-        padding-left: 0;
-    }
-
-    ul ul,
-    ul ol,
-    ol ol,
-    ol ul {
-    }
-
-    li {
     }
 
     /* ---------------------------------------------
@@ -236,7 +196,7 @@
     ------------------------------------------------ */
 
     pre code {
-        background-color: var(--neutral-200);
+        background-color: var(--white);
         border: 1px solid var(--neutral-700);
         border-left: 6px solid var(--accent-700);
         color: var(--neutral-900);
@@ -249,43 +209,6 @@
         overflow: auto;
         overflow-x: auto;
         white-space: pre-wrap;
-    }
-
-    /* ---------------------------------------------
-    Blockquote + cite
-    ------------------------------------------------ */
-
-    blockquote {
-        border-left: 10px solid rgb(61, 79, 93);
-        background: #f9f9f9;
-        font-family: Georgia, serif;
-        font-style: italic;
-        margin: 0.25em 0;
-        padding: 0.25em 60px;
-        line-height: 1.45;
-        position: relative;
-        color: #383838;
-    }
-
-    blockquote:before {
-        display: block;
-        content: "\201C";
-        font-size: 60px;
-        position: absolute;
-        left: 20px;
-        top: 0px;
-        color: #7a7a7a;
-    }
-
-    blockquote cite {
-        color: #999999;
-        font-size: 14px;
-        display: block;
-        margin-top: 5px;
-    }
-    
-    blockquote cite:before {
-        content: "\2014 \2009";
     }
 
     /* ---------------------------------------------
@@ -336,22 +259,18 @@
     ul,
     ol,
     {
+        margin-top: 0em;
         margin-bottom: .5em;
-    }
-
-    /* ---------------------------------------------
-    Misc
-    ------------------------------------------------ */
-
-    hr {
-        margin-top: 2em;
-        margin-bottom: 2em;
-        border-width: 0;
-        border-top: 4px solid #123;
     }
 
 </style>
         
+
+    <!-- https://highlightjs.org/#usage -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js"></script>
 
   </head>
   <body id="top">
@@ -485,41 +404,41 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.ComplexComments.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.ComplexComments.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
         
         
-<div>
 <h3>Methods</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">System.String MethodThatHasRemarks()</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">System.String MethodThatHasRemarks()</a></td><td>
             This is a method that returns nothing.
             </td></tr><tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">System.Void MethodThatThrowsTwoExceptionTypes(System.Int32, System.Int32)</a></td><td>
             This is a method that throws 2 possible exceptions.
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
@@ -552,37 +471,37 @@ MulticastDelegate
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">System.Void .ctor(System.Object, System.IntPtr)</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">System.Void .ctor(System.Object, System.IntPtr)</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
         
         
-<div>
 <h3>Methods</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">System.IAsyncResult BeginInvoke(System.String, System.AsyncCallback, System.Object)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">System.Int32 EndInvoke(System.IAsyncResult)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">System.Int32 Invoke(System.String)</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">System.IAsyncResult BeginInvoke(System.String, System.AsyncCallback, System.Object)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">System.Int32 EndInvoke(System.IAsyncResult)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">System.Int32 Invoke(System.String)</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
@@ -613,19 +532,19 @@ Exception
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.ExceptionA.#ctor(System.String)">System.Void .ctor(System.String)</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.ExceptionA.#ctor(System.String)">System.Void .ctor(System.String)</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
@@ -659,19 +578,19 @@ Exception
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.ExceptionB.#ctor(System.String)">System.Void .ctor(System.String)</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.ExceptionB.#ctor(System.String)">System.Void .ctor(System.String)</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
@@ -708,25 +627,25 @@ Enum
         
         
         
-<div>
 <h3>Fields</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.BAR">ExampleLibrary.FooBarBazEnum BAR</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.BAR">ExampleLibrary.FooBarBazEnum BAR</a></td><td>
             Bar.
             </td></tr><tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.BAZ">ExampleLibrary.FooBarBazEnum BAZ</a></td><td>
             Baz.
             </td></tr><tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.FOO">ExampleLibrary.FooBarBazEnum FOO</a></td><td>
             Foo.
             </td></tr><tr><td><a href="#F:ExampleLibrary.FooBarBazEnum.value__">System.Int32 value__</a></td><td></td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
@@ -759,33 +678,33 @@ Object
 
         
 <h3>Type Parameters</h3>
-<div>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>T</a></td><td>The type parameter, 'T'.</td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>T</a></td><td>The type parameter, 'T'.</td></tr>
+        </tbody>
+    </table>
 </div>
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.GenericType.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.GenericType.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
@@ -819,21 +738,21 @@ Object
         
         
         
-<div>
 <h3>Properties</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#P:ExampleLibrary.ITestInterface.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#P:ExampleLibrary.ITestInterface.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td>
             The type of the object (foo, bar, baz).
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
@@ -865,19 +784,19 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:foo.bar.baz.MultipartNamespace.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:foo.bar.baz.MultipartNamespace.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
@@ -909,19 +828,19 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
@@ -955,19 +874,19 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:NoNamespace.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:NoNamespace.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
@@ -999,19 +918,19 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:NoNamespace+NoNamespaceNestedClass.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:NoNamespace+NoNamespaceNestedClass.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
@@ -1047,38 +966,38 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.SubclassBar.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.SubclassBar.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
         
-<div>
 <h3>Properties</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#P:ExampleLibrary.SubclassBar.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#P:ExampleLibrary.SubclassBar.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td>
             The type of the object (foo).
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
@@ -1112,38 +1031,38 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.SubclassBaz.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.SubclassBaz.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
         
-<div>
 <h3>Properties</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#P:ExampleLibrary.SubclassBaz.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#P:ExampleLibrary.SubclassBaz.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td>
             The type of the object (foo).
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
@@ -1177,38 +1096,38 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.SubclassFoo.#ctor">System.Void .ctor()</a></td><td></td></tr>
-    </tbody>
-</table>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.SubclassFoo.#ctor">System.Void .ctor()</a></td><td></td></tr>
+        </tbody>
+    </table>
 </div>
         
         
         
-<div>
 <h3>Properties</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#P:ExampleLibrary.SubclassFoo.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#P:ExampleLibrary.SubclassFoo.FooBarBazType">ExampleLibrary.FooBarBazEnum FooBarBazType</a></td><td>
             The type of the object (foo).
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
@@ -1240,58 +1159,58 @@ Object
 
         
         
-<div>
 <h3>Constructors</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.Test.#ctor">System.Void .ctor()</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.Test.#ctor">System.Void .ctor()</a></td><td>
             Default constructor.
             </td></tr><tr><td><a href="#M:ExampleLibrary.Test.#ctor(System.Int32)">System.Void .ctor(System.Int32)</a></td><td>
             Constructor with 1 parameter.
             </td></tr><tr><td><a href="#M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">System.Void .ctor(System.Int32, System.Int32)</a></td><td>
             Constructor with 2 parameters.
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
         
-<div>
 <h3>Properties</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#P:ExampleLibrary.Test.SomeFlag">System.Boolean SomeFlag</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#P:ExampleLibrary.Test.SomeFlag">System.Boolean SomeFlag</a></td><td>
             This is a test boolean property.
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
-<div>
 <h3>Methods</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td><a href="#M:ExampleLibrary.Test.Add(System.Int32,System.Int32)">System.Int32 Add(System.Int32, System.Int32)</a></td><td>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.Test.Add(System.Int32,System.Int32)">System.Int32 Add(System.Int32, System.Int32)</a></td><td>
             This method takes 2 integers and adds them.
             </td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{T}(T)">T GenericMethod[T](T)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">TOutput GenericMethod[TInput,TOutput](TInput, System.Boolean)</a></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesException">System.Void MethodThatRaisesException()</a></td><td>
             This is a method that throws an exception.
@@ -1302,8 +1221,8 @@ Object
             </td></tr><tr><td><a href="#M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">System.Void ParameterWithMultipleParameters(System.Int32, System.DateTime, System.Guid)</a></td><td>
             An example method with multiple parameters.
             </td></tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
         
         
@@ -1312,1541 +1231,1665 @@ Object
 
         
 <div class="member">
-<h2 id="M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">Method: MethodThatHasRemarks</h1>
+    <h2 id="M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">Method: MethodThatHasRemarks</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public string MethodThatHasRemarks()</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             This is a method that returns nothing.
             
 
-<h3>Remarks</h3>
+        <h3>Remarks</h3>
 <p>This method returns nothing.</p><h3>Example</h3>
 
             This is an example of calling this method.
-            <pre><code>MethodThatHasRemarks();</code></pre><p>Did we say, this method returns nothing.</p>
+            <pre><code class="csharp">MethodThatHasRemarks();</code></pre><p>Did we say, this method returns nothing.</p>
 
+        
 
+        
 
-
-
-<h3>Returns</h3>
+        <h3>Returns</h3>
 This method returns nothing.
 
+        
 
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">Method: MethodThatThrowsTwoExceptionTypes</h1>
+    <h2 id="M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">Method: MethodThatThrowsTwoExceptionTypes</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void MethodThatThrowsTwoExceptionTypes(int a, int b)</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             This is a method that throws 2 possible exceptions.
             
 
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
         
-<tr>
-    <td>a</td>
-    <td>System.Int32</td>
-    <td>The first parameter.</td>
-</tr>
-<tr>
-    <td>b</td>
-    <td>System.Int32</td>
-    <td>The second parameter</td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>a</td>
+        <td>System.Int32</td>
+        <td>The first parameter.</td>
+    </tr>
+    <tr>
+        <td>b</td>
+        <td>System.Int32</td>
+        <td>The second parameter</td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
-<h3>Exceptions</h3><div><b>T:ExampleLibrary.ExceptionA</b></div>This error is thrown if a is less than b.<div><b>T:ExampleLibrary.ExceptionB</b></div>This error is thrown in all other cases.
+        
 
+        <h3>Exceptions</h3><div><b>T:ExampleLibrary.ExceptionA</b></div>This error is thrown if a is less than b.<div><b>T:ExampleLibrary.ExceptionB</b></div>This error is thrown in all other cases.
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ComplexComments.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.ComplexComments.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ComplexComments">ExampleLibrary.ComplexComments</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public ComplexComments()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Method: Invoke</h1>
+    <h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Method: Invoke</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public int Invoke(string input)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>input</td>
-    <td>System.String</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>input</td>
+        <td>System.String</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">Method: BeginInvoke</h1>
+    <h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">Method: BeginInvoke</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public System.IAsyncResult BeginInvoke(string input, System.AsyncCallback callback, object object)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>input</td>
-    <td>System.String</td>
-    <td></td>
-</tr>
-<tr>
-    <td>callback</td>
-    <td>System.AsyncCallback</td>
-    <td></td>
-</tr>
-<tr>
-    <td>object</td>
-    <td>System.Object</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>input</td>
+        <td>System.String</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>callback</td>
+        <td>System.AsyncCallback</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>object</td>
+        <td>System.Object</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">Method: EndInvoke</h1>
+    <h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">Method: EndInvoke</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public int EndInvoke(System.IAsyncResult result)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>result</td>
-    <td>System.IAsyncResult</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>result</td>
+        <td>System.IAsyncResult</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ExampleLibrary.ConvertStringToIntDelegate</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public ConvertStringToIntDelegate(object object, nint method)</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ExceptionA.#ctor(System.String)">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.ExceptionA.#ctor(System.String)">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ExceptionA">ExampleLibrary.ExceptionA</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ExceptionA">ExampleLibrary.ExceptionA</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public ExceptionA(string message)</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ExceptionB.#ctor(System.String)">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.ExceptionB.#ctor(System.String)">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ExceptionB">ExampleLibrary.ExceptionB</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ExceptionB">ExampleLibrary.ExceptionB</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public ExceptionB(string message)</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="F:ExampleLibrary.FooBarBazEnum.value__">Field: value__</h1>
+    <h2 id="F:ExampleLibrary.FooBarBazEnum.value__">Field: value__</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
 
+        
 
+        <h3>Summary</h3>
+        
 
-<h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="F:ExampleLibrary.FooBarBazEnum.FOO">Field: FOO</h1>
+    <h2 id="F:ExampleLibrary.FooBarBazEnum.FOO">Field: FOO</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Foo.
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="F:ExampleLibrary.FooBarBazEnum.BAR">Field: BAR</h1>
+    <h2 id="F:ExampleLibrary.FooBarBazEnum.BAR">Field: BAR</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Bar.
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="F:ExampleLibrary.FooBarBazEnum.BAZ">Field: BAZ</h1>
+    <h2 id="F:ExampleLibrary.FooBarBazEnum.BAZ">Field: BAZ</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.FooBarBazEnum">ExampleLibrary.FooBarBazEnum</a>
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Baz.
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.GenericType.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.GenericType.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.GenericType`1">ExampleLibrary.GenericType`1</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.GenericType`1">ExampleLibrary.GenericType`1</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public GenericType`1()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ITestInterface.get_FooBarBazType">Method: get_FooBarBazType</h1>
+    <h2 id="M:ExampleLibrary.ITestInterface.get_FooBarBazType">Method: get_FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.ITestInterface.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+    <h2 id="M:ExampleLibrary.ITestInterface.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>value</td>
-    <td>ExampleLibrary.FooBarBazEnum</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td>ExampleLibrary.FooBarBazEnum</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="P:ExampleLibrary.ITestInterface.FooBarBazType">Property: FooBarBazType</h1>
+    <h2 id="P:ExampleLibrary.ITestInterface.FooBarBazType">Property: FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.ITestInterface">ExampleLibrary.ITestInterface</a>
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             The type of the object (foo, bar, baz).
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:foo.bar.baz.MultipartNamespace.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:foo.bar.baz.MultipartNamespace.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:foo.bar.baz.MultipartNamespace">foo.bar.baz.MultipartNamespace</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:foo.bar.baz.MultipartNamespace">foo.bar.baz.MultipartNamespace</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public MultipartNamespace()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id=":foo.bar.baz.MultipartNamespace.foo#bar#baz#MultipartNamespace+MultpartNamespaceNestedClass">: MultpartNamespaceNestedClass</h1>
+    <h2 id=":foo.bar.baz.MultipartNamespace.foo#bar#baz#MultipartNamespace+MultpartNamespaceNestedClass">: MultpartNamespaceNestedClass</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:foo.bar.baz.MultipartNamespace">foo.bar.baz.MultipartNamespace</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:foo.bar.baz.MultipartNamespace">foo.bar.baz.MultipartNamespace</a>
 
+        
 
+        <h3>Summary</h3>
+        
 
-<h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public MultpartNamespaceNestedClass()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:NoNamespace.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:NoNamespace.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:NoNamespace">NoNamespace</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:NoNamespace">NoNamespace</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public NoNamespace()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id=":NoNamespace.NoNamespace+NoNamespaceNestedClass">: NoNamespaceNestedClass</h1>
+    <h2 id=":NoNamespace.NoNamespace+NoNamespaceNestedClass">: NoNamespaceNestedClass</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:NoNamespace">NoNamespace</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:NoNamespace">NoNamespace</a>
 
+        
 
+        <h3>Summary</h3>
+        
 
-<h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:NoNamespace+NoNamespaceNestedClass.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:NoNamespace+NoNamespaceNestedClass.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:NoNamespace+NoNamespaceNestedClass">NoNamespace+NoNamespaceNestedClass</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:NoNamespace+NoNamespaceNestedClass">NoNamespace+NoNamespaceNestedClass</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public NoNamespaceNestedClass()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassBar.get_FooBarBazType">Method: get_FooBarBazType</h1>
+    <h2 id="M:ExampleLibrary.SubclassBar.get_FooBarBazType">Method: get_FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassBar.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+    <h2 id="M:ExampleLibrary.SubclassBar.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>value</td>
-    <td>ExampleLibrary.FooBarBazEnum</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td>ExampleLibrary.FooBarBazEnum</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassBar.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.SubclassBar.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public SubclassBar()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="P:ExampleLibrary.SubclassBar.FooBarBazType">Property: FooBarBazType</h1>
+    <h2 id="P:ExampleLibrary.SubclassBar.FooBarBazType">Property: FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassBar">ExampleLibrary.SubclassBar</a>
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             The type of the object (foo).
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassBaz.get_FooBarBazType">Method: get_FooBarBazType</h1>
+    <h2 id="M:ExampleLibrary.SubclassBaz.get_FooBarBazType">Method: get_FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassBaz.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+    <h2 id="M:ExampleLibrary.SubclassBaz.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>value</td>
-    <td>ExampleLibrary.FooBarBazEnum</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td>ExampleLibrary.FooBarBazEnum</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassBaz.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.SubclassBaz.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public SubclassBaz()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="P:ExampleLibrary.SubclassBaz.FooBarBazType">Property: FooBarBazType</h1>
+    <h2 id="P:ExampleLibrary.SubclassBaz.FooBarBazType">Property: FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassBaz">ExampleLibrary.SubclassBaz</a>
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             The type of the object (foo).
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassFoo.get_FooBarBazType">Method: get_FooBarBazType</h1>
+    <h2 id="M:ExampleLibrary.SubclassFoo.get_FooBarBazType">Method: get_FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassFoo.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+    <h2 id="M:ExampleLibrary.SubclassFoo.set_FooBarBazType(ExampleLibrary.FooBarBazEnum)">Method: set_FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>value</td>
-    <td>ExampleLibrary.FooBarBazEnum</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td>ExampleLibrary.FooBarBazEnum</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.SubclassFoo.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.SubclassFoo.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public SubclassFoo()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="P:ExampleLibrary.SubclassFoo.FooBarBazType">Property: FooBarBazType</h1>
+    <h2 id="P:ExampleLibrary.SubclassFoo.FooBarBazType">Property: FooBarBazType</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.SubclassFoo">ExampleLibrary.SubclassFoo</a>
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             The type of the object (foo).
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.Add(System.Int32,System.Int32)">Method: Add</h1>
+    <h2 id="M:ExampleLibrary.Test.Add(System.Int32,System.Int32)">Method: Add</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public int Add(int a, int b)</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             This method takes 2 integers and adds them.
             
 
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
         
-<tr>
-    <td>a</td>
-    <td>System.Int32</td>
-    <td>The first integer.</td>
-</tr>
-<tr>
-    <td>b</td>
-    <td>System.Int32</td>
-    <td>The second integer.</td>
-</tr>
-    </tbody>
-</table>
 
-<h3>Returns</h3>
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>a</td>
+        <td>System.Int32</td>
+        <td>The first integer.</td>
+    </tr>
+    <tr>
+        <td>b</td>
+        <td>System.Int32</td>
+        <td>The second integer.</td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        <h3>Returns</h3>
 Returns the sum of a and b.
 
+        
 
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.GenericMethod{T}(T)">Method: GenericMethod</h1>
+    <h2 id="M:ExampleLibrary.Test.GenericMethod{T}(T)">Method: GenericMethod</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public T GenericMethod<T>(T input)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>input</td>
-    <td>T</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>input</td>
+        <td>T</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.NothingFunction">Method: NothingFunction</h1>
+    <h2 id="M:ExampleLibrary.Test.NothingFunction">Method: NothingFunction</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void NothingFunction()</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             This function does nothing and doesn't return a value.
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">Method: ParameterWithMultipleParameters</h1>
+    <h2 id="M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">Method: ParameterWithMultipleParameters</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void ParameterWithMultipleParameters(int intValue, System.DateTime dateTimeValue, System.Guid guidValue)</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             An example method with multiple parameters.
             
 
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
         
-<tr>
-    <td>intValue</td>
-    <td>System.Int32</td>
-    <td>An integer value.</td>
-</tr>
-<tr>
-    <td>dateTimeValue</td>
-    <td>System.DateTime</td>
-    <td>A date time value.</td>
-</tr>
-<tr>
-    <td>guidValue</td>
-    <td>System.Guid</td>
-    <td>A guid value.</td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>intValue</td>
+        <td>System.Int32</td>
+        <td>An integer value.</td>
+    </tr>
+    <tr>
+        <td>dateTimeValue</td>
+        <td>System.DateTime</td>
+        <td>A date time value.</td>
+    </tr>
+    <tr>
+        <td>guidValue</td>
+        <td>System.Guid</td>
+        <td>A guid value.</td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
 
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.MethodThatRaisesException">Method: MethodThatRaisesException</h1>
+    <h2 id="M:ExampleLibrary.Test.MethodThatRaisesException">Method: MethodThatRaisesException</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void MethodThatRaisesException()</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             This is a method that throws an exception.
             
 
+        
 
+        
 
+        
 
+        
 
+        <h3>Exceptions</h3><div><b>T:System.NotSupportedException</b></div>Throws a colourful exception.
 
-
-
-
-<h3>Exceptions</h3><div><b>T:System.NotSupportedException</b></div>Throws a colourful exception.
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.MethodWithExamples">Method: MethodWithExamples</h1>
+    <h2 id="M:ExampleLibrary.Test.MethodWithExamples">Method: MethodWithExamples</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void MethodWithExamples()</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             This method has some examples.
             
 
+        
 
-
-<h3>Examples</h3>
+        <h3>Examples</h3>
 
             This is example #1:
-            <pre><code>
+            <pre><code class="csharp">
             This is some code #1.
             </code></pre>
             This is example #2.
-            <pre><code>
+            <pre><code class="csharp">
             This is some code #2.
             </code></pre>
 
+        
 
+        
 
+        
 
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.get_SomeFlag">Method: get_SomeFlag</h1>
+    <h2 id="M:ExampleLibrary.Test.get_SomeFlag">Method: get_SomeFlag</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public bool get_SomeFlag()</code></pre>
             
 
-<h3>Summary</h3>
+        <h3>Summary</h3>
+        
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.set_SomeFlag(System.Boolean)">Method: set_SomeFlag</h1>
+    <h2 id="M:ExampleLibrary.Test.set_SomeFlag(System.Boolean)">Method: set_SomeFlag</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public void set_SomeFlag(bool value)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>value</td>
-    <td>System.Boolean</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td>System.Boolean</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">Method: GenericMethod</h1>
+    <h2 id="M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">Method: GenericMethod</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public TOutput GenericMethod<TInput, TOutput>(TInput input, bool flag)</code></pre>
             
 
-<h3>Summary</h3>
-
-
-
-
-
-
-
-<h3>Parameters</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
+        <h3>Summary</h3>
         
-<tr>
-    <td>input</td>
-    <td>TInput</td>
-    <td></td>
-</tr>
-<tr>
-    <td>flag</td>
-    <td>System.Boolean</td>
-    <td></td>
-</tr>
-    </tbody>
-</table>
 
+        
 
+        
 
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>input</td>
+        <td>TInput</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>flag</td>
+        <td>System.Boolean</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
 
+        
 
+        
+
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.#ctor">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.Test.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public Test()</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Default constructor.
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.#ctor(System.Int32)">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.Test.#ctor(System.Int32)">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public Test(int a)</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Constructor with 1 parameter.
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">Constructor: .ctor</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
-
+        
 <h3>Signature</h3>
 <pre><code>public Test(int a, int b)</code></pre>
             
 
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             Constructor with 2 parameters.
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 <div class="member">
-<h2 id="P:ExampleLibrary.Test.SomeFlag">Property: SomeFlag</h1>
+    <h2 id="P:ExampleLibrary.Test.SomeFlag">Property: SomeFlag</h1>
+    <div class="member-inner">
 
-<h3>Declaring Type</h3>
-<a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
 
+        
 
-
-<h3>Summary</h3>
-
+        <h3>Summary</h3>
+        
             This is a test boolean property.
             
 
+        
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+    </div>
 </div>
 
 
     </body>
+    <!-- https://highlightjs.org/#usage -->
+    <script>hljs.highlightAll();</script>
 </html>
         
