@@ -22,7 +22,10 @@ public class DocumentGeneratorTests
             assemblyPath,
             outputPath,
             OutputType.html,
-            xmlCommentsPath, readmePath);
+            true,
+            xmlCommentsPath,
+            readmePath,
+            null);
         dg.GenerateDocument();
     }
 
@@ -38,9 +41,10 @@ public class DocumentGeneratorTests
             assemblyPath,
             outputPath,
             OutputType.html,
+            true,
             xmlCommentsPath,
-            readmePath);
+            readmePath,
+            null);
         dg.GenerateDocument();
-
     }
 }

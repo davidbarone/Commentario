@@ -54,7 +54,7 @@ public class ExtensionMethodTests
     public static IEnumerable<object[]> CommentIdMemberData =>
             new List<object[]>
             {
-            new object[] {typeof(DocumentGenerator).GetMember("Create").First(), "M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,System.Nullable{Dbarone.Net.CommentarioServer.OutputType},System.String,System.String)" }
+            new object[] {typeof(DocumentGenerator).GetMember("Create").First(), "M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,Dbarone.Net.CommentarioServer.OutputType,Boolean,System.String,System.String,System.String)" }
             };
 
     [Theory, MemberData(nameof(CommentIdMemberData))]

@@ -29,6 +29,7 @@ public class Arguments
     /// -d  --debug                                 Includes debug information in the output documentation. Default is off.
     /// -c  --comments &lt;xml comments path&gt;    Path to optional comments.
     /// -r  --readme &lt;readme path&gt;            Path to optional readme file.
+    /// -s  --styles &lt;styles path&gt;            Path to optional styles file.
     /// -t  --type Html                             Output type (currently only Html supported, and is default).
     /// -o  --overwrite                             Allows the output file to be overwritten if it exists.
     /// </summary>
@@ -70,6 +71,15 @@ public class Arguments
                         throw new Exception("Invalid arguments.");
                     }
                     this.ReadMePath = args[i];
+                    break;
+                case "-s":
+                case "--styles":
+                    i++;
+                    if (i >= args.Length)
+                    {
+                        throw new Exception("Invalid arguments.");
+                    }
+                    this.StylesPath = args[i];
                     break;
                 case "-t":
                 case "--type":
@@ -139,6 +149,12 @@ public class Arguments
     /// Contents must be in html format.
     /// </summary>
     public string ReadMePath { get; set; } = default!;
+
+    /// <summary>
+    /// Optional path to a styles file. If specified, the contents must be in the format suitable for the output type.
+    /// For example, for html output, the styles file must be a valid .css file.
+    /// </summary>
+    public string StylesPath { get; set; } = default!;
 
     /// <summary>
     /// The output type. Currently only Html output is supported.

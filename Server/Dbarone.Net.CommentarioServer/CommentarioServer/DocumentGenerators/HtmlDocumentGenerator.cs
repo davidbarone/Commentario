@@ -7,8 +7,29 @@ namespace Dbarone.Net.CommentarioServer;
 /// </summary>
 public class HtmlDocumentGenerator : DocumentGenerator
 {
-    public HtmlDocumentGenerator(string xmlCommentsPath, string assemblyPath, string readMePath, string outputPath) : base(xmlCommentsPath, assemblyPath, readMePath, outputPath) { }
-
+    /// <summary>
+    /// Creates a new HtmlDocumentGenerator instance.
+    /// </summary>
+    /// <param name="assemblyPath">The source assembly path.</param>
+    /// <param name="outputPath">The output documentation path.</param>
+    /// <param name="overwriteOutput">Set to true to overwrite the output path.</param>
+    /// <param name="xmlCommentsPath">Optional xml comments path.</param>
+    /// <param name="readMePath">Optional readme path.</param>
+    /// <param name="stylesPath">Optional path to styles file.</param>
+    public HtmlDocumentGenerator(
+        string assemblyPath,
+        string outputPath,
+        bool overwriteOutput,
+        string? xmlCommentsPath,
+        string? readMePath,
+        string? stylesPath) : base(
+            assemblyPath,
+            outputPath,
+            overwriteOutput,
+            xmlCommentsPath,
+            readMePath,
+            stylesPath)
+    { }
 
     protected override string RenderDocument()
     {
@@ -22,6 +43,8 @@ public class HtmlDocumentGenerator : DocumentGenerator
             {
                 contentMembers += RenderTypeMember(member);
             }
+
+            Console.Out.WriteLine($"Documented type: {type.Name}.");
         }
 
         var template = @$"
@@ -33,7 +56,9 @@ public class HtmlDocumentGenerator : DocumentGenerator
         <meta http-equiv=""X-UA-Compatible"" content=""ie=edge"">
         <title>HTML 5 Boilerplate</title>
 
-        {this.GetCSSStyles()}
+        <style type=""text/css"">
+            {this.Styles}
+        </style>
 
         <!-- https://highlightjs.org/#usage -->
         <link rel=""stylesheet"" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"">
@@ -581,4 +606,268 @@ public class HtmlDocumentGenerator : DocumentGenerator
 </div>";
         return str;
     }
+
+    protected override string DefaultStyles => @"
+
+/* https://goodpalette.io */
+:root {
+
+    /* Primary: Blue Blue */
+    --primary-100: #F3F2FF;
+    --primary-200: #C0C0FE;
+    --primary-300: #8B91F9;
+    --primary-400: #5565E9;
+    --primary-500: #233FCC;
+    --primary-600: #0C2EA3;
+    --primary-700: #032479;
+    --primary-800: #001B50;
+    --primary-900: #000F26;
+
+    /* Accent: Jaffa */
+    --accent-100: #FFF9F2;
+    --accent-200: #FFE4C8;
+    --accent-300: #FBC89D;
+    --accent-400: #F3A470;
+    --accent-500: #E37944;
+    --accent-600: #B44921;
+    --accent-700: #852A11;
+    --accent-800: #551509;
+    --accent-900: #260704;
+
+    /* Neutral */
+    --neutral-100: #FAFAFC;
+    --neutral-200: #EAEAEF;
+    --neutral-300: #DADAE2;
+    --neutral-400: #CACBD4;
+    --neutral-500: #BBBDC7;
+    --neutral-600: #94969F;
+    --neutral-700: #6D7077;
+    --neutral-800: #474A4E;
+    --neutral-900: #222426;
+
+    --white: #fff;
+}
+
+/* -----------------------------------------------
+Base Styles
+-------------------------------------------------- */
+
+body {
+    font-family: ""Helvetica Neue"", Helvetica, Arial, sans-serif;
+    color: var(--neutral-900);
+    overflow-y: scroll;
+    font-size: 0.9em;
+}
+
+div.toc {
+    background-color: var(--primary-200);
+    border: 1px solid var(--primary-500);
+    border-radius: 4px;
+    margin: 4px 0px;
+    padding: 0px;
+}
+
+div.toc-inner {
+    margin: 4px;
+}
+
+div.type {
+    background-color: var(--accent-200);
+    border: 1px solid var(--accent-500);
+    border-radius: 4px;
+    margin: 4px 0px;
+    padding: 0px;
+}
+
+div.type-inner {
+    margin: 4px;
+}
+
+div.member {
+    background-color: var(--neutral-200);
+    border: 1px solid var(--neutral-500);
+    border-radius: 4px;
+    margin: 4px 0px;
+    padding: 4px 4px;
+}
+
+div.member-inner {
+    margin: 4px;
+}
+
+/* ------------------------------------
+Typography
+--------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2.0em;
+    display: block;
+    background: var(--primary-300);
+    border: 1px solid var(--primary-700);
+    border-left: 2em solid var(--primary-700);
+    border-right: 2em solid var(--primary-700);
+    padding: 24px 6px;
+    border-radius: 4px;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.6em;
+    margin: 1em 0em 0em 0em;
+}
+
+div.toc h2  {
+    border-left: 2.0em solid var(--primary-500);
+    display: block;
+    padding: 12px 2px 12px 12px;
+    background-color: var(--primary-300);
+    margin: 0px;
+}
+
+div.toc h3 {
+    color: var(--primary-500);
+}
+
+div.type h2  {
+    border-left: 2.0em solid var(--accent-500);
+    display: block;
+    padding: 12px 2px 12px 12px;
+    background-color: var(--accent-300);
+    margin: 0px;
+}
+
+div.type h3 {
+    color: var(--accent-500);
+}
+
+div.member h2  {
+    border-left: 2.0em solid var(--primary-500);
+    display: block;
+    padding: 12px 2px 12px 12px;
+    background-color: var(--primary-300);
+    margin: 0px;
+}
+
+div.member h3 {
+    color: var(--primary-500);
+}
+
+/* -----------------------------------
+Links
+-------------------------------------- */
+
+a {
+    color: var(--accent-700);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-700);
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------
+Lists
+------------------------------------------------ */
+
+ol, ul {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 0.5em;
+}
+
+ul {
+    list-style: disc inside;
+}
+
+ol {
+    list-style: decimal inside;
+}
+
+/* ---------------------------------------------
+Code / Pre
+------------------------------------------------ */
+
+pre code {
+    background-color: var(--white);
+    border: 1px solid var(--neutral-700);
+    border-left: 6px solid var(--accent-700);
+    color: var(--neutral-900);
+    page-break-inside: avoid;
+    font: ""Courier New"", Courier, Monospace;
+    max-width: 100%;
+    padding: 2em 1em;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: auto;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-weight: 500;
+}
+
+code {
+    font-weight: bold;
+    background-color: var(--neutral-500);
+    padding: 2px;
+}
+
+/* ---------------------------------------------
+Tables
+------------------------------------------------ */
+
+div.table {
+    border: 1px solid var(--primary-700);
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    padding: 0px;
+}
+
+th,
+td {
+    padding: 6px 24px;
+    text-align: left;
+    margin: 0px;
+}
+
+th {
+    background-color: var(--primary-700);
+    color: var(--neutral-300);
+    font-weight: 500;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--neutral-100);  
+}
+
+/* ---------------------------------------------
+Spacing
+------------------------------------------------ */
+
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+{
+    margin-top: 0em;
+    margin-bottom: .5em;
+}";
+
 }
