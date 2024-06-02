@@ -14,7 +14,9 @@
   ],
   "keywords": [
     "Documentation",
-    ".NET"
+    ".NET",
+    "Commentario",
+    "Extension"
   ],
   "repository": {
     "url": "https://github.com/davidbarone/Commentario"
@@ -62,6 +64,11 @@
           "type": "string",
           "description": "Path to an optional readme file to place at the start of the document. Must be in html format.",
           "default": "${workspaceFolder}/readme.html"
+        },
+        "commentario.stylesPath": {
+          "type": "string",
+          "description": "Path to an optional styles file. For html output, the file must be a valid .css file.",
+          "default": ""
         },
         "commentario.outputType": {
           "type": "string",
