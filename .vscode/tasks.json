@@ -22,6 +22,25 @@
         "Release"
       ],
       "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build ExampleLibrary: release",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.csproj",
+        "-c",
+        "Release"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build: release",
+      "dependsOn": [
+        "Build ExampleLibrary: release",
+        "Build Dbarone.Net.CommentarioConsole: release"
+      ]
     }
   ]
 }

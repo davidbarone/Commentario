@@ -10,7 +10,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/bin/Debug/net8.0/Dbarone.Net.CommentarioConsole.dll",
       //"args": "-h"
-      "args": "${workspaceFolder}/Server/ExampleLibrary/bin/Debug/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt",
+      "args": "${workspaceFolder}/Server/ExampleLibrary/bin/Debug/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt -o",
       "preLaunchTask": "Build Dbarone.Net.CommentarioConsole: debug"
     },
     {
@@ -19,8 +19,8 @@
       "request": "launch",
       "program": "${workspaceFolder}/Server/Dbarone.Net.CommentarioConsole/bin/Release/net8.0/Dbarone.Net.CommentarioConsole.dll",
       //"args": "-h"
-      "args": "${workspaceFolder}/Server/ExampleLibrary/bin/release/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt",
-      "preLaunchTask": "Build Dbarone.Net.CommentarioConsole: release"
+      "args": "${workspaceFolder}/Server/ExampleLibrary/bin/release/net8.0/ExampleLibrary.dll ${workspaceFolder}/Server/ExampleLibrary/ExampleLibrary.html -t html -r ${workspaceFolder}/Server/ExampleLibrary/readme.txt -o",
+      "preLaunchTask": "Build: release"
     },
     {
       "name": "C#: Run Tests",

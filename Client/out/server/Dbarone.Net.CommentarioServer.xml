@@ -8,16 +8,9 @@
             <summary>
             Main entry point to CommentarioServer. Generates documents from xml comments and the assembly file.
             </summary>
-        </member>
-        <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.OutputType">
-            <summary>
-            The document output format.
-            </summary>
-        </member>
-        <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.XmlCommentsPath">
-            <summary>
-            The xml comments path.
-            </summary>
+            <remarks>
+            Note that this class is an abstract base class. Implementations are included in sub classes.
+            </remarks>
         </member>
         <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.AssemblyPath">
             <summary>
@@ -29,9 +22,34 @@
             The documentation output path. 
             </summary>
         </member>
+        <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.OutputType">
+            <summary>
+            The document output format.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.AllowOverwrite">
+            <summary>
+            Set to true to allow the output documentation file to be overwritten. Otherwise an exception will be throw if the file exists.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.XmlCommentsPath">
+            <summary>
+            The xml comments path.
+            </summary>
+        </member>
         <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.ReadMePath">
             <summary>
             Optional path to an assembly readme. The contents are included at the top of the documentation file. 
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.StylesPath">
+            <summary>
+            Optional path to a styles file. For html output, the file must be a valid css file.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.Styles">
+            <summary>
+            The styles content.
             </summary>
         </member>
         <member name="P:Dbarone.Net.CommentarioServer.DocumentGenerator.Comments">
@@ -39,10 +57,113 @@
             The xml comments.
             </summary>
         </member>
-        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.#ctor(System.String,System.String,System.String,System.String)">
+        <!-- Badly formed XML comment ignored for member "M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,Dbarone.Net.CommentarioServer.OutputType,System.Boolean,System.String,System.String,System.String)" -->
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.#ctor(System.String,System.String,System.Boolean,System.String,System.String,System.String)">
             <summary>
             Creates a new DocumentGenerator instance.
             </summary>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetAssembly">
+            <summary>
+            Gets the assembly referenced by the <c>AssemblyPath</c> parameter.
+            </summary>
+            <remarks>
+            Uses MetadataLoadContext to load assembly metadata only for inspection.
+            </remarks>
+            <returns>The Assembly object.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypes">
+            <summary>
+            Gets all types in the source assembly.
+            </summary>
+            <returns>Returns an array of <c>Type</c> objects.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInheritedType(System.Type)">
+            <summary>
+            Gets the inherited or base type, if any.
+            </summary>
+            <param name="type">The type to check.</param>
+            <returns>Returns the base type, or null.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetSubClasses(System.Type)">
+            <summary>
+            Gets the subclasses - types which directly inherit from the specified type.
+            </summary>
+            <param name="type">The type to check.</param>
+            <returns>Returns an array of types that directly inherit from the specified type.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfacesImplemented(System.Type)">
+            <summary>
+            Gets the interfaces implemented by a type.
+            </summary>
+            <param name="type">The type to check.</param>
+            <returns>Returns an array of interface types implemented by the specified type.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeCategory(System.Type)">
+            <summary>
+            Gets the category of a type.
+            </summary>
+            <remarks>
+            <list type="table">
+            <listheader>
+            <term>Category</term>
+            <description>Description</description>
+            </listheader>
+            <item>
+            <term>Class</term>
+            <description>The type is a class (reference type).</description>
+            </item>
+            <item>
+            <term>Struct</term>
+            <description>The type is a struct (value type).</description>
+            </item>
+            <item>
+            <term>Interface</term>
+            <description>The type is an interface.</description>
+            </item>
+            <item>
+            <term>Enum</term>
+            <description>The type is an enum.</description>
+            </item>
+            <item>
+            <term>Other</term>
+            <description>The type is unspecified.</description>
+            </item>
+            </list>
+            </remarks>
+            <param name="type">The type to check.</param>
+            <returns>Returns a string value to categorise the type:</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetClasses">
+            <summary>
+            Gets a list of classes for the source Assembly.
+            </summary>
+            <returns>Returns an array of class types.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetStructs">
+            <summary>
+            Gets a list of structs for the source Assembly.
+            </summary>
+            <returns>Returns an array of struct types.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfaces">
+            <summary>
+            Gets a list of interfaces for the source Assembly.
+            </summary>
+            <returns>Returns an array of interface types.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetEnums">
+            <summary>
+            Gets a list of enums for the source Assembly.
+            </summary>
+            <returns>Returns an array of enum types.</returns>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMembers(System.Type)">
+            <summary>
+            Gets public or protected members for a type.
+            </summary>
+            <param name="type">The type to get members for.</param>
+            <returns>Returns all public and protected members.</returns>
         </member>
         <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GenerateDocument">
             <summary>
@@ -56,6 +177,30 @@
             <param name="type">The type to render.</param>
             <returns>A string representing the generic arguments.</returns>
         </member>
+        <member name="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetLinkForType(System.Type)">
+            <summary>
+            Returns a hyperlink for a type.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator">
+            <summary>
+            Generates documentation in html format. Html implementation of <see cref="T:Dbarone.Net.CommentarioServer.DocumentGenerator"/>.
+            </summary>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.#ctor(System.String,System.String,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Creates a new HtmlDocumentGenerator instance.
+            </summary>
+            <param name="assemblyPath">The source assembly path.</param>
+            <param name="outputPath">The output documentation path.</param>
+            <param name="allowOverwrite">Set to true to overwrite the output path.</param>
+            <param name="xmlCommentsPath">Optional xml comments path.</param>
+            <param name="readMePath">Optional readme path.</param>
+            <param name="stylesPath">Optional path to styles file.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderSee(Dbarone.Net.CommentarioServer.SeeNode)" -->
         <member name="T:Dbarone.Net.CommentarioServer.ExtensionMethods">
             <summary>
             Useful extension methods. Primarily to provide reflection services.
@@ -123,6 +268,11 @@
             Html format.
             </summary>
         </member>
+        <member name="T:Dbarone.Net.CommentarioServer.ConstructorMethodSignature">
+            <summary>
+            Creates signatures for constructor methods.
+            </summary>
+        </member>
         <member name="M:Dbarone.Net.CommentarioServer.MethodBaseSignature.GetAccessModifier(System.Reflection.MethodBase)">
             <summary>
             Gets the method access modifier.
@@ -160,6 +310,26 @@
             <param name="genericTypeSignature">Signature of a generic type</param>
             <returns><paramref name="genericTypeSignature"/> without any argument count</returns>
         </member>
+        <member name="T:Dbarone.Net.CommentarioServer.AssemblyNode">
+            <summary>
+            Represents the top level assembly node in the documentation.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.AssemblyNode.Name">
+            <summary>
+            The assembly name.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.CNode">
+            <summary>
+            Denotes text within a description should be marked as single-line code.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.CodeNode">
+            <summary>
+            Denotes a block of code in a descriptive text block.
+            </summary>
+        </member>
         <member name="T:Dbarone.Net.CommentarioServer.DocumentNode">
             <summary>
             Represents the root node of the xml comments file.
@@ -172,7 +342,7 @@
         </member>
         <member name="P:Dbarone.Net.CommentarioServer.DocumentNode.Members">
             <summary>
-            The collection of members. All documentation nodes whether for Type documentation or Member documentation are included in this collection.
+            The collection of members. Members can describe .NET types and members.
             </summary>
         </member>
         <member name="M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForType(System.Type)">
@@ -189,66 +359,227 @@
             <param name="member">The member to get the document for.</param>
             <returns>Returns the document node for the member.</returns>
         </member>
-        <member name="T:Dbarone.CommentarioServer.IDString">
+        <member name="T:Dbarone.Net.CommentarioServer.ExampleNode">
+            <summary>
+            Denotes an example, typically code examples.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.ExceptionNode">
+            <summary>
+            A description of an exception that can be thrown.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.ExceptionNode.Name">
+            <summary>
+            The exception type name that is thrown.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.IDString">
             <summary>
             Represents the parts making up a comment document id, known as the 'ID string'.
             https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.Id">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.Id">
             <summary>
             The full member id string. In format [MemberType]:[memberid]
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.FullyQualifiedName">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.FullyQualifiedName">
             <summary>
             The id value after the initial ':' character.
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.MemberType">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.MemberType">
             <summary>
             The member type.
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.Name">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.Name">
             <summary>
             The name of the type or member. This optionally includes the namespace and the parent / enclosing type name. 
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.MemberName">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.MemberName">
             <summary>
             The member name. Only applies for members.
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.FullyQualifiedNameLink">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.FullyQualifiedNameLink">
             <summary>
             Unique link tag based on fully qualified name. Used for generaing links for TOC etc.
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.ParentTypeArguments">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.ParentTypeArguments">
             <summary>
             The number of generic type arguments on the parent type / class. 
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.TypeArguments">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.TypeArguments">
             <summary>
             The number of generic type arguments on the current member. 
             </summary>
         </member>
-        <member name="P:Dbarone.CommentarioServer.IDString.Arguments">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.Arguments">
             <summary>
             Arguments (if exist for methods and properties).
             </summary>
         </member>
-        <member name="M:Dbarone.CommentarioServer.IDString.#ctor(System.String)">
+        <member name="P:Dbarone.Net.CommentarioServer.IDString.TypeName">
+            <summary>
+            Returns the type name if the member is a type.
+            </summary>
+        </member>
+        <member name="M:Dbarone.Net.CommentarioServer.IDString.#ctor(System.String)">
             <summary>
             constructor for IDString class.
             </summary>
             <param name="id">The ID string.</param>
         </member>
-        <member name="T:Dbarone.CommentarioServer.MemberType">
+        <member name="T:Dbarone.Net.CommentarioServer.ItemsNode">
+            <summary>
+            An items node is a node that can contain multiple types of child node.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.ItemsNode.Items">
+            <summary>
+            The array of child item nodes. Multiple types of child item are permitted.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.ListNode">
+            <summary>
+            Used to create a list of items in a comment.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.ListNode.Type">
+            <summary>
+            The name of list. Can be bullet, number, or table.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.MemberNode">
+            <summary>
+            Describes a single member in the xml comments. A member can be either a .NET Type or a .NET member for a type (for example a method, property, field etc).
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.MemberNode.Name">
+            <summary>
+            The name of the member.
+            </summary>
+            <remarks>
+            The format of the name is called an ID String: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/
+            The string uniquely identifies the member.
+            </remarks>
+            <example>
+            Using the code example shown below:
+            <code>
+            public class Test
+            {
+                public int Add(int a, int b)
+                {
+                    return a + b;
+                }
+            }
+            </code>
+            The above method could generate a name of <c>M:ExampleLibrary.Test.Add(System.Int32,System.Int32)</c>
+            <para>
+            Note that the return type is not included in the name.
+            </para>
+            </example>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.MemberType">
             <summary>
             The member type.
+            </summary>
+        </member>
+        <member name="F:Dbarone.Net.CommentarioServer.MemberType.Namespace">
+            <summary>
+            The member is a namespace.
+            </summary>
+        </member>
+        <member name="F:Dbarone.Net.CommentarioServer.MemberType.Type">
+            <summary>
+            The member is a type.
+            </summary>
+        </member>
+        <member name="F:Dbarone.Net.CommentarioServer.MemberType.Field">
+            <summary>
+            The member is a field.
+            </summary>
+        </member>
+        <member name="F:Dbarone.Net.CommentarioServer.MemberType.Property">
+            <summary>
+            The member is a property.
+            </summary>
+        </member>
+        <member name="F:Dbarone.Net.CommentarioServer.MemberType.Method">
+            <summary>
+            The member is a method.
+            </summary>
+        </member>
+        <member name="F:Dbarone.Net.CommentarioServer.MemberType.Event">
+            <summary>
+            The member is an event.
+            </summary>
+        </member>
+        <member name="F:Dbarone.Net.CommentarioServer.MemberType.ErrorString">
+            <summary>
+            The member is an error?
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.ParamNode">
+            <summary>
+            Comment for a parameter on a method. The items property stores the descriptions.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.ParamNode.Name">
+            <summary>
+            The name of the parameters.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.ParaNode">
+            <summary>
+            Represents a paragraph of text in a description field.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.RemarkNode">
+            <summary>
+            Expands on the summary sentence to provide more information for readers.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.ReturnsNode">
+            <summary>
+            The ReturnsNode describes the return value of a method.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.SeeNode">
+            <summary>
+            Allows you to specify a link from text.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.SummaryNode">
+            <summary>
+            Every class and member should have a one sentence summary describing its purpose.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.TextNode">
+            <summary>
+            A text node represents a node in the xml comments that only has inner text.
+            This text is not processed any further, and the literal value is used as is. 
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.TextNode.Text">
+            <summary>
+            The inner text value. This text is not processed any further.
+            </summary>
+        </member>
+        <member name="T:Dbarone.Net.CommentarioServer.TypeParamNode">
+            <summary>
+            Represents a type parameter comment.
+            </summary>
+        </member>
+        <member name="P:Dbarone.Net.CommentarioServer.TypeParamNode.Name">
+            <summary>
+            The name of the type parameter.
             </summary>
         </member>
         <member name="T:XmlComments">

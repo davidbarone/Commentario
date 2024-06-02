@@ -75,6 +75,7 @@ function activate(context) {
         outputChannel.show();
         outputChannel.appendLine("Commentario Client Debugging");
         outputChannel.appendLine("----------------------------");
+        outputChannel.appendLine(`WorkspaceFolder: ${workspaceFolderString}`);
         outputChannel.appendLine(`commentario.assemblyPath: ${assemblyPath}`);
         outputChannel.appendLine(`commentario.outputPath: ${outputPath}`);
         outputChannel.appendLine(`commentario.allowOverwrite: ${allowOverwrite}`);
