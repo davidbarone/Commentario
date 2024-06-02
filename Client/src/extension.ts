@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
 		let workspaceFolderString: string = "";
 		if (vscode.workspace.workspaceFolders !== undefined) {
 			workspaceFolder = vscode.workspace.workspaceFolders[0];
-			workspaceFolderString = workspaceFolder.uri.path;
+			workspaceFolderString = workspaceFolder.uri.fsPath;
 		}
 
 		var assemblyPath: string | undefined = vscode.workspace.getConfiguration().get("commentario.assemblyPath");
@@ -40,18 +40,30 @@ export function activate(context: vscode.ExtensionContext) {
 		var allowOverwrite: string | undefined = vscode.workspace.getConfiguration().get("commentario.allowOverwrite");
 
 		var readMePath: string | undefined = vscode.workspace.getConfiguration().get("commentario.readMePath");
-		if (readMePath !== undefined) {
+		if (readMePath !== undefined && readMePath.trim() !== "") {
 			readMePath = readMePath.replace('${workspaceFolder}', workspaceFolderString);
 		}
 
+		if (readMePath !== undefined && readMePath.trim() === "") {
+			readMePath = undefined;
+		}
+
 		var stylesPath: string | undefined = vscode.workspace.getConfiguration().get("commentario.stylesPath");
-		if (stylesPath !== undefined) {
+		if (stylesPath !== undefined && stylesPath.trim() !== "") {
 			stylesPath = stylesPath.replace('${workspaceFolder}', workspaceFolderString);
 		}
 
+		if (stylesPath !== undefined && stylesPath.trim() === "") {
+			stylesPath = undefined;
+		}
+		
 		var xmlCommentsPath: string | undefined = vscode.workspace.getConfiguration().get("commentario.xmlCommentsPath");
-		if (xmlCommentsPath !== undefined) {
+		if (xmlCommentsPath !== undefined && xmlCommentsPath.trim() !== "") {
 			xmlCommentsPath = xmlCommentsPath.replace('${workspaceFolder}', workspaceFolderString);
+		}
+
+		if (xmlCommentsPath !== undefined && xmlCommentsPath.trim() === "") {
+			xmlCommentsPath = undefined;
 		}
 
 		var outputType: string | undefined = vscode.workspace.getConfiguration().get("commentario.outputType");

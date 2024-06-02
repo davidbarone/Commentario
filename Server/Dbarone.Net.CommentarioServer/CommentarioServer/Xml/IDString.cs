@@ -68,7 +68,7 @@ public class IDString
     /// <param name="id">The ID string.</param>
     public IDString(string id)
     {
-        Console.WriteLine($"Processing: {id}...");
+        //Console.WriteLine($"Processing: {id}...");
         this.Id = id;
         var splits = id.Split(':');
         switch (splits[0])

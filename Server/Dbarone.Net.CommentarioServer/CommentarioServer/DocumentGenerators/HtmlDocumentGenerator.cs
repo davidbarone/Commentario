@@ -38,13 +38,12 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
         foreach (var type in this.GetTypes())
         {
+            Console.WriteLine($"Documenting type: {type.Name}...");
             contentTypes += RenderType(type);
             foreach (var member in GetMembers(type))
             {
                 contentMembers += RenderTypeMember(member);
             }
-
-            Console.Out.WriteLine($"Documented type: {type.Name}.");
         }
 
         var template = @$"

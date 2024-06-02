@@ -162,8 +162,12 @@ public abstract class DocumentGenerator
         // Use MetadataLoadContext to inspect types
         // Need to provide all BCL libraries in search too.
         string[] runtimeAssemblies = Directory.GetFiles(RuntimeEnvironment.GetRuntimeDirectory(), "*.dll");
+
+        // Include files in assembly directory
+        string[] sourceAssemblies = Directory.GetFiles(new FileInfo(this.AssemblyPath).DirectoryName!, "*.dll");
+
         var paths = new List<string>(runtimeAssemblies);
-        paths.Add(this.AssemblyPath);
+        paths.AddRange(sourceAssemblies);
         var resolver = new PathAssemblyResolver(paths);
 
         var mlc = new MetadataLoadContext(resolver, typeof(object).Assembly.GetName().ToString());

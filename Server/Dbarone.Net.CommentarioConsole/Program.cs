@@ -38,8 +38,10 @@ namespace Dbarone.Net.CommentarioConsole
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine("An error has occurred:");
-                Console.Error.WriteLine(ex.Message);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Out.WriteLine("An error has occurred:");
+                Console.Out.WriteLine(ex.Message);
+                Console.ResetColor();
                 Environment.Exit(1);
             }
         }
@@ -55,7 +57,10 @@ namespace Dbarone.Net.CommentarioConsole
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine($"Error: {ex}");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Out.WriteLine($"Warning - error getting arguments: {ex}");
+                Console.Out.WriteLine($"Arguments being ignored...");
+                Console.ResetColor();
                 arguments = new Arguments();
             }
             finally

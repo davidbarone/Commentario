@@ -46,7 +46,7 @@ function activate(context) {
         let workspaceFolderString = "";
         if (vscode.workspace.workspaceFolders !== undefined) {
             workspaceFolder = vscode.workspace.workspaceFolders[0];
-            workspaceFolderString = workspaceFolder.uri.path;
+            workspaceFolderString = workspaceFolder.uri.fsPath;
         }
         var assemblyPath = vscode.workspace.getConfiguration().get("commentario.assemblyPath");
         if (assemblyPath !== undefined) {
@@ -58,16 +58,25 @@ function activate(context) {
         }
         var allowOverwrite = vscode.workspace.getConfiguration().get("commentario.allowOverwrite");
         var readMePath = vscode.workspace.getConfiguration().get("commentario.readMePath");
-        if (readMePath !== undefined) {
+        if (readMePath !== undefined && readMePath.trim() !== "") {
             readMePath = readMePath.replace('${workspaceFolder}', workspaceFolderString);
         }
+        if (readMePath !== undefined && readMePath.trim() === "") {
+            readMePath = undefined;
+        }
         var stylesPath = vscode.workspace.getConfiguration().get("commentario.stylesPath");
-        if (stylesPath !== undefined) {
+        if (stylesPath !== undefined && stylesPath.trim() !== "") {
             stylesPath = stylesPath.replace('${workspaceFolder}', workspaceFolderString);
         }
+        if (stylesPath !== undefined && stylesPath.trim() === "") {
+            stylesPath = undefined;
+        }
         var xmlCommentsPath = vscode.workspace.getConfiguration().get("commentario.xmlCommentsPath");
-        if (xmlCommentsPath !== undefined) {
+        if (xmlCommentsPath !== undefined && xmlCommentsPath.trim() !== "") {
             xmlCommentsPath = xmlCommentsPath.replace('${workspaceFolder}', workspaceFolderString);
+        }
+        if (xmlCommentsPath !== undefined && xmlCommentsPath.trim() === "") {
+            xmlCommentsPath = undefined;
         }
         var outputType = vscode.workspace.getConfiguration().get("commentario.outputType");
         var debugMode = vscode.workspace.getConfiguration().get("commentario.debugMode");
