@@ -34,7 +34,7 @@ public abstract class DocumentGenerator
     /// <summary>
     /// Set to true to allow the output documentation file to be overwritten. Otherwise an exception will be throw if the file exists.
     /// </summary>
-    public bool OverwriteOutput { get; set; } = false;
+    public bool AllowOverwrite { get; set; } = false;
 
     /// <summary>
     /// The xml comments path.
@@ -71,13 +71,13 @@ public abstract class DocumentGenerator
     /// <param name="assemblyPath">The path to the assembly file.</param>
     /// <param name="outputPath">The path to the output documentation file.</param>
     /// <param name="outputType">The documentation format type.</param>
-    /// <param name="overwriteOutput">Set to true to allow existing output documentation file to be overwritten. Otherwise an exception will be thrown if the output file exists.
+    /// <param name="allowOverwrite">Set to true to allow existing output documentation file to be overwritten. Otherwise an exception will be thrown if the output file exists.
     /// <param name="xmlCommentsPath">The path to an xml comments file. This content will be merged with the reflected assembly information.</param>
     /// <param name="readMePath">The path to an optional readme file. This file should contain html content. If a file is specified, it will be included at the top of the documentation file.</param>
     /// <param name="stylesPath">The path to an optional styles file.</param>
     /// <returns>Returns a <see cref="DocumentGenerator"/> instance.</returns>
     /// <exception cref="Exception">Throws an exception if invalid parameters are provided.</exception>
-    public static DocumentGenerator Create(string assemblyPath, string outputPath, OutputType outputType = OutputType.html, bool overwriteOutput = false, string? xmlCommentsPath = null, string? readMePath = null, string? stylesPath = null)
+    public static DocumentGenerator Create(string assemblyPath, string outputPath, OutputType outputType = OutputType.html, bool allowOverwrite = false, string? xmlCommentsPath = null, string? readMePath = null, string? stylesPath = null)
     {
         switch (outputType)
         {
@@ -85,7 +85,7 @@ public abstract class DocumentGenerator
                 return new HtmlDocumentGenerator(
                     assemblyPath,
                     outputPath,
-                    overwriteOutput,
+                    allowOverwrite,
                     xmlCommentsPath,
                     readMePath,
                     stylesPath);
@@ -100,14 +100,14 @@ public abstract class DocumentGenerator
     internal DocumentGenerator(
         string assemblyPath,
         string outputPath,
-        bool overwriteOutput,
+        bool allowOverwrite,
         string? xmlCommentsPath,
         string? readMePath,
         string? stylesPath)
     {
         AssemblyPath = assemblyPath;
         OutputPath = outputPath;
-        OverwriteOutput = overwriteOutput;
+        AllowOverwrite = allowOverwrite;
         XmlCommentsPath = xmlCommentsPath;
         ReadMePath = readMePath;
         StylesPath = stylesPath;
@@ -423,7 +423,7 @@ public abstract class DocumentGenerator
         ValidateParameters();
 
         // Save file
-        if (this.OverwriteOutput==false && File.Exists(this.OutputPath)) {
+        if (this.AllowOverwrite==false && File.Exists(this.OutputPath)) {
             throw new Exception("Output file already exists and [OverwriteOutput] parameter set to false.");
         }
         File.WriteAllText(this.OutputPath, RenderDocument());

@@ -12,20 +12,20 @@ public class HtmlDocumentGenerator : DocumentGenerator
     /// </summary>
     /// <param name="assemblyPath">The source assembly path.</param>
     /// <param name="outputPath">The output documentation path.</param>
-    /// <param name="overwriteOutput">Set to true to overwrite the output path.</param>
+    /// <param name="allowOverwrite">Set to true to overwrite the output path.</param>
     /// <param name="xmlCommentsPath">Optional xml comments path.</param>
     /// <param name="readMePath">Optional readme path.</param>
     /// <param name="stylesPath">Optional path to styles file.</param>
     public HtmlDocumentGenerator(
         string assemblyPath,
         string outputPath,
-        bool overwriteOutput,
+        bool allowOverwrite,
         string? xmlCommentsPath,
         string? readMePath,
         string? stylesPath) : base(
             assemblyPath,
             outputPath,
-            overwriteOutput,
+            allowOverwrite,
             xmlCommentsPath,
             readMePath,
             stylesPath)

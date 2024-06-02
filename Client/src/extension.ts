@@ -9,7 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "commentario" is now active!');
+	console.log('Commentario activated.');
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('commentario.createDocumentation', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('dbarone.commentario is running.');
+		vscode.window.showInformationMessage('Starting Commentario...');
 
 		// Get configuration
 		let workspaceFolder: vscode.WorkspaceFolder;
@@ -44,6 +44,11 @@ export function activate(context: vscode.ExtensionContext) {
 			readMePath = readMePath.replace('${workspaceFolder}', workspaceFolderString);
 		}
 
+		var stylesPath: string | undefined = vscode.workspace.getConfiguration().get("commentario.stylesPath");
+		if (stylesPath !== undefined) {
+			stylesPath = stylesPath.replace('${workspaceFolder}', workspaceFolderString);
+		}
+
 		var xmlCommentsPath: string | undefined = vscode.workspace.getConfiguration().get("commentario.xmlCommentsPath");
 		if (xmlCommentsPath !== undefined) {
 			xmlCommentsPath = xmlCommentsPath.replace('${workspaceFolder}', workspaceFolderString);
@@ -61,6 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 		outputChannel.appendLine(`commentario.allowOverwrite: ${allowOverwrite}`);
 		outputChannel.appendLine(`commentario.xmlCommentsPath: ${xmlCommentsPath}`);
 		outputChannel.appendLine(`commentario.readMePath: ${readMePath}`);
+		outputChannel.appendLine(`commentario.stylesPath: ${stylesPath}`);
 		outputChannel.appendLine(`commentario.outputType: ${outputType}`);
 		outputChannel.appendLine(`commentario.debugMode: ${debugMode}`);
 
@@ -73,8 +79,17 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// Calculate the command
 		var cmd: string = `${consolePath} ${assemblyPath} ${outputPath}`;
+
 		if (xmlCommentsPath !== undefined) {
 			cmd = `${cmd} -c ${xmlCommentsPath}`;
+		}
+
+		if (readMePath !== undefined) {
+			cmd = `${cmd} -r ${readMePath}`;
+		}
+
+		if (stylesPath !== undefined) {
+			cmd = `${cmd} -s ${stylesPath}`;
 		}
 
 		if (outputType !== undefined) {
@@ -104,6 +119,7 @@ export function activate(context: vscode.ExtensionContext) {
 				outputChannel.appendLine(stderr);
 			}
 		});
+		vscode.window.showInformationMessage('Completed Commentario.');
 	});
 
 	context.subscriptions.push(disposable);
