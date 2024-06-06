@@ -257,13 +257,152 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
         {this.RenderTypeGenericArguments(type)}
         {this.RenderTypeTOCSection(type, "Constructors", this.GetConstructors(type))}
-        {this.RenderTypeTOCSection(type, "Fields", this.GetFields(type))}
-        {this.RenderTypeTOCSection(type, "Properties", this.GetProperties(type))}
-        {this.RenderTypeTOCSection(type, "Methods", this.GetMethods(type))}
+        {this.RenderTypeFields(type)}
+        {this.RenderTypeProperties(type)}
+        {this.RenderTypeMethods(type)}
         {this.RenderTypeTOCSection(type, "Events", this.GetEvents(type))}
     </div>
 </div>";
         return template;
+    }
+
+    protected override string RenderTypeFields(Type type)
+    {
+        var fields = this.GetFields(type);
+
+        var values = string.Join("", fields.OrderBy(m => m.Name).Select(m =>
+        {
+            var memberCommentText = "";
+            var memberNode = Comments.GetDocumentForMember(m);
+            if (memberNode is not null)
+            {
+                var memberNodeSummary = memberNode.Summary;
+                if (memberNodeSummary is not null)
+                {
+                    memberCommentText = RenderItems(memberNodeSummary.Items);
+                }
+            }
+            return $@"<tr><td><a href=""#{m.ToCommentId()}"">{m.Name}</a></td><td>{this.GetLinkForType(m.FieldType)}</td><td>{memberCommentText}</td></tr>";
+        }));
+
+        if (fields is null || fields.Length == 0)
+        {
+            return "";
+        }
+        else
+        {
+            return @$"
+<h3>Fields</h3>
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {values}
+        </tbody>
+    </table>
+</div>";
+        }
+
+    }
+
+    protected override string RenderTypeMethods(Type type)
+    {
+        var methods = this.GetMethods(type);
+
+        var values = string.Join("", methods.OrderBy(m => m.Name).Select(m =>
+        {
+            var memberCommentText = "";
+            var memberNode = Comments.GetDocumentForMember(m);
+            if (memberNode is not null)
+            {
+                var memberNodeSummary = memberNode.Summary;
+                if (memberNodeSummary is not null)
+                {
+                    memberCommentText = RenderItems(memberNodeSummary.Items);
+                }
+            }
+
+            var parameters = string.Join(",", m.GetParameters().Select(p => this.GetLinkForType(p.ParameterType)));
+
+            return $@"<tr><td><a href=""#{m.ToCommentId()}"">{m.Name}</a></td><td>{this.GetLinkForType(m.ReturnType)}</td><td>{parameters}</td><td>{memberCommentText}</td></tr>";
+        }));
+
+        if (methods is null || methods.Length == 0)
+        {
+            return "";
+        }
+        else
+        {
+            return @$"
+<h3>Methods</h3>
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Return Type</th>
+                <th>Parameters</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {values}
+        </tbody>
+    </table>
+</div>";
+        }
+
+    }
+
+    protected override string RenderTypeProperties(Type type)
+    {
+        var properties = this.GetProperties(type);
+
+        var values = string.Join("", properties.OrderBy(m => m.Name).Select(m =>
+        {
+            var memberCommentText = "";
+            var memberNode = Comments.GetDocumentForMember(m);
+            if (memberNode is not null)
+            {
+                var memberNodeSummary = memberNode.Summary;
+                if (memberNodeSummary is not null)
+                {
+                    memberCommentText = RenderItems(memberNodeSummary.Items);
+                }
+            }
+            return $@"<tr><td><a href=""#{m.ToCommentId()}"">{m.Name}</a></td><td>{this.GetLinkForType(m.PropertyType)}</td><td>{memberCommentText}</td></tr>";
+        }));
+
+        if (properties is null || properties.Length == 0)
+        {
+            return "";
+        }
+        else
+        {
+            return @$"
+<h3>Properties</h3>
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {values}
+        </tbody>
+    </table>
+</div>";
+        }
+
     }
 
     protected override string RenderTypeTOCSection(Type type, string header, MemberInfo[] members)

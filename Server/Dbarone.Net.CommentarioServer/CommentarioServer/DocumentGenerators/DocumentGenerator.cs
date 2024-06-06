@@ -427,8 +427,9 @@ public abstract class DocumentGenerator
         ValidateParameters();
 
         // Save file
-        if (this.AllowOverwrite==false && File.Exists(this.OutputPath)) {
-            throw new Exception("Output file already exists and [OverwriteOutput] parameter set to false.");
+        if (this.AllowOverwrite == false && File.Exists(this.OutputPath))
+        {
+            throw new Exception("Output file already exists and [Allow Overwrite] parameter set to false.");
         }
         File.WriteAllText(this.OutputPath, RenderDocument());
     }
@@ -437,6 +438,9 @@ public abstract class DocumentGenerator
     protected abstract string RenderTOCSection(string header, Type[] types);
     protected abstract string RenderType(Type type);
     protected abstract string RenderTypeTOCSection(Type type, string header, MemberInfo[] members);
+    protected abstract string RenderTypeFields(Type type);
+    protected abstract string RenderTypeProperties(Type type);
+    protected abstract string RenderTypeMethods(Type type);
     protected abstract string RenderTypeMember(MemberInfo member);
     protected abstract string RenderItems(object[] items);
     protected abstract string RenderExample(ExampleNode node);

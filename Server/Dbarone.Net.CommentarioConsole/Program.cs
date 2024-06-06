@@ -33,7 +33,6 @@ namespace Dbarone.Net.CommentarioConsole
                     docGen.GenerateDocument();
                     Console.Out.WriteLine("Completed document generation.");
                 }
-                Console.Out.WriteLine("Exiting Dbarone.Net.CommentarioConsole server...");
                 Environment.Exit(0);
             }
             catch (Exception ex)
@@ -43,6 +42,10 @@ namespace Dbarone.Net.CommentarioConsole
                 Console.Out.WriteLine(ex.Message);
                 Console.ResetColor();
                 Environment.Exit(1);
+            }
+            finally
+            {
+                Console.Out.WriteLine("Exiting Dbarone.Net.CommentarioConsole server...");
             }
         }
 
