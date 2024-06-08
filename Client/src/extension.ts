@@ -56,7 +56,7 @@ export function activate(context: vscode.ExtensionContext) {
 		if (stylesPath !== undefined && stylesPath.trim() === "") {
 			stylesPath = undefined;
 		}
-		
+
 		var xmlCommentsPath: string | undefined = vscode.workspace.getConfiguration().get("commentario.xmlCommentsPath");
 		if (xmlCommentsPath !== undefined && xmlCommentsPath.trim() !== "") {
 			xmlCommentsPath = xmlCommentsPath.replace('${workspaceFolder}', workspaceFolderString);
@@ -69,10 +69,12 @@ export function activate(context: vscode.ExtensionContext) {
 		var outputType: string | undefined = vscode.workspace.getConfiguration().get("commentario.outputType");
 		var debugMode: string | undefined = vscode.workspace.getConfiguration().get("commentario.debugMode");
 
-		var outputChannel = vscode.window.createOutputChannel("commentario");
+		var outputChannel = vscode.window.createOutputChannel("Commentario");
 		outputChannel.show();
-		outputChannel.appendLine("Commentario Client Debugging");
-		outputChannel.appendLine("----------------------------");
+		outputChannel.appendLine("Starting commentario.createDocumentation...");
+		outputChannel.appendLine("");
+		outputChannel.appendLine("Configuration");
+		outputChannel.appendLine("-------------");
 		outputChannel.appendLine(`WorkspaceFolder: ${workspaceFolderString}`);
 		outputChannel.appendLine(`commentario.assemblyPath: ${assemblyPath}`);
 		outputChannel.appendLine(`commentario.outputPath: ${outputPath}`);
@@ -120,19 +122,14 @@ export function activate(context: vscode.ExtensionContext) {
 		outputChannel.appendLine("");
 		outputChannel.appendLine(`Executing command: ${cmd}`);
 
-		//const terminal = vscode.window.createTerminal("Open Terminal");
+		//const terminal = vscode.window.createTerminal("Commentario");
 		//terminal.show();
-		//terminal.sendText("Command:\n", false);
-		//terminal.sendText("--------\n", false);
-		//terminal.sendText(`${cmd}\n`, false);
+		//terminal.sendText("Generating documentation using Commentario...\n", false);
 		cp.exec(`${cmd}`, (err: any, stdout: any, stderr: any) => {
 			outputChannel.appendLine(stdout);
-
-			if (err) {
-				outputChannel.appendLine(stderr);
-			}
+			outputChannel.appendLine(stderr);
+			outputChannel.appendLine("Completed commentario.createDocumentation...");
 		});
-		vscode.window.showInformationMessage('Completed Commentario.');
 	});
 
 	context.subscriptions.push(disposable);

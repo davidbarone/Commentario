@@ -80,10 +80,12 @@ function activate(context) {
         }
         var outputType = vscode.workspace.getConfiguration().get("commentario.outputType");
         var debugMode = vscode.workspace.getConfiguration().get("commentario.debugMode");
-        var outputChannel = vscode.window.createOutputChannel("commentario");
+        var outputChannel = vscode.window.createOutputChannel("Commentario");
         outputChannel.show();
-        outputChannel.appendLine("Commentario Client Debugging");
-        outputChannel.appendLine("----------------------------");
+        outputChannel.appendLine("Starting commentario.createDocumentation...");
+        outputChannel.appendLine("");
+        outputChannel.appendLine("Configuration");
+        outputChannel.appendLine("-------------");
         outputChannel.appendLine(`WorkspaceFolder: ${workspaceFolderString}`);
         outputChannel.appendLine(`commentario.assemblyPath: ${assemblyPath}`);
         outputChannel.appendLine(`commentario.outputPath: ${outputPath}`);
@@ -121,18 +123,14 @@ function activate(context) {
         }
         outputChannel.appendLine("");
         outputChannel.appendLine(`Executing command: ${cmd}`);
-        //const terminal = vscode.window.createTerminal("Open Terminal");
+        //const terminal = vscode.window.createTerminal("Commentario");
         //terminal.show();
-        //terminal.sendText("Command:\n", false);
-        //terminal.sendText("--------\n", false);
-        //terminal.sendText(`${cmd}\n`, false);
+        //terminal.sendText("Generating documentation using Commentario...\n", false);
         cp.exec(`${cmd}`, (err, stdout, stderr) => {
             outputChannel.appendLine(stdout);
-            if (err) {
-                outputChannel.appendLine(stderr);
-            }
+            outputChannel.appendLine(stderr);
+            outputChannel.appendLine("Completed commentario.createDocumentation...");
         });
-        vscode.window.showInformationMessage('Completed Commentario.');
     });
     context.subscriptions.push(disposable);
 }

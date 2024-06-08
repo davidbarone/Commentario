@@ -7,46 +7,32 @@ namespace Dbarone.Net.CommentarioConsole
         static void Main(string[] args)
         {
             // process args
-            try
-            {
-                Console.Out.WriteLine("Starting Dbarone.Net.CommentarioConsole server...");
-                Console.Out.WriteLine($"args[]: {args.ToString()}");
+            Console.Out.WriteLine("Starting Dbarone.Net.CommentarioConsole server...");
+            Console.Out.WriteLine($"args[]: {args.ToString()}");
 
-                var arguments = GetArguments(args);
+            var arguments = GetArguments(args);
 
-                if (arguments.DisplayHelp)
-                {
-                    DisplayHelp();
-                }
-                else
-                {
-                    DocumentGenerator docGen = DocumentGenerator.Create(
-                        arguments.AssemblyPath,
-                        arguments.OutputPath,
-                        arguments.OutputType,
-                        arguments.AllowOverwrite,
-                        arguments.XmlCommentsPath,
-                        arguments.ReadMePath,
-                        arguments.StylesPath);
+            if (arguments.DisplayHelp)
+            {
+                DisplayHelp();
+            }
+            else
+            {
+                DocumentGenerator docGen = DocumentGenerator.Create(
+                    arguments.AssemblyPath,
+                    arguments.OutputPath,
+                    arguments.OutputType,
+                    arguments.AllowOverwrite,
+                    arguments.XmlCommentsPath,
+                    arguments.ReadMePath,
+                    arguments.StylesPath);
 
-                    Console.Out.WriteLine("Starting document generation...");
-                    docGen.GenerateDocument();
-                    Console.Out.WriteLine("Completed document generation.");
-                }
-                Environment.Exit(0);
+                Console.Out.WriteLine("Starting document generation...");
+                docGen.GenerateDocument();
+                Console.Out.WriteLine("Completed document generation.");
             }
-            catch (Exception ex)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Out.WriteLine("An error has occurred:");
-                Console.Out.WriteLine(ex.Message);
-                Console.ResetColor();
-                Environment.Exit(1);
-            }
-            finally
-            {
-                Console.Out.WriteLine("Exiting Dbarone.Net.CommentarioConsole server...");
-            }
+            Console.Out.WriteLine("Exiting Dbarone.Net.CommentarioConsole server...");
+            Environment.Exit(0);
         }
 
         private static Arguments GetArguments(string[] args)

@@ -89,7 +89,7 @@ div.member {
     border: 1px solid var(--neutral-500);
     border-radius: 4px;
     margin: 4px 0px;
-    padding: 4px 4px;
+    padding: 0px;
 }
 
 div.member-inner {
@@ -256,6 +256,24 @@ tr:nth-child(odd) {
 }
 
 /* ---------------------------------------------
+Others
+------------------------------------------------ */
+
+.tag {
+    background-color: var(--neutral-700);
+    color: var(--neutral-200);
+    border-radius: 4px;
+    padding: 4px;
+    text-shadow: 2px 2px 5px var(--neutral-900);
+}
+
+.footer {
+    margin: 1em 0em;
+    font-style: italic;
+    font-size: small;
+}
+
+/* ---------------------------------------------
 Spacing
 ------------------------------------------------ */
 
@@ -303,7 +321,7 @@ and also to provide an example of the output of Commentario.</p>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#T:ExampleLibrary.ComplexComments">ComplexComments</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.ExceptionA">ExceptionA</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.ExceptionB">ExceptionB</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.GenericType`1">GenericType`1</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:foo.bar.baz.MultipartNamespace">MultipartNamespace</a></td><td>foo.bar.baz</td><td></td></tr><tr><td><a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass</a></td><td>foo.bar.baz</td><td></td></tr><tr><td><a href="#T:NoNamespace">NoNamespace</a></td><td></td><td></td></tr><tr><td><a href="#T:NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass</a></td><td></td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassBar">SubclassBar</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassBaz">SubclassBaz</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassFoo">SubclassFoo</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.Test">Test</a></td><td>ExampleLibrary</td><td></td></tr>
+            <tr><td><a href="#T:ExampleLibrary.ComplexComments">ComplexComments</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.DummyDelegateHandler">DummyDelegateHandler</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.ExceptionA">ExceptionA</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.ExceptionB">ExceptionB</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.GenericType`1">GenericType`1</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:foo.bar.baz.MultipartNamespace">MultipartNamespace</a></td><td>foo.bar.baz</td><td></td></tr><tr><td><a href="#T:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass">MultpartNamespaceNestedClass</a></td><td>foo.bar.baz</td><td></td></tr><tr><td><a href="#T:NoNamespace">NoNamespace</a></td><td></td><td></td></tr><tr><td><a href="#T:NoNamespace+NoNamespaceNestedClass">NoNamespaceNestedClass</a></td><td></td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassBar">SubclassBar</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassBaz">SubclassBaz</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.SubclassFoo">SubclassFoo</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.Test">Test</a></td><td>ExampleLibrary</td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -412,10 +430,11 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">MethodThatHasRemarks</a></td><td>String</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">MethodThatThrowsTwoExceptionTypes</a></td><td>Void</td><td>Int32,Int32</td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">MethodThatHasRemarks</a></td><td>String</td><td></td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">MethodThatThrowsTwoExceptionTypes</a></td><td>Void</td><td>Int32,Int32</td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -477,10 +496,77 @@ MulticastDelegate
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">BeginInvoke</a></td><td>IAsyncResult</td><td>String,AsyncCallback,Object</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">EndInvoke</a></td><td>Int32</td><td>IAsyncResult</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Invoke</a></td><td>Int32</td><td>String</td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">BeginInvoke</a></td><td>IAsyncResult</td><td>String,AsyncCallback,Object</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">EndInvoke</a></td><td>Int32</td><td>IAsyncResult</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Invoke</a></td><td>Int32</td><td>String</td><td></td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+        
+    </div>
+</div>
+
+<div class="type">       
+    <h2 id="T:ExampleLibrary.DummyDelegateHandler">Class: DummyDelegateHandler</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+
+        
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: ExampleLibrary</li>
+            <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
+        
+        
+        
+<h3>Base Class</h3>
+MulticastDelegate
+
+        
+<h3>Implemented Interfaces</h3>
+<ul><li>ICloneable</li><li>ISerializable</li></ul>
+
+        
+
+        
+
+        
+        
+<h3>Constructors</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Parameters</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.DummyDelegateHandler.#ctor(System.Object,System.IntPtr)">.ctor</a></td><td>Object,IntPtr</td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+        
+        
+        
+<h3>Methods</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Return Type</th>
+                <th>Parameters</th>
+                <th>Description</th>
+                <th>Tags</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.DummyDelegateHandler.BeginInvoke(System.Object,ExampleLibrary.DummyEventArgs,System.AsyncCallback,System.Object)">BeginInvoke</a></td><td>IAsyncResult</td><td>Object,<a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a>,AsyncCallback,Object</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.DummyDelegateHandler.EndInvoke(System.IAsyncResult)">EndInvoke</a></td><td>Void</td><td>IAsyncResult</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.DummyDelegateHandler.Invoke(System.Object,ExampleLibrary.DummyEventArgs)">Invoke</a></td><td>Void</td><td>Object,<a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1250,14 +1336,30 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.Test.Add(System.Int32,System.Int32)">Add</a></td><td>Int32</td><td>Int32,Int32</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{T}(T)">GenericMethod</a></td><td>T</td><td>T</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">GenericMethod</a></td><td>TOutput</td><td>TInput,Boolean</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException</a></td><td>Void</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples</a></td><td>Void</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.NothingFunction">NothingFunction</a></td><td>Void</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">ParameterWithMultipleParameters</a></td><td>Void</td><td>Int32,DateTime,Guid</td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.Test.Add(System.Int32,System.Int32)">Add</a></td><td>Int32</td><td>Int32,Int32</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{T}(T)">GenericMethod</a></td><td>T</td><td>T</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">GenericMethod</a></td><td>TOutput</td><td>TInput,Boolean</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesDummyEvent">MethodThatRaisesDummyEvent</a></td><td>Void</td><td></td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException</a></td><td>Void</td><td></td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples</a></td><td>Void</td><td></td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.NothingFunction">NothingFunction</a></td><td>Void</td><td></td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">ParameterWithMultipleParameters</a></td><td>Void</td><td>Int32,DateTime,Guid</td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
         
+<h3>Events</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Event Handler Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#E:ExampleLibrary.Test.DummyEvent">DummyEvent</a></td><td><a href="#T:ExampleLibrary.DummyDelegateHandler">DummyDelegateHandler</a></td><td></td></tr>
+        </tbody>
+    </table>
+</div>
     </div>
 </div>
         
@@ -1273,7 +1375,6 @@ Object
 <pre><code>public string MethodThatHasRemarks()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1301,7 +1402,6 @@ Object
 <pre><code>public void MethodThatThrowsTwoExceptionTypes(int a, int b)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1354,7 +1454,6 @@ Object
 <pre><code>public ComplexComments()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1382,7 +1481,6 @@ Object
 <pre><code>public int Invoke(string input)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1430,7 +1528,6 @@ Object
 <pre><code>public System.IAsyncResult BeginInvoke(string input, System.AsyncCallback callback, object object)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1488,7 +1585,6 @@ Object
 <pre><code>public int EndInvoke(System.IAsyncResult result)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1536,7 +1632,194 @@ Object
 <pre><code>public ConvertStringToIntDelegate(object object, nint method)</code></pre>
             
 
-        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyDelegateHandler.Invoke(System.Object,ExampleLibrary.DummyEventArgs)">Method: Invoke</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void Invoke(object sender, ExampleLibrary.DummyEventArgs args)</code></pre>
+            
+
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>sender</td>
+        <td>Object</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>args</td>
+        <td><a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyDelegateHandler.BeginInvoke(System.Object,ExampleLibrary.DummyEventArgs,System.AsyncCallback,System.Object)">Method: BeginInvoke</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public System.IAsyncResult BeginInvoke(object sender, ExampleLibrary.DummyEventArgs args, System.AsyncCallback callback, object object)</code></pre>
+            
+
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>sender</td>
+        <td>Object</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>args</td>
+        <td><a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>callback</td>
+        <td>AsyncCallback</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>object</td>
+        <td>Object</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyDelegateHandler.EndInvoke(System.IAsyncResult)">Method: EndInvoke</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void EndInvoke(System.IAsyncResult result)</code></pre>
+            
+
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>result</td>
+        <td>IAsyncResult</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyDelegateHandler.#ctor(System.Object,System.IntPtr)">Constructor: .ctor</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public DummyDelegateHandler(object object, nint method)</code></pre>
+            
+
         
 
         
@@ -1564,7 +1847,6 @@ Object
 <pre><code>public int get_EventId()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1592,7 +1874,6 @@ Object
 <pre><code>public void set_EventId(int value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1640,7 +1921,6 @@ Object
 <pre><code>public string get_EventMessage()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1668,7 +1948,6 @@ Object
 <pre><code>public void set_EventMessage(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1716,7 +1995,6 @@ Object
 <pre><code>public DummyEventArgs()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1741,7 +2019,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -1766,7 +2043,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -1794,7 +2070,6 @@ Object
 <pre><code>public ExceptionA(string message)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1822,7 +2097,6 @@ Object
 <pre><code>public ExceptionB(string message)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1847,7 +2121,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -1872,7 +2145,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -1897,7 +2169,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -1922,7 +2193,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -1950,7 +2220,6 @@ Object
 <pre><code>public GenericType`1()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1978,7 +2247,6 @@ Object
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2006,7 +2274,6 @@ Object
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2051,7 +2318,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2079,7 +2345,6 @@ Object
 <pre><code>public MultipartNamespace()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2104,7 +2369,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2132,7 +2396,6 @@ Object
 <pre><code>public MultpartNamespaceNestedClass()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2160,7 +2423,6 @@ Object
 <pre><code>public NoNamespace()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2185,7 +2447,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2213,7 +2474,6 @@ Object
 <pre><code>public NoNamespaceNestedClass()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2241,7 +2501,6 @@ Object
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2269,7 +2528,6 @@ Object
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2317,7 +2575,6 @@ Object
 <pre><code>public SubclassBar()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2342,7 +2599,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2370,7 +2626,6 @@ Object
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2398,7 +2653,6 @@ Object
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2446,7 +2700,6 @@ Object
 <pre><code>public SubclassBaz()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2471,7 +2724,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2499,7 +2751,6 @@ Object
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2527,7 +2778,6 @@ Object
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2575,7 +2825,6 @@ Object
 <pre><code>public SubclassFoo()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2600,7 +2849,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2628,7 +2876,6 @@ Object
 <pre><code>public int Add(int a, int b)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2681,7 +2928,6 @@ Object
 <pre><code>public T GenericMethod<T>(T input)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2729,7 +2975,6 @@ Object
 <pre><code>public void NothingFunction()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2757,7 +3002,6 @@ Object
 <pre><code>public void ParameterWithMultipleParameters(int intValue, System.DateTime dateTimeValue, System.Guid guidValue)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2815,7 +3059,6 @@ Object
 <pre><code>public void MethodThatRaisesException()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2843,7 +3086,6 @@ Object
 <pre><code>public void MethodWithExamples()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2871,7 +3113,6 @@ Object
 <pre><code>public bool get_SomeFlag()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2899,7 +3140,6 @@ Object
 <pre><code>public void set_SomeFlag(bool value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2947,7 +3187,6 @@ Object
 <pre><code>public TOutput GenericMethod<TInput, TOutput>(TInput input, bool flag)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2989,6 +3228,127 @@ Object
 </div>
 
 <div class="member">
+    <h2 id="M:ExampleLibrary.Test.add_DummyEvent(ExampleLibrary.DummyDelegateHandler)">Method: add_DummyEvent</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void add_DummyEvent(ExampleLibrary.DummyDelegateHandler value)</code></pre>
+            
+
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td><a href="#T:ExampleLibrary.DummyDelegateHandler">DummyDelegateHandler</a></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.Test.remove_DummyEvent(ExampleLibrary.DummyDelegateHandler)">Method: remove_DummyEvent</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void remove_DummyEvent(ExampleLibrary.DummyDelegateHandler value)</code></pre>
+            
+
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td><a href="#T:ExampleLibrary.DummyDelegateHandler">DummyDelegateHandler</a></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.Test.MethodThatRaisesDummyEvent">Method: MethodThatRaisesDummyEvent</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void MethodThatRaisesDummyEvent()</code></pre>
+            
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
     <h2 id="M:ExampleLibrary.Test.#ctor">Constructor: .ctor</h1>
     <div class="member-inner">
 
@@ -3000,7 +3360,6 @@ Object
 <pre><code>public Test()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3028,7 +3387,6 @@ Object
 <pre><code>public Test(int a)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3056,7 +3414,6 @@ Object
 <pre><code>public Test(int a, int b)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3081,7 +3438,6 @@ Object
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -3097,6 +3453,35 @@ Object
     </div>
 </div>
 
+<div class="member">
+    <h2 id="E:ExampleLibrary.Test.DummyEvent">Event: DummyEvent</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+
+        <!-- Footer / Commentario link -->
+        <div class="footer">
+            Documentation generated on 08-Jun-2024 16:16:52 using <a href="https://github.com/davidbarone/Commentario">Commentario</a>.
+        </div>
 
     </body>
     <!-- https://highlightjs.org/#usage -->
