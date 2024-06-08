@@ -215,7 +215,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {
             inherits = @$"
 <h3>Base Class</h3>
-{inheritedType.Name}";
+{this.GetLinkForType(inheritedType)}";
         }
 
         // Subclasses
@@ -225,7 +225,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {
             subclasses = @$"
 <h3>Sub Classes</h3>
-<ul>{string.Join("", subclassTypes.Select(s => $"<li>{s.Name}</li>"))}</ul>";
+<ul>{string.Join("", subclassTypes.Select(s => $"<li>{this.GetLinkForType(s)}</li>"))}</ul>";
         }
 
         // Implements
@@ -256,11 +256,11 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {summary}
 
         {this.RenderTypeGenericArguments(type)}
-        {this.RenderTypeTOCSection(type, "Constructors", this.GetConstructors(type))}
+        {this.RenderTypeConstructors(type)}
         {this.RenderTypeFields(type)}
         {this.RenderTypeProperties(type)}
         {this.RenderTypeMethods(type)}
-        {this.RenderTypeTOCSection(type, "Events", this.GetEvents(type))}
+        {this.RenderTypeEvents(type)}
     </div>
 </div>";
         return template;
@@ -360,6 +360,54 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
     }
 
+    protected override string RenderTypeConstructors(Type type)
+    {
+        var constructors = this.GetConstructors(type);
+
+        var values = string.Join("", constructors.OrderBy(m => m.Name).Select(m =>
+        {
+            var memberCommentText = "";
+            var memberNode = Comments.GetDocumentForMember(m);
+            if (memberNode is not null)
+            {
+                var memberNodeSummary = memberNode.Summary;
+                if (memberNodeSummary is not null)
+                {
+                    memberCommentText = RenderItems(memberNodeSummary.Items);
+                }
+            }
+
+            var parameters = string.Join(",", m.GetParameters().Select(p => this.GetLinkForType(p.ParameterType)));
+
+            return $@"<tr><td><a href=""#{m.ToCommentId()}"">{m.Name}</a></td><td>{parameters}</td><td>{memberCommentText}</td></tr>";
+        }));
+
+        if (constructors is null || constructors.Length == 0)
+        {
+            return "";
+        }
+        else
+        {
+            return @$"
+<h3>Constructors</h3>
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Parameters</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {values}
+        </tbody>
+    </table>
+</div>";
+        }
+
+    }
+
     protected override string RenderTypeProperties(Type type)
     {
         var properties = this.GetProperties(type);
@@ -393,6 +441,51 @@ public class HtmlDocumentGenerator : DocumentGenerator
             <tr>
                 <th>Name</th>
                 <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {values}
+        </tbody>
+    </table>
+</div>";
+        }
+
+    }
+
+    protected override string RenderTypeEvents(Type type)
+    {
+        var events = this.GetEvents(type);
+
+        var values = string.Join("", events.OrderBy(e => e.Name).Select(e =>
+        {
+            var memberCommentText = "";
+            var memberNode = Comments.GetDocumentForMember(e);
+            if (memberNode is not null)
+            {
+                var memberNodeSummary = memberNode.Summary;
+                if (memberNodeSummary is not null)
+                {
+                    memberCommentText = RenderItems(memberNodeSummary.Items);
+                }
+            }
+            return $@"<tr><td><a href=""#{e.ToCommentId()}"">{e.Name}</a></td><td>{this.GetLinkForType(e.EventHandlerType)}</td><td>{memberCommentText}</td></tr>";
+        }));
+
+        if (events is null || events.Length == 0)
+        {
+            return "";
+        }
+        else
+        {
+            return @$"
+<h3>Events</h3>
+<div class=""table"">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Event Handler Type</th>
                 <th>Description</th>
             </tr>
         </thead>

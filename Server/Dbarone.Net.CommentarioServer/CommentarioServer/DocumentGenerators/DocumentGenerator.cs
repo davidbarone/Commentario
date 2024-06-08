@@ -440,7 +440,9 @@ public abstract class DocumentGenerator
     protected abstract string RenderTypeTOCSection(Type type, string header, MemberInfo[] members);
     protected abstract string RenderTypeFields(Type type);
     protected abstract string RenderTypeProperties(Type type);
+    protected abstract string RenderTypeConstructors(Type type);
     protected abstract string RenderTypeMethods(Type type);
+    protected abstract string RenderTypeEvents(Type type);
     protected abstract string RenderTypeMember(MemberInfo member);
     protected abstract string RenderItems(object[] items);
     protected abstract string RenderExample(ExampleNode node);

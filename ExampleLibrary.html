@@ -307,6 +307,10 @@ and also to provide an example of the output of Commentario.</p>
             This class contains some members with more complex commentary.
             </td></tr><tr><td><a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate</a></td><td>ExampleLibrary</td><td>
             A test delegate class.
+            </td></tr><tr><td><a href="#T:DummyDelegateHandler">DummyDelegateHandler</a></td><td></td><td>
+            A dummy delegate (callback) event handler which specifies <a href="T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a> args. 
+            </td></tr><tr><td><a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td><td>ExampleLibrary</td><td>
+            A dummy event args object.
             </td></tr><tr><td><a href="#T:ExampleLibrary.ExceptionA">ExceptionA</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.ExceptionB">ExceptionB</a></td><td>ExampleLibrary</td><td></td></tr><tr><td><a href="#T:ExampleLibrary.GenericType`1">GenericType`1</a></td><td>ExampleLibrary</td><td>
             A test generic type.
             </td></tr><tr><td><a href="#T:foo.bar.baz.MultipartNamespace">MultipartNamespace</a></td><td>foo.bar.baz</td><td>
@@ -419,11 +423,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.ComplexComments.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.ComplexComments.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -491,11 +496,12 @@ MulticastDelegate
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">System.Void .ctor(System.Object, System.IntPtr)</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.#ctor(System.Object,System.IntPtr)">.ctor</a></td><td>Object,IntPtr</td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -518,6 +524,145 @@ MulticastDelegate
         </tbody>
     </table>
 </div>
+        
+    </div>
+</div>
+
+<div class="type">       
+    <h2 id="T:DummyDelegateHandler">Class: DummyDelegateHandler</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+
+        
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: </li>
+            <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
+        
+        
+        
+<h3>Base Class</h3>
+MulticastDelegate
+
+        
+<h3>Implemented Interfaces</h3>
+<ul><li>ICloneable</li><li>ISerializable</li></ul>
+
+        
+
+        
+<h3>Summary</h3>
+
+            A dummy delegate (callback) event handler which specifies <a href="T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a> args. 
+            
+
+        
+        
+<h3>Constructors</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Parameters</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:DummyDelegateHandler.#ctor(System.Object,System.IntPtr)">.ctor</a></td><td>Object,IntPtr</td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+        
+        
+        
+<h3>Methods</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Return Type</th>
+                <th>Parameters</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:DummyDelegateHandler.BeginInvoke(System.Object,ExampleLibrary.DummyEventArgs,System.AsyncCallback,System.Object)">BeginInvoke</a></td><td>IAsyncResult</td><td>Object,<a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a>,AsyncCallback,Object</td><td></td></tr><tr><td><a href="#M:DummyDelegateHandler.EndInvoke(System.IAsyncResult)">EndInvoke</a></td><td>Void</td><td>IAsyncResult</td><td></td></tr><tr><td><a href="#M:DummyDelegateHandler.Invoke(System.Object,ExampleLibrary.DummyEventArgs)">Invoke</a></td><td>Void</td><td>Object,<a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+        
+    </div>
+</div>
+
+<div class="type">       
+    <h2 id="T:ExampleLibrary.DummyEventArgs">Class: DummyEventArgs</h2>
+    <div class="type-inner">
+        <a href="#top">Back to top</a>
+
+        
+        <h3>Definition:</h3>
+        <ul>
+            <li>Namespace: ExampleLibrary</li>
+            <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
+        </ul>
+        
+        
+        
+<h3>Base Class</h3>
+EventArgs
+
+        
+
+        
+
+        
+<h3>Summary</h3>
+
+            A dummy event args object.
+            
+
+        
+        
+<h3>Constructors</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Parameters</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#M:ExampleLibrary.DummyEventArgs.#ctor">.ctor</a></td><td></td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+        
+        
+<h3>Properties</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Data Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#P:ExampleLibrary.DummyEventArgs.EventId">EventId</a></td><td>Int32</td><td>
+            The event id.
+            </td></tr><tr><td><a href="#P:ExampleLibrary.DummyEventArgs.EventMessage">EventMessage</a></td><td>String</td><td>
+            This is a useful message about the event.
+            </td></tr>
+        </tbody>
+    </table>
+</div>
+        
         
     </div>
 </div>
@@ -555,11 +700,12 @@ Exception
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.ExceptionA.#ctor(System.String)">System.Void .ctor(System.String)</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.ExceptionA.#ctor(System.String)">.ctor</a></td><td>String</td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -603,11 +749,12 @@ Exception
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.ExceptionB.#ctor(System.String)">System.Void .ctor(System.String)</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.ExceptionB.#ctor(System.String)">.ctor</a></td><td>String</td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -726,11 +873,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.GenericType.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.GenericType.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -827,11 +975,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:foo.bar.baz.MultipartNamespace.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:foo.bar.baz.MultipartNamespace.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -873,11 +1022,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:foo.bar.baz.MultipartNamespace+MultpartNamespaceNestedClass.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -923,11 +1073,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:NoNamespace.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:NoNamespace.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -969,11 +1120,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:NoNamespace+NoNamespaceNestedClass.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:NoNamespace+NoNamespaceNestedClass.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1021,11 +1173,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.SubclassBar.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.SubclassBar.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1090,11 +1243,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.SubclassBaz.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.SubclassBaz.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1159,11 +1313,12 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.SubclassFoo.#ctor">System.Void .ctor()</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.SubclassFoo.#ctor">.ctor</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1226,15 +1381,16 @@ Object
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Parameters</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.Test.#ctor">System.Void .ctor()</a></td><td>
+            <tr><td><a href="#M:ExampleLibrary.Test.#ctor">.ctor</a></td><td></td><td>
             Default constructor.
-            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.#ctor(System.Int32)">System.Void .ctor(System.Int32)</a></td><td>
+            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.#ctor(System.Int32)">.ctor</a></td><td>Int32</td><td>
             Constructor with 1 parameter.
-            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">System.Void .ctor(System.Int32, System.Int32)</a></td><td>
+            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.#ctor(System.Int32,System.Int32)">.ctor</a></td><td>Int32,Int32</td><td>
             Constructor with 2 parameters.
             </td></tr>
         </tbody>
@@ -1274,7 +1430,9 @@ Object
         <tbody>
             <tr><td><a href="#M:ExampleLibrary.Test.Add(System.Int32,System.Int32)">Add</a></td><td>Int32</td><td>Int32,Int32</td><td>
             This method takes 2 integers and adds them.
-            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{T}(T)">GenericMethod</a></td><td>T</td><td>T</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">GenericMethod</a></td><td>TOutput</td><td>TInput,Boolean</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException</a></td><td>Void</td><td></td><td>
+            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{T}(T)">GenericMethod</a></td><td>T</td><td>T</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">GenericMethod</a></td><td>TOutput</td><td>TInput,Boolean</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesDummyEvent">MethodThatRaisesDummyEvent</a></td><td>Void</td><td></td><td>
+            This is a method which raises a dummy event, see: <a href="T:DummyDelegateHandler">DummyDelegateHandler</a>.
+            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException</a></td><td>Void</td><td></td><td>
             This is a method that throws an exception.
             </td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples</a></td><td>Void</td><td></td><td>
                 This method has some examples.
@@ -1287,6 +1445,23 @@ Object
     </table>
 </div>
         
+<h3>Events</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Event Handler Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><a href="#E:ExampleLibrary.Test.DummyEvent">DummyEvent</a></td><td><a href="#T:DummyDelegateHandler">DummyDelegateHandler</a></td><td>
+            This is a dummy event.
+            </td></tr>
+        </tbody>
+    </table>
+</div>
     </div>
 </div>
         
@@ -1576,6 +1751,432 @@ This method returns nothing.
 
         <h3>Summary</h3>
         
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:DummyDelegateHandler.Invoke(System.Object,ExampleLibrary.DummyEventArgs)">Method: Invoke</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:DummyDelegateHandler">DummyDelegateHandler</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void Invoke(object sender, ExampleLibrary.DummyEventArgs args)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>sender</td>
+        <td>Object</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>args</td>
+        <td><a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:DummyDelegateHandler.BeginInvoke(System.Object,ExampleLibrary.DummyEventArgs,System.AsyncCallback,System.Object)">Method: BeginInvoke</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:DummyDelegateHandler">DummyDelegateHandler</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public System.IAsyncResult BeginInvoke(object sender, ExampleLibrary.DummyEventArgs args, System.AsyncCallback callback, object object)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>sender</td>
+        <td>Object</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>args</td>
+        <td><a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>callback</td>
+        <td>AsyncCallback</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>object</td>
+        <td>Object</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:DummyDelegateHandler.EndInvoke(System.IAsyncResult)">Method: EndInvoke</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:DummyDelegateHandler">DummyDelegateHandler</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void EndInvoke(System.IAsyncResult result)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>result</td>
+        <td>IAsyncResult</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:DummyDelegateHandler.#ctor(System.Object,System.IntPtr)">Constructor: .ctor</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:DummyDelegateHandler">DummyDelegateHandler</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public DummyDelegateHandler(object object, nint method)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyEventArgs.get_EventId">Method: get_EventId</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public int get_EventId()</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyEventArgs.set_EventId(System.Int32)">Method: set_EventId</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void set_EventId(int value)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td>Int32</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyEventArgs.get_EventMessage">Method: get_EventMessage</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public string get_EventMessage()</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyEventArgs.set_EventMessage(System.String)">Method: set_EventMessage</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void set_EventMessage(string value)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td>String</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.DummyEventArgs.#ctor">Constructor: .ctor</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public DummyEventArgs()</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="P:ExampleLibrary.DummyEventArgs.EventId">Property: EventId</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a>
+
+        
+
+        <h3>Summary</h3>
+        
+            The event id.
+            
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="P:ExampleLibrary.DummyEventArgs.EventMessage">Property: EventMessage</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a>
+
+        
+
+        <h3>Summary</h3>
+        
+            This is a useful message about the event.
+            
 
         
 
@@ -2827,6 +3428,132 @@ Returns the sum of a and b.
 </div>
 
 <div class="member">
+    <h2 id="M:ExampleLibrary.Test.add_DummyEvent(DummyDelegateHandler)">Method: add_DummyEvent</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void add_DummyEvent(DummyDelegateHandler value)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td><a href="#T:DummyDelegateHandler">DummyDelegateHandler</a></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.Test.remove_DummyEvent(DummyDelegateHandler)">Method: remove_DummyEvent</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void remove_DummyEvent(DummyDelegateHandler value)</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>value</td>
+        <td><a href="#T:DummyDelegateHandler">DummyDelegateHandler</a></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:ExampleLibrary.Test.MethodThatRaisesDummyEvent">Method: MethodThatRaisesDummyEvent</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+
+        
+<h3>Signature</h3>
+<pre><code>public void MethodThatRaisesDummyEvent()</code></pre>
+            
+
+        <h3>Summary</h3>
+        
+            This is a method which raises a dummy event, see: <a href="T:DummyDelegateHandler">DummyDelegateHandler</a>.
+            
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
     <h2 id="M:ExampleLibrary.Test.#ctor">Constructor: .ctor</h1>
     <div class="member-inner">
 
@@ -2928,6 +3655,33 @@ Returns the sum of a and b.
         <h3>Summary</h3>
         
             This is a test boolean property.
+            
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="E:ExampleLibrary.Test.DummyEvent">Event: DummyEvent</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:ExampleLibrary.Test">ExampleLibrary.Test</a>
+
+        
+
+        <h3>Summary</h3>
+        
+            This is a dummy event.
             
 
         

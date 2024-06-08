@@ -126,4 +126,37 @@ public class Test
     {
         throw new NotImplementedException("This is not implemented");
     }
+
+    #region Event
+
+    /// <summary>
+    /// This is a dummy event.
+    /// </summary>
+    public event DummyDelegateHandler DummyEvent;
+
+    /// <summary>
+    /// This is a method which raises a dummy event, see: <see cref="DummyDelegateHandler"/>.
+    /// </summary>
+    public void MethodThatRaisesDummyEvent()
+    {
+        // Make a temporary copy of the event to avoid possibility of
+        // a race condition if the last subscriber unsubscribes
+        // immediately after the null check and before the event is raised.
+        var dummyEvent = DummyEvent;
+
+        // Event will be null if there are no subscribers
+        if (dummyEvent != null)
+        {
+            DummyEventArgs args = new DummyEventArgs
+            {
+                EventId = 123,
+                EventMessage = "This is a dummy event"
+            };
+
+            // Call to raise the event.
+            dummyEvent(this, args);
+        }
+    }
+
+    #endregion
 }
