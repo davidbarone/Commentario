@@ -89,7 +89,7 @@ div.member {
     border: 1px solid var(--neutral-500);
     border-radius: 4px;
     margin: 4px 0px;
-    padding: 4px 4px;
+    padding: 0px;
 }
 
 div.member-inner {
@@ -1478,7 +1478,7 @@ Object
             
 
         <h3>Summary</h3>
-        
+
             This is a method that returns nothing.
             
 
@@ -1513,7 +1513,7 @@ This method returns nothing.
             
 
         <h3>Summary</h3>
-        
+
             This is a method that throws 2 possible exceptions.
             
 
@@ -1550,7 +1550,19 @@ This method returns nothing.
 
         
 
-        <h3>Exceptions</h3><div><b>T:ExampleLibrary.ExceptionA</b></div>This error is thrown if a is less than b.<div><b>T:ExampleLibrary.ExceptionB</b></div>This error is thrown in all other cases.
+        <h3>Exceptions</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Exception</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="#T:ExampleLibrary.ExceptionA">ExceptionA</a></td><td>This error is thrown if a is less than b.</td></tr><tr><td><a href="#T:ExampleLibrary.ExceptionB">ExceptionB</a></td><td>This error is thrown in all other cases.</td></tr>
+    </tbody>
+</table>
+        
 
     </div>
 </div>
@@ -1567,7 +1579,6 @@ This method returns nothing.
 <pre><code>public ComplexComments()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1595,7 +1606,6 @@ This method returns nothing.
 <pre><code>public int Invoke(string input)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1643,7 +1653,6 @@ This method returns nothing.
 <pre><code>public System.IAsyncResult BeginInvoke(string input, System.AsyncCallback callback, object object)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1701,7 +1710,6 @@ This method returns nothing.
 <pre><code>public int EndInvoke(System.IAsyncResult result)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1749,7 +1757,6 @@ This method returns nothing.
 <pre><code>public ConvertStringToIntDelegate(object object, nint method)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1777,7 +1784,6 @@ This method returns nothing.
 <pre><code>public void Invoke(object sender, ExampleLibrary.DummyEventArgs args)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1830,7 +1836,6 @@ This method returns nothing.
 <pre><code>public System.IAsyncResult BeginInvoke(object sender, ExampleLibrary.DummyEventArgs args, System.AsyncCallback callback, object object)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1893,7 +1898,6 @@ This method returns nothing.
 <pre><code>public void EndInvoke(System.IAsyncResult result)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1941,7 +1945,6 @@ This method returns nothing.
 <pre><code>public DummyDelegateHandler(object object, nint method)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1969,7 +1972,6 @@ This method returns nothing.
 <pre><code>public int get_EventId()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -1997,7 +1999,6 @@ This method returns nothing.
 <pre><code>public void set_EventId(int value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2045,7 +2046,6 @@ This method returns nothing.
 <pre><code>public string get_EventMessage()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2073,7 +2073,6 @@ This method returns nothing.
 <pre><code>public void set_EventMessage(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2121,7 +2120,6 @@ This method returns nothing.
 <pre><code>public DummyEventArgs()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2147,7 +2145,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             The event id.
             
 
@@ -2174,7 +2172,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             This is a useful message about the event.
             
 
@@ -2203,7 +2201,6 @@ This method returns nothing.
 <pre><code>public ExceptionA(string message)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2231,7 +2228,6 @@ This method returns nothing.
 <pre><code>public ExceptionB(string message)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2256,7 +2252,6 @@ This method returns nothing.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2282,7 +2277,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             Foo.
             
 
@@ -2309,7 +2304,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             Bar.
             
 
@@ -2336,7 +2331,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             Baz.
             
 
@@ -2365,7 +2360,6 @@ This method returns nothing.
 <pre><code>public GenericType`1()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2393,7 +2387,6 @@ This method returns nothing.
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2421,7 +2414,6 @@ This method returns nothing.
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2467,7 +2459,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             The type of the object (foo, bar, baz).
             
 
@@ -2496,7 +2488,6 @@ This method returns nothing.
 <pre><code>public MultipartNamespace()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2521,7 +2512,6 @@ This method returns nothing.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2549,7 +2539,6 @@ This method returns nothing.
 <pre><code>public MultpartNamespaceNestedClass()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2577,7 +2566,6 @@ This method returns nothing.
 <pre><code>public NoNamespace()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2602,7 +2590,6 @@ This method returns nothing.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -2630,7 +2617,6 @@ This method returns nothing.
 <pre><code>public NoNamespaceNestedClass()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2658,7 +2644,6 @@ This method returns nothing.
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2686,7 +2671,6 @@ This method returns nothing.
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2734,7 +2718,6 @@ This method returns nothing.
 <pre><code>public SubclassBar()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2760,7 +2743,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             The type of the object (foo).
             
 
@@ -2789,7 +2772,6 @@ This method returns nothing.
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2817,7 +2799,6 @@ This method returns nothing.
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2865,7 +2846,6 @@ This method returns nothing.
 <pre><code>public SubclassBaz()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2891,7 +2871,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             The type of the object (foo).
             
 
@@ -2920,7 +2900,6 @@ This method returns nothing.
 <pre><code>public ExampleLibrary.FooBarBazEnum get_FooBarBazType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2948,7 +2927,6 @@ This method returns nothing.
 <pre><code>public void set_FooBarBazType(ExampleLibrary.FooBarBazEnum value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2996,7 +2974,6 @@ This method returns nothing.
 <pre><code>public SubclassFoo()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3022,7 +2999,7 @@ This method returns nothing.
         
 
         <h3>Summary</h3>
-        
+
             The type of the object (foo).
             
 
@@ -3052,7 +3029,7 @@ This method returns nothing.
             
 
         <h3>Summary</h3>
-        
+
             This method takes 2 integers and adds them.
             
 
@@ -3107,7 +3084,6 @@ Returns the sum of a and b.
 <pre><code>public T GenericMethod<T>(T input)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3156,7 +3132,7 @@ Returns the sum of a and b.
             
 
         <h3>Summary</h3>
-        
+
             This function does nothing and doesn't return a value.
             
 
@@ -3186,7 +3162,7 @@ Returns the sum of a and b.
             
 
         <h3>Summary</h3>
-        
+
             An example method with multiple parameters.
             
 
@@ -3246,7 +3222,7 @@ Returns the sum of a and b.
             
 
         <h3>Summary</h3>
-        
+
             This is a method that throws an exception.
             
 
@@ -3258,7 +3234,19 @@ Returns the sum of a and b.
 
         
 
-        <h3>Exceptions</h3><div><b>T:System.NotSupportedException</b></div>Throws a colourful exception.
+        <h3>Exceptions</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Exception</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>T:System.NotSupportedException</td><td>Throws a colourful exception.</td></tr>
+    </tbody>
+</table>
+        
 
     </div>
 </div>
@@ -3276,7 +3264,7 @@ Returns the sum of a and b.
             
 
         <h3>Summary</h3>
-        
+
                 This method has some examples.
                 
 
@@ -3310,7 +3298,6 @@ Returns the sum of a and b.
 <pre><code>public bool get_SomeFlag()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3338,7 +3325,6 @@ Returns the sum of a and b.
 <pre><code>public void set_SomeFlag(bool value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3386,7 +3372,6 @@ Returns the sum of a and b.
 <pre><code>public TOutput GenericMethod<TInput, TOutput>(TInput input, bool flag)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3439,7 +3424,6 @@ Returns the sum of a and b.
 <pre><code>public void add_DummyEvent(DummyDelegateHandler value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3487,7 +3471,6 @@ Returns the sum of a and b.
 <pre><code>public void remove_DummyEvent(DummyDelegateHandler value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3536,7 +3519,7 @@ Returns the sum of a and b.
             
 
         <h3>Summary</h3>
-        
+
             This is a method which raises a dummy event, see: <a href="T:DummyDelegateHandler">DummyDelegateHandler</a>.
             
 
@@ -3566,7 +3549,7 @@ Returns the sum of a and b.
             
 
         <h3>Summary</h3>
-        
+
             Default constructor.
             
 
@@ -3596,7 +3579,7 @@ Returns the sum of a and b.
             
 
         <h3>Summary</h3>
-        
+
             Constructor with 1 parameter.
             
 
@@ -3626,7 +3609,7 @@ Returns the sum of a and b.
             
 
         <h3>Summary</h3>
-        
+
             Constructor with 2 parameters.
             
 
@@ -3653,7 +3636,7 @@ Returns the sum of a and b.
         
 
         <h3>Summary</h3>
-        
+
             This is a test boolean property.
             
 
@@ -3680,7 +3663,7 @@ Returns the sum of a and b.
         
 
         <h3>Summary</h3>
-        
+
             This is a dummy event.
             
 

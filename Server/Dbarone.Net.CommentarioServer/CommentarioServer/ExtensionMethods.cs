@@ -72,9 +72,16 @@ public static class ExtensionMethods
     /// </summary>
     /// <param name="type"></param>
     /// <returns></returns>
-    public static string ToCommentId(this Type type)
+    public static string ToCommentId(this Type? type)
     {
-        return $"T:{type.FullName}";
+        if (type is null)
+        {
+            return "";
+        }
+        else
+        {
+            return $"T:{type.FullName}";
+        }
     }
 
     /// <summary>

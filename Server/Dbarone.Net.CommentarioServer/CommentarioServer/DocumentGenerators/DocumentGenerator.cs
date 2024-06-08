@@ -481,4 +481,14 @@ public abstract class DocumentGenerator
             return type.Name;
         }
     }
+
+    /// <summary>
+    /// Returns a type matching a comment id.
+    /// </summary>
+    /// <param name="commentId">The comment id.</param>
+    /// <returns>Returns the type matching the comment id.</returns>
+    protected Type? GetTypeForCommentId(string commentId)
+    {
+        return this.GetTypes().FirstOrDefault(t => t.ToCommentId().Equals(commentId, StringComparison.OrdinalIgnoreCase));
+    }
 }

@@ -574,7 +574,8 @@ public class HtmlDocumentGenerator : DocumentGenerator
             summaryNode = node.Summary;
             if (summaryNode is not null)
             {
-                summary = RenderItems(summaryNode.Items);
+                summary = @$"<h3>Summary</h3>
+{RenderItems(summaryNode.Items)}";
             }
         }
 
@@ -662,7 +663,6 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
         {signature}
 
-        <h3>Summary</h3>
         {summary}
 
         {remarks}
@@ -794,7 +794,19 @@ public class HtmlDocumentGenerator : DocumentGenerator
         var exceptions = "";
         if (nodes is not null && nodes.Length > 0)
         {
-            exceptions = $@"<h3>Exceptions</h3>{string.Join("", nodes.Select(n => RenderException(n)))}";
+            exceptions = $@"<h3>Exceptions</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Exception</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {string.Join("", nodes.Select(n => RenderException(n)))}
+    </tbody>
+</table>
+        ";
         }
         return exceptions;
     }
@@ -802,13 +814,21 @@ public class HtmlDocumentGenerator : DocumentGenerator
     protected override string RenderException(ExceptionNode node)
     {
         var exception = "";
+        var description = "";
+        if (node.Items is not null)
+        {
+            description = $@"{this.RenderItems(node.Items)}";
+        }
+
         if (node is not null)
         {
-            exception = $@"<div><b>{node.Name}</b></div>";
-            if (node.Items is not null)
+            var type = this.GetTypeForCommentId(node.Name);
+            var link = node.Name;
+            if (type is not null)
             {
-                exception += $@"{this.RenderItems(node.Items)}";
+                link = this.GetLinkForType(type);
             }
+            exception = $@"<tr><td>{link}</td><td>{description}</td></tr>";
         }
         return exception;
     }
@@ -919,7 +939,7 @@ div.member {
     border: 1px solid var(--neutral-500);
     border-radius: 4px;
     margin: 4px 0px;
-    padding: 4px 4px;
+    padding: 0px;
 }
 
 div.member-inner {

@@ -89,7 +89,7 @@ div.member {
     border: 1px solid var(--neutral-500);
     border-radius: 4px;
     margin: 4px 0px;
-    padding: 4px 4px;
+    padding: 0px;
 }
 
 div.member-inner {
@@ -765,6 +765,8 @@ Object
             Gets the subclasses - types which directly inherit from the specified type.
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeCategory(System.Type)">GetTypeCategory</a></td><td>String</td><td>Type</td><td>
             Gets the category of a type.
+            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeForCommentId(System.String)">GetTypeForCommentId</a></td><td>Type</td><td>String</td><td>
+            Returns a type matching a comment id.
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypes">GetTypes</a></td><td>Type[]</td><td></td><td>
             Gets all types in the source assembly.
             </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderC(Dbarone.Net.CommentarioServer.CNode)">RenderC</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderCode(Dbarone.Net.CommentarioServer.CodeNode)">RenderCode</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CodeNode">CodeNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderDocument">RenderDocument</a></td><td>String</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderExample(Dbarone.Net.CommentarioServer.ExampleNode)">RenderExample</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">ExampleNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderException(Dbarone.Net.CommentarioServer.ExceptionNode)">RenderException</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">ExceptionNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderExceptions(Dbarone.Net.CommentarioServer.ExceptionNode{})">RenderExceptions</a></td><td>String</td><td>ExceptionNode[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderItems(System.Object{})">RenderItems</a></td><td>String</td><td>Object[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderList(Dbarone.Net.CommentarioServer.ListNode)">RenderList</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ListNode">ListNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderPara(Dbarone.Net.CommentarioServer.ParaNode)">RenderPara</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParaNode">ParaNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderParam(Dbarone.Net.CommentarioServer.ParamNode)">RenderParam</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParamNode">ParamNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderReturns(Dbarone.Net.CommentarioServer.ReturnsNode)">RenderReturns</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderSee(Dbarone.Net.CommentarioServer.SeeNode)">RenderSee</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.SeeNode">SeeNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTOCSection(System.String,System.Type{})">RenderTOCSection</a></td><td>String</td><td>String,Type[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderType(System.Type)">RenderType</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeConstructors(System.Type)">RenderTypeConstructors</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeEvents(System.Type)">RenderTypeEvents</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeFields(System.Type)">RenderTypeFields</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeGenericArguments(System.Type)">RenderTypeGenericArguments</a></td><td>String</td><td>Type</td><td>
@@ -2402,7 +2404,6 @@ Object
 <pre><code>public string get_Name()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2430,7 +2431,6 @@ Object
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2478,7 +2478,6 @@ Object
 <pre><code>public AssemblyNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2504,7 +2503,7 @@ Object
         
 
         <h3>Summary</h3>
-        
+
             The assembly name.
             
 
@@ -2533,7 +2532,6 @@ Object
 <pre><code>public CNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2561,7 +2559,6 @@ Object
 <pre><code>public CodeNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2589,7 +2586,6 @@ Object
 <pre><code>public string Build(System.Reflection.ConstructorInfo method, bool invokable)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2642,7 +2638,6 @@ Object
 <pre><code>public ConstructorMethodSignature()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2670,7 +2665,6 @@ Object
 <pre><code>public string get_AssemblyPath()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2698,7 +2692,6 @@ Object
 <pre><code>public void set_AssemblyPath(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2746,7 +2739,6 @@ Object
 <pre><code>public string get_OutputPath()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2774,7 +2766,6 @@ Object
 <pre><code>public void set_OutputPath(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2822,7 +2813,6 @@ Object
 <pre><code>public Dbarone.Net.CommentarioServer.OutputType get_OutputType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2850,7 +2840,6 @@ Object
 <pre><code>public void set_OutputType(Dbarone.Net.CommentarioServer.OutputType value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2898,7 +2887,6 @@ Object
 <pre><code>public bool get_AllowOverwrite()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2926,7 +2914,6 @@ Object
 <pre><code>public void set_AllowOverwrite(bool value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -2974,7 +2961,6 @@ Object
 <pre><code>public string get_XmlCommentsPath()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3002,7 +2988,6 @@ Object
 <pre><code>public void set_XmlCommentsPath(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3050,7 +3035,6 @@ Object
 <pre><code>public string get_ReadMePath()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3078,7 +3062,6 @@ Object
 <pre><code>public void set_ReadMePath(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3126,7 +3109,6 @@ Object
 <pre><code>public string get_StylesPath()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3154,7 +3136,6 @@ Object
 <pre><code>public void set_StylesPath(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3202,7 +3183,6 @@ Object
 <pre><code>protected void set_Styles(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3250,7 +3230,6 @@ Object
 <pre><code>protected string get_Styles()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3278,7 +3257,6 @@ Object
 <pre><code>public Dbarone.Net.CommentarioServer.DocumentNode get_Comments()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3306,7 +3284,6 @@ Object
 <pre><code>public void set_Comments(Dbarone.Net.CommentarioServer.DocumentNode value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3354,7 +3331,6 @@ Object
 <pre><code>public static Dbarone.Net.CommentarioServer.DocumentGenerator Create(string assemblyPath, string outputPath, Dbarone.Net.CommentarioServer.OutputType outputType, bool allowOverwrite, string xmlCommentsPath, string readMePath, string stylesPath)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3433,7 +3409,7 @@ Object
             
 
         <h3>Summary</h3>
-        
+
             Gets the assembly referenced by the <code>AssemblyPath</code> parameter.
             
 
@@ -3467,7 +3443,7 @@ The Assembly object.
             
 
         <h3>Summary</h3>
-        
+
             Gets all types in the source assembly.
             
 
@@ -3498,7 +3474,7 @@ Returns an array of <code>Type</code> objects.
             
 
         <h3>Summary</h3>
-        
+
             Gets the inherited or base type, if any.
             
 
@@ -3549,7 +3525,7 @@ Returns the base type, or null.
             
 
         <h3>Summary</h3>
-        
+
             Gets the subclasses - types which directly inherit from the specified type.
             
 
@@ -3600,7 +3576,7 @@ Returns an array of types that directly inherit from the specified type.
             
 
         <h3>Summary</h3>
-        
+
             Gets the interfaces implemented by a type.
             
 
@@ -3651,7 +3627,7 @@ Returns an array of interface types implemented by the specified type.
             
 
         <h3>Summary</h3>
-        
+
             Gets the category of a type.
             
 
@@ -3712,7 +3688,7 @@ Returns a string value to categorise the type:
             
 
         <h3>Summary</h3>
-        
+
             Gets a list of classes for the source Assembly.
             
 
@@ -3743,7 +3719,7 @@ Returns an array of class types.
             
 
         <h3>Summary</h3>
-        
+
             Gets a list of structs for the source Assembly.
             
 
@@ -3774,7 +3750,7 @@ Returns an array of struct types.
             
 
         <h3>Summary</h3>
-        
+
             Gets a list of interfaces for the source Assembly.
             
 
@@ -3805,7 +3781,7 @@ Returns an array of interface types.
             
 
         <h3>Summary</h3>
-        
+
             Gets a list of enums for the source Assembly.
             
 
@@ -3836,7 +3812,7 @@ Returns an array of enum types.
             
 
         <h3>Summary</h3>
-        
+
             Gets public or protected members for a type.
             
 
@@ -3886,7 +3862,6 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.ConstructorInfo[] GetConstructors(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3934,7 +3909,6 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.MethodInfo[] GetMethods(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -3982,7 +3956,6 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.FieldInfo[] GetFields(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4030,7 +4003,6 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.PropertyInfo[] GetProperties(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4078,7 +4050,6 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.EventInfo[] GetEvents(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4126,7 +4097,6 @@ Returns all public and protected members.
 <pre><code>protected string GetReadMe()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4154,7 +4124,6 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.ParameterInfo[] GetMemberParameters(System.Reflection.MemberInfo member)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4203,7 +4172,7 @@ Returns all public and protected members.
             
 
         <h3>Summary</h3>
-        
+
             Generates document.
             
 
@@ -4232,7 +4201,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderDocument()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4260,7 +4228,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderTOCSection(string header, System.Type[] types)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4313,7 +4280,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderType(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4361,7 +4327,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderTypeTOCSection(System.Type type, string header, System.Reflection.MemberInfo[] members)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4419,7 +4384,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderTypeFields(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4467,7 +4431,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderTypeProperties(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4515,7 +4478,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderTypeConstructors(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4563,7 +4525,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderTypeMethods(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4611,7 +4572,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderTypeEvents(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4659,7 +4619,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderTypeMember(System.Reflection.MemberInfo member)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4707,7 +4666,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderItems(System.Object[] items)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4755,7 +4713,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderExample(Dbarone.Net.CommentarioServer.ExampleNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4803,7 +4760,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderCode(Dbarone.Net.CommentarioServer.CodeNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4851,7 +4807,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderC(Dbarone.Net.CommentarioServer.CNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4899,7 +4854,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderPara(Dbarone.Net.CommentarioServer.ParaNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4947,7 +4901,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderSee(Dbarone.Net.CommentarioServer.SeeNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -4995,7 +4948,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderReturns(Dbarone.Net.CommentarioServer.ReturnsNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5043,7 +4995,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderExceptions(Dbarone.Net.CommentarioServer.ExceptionNode[] nodes)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5091,7 +5042,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderException(Dbarone.Net.CommentarioServer.ExceptionNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5139,7 +5089,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderParam(Dbarone.Net.CommentarioServer.ParamNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5187,7 +5136,6 @@ Returns all public and protected members.
 <pre><code>protected string RenderList(Dbarone.Net.CommentarioServer.ListNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5235,7 +5183,6 @@ Returns all public and protected members.
 <pre><code>protected string get_DefaultStyles()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5264,7 +5211,7 @@ Returns all public and protected members.
             
 
         <h3>Summary</h3>
-        
+
             Renders the type's generic arguments.
             
 
@@ -5315,7 +5262,7 @@ A string representing the generic arguments.
             
 
         <h3>Summary</h3>
-        
+
             Returns a hyperlink for a type.
             
 
@@ -5353,6 +5300,57 @@ A string representing the generic arguments.
 </div>
 
 <div class="member">
+    <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeForCommentId(System.String)">Method: GetTypeForCommentId</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
+
+        
+<h3>Signature</h3>
+<pre><code>protected System.Type GetTypeForCommentId(string commentId)</code></pre>
+            
+
+        <h3>Summary</h3>
+
+            Returns a type matching a comment id.
+            
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>commentId</td>
+        <td>String</td>
+        <td>The comment id.</td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        <h3>Returns</h3>
+Returns the type matching the comment id.
+
+        
+
+    </div>
+</div>
+
+<div class="member">
     <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.#ctor(System.String,System.String,System.Boolean,System.String,System.String,System.String)">Constructor: .ctor</h1>
     <div class="member-inner">
 
@@ -5365,7 +5363,7 @@ A string representing the generic arguments.
             
 
         <h3>Summary</h3>
-        
+
             Creates a new DocumentGenerator instance.
             
 
@@ -5392,7 +5390,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             The assembly file path.
             
 
@@ -5419,7 +5417,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             The documentation output path. 
             
 
@@ -5446,7 +5444,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             The document output format.
             
 
@@ -5473,7 +5471,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             Set to true to allow the output documentation file to be overwritten. Otherwise an exception will be throw if the file exists.
             
 
@@ -5500,7 +5498,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             The xml comments path.
             
 
@@ -5527,7 +5525,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             Optional path to an assembly readme. The contents are included at the top of the documentation file. 
             
 
@@ -5554,7 +5552,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             Optional path to a styles file. For html output, the file must be a valid css file.
             
 
@@ -5581,7 +5579,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             The styles content.
             
 
@@ -5608,7 +5606,7 @@ A string representing the generic arguments.
         
 
         <h3>Summary</h3>
-        
+
             The xml comments.
             
 
@@ -5634,7 +5632,6 @@ A string representing the generic arguments.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -5659,7 +5656,6 @@ A string representing the generic arguments.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -5684,7 +5680,30 @@ A string representing the generic arguments.
 
         
 
-        <h3>Summary</h3>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id=":Dbarone.Net.CommentarioServer.DocumentGenerator.Dbarone#Net#CommentarioServer#DocumentGenerator+<>c__DisplayClass85_0">: <>c__DisplayClass85_0</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
+
+        
+
         
 
         
@@ -5712,7 +5731,6 @@ A string representing the generic arguments.
 <pre><code>public Dbarone.Net.CommentarioServer.AssemblyNode get_Assembly()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5740,7 +5758,6 @@ A string representing the generic arguments.
 <pre><code>public void set_Assembly(Dbarone.Net.CommentarioServer.AssemblyNode value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5788,7 +5805,6 @@ A string representing the generic arguments.
 <pre><code>public Dbarone.Net.CommentarioServer.MemberNode[] get_Members()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5816,7 +5832,6 @@ A string representing the generic arguments.
 <pre><code>public void set_Members(Dbarone.Net.CommentarioServer.MemberNode[] value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5865,7 +5880,7 @@ A string representing the generic arguments.
             
 
         <h3>Summary</h3>
-        
+
             Gets the xml comment node for a specific type.
             
 
@@ -5916,7 +5931,7 @@ Returns the document node for the type.
             
 
         <h3>Summary</h3>
-        
+
             Gets the xml comment node for the specific member.
             
 
@@ -5966,7 +5981,6 @@ Returns the document node for the member.
 <pre><code>public DocumentNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -5992,7 +6006,7 @@ Returns the document node for the member.
         
 
         <h3>Summary</h3>
-        
+
             The assembly node. Provides information about the assembly.
             
 
@@ -6019,7 +6033,7 @@ Returns the document node for the member.
         
 
         <h3>Summary</h3>
-        
+
             The collection of members. Members can describe .NET types and members.
             
 
@@ -6045,7 +6059,6 @@ Returns the document node for the member.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -6070,7 +6083,6 @@ Returns the document node for the member.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -6098,7 +6110,6 @@ Returns the document node for the member.
 <pre><code>public ExampleNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6126,7 +6137,6 @@ Returns the document node for the member.
 <pre><code>public string get_Name()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6154,7 +6164,6 @@ Returns the document node for the member.
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6202,7 +6211,6 @@ Returns the document node for the member.
 <pre><code>public ExceptionNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6228,7 +6236,7 @@ Returns the document node for the member.
         
 
         <h3>Summary</h3>
-        
+
             The exception type name that is thrown.
             
 
@@ -6257,7 +6265,6 @@ Returns the document node for the member.
 <pre><code>public static string GetMemberType(System.Reflection.MemberInfo member)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6305,7 +6312,6 @@ Returns the document node for the member.
 <pre><code>public static string GetMemberTypeName(System.Reflection.MemberInfo member)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6354,7 +6360,7 @@ Returns the document node for the member.
             
 
         <h3>Summary</h3>
-        
+
             Returns a comment id string for a given type member. Can be used to locate the comments from xml comments file. 
             
 
@@ -6405,7 +6411,7 @@ Returns a comment id string.
             
 
         <h3>Summary</h3>
-        
+
             Returns a comment id string for a type which can be used to locate the type comments from the xml comments file
             
 
@@ -6455,7 +6461,7 @@ Returns a comment id string.
             
 
         <h3>Summary</h3>
-        
+
             Gets the type letter arguments for a generic type.
             
 
@@ -6506,7 +6512,7 @@ Returns an array of type parameter names.
             
 
         <h3>Summary</h3>
-        
+
             Checks if a type is a generic type.
             
 
@@ -6556,7 +6562,6 @@ Returns true if the type is a generic type.
 <pre><code>public static bool IsNullable(System.Type type, ref System.Type& underlyingType)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6610,7 +6615,7 @@ Returns true if the type is a generic type.
             
 
         <h3>Summary</h3>
-        
+
             Gets the signature for a method.
             
 
@@ -6666,7 +6671,7 @@ Returns a signature.
             
 
         <h3>Summary</h3>
-        
+
             Gets the signature for a constructor method.
             
 
@@ -6718,7 +6723,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -6746,7 +6750,6 @@ Returns a signature.
 <pre><code>protected string RenderDocument()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6774,7 +6777,6 @@ Returns a signature.
 <pre><code>protected string RenderTOCSection(string header, System.Type[] types)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6827,7 +6829,6 @@ Returns a signature.
 <pre><code>protected string RenderTypeGenericArguments(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6875,7 +6876,6 @@ Returns a signature.
 <pre><code>protected string RenderType(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6923,7 +6923,6 @@ Returns a signature.
 <pre><code>protected string RenderTypeFields(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -6971,7 +6970,6 @@ Returns a signature.
 <pre><code>protected string RenderTypeMethods(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7019,7 +7017,6 @@ Returns a signature.
 <pre><code>protected string RenderTypeConstructors(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7067,7 +7064,6 @@ Returns a signature.
 <pre><code>protected string RenderTypeProperties(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7115,7 +7111,6 @@ Returns a signature.
 <pre><code>protected string RenderTypeEvents(System.Type type)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7163,7 +7158,6 @@ Returns a signature.
 <pre><code>protected string RenderTypeTOCSection(System.Type type, string header, System.Reflection.MemberInfo[] members)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7221,7 +7215,6 @@ Returns a signature.
 <pre><code>protected string RenderTypeMember(System.Reflection.MemberInfo member)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7269,7 +7262,6 @@ Returns a signature.
 <pre><code>protected string RenderItems(System.Object[] items)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7317,7 +7309,6 @@ Returns a signature.
 <pre><code>protected string RenderExample(Dbarone.Net.CommentarioServer.ExampleNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7365,7 +7356,6 @@ Returns a signature.
 <pre><code>protected string RenderCode(Dbarone.Net.CommentarioServer.CodeNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7413,7 +7403,6 @@ Returns a signature.
 <pre><code>protected string RenderC(Dbarone.Net.CommentarioServer.CNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7461,7 +7450,6 @@ Returns a signature.
 <pre><code>protected string RenderPara(Dbarone.Net.CommentarioServer.ParaNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7509,7 +7497,6 @@ Returns a signature.
 <pre><code>protected string RenderSee(Dbarone.Net.CommentarioServer.SeeNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7557,7 +7544,6 @@ Returns a signature.
 <pre><code>protected string RenderReturns(Dbarone.Net.CommentarioServer.ReturnsNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7605,7 +7591,6 @@ Returns a signature.
 <pre><code>protected string RenderExceptions(Dbarone.Net.CommentarioServer.ExceptionNode[] nodes)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7653,7 +7638,6 @@ Returns a signature.
 <pre><code>protected string RenderException(Dbarone.Net.CommentarioServer.ExceptionNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7701,7 +7685,6 @@ Returns a signature.
 <pre><code>protected string RenderParam(Dbarone.Net.CommentarioServer.ParamNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7749,7 +7732,6 @@ Returns a signature.
 <pre><code>protected string RenderList(Dbarone.Net.CommentarioServer.ListNode node)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7797,7 +7779,6 @@ Returns a signature.
 <pre><code>protected string get_DefaultStyles()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -7826,7 +7807,7 @@ Returns a signature.
             
 
         <h3>Summary</h3>
-        
+
             Creates a new HtmlDocumentGenerator instance.
             
 
@@ -7852,7 +7833,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -7877,7 +7857,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -7902,7 +7881,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -7927,7 +7905,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -7952,7 +7929,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -7977,7 +7953,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -8005,7 +7980,6 @@ Returns a signature.
 <pre><code>public string get_Id()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8033,7 +8007,6 @@ Returns a signature.
 <pre><code>public void set_Id(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8081,7 +8054,6 @@ Returns a signature.
 <pre><code>public string get_FullyQualifiedName()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8109,7 +8081,6 @@ Returns a signature.
 <pre><code>public void set_FullyQualifiedName(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8157,7 +8128,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.MemberType get_MemberType()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8185,7 +8155,6 @@ Returns a signature.
 <pre><code>public void set_MemberType(Dbarone.Net.CommentarioServer.MemberType value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8233,7 +8202,6 @@ Returns a signature.
 <pre><code>public string get_Name()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8261,7 +8229,6 @@ Returns a signature.
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8309,7 +8276,6 @@ Returns a signature.
 <pre><code>public string get_MemberName()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8337,7 +8303,6 @@ Returns a signature.
 <pre><code>public void set_MemberName(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8385,7 +8350,6 @@ Returns a signature.
 <pre><code>public string get_FullyQualifiedNameLink()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8413,7 +8377,6 @@ Returns a signature.
 <pre><code>public void set_FullyQualifiedNameLink(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8461,7 +8424,6 @@ Returns a signature.
 <pre><code>public int get_ParentTypeArguments()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8489,7 +8451,6 @@ Returns a signature.
 <pre><code>public void set_ParentTypeArguments(int value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8537,7 +8498,6 @@ Returns a signature.
 <pre><code>public int get_TypeArguments()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8565,7 +8525,6 @@ Returns a signature.
 <pre><code>public void set_TypeArguments(int value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8613,7 +8572,6 @@ Returns a signature.
 <pre><code>public string get_Arguments()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8641,7 +8599,6 @@ Returns a signature.
 <pre><code>public void set_Arguments(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8689,7 +8646,6 @@ Returns a signature.
 <pre><code>public string get_TypeName()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -8718,7 +8674,7 @@ Returns a signature.
             
 
         <h3>Summary</h3>
-        
+
             constructor for IDString class.
             
 
@@ -8745,7 +8701,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The full member id string. In format [MemberType]:[memberid]
             
 
@@ -8772,7 +8728,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The id value after the initial ':' character.
             
 
@@ -8799,7 +8755,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member type.
             
 
@@ -8826,7 +8782,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The name of the type or member. This optionally includes the namespace and the parent / enclosing type name. 
             
 
@@ -8853,7 +8809,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member name. Only applies for members.
             
 
@@ -8880,7 +8836,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             Unique link tag based on fully qualified name. Used for generaing links for TOC etc.
             
 
@@ -8907,7 +8863,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The number of generic type arguments on the parent type / class. 
             
 
@@ -8934,7 +8890,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The number of generic type arguments on the current member. 
             
 
@@ -8961,7 +8917,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             Arguments (if exist for methods and properties).
             
 
@@ -8988,7 +8944,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             Returns the type name if the member is a type.
             
 
@@ -9017,7 +8973,6 @@ Returns a signature.
 <pre><code>public System.Object[] get_Items()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9045,7 +9000,6 @@ Returns a signature.
 <pre><code>public void set_Items(System.Object[] value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9093,7 +9047,6 @@ Returns a signature.
 <pre><code>public ItemsNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9119,7 +9072,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The array of child item nodes. Multiple types of child item are permitted.
             
 
@@ -9148,7 +9101,6 @@ Returns a signature.
 <pre><code>public string get_Term()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9176,7 +9128,6 @@ Returns a signature.
 <pre><code>public void set_Term(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9224,7 +9175,6 @@ Returns a signature.
 <pre><code>public string get_Description()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9252,7 +9202,6 @@ Returns a signature.
 <pre><code>public void set_Description(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9300,7 +9249,6 @@ Returns a signature.
 <pre><code>public ListItemNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9325,7 +9273,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -9350,7 +9297,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -9378,7 +9324,6 @@ Returns a signature.
 <pre><code>public string get_Type()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9406,7 +9351,6 @@ Returns a signature.
 <pre><code>public void set_Type(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9454,7 +9398,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.ListItemNode get_ListHeader()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9482,7 +9425,6 @@ Returns a signature.
 <pre><code>public void set_ListHeader(Dbarone.Net.CommentarioServer.ListItemNode value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9530,7 +9472,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.ListItemNode[] get_Items()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9558,7 +9499,6 @@ Returns a signature.
 <pre><code>public void set_Items(Dbarone.Net.CommentarioServer.ListItemNode[] value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9606,7 +9546,6 @@ Returns a signature.
 <pre><code>public ListNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9632,7 +9571,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The name of list. Can be bullet, number, or table.
             
 
@@ -9658,7 +9597,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -9683,7 +9621,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -9711,7 +9648,6 @@ Returns a signature.
 <pre><code>public string get_Name()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9739,7 +9675,6 @@ Returns a signature.
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9787,7 +9722,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.SummaryNode get_Summary()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9815,7 +9749,6 @@ Returns a signature.
 <pre><code>public void set_Summary(Dbarone.Net.CommentarioServer.SummaryNode value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9863,7 +9796,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.RemarkNode get_Remarks()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9891,7 +9823,6 @@ Returns a signature.
 <pre><code>public void set_Remarks(Dbarone.Net.CommentarioServer.RemarkNode value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9939,7 +9870,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.ParamNode[] get_Params()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -9967,7 +9897,6 @@ Returns a signature.
 <pre><code>public void set_Params(Dbarone.Net.CommentarioServer.ParamNode[] value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10015,7 +9944,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.TypeParamNode[] get_TypeParams()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10043,7 +9971,6 @@ Returns a signature.
 <pre><code>public void set_TypeParams(Dbarone.Net.CommentarioServer.TypeParamNode[] value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10091,7 +10018,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.ReturnsNode get_Returns()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10119,7 +10045,6 @@ Returns a signature.
 <pre><code>public void set_Returns(Dbarone.Net.CommentarioServer.ReturnsNode value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10167,7 +10092,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.ExceptionNode[] get_Exceptions()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10195,7 +10119,6 @@ Returns a signature.
 <pre><code>public void set_Exceptions(Dbarone.Net.CommentarioServer.ExceptionNode[] value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10243,7 +10166,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.ExampleNode[] get_Examples()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10271,7 +10193,6 @@ Returns a signature.
 <pre><code>public void set_Examples(Dbarone.Net.CommentarioServer.ExampleNode[] value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10319,7 +10240,6 @@ Returns a signature.
 <pre><code>public Dbarone.Net.CommentarioServer.IDString get_ID()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10347,7 +10267,6 @@ Returns a signature.
 <pre><code>public MemberNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10373,7 +10292,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The name of the member.
             
 
@@ -10417,7 +10336,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10442,7 +10360,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10467,7 +10384,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10492,7 +10408,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10517,7 +10432,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10542,7 +10456,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10567,7 +10480,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10592,7 +10504,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10617,7 +10528,6 @@ Returns a signature.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -10643,7 +10553,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member is a namespace.
             
 
@@ -10670,7 +10580,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member is a type.
             
 
@@ -10697,7 +10607,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member is a field.
             
 
@@ -10724,7 +10634,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member is a property.
             
 
@@ -10751,7 +10661,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member is a method.
             
 
@@ -10778,7 +10688,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member is an event.
             
 
@@ -10805,7 +10715,7 @@ Returns a signature.
         
 
         <h3>Summary</h3>
-        
+
             The member is an error?
             
 
@@ -10835,7 +10745,7 @@ Returns a signature.
             
 
         <h3>Summary</h3>
-        
+
             Gets the method access modifier.
             https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/access-modifiers
             
@@ -10886,7 +10796,6 @@ Returns the access modifier.
 <pre><code>public string BuildArguments(System.Reflection.MethodBase method, bool invokable)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10939,7 +10848,6 @@ Returns the access modifier.
 <pre><code>public string BuildGenerics(System.Reflection.MethodBase method)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -10987,7 +10895,6 @@ Returns the access modifier.
 <pre><code>protected MethodBaseSignature()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11012,7 +10919,6 @@ Returns the access modifier.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -11037,7 +10943,6 @@ Returns the access modifier.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -11065,7 +10970,6 @@ Returns the access modifier.
 <pre><code>public string Build(System.Reflection.MethodInfo method, bool invokable)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11118,7 +11022,6 @@ Returns the access modifier.
 <pre><code>public MethodSignature()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11143,7 +11046,6 @@ Returns the access modifier.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -11169,7 +11071,7 @@ Returns the access modifier.
         
 
         <h3>Summary</h3>
-        
+
             Html format.
             
 
@@ -11198,7 +11100,6 @@ Returns the access modifier.
 <pre><code>public string get_Name()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11226,7 +11127,6 @@ Returns the access modifier.
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11274,7 +11174,6 @@ Returns the access modifier.
 <pre><code>public ParamNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11300,7 +11199,7 @@ Returns the access modifier.
         
 
         <h3>Summary</h3>
-        
+
             The name of the parameters.
             
 
@@ -11329,7 +11228,6 @@ Returns the access modifier.
 <pre><code>public ParaNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11357,7 +11255,6 @@ Returns the access modifier.
 <pre><code>public RemarkNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11385,7 +11282,6 @@ Returns the access modifier.
 <pre><code>public ReturnsNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11413,7 +11309,6 @@ Returns the access modifier.
 <pre><code>public string get_Member()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11441,7 +11336,6 @@ Returns the access modifier.
 <pre><code>public void set_Member(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11489,7 +11383,6 @@ Returns the access modifier.
 <pre><code>public SeeNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11514,7 +11407,6 @@ Returns the access modifier.
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -11542,7 +11434,6 @@ Returns the access modifier.
 <pre><code>public SummaryNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11570,7 +11461,6 @@ Returns the access modifier.
 <pre><code>public string get_Text()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11598,7 +11488,6 @@ Returns the access modifier.
 <pre><code>public void set_Text(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11646,7 +11535,6 @@ Returns the access modifier.
 <pre><code>public TextNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11672,7 +11560,7 @@ Returns the access modifier.
         
 
         <h3>Summary</h3>
-        
+
             The inner text value. This text is not processed any further.
             
 
@@ -11701,7 +11589,6 @@ Returns the access modifier.
 <pre><code>public string get_Name()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11729,7 +11616,6 @@ Returns the access modifier.
 <pre><code>public void set_Name(string value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11777,7 +11663,6 @@ Returns the access modifier.
 <pre><code>public TypeParamNode()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -11803,7 +11688,7 @@ Returns the access modifier.
         
 
         <h3>Summary</h3>
-        
+
             The name of the type parameter.
             
 
@@ -11833,7 +11718,7 @@ Returns the access modifier.
             
 
         <h3>Summary</h3>
-        
+
             Get a fully qualified signature for 
 
         
@@ -11883,7 +11768,7 @@ Fully qualified signature
             
 
         <h3>Summary</h3>
-        
+
             Takes an <a href="T:System.Collections.Generic.IEnumerable`1">System.Collections.Generic.IEnumerable`1</a> and creates a generic type signature (<string, string> for example)
             
 
@@ -11934,7 +11819,7 @@ Generic type signature like <Type, ...>
             
 
         <h3>Summary</h3>
-        
+
             Gets the fully qualified type name of .
             This will use any keywords in place of types where possible (string instead of System.String for example)
             
@@ -11986,7 +11871,7 @@ The fully qualified name for
             
 
         <h3>Summary</h3>
-        
+
             This removes the `{argumentcount} from a the signature of a generic type
             
 
@@ -12033,7 +11918,6 @@ The fully qualified name for
 
         
 
-        <h3>Summary</h3>
         
 
         
@@ -12061,7 +11945,6 @@ The fully qualified name for
 <pre><code>public XmlComments(string path)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -12089,7 +11972,6 @@ The fully qualified name for
 <pre><code>public Dbarone.Net.CommentarioServer.DocumentNode get_Document()</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -12117,7 +11999,6 @@ The fully qualified name for
 <pre><code>public void set_Document(Dbarone.Net.CommentarioServer.DocumentNode value)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -12165,7 +12046,6 @@ The fully qualified name for
 <pre><code>public XmlCommentsReader(System.IO.Stream stream)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -12193,7 +12073,6 @@ The fully qualified name for
 <pre><code>public XmlCommentsReader(string path)</code></pre>
             
 
-        <h3>Summary</h3>
         
 
         
@@ -12218,7 +12097,6 @@ The fully qualified name for
 
         
 
-        <h3>Summary</h3>
         
 
         
