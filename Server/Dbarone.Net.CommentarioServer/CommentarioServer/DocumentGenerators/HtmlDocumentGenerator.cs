@@ -84,6 +84,11 @@ public class HtmlDocumentGenerator : DocumentGenerator
         {contentTypes}
         {contentMembers}
 
+        <!-- Footer / Commentario link -->
+        <div class=""footer"">
+            Documentation generated on {DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss")} using <a href=""https://github.com/davidbarone/Commentario"">Commentario</a>.
+        </div>
+
     </body>
     <!-- https://highlightjs.org/#usage -->
     <script>hljs.highlightAll();</script>
@@ -330,7 +335,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
 
             var parameters = string.Join(",", m.GetParameters().Select(p => this.GetLinkForType(p.ParameterType)));
 
-            return $@"<tr><td><a href=""#{m.ToCommentId()}"">{m.Name}</a></td><td>{this.GetLinkForType(m.ReturnType)}</td><td>{parameters}</td><td>{memberCommentText}</td></tr>";
+            return $@"<tr><td><a href=""#{m.ToCommentId()}"">{m.Name}</a></td><td>{this.GetLinkForType(m.ReturnType)}</td><td>{parameters}</td><td>{memberCommentText}</td><td>{this.GetMemberTags(m)}</td></tr>";
         }));
 
         if (methods is null || methods.Length == 0)
@@ -349,6 +354,7 @@ public class HtmlDocumentGenerator : DocumentGenerator
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
@@ -1103,6 +1109,24 @@ th {
 
 tr:nth-child(odd) {
     background-color: var(--neutral-100);  
+}
+
+/* ---------------------------------------------
+Others
+------------------------------------------------ */
+
+.tag {
+    background-color: var(--neutral-700);
+    color: var(--neutral-200);
+    border-radius: 4px;
+    padding: 4px;
+    text-shadow: 2px 2px 5px var(--neutral-900);
+}
+
+.footer {
+    margin: 1em 0em;
+    font-style: italic;
+    font-size: small;
 }
 
 /* ---------------------------------------------

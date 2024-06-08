@@ -256,6 +256,24 @@ tr:nth-child(odd) {
 }
 
 /* ---------------------------------------------
+Others
+------------------------------------------------ */
+
+.tag {
+    background-color: var(--neutral-700);
+    color: var(--neutral-200);
+    border-radius: 4px;
+    padding: 4px;
+    text-shadow: 2px 2px 5px var(--neutral-900);
+}
+
+.footer {
+    margin: 1em 0em;
+    font-style: italic;
+    font-size: small;
+}
+
+/* ---------------------------------------------
 Spacing
 ------------------------------------------------ */
 
@@ -634,10 +652,11 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.ConstructorMethodSignature.Build(System.Reflection.ConstructorInfo,System.Boolean)">Build</a></td><td>String</td><td>ConstructorInfo,Boolean</td><td></td></tr>
+            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.ConstructorMethodSignature.Build(System.Reflection.ConstructorInfo,System.Boolean)">Build</a></td><td>String</td><td>ConstructorInfo,Boolean</td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -719,7 +738,7 @@ Object
             </td></tr><tr><td><a href="#P:Dbarone.Net.CommentarioServer.DocumentGenerator.ReadMePath">ReadMePath</a></td><td>String</td><td>
             Optional path to an assembly readme. The contents are included at the top of the documentation file. 
             </td></tr><tr><td><a href="#P:Dbarone.Net.CommentarioServer.DocumentGenerator.Styles">Styles</a></td><td>String</td><td>
-            The styles content.
+            The styles content. For html output, this must be valid css content.
             </td></tr><tr><td><a href="#P:Dbarone.Net.CommentarioServer.DocumentGenerator.StylesPath">StylesPath</a></td><td>String</td><td>
             Optional path to a styles file. For html output, the file must be a valid css file.
             </td></tr><tr><td><a href="#P:Dbarone.Net.CommentarioServer.DocumentGenerator.XmlCommentsPath">XmlCommentsPath</a></td><td>String</td><td>
@@ -738,40 +757,59 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,Dbarone.Net.CommentarioServer.OutputType,System.Boolean,System.String,System.String,System.String)">Create</a></td><td><a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">DocumentGenerator</a></td><td>String,String,<a href="#T:Dbarone.Net.CommentarioServer.OutputType">OutputType</a>,Boolean,String,String,String</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GenerateDocument">GenerateDocument</a></td><td>Void</td><td></td><td>
-            Generates document.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetAssembly">GetAssembly</a></td><td>Assembly</td><td></td><td>
+            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.Create(System.String,System.String,Dbarone.Net.CommentarioServer.OutputType,System.Boolean,System.String,System.String,System.String)">Create</a></td><td><a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">DocumentGenerator</a></td><td>String,String,<a href="#T:Dbarone.Net.CommentarioServer.OutputType">OutputType</a>,Boolean,String,String,String</td><td>
+            Static factory method to create a new DocumentGenerator instance. 
+            </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GenerateDocument">GenerateDocument</a></td><td>Void</td><td></td><td>
+            Generates the documentation.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetAssembly">GetAssembly</a></td><td>Assembly</td><td></td><td>
             Gets the assembly referenced by the <code>AssemblyPath</code> parameter.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetClasses">GetClasses</a></td><td>Type[]</td><td></td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetClasses">GetClasses</a></td><td>Type[]</td><td></td><td>
             Gets a list of classes for the source Assembly.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetConstructors(System.Type)">GetConstructors</a></td><td>ConstructorInfo[]</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetEnums">GetEnums</a></td><td>Type[]</td><td></td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetConstructors(System.Type)">GetConstructors</a></td><td>ConstructorInfo[]</td><td>Type</td><td>
+            Gets the public or protected constructors for a type.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetEnums">GetEnums</a></td><td>Type[]</td><td></td><td>
             Gets a list of enums for the source Assembly.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetEvents(System.Type)">GetEvents</a></td><td>EventInfo[]</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetFields(System.Type)">GetFields</a></td><td>FieldInfo[]</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInheritedType(System.Type)">GetInheritedType</a></td><td>Type</td><td>Type</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetEvents(System.Type)">GetEvents</a></td><td>EventInfo[]</td><td>Type</td><td>
+            Gets the public or protected events for a type.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetFields(System.Type)">GetFields</a></td><td>FieldInfo[]</td><td>Type</td><td>
+            Gets the public or protected fields for a type.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInheritedType(System.Type)">GetInheritedType</a></td><td>Type</td><td>Type</td><td>
             Gets the inherited or base type, if any.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfaces">GetInterfaces</a></td><td>Type[]</td><td></td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfaces">GetInterfaces</a></td><td>Type[]</td><td></td><td>
             Gets a list of interfaces for the source Assembly.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfacesImplemented(System.Type)">GetInterfacesImplemented</a></td><td>Type[]</td><td>Type</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetInterfacesImplemented(System.Type)">GetInterfacesImplemented</a></td><td>Type[]</td><td>Type</td><td>
             Gets the interfaces implemented by a type.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetLinkForType(System.Type)">GetLinkForType</a></td><td>String</td><td>Type</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetLinkForType(System.Type)">GetLinkForType</a></td><td>String</td><td>Type</td><td>
             Returns a hyperlink for a type.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMemberParameters(System.Reflection.MemberInfo)">GetMemberParameters</a></td><td>ParameterInfo[]</td><td>MemberInfo</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMembers(System.Type)">GetMembers</a></td><td>MemberInfo[]</td><td>Type</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMemberParameters(System.Reflection.MemberInfo)">GetMemberParameters</a></td><td>ParameterInfo[]</td><td>MemberInfo</td><td>
+            Gets the parameters for a method.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMembers(System.Type)">GetMembers</a></td><td>MemberInfo[]</td><td>Type</td><td>
             Gets public or protected members for a type.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMethods(System.Type)">GetMethods</a></td><td>MethodInfo[]</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetProperties(System.Type)">GetProperties</a></td><td>PropertyInfo[]</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetReadMe">GetReadMe</a></td><td>String</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetStructs">GetStructs</a></td><td>Type[]</td><td></td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMemberTags(System.Reflection.MemberInfo)">GetMemberTags</a></td><td>String</td><td>MemberInfo</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMethods(System.Type)">GetMethods</a></td><td>MethodInfo[]</td><td>Type</td><td>
+            Gets the public or protected methods for a type.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetProperties(System.Type)">GetProperties</a></td><td>PropertyInfo[]</td><td>Type</td><td>
+            Gets the public or protected properties for a type.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetReadMe">GetReadMe</a></td><td>String</td><td></td><td>
+            Gets the optional readme content.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetStructs">GetStructs</a></td><td>Type[]</td><td></td><td>
             Gets a list of structs for the source Assembly.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetSubClasses(System.Type)">GetSubClasses</a></td><td>Type[]</td><td>Type</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetSubClasses(System.Type)">GetSubClasses</a></td><td>Type[]</td><td>Type</td><td>
             Gets the subclasses - types which directly inherit from the specified type.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeCategory(System.Type)">GetTypeCategory</a></td><td>String</td><td>Type</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeCategory(System.Type)">GetTypeCategory</a></td><td>String</td><td>Type</td><td>
             Gets the category of a type.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeForCommentId(System.String)">GetTypeForCommentId</a></td><td>Type</td><td>String</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeForCommentId(System.String)">GetTypeForCommentId</a></td><td>Type</td><td>String</td><td>
             Returns a type matching a comment id.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypes">GetTypes</a></td><td>Type[]</td><td></td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypes">GetTypes</a></td><td>Type[]</td><td></td><td>
             Gets all types in the source assembly.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderC(Dbarone.Net.CommentarioServer.CNode)">RenderC</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderCode(Dbarone.Net.CommentarioServer.CodeNode)">RenderCode</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CodeNode">CodeNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderDocument">RenderDocument</a></td><td>String</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderExample(Dbarone.Net.CommentarioServer.ExampleNode)">RenderExample</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">ExampleNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderException(Dbarone.Net.CommentarioServer.ExceptionNode)">RenderException</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">ExceptionNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderExceptions(Dbarone.Net.CommentarioServer.ExceptionNode{})">RenderExceptions</a></td><td>String</td><td>ExceptionNode[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderItems(System.Object{})">RenderItems</a></td><td>String</td><td>Object[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderList(Dbarone.Net.CommentarioServer.ListNode)">RenderList</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ListNode">ListNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderPara(Dbarone.Net.CommentarioServer.ParaNode)">RenderPara</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParaNode">ParaNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderParam(Dbarone.Net.CommentarioServer.ParamNode)">RenderParam</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParamNode">ParamNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderReturns(Dbarone.Net.CommentarioServer.ReturnsNode)">RenderReturns</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderSee(Dbarone.Net.CommentarioServer.SeeNode)">RenderSee</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.SeeNode">SeeNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTOCSection(System.String,System.Type{})">RenderTOCSection</a></td><td>String</td><td>String,Type[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderType(System.Type)">RenderType</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeConstructors(System.Type)">RenderTypeConstructors</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeEvents(System.Type)">RenderTypeEvents</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeFields(System.Type)">RenderTypeFields</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeGenericArguments(System.Type)">RenderTypeGenericArguments</a></td><td>String</td><td>Type</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.IsStatic(System.Reflection.MemberInfo)">IsStatic</a></td><td>Boolean</td><td>MemberInfo</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderC(Dbarone.Net.CommentarioServer.CNode)">RenderC</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderCode(Dbarone.Net.CommentarioServer.CodeNode)">RenderCode</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CodeNode">CodeNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderDocument">RenderDocument</a></td><td>String</td><td></td><td>
+            Abstract method to render document.
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderExample(Dbarone.Net.CommentarioServer.ExampleNode)">RenderExample</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">ExampleNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderException(Dbarone.Net.CommentarioServer.ExceptionNode)">RenderException</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">ExceptionNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderExceptions(Dbarone.Net.CommentarioServer.ExceptionNode{})">RenderExceptions</a></td><td>String</td><td>ExceptionNode[]</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderItems(System.Object{})">RenderItems</a></td><td>String</td><td>Object[]</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderList(Dbarone.Net.CommentarioServer.ListNode)">RenderList</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ListNode">ListNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderPara(Dbarone.Net.CommentarioServer.ParaNode)">RenderPara</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParaNode">ParaNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderParam(Dbarone.Net.CommentarioServer.ParamNode)">RenderParam</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParamNode">ParamNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderReturns(Dbarone.Net.CommentarioServer.ReturnsNode)">RenderReturns</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderSee(Dbarone.Net.CommentarioServer.SeeNode)">RenderSee</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.SeeNode">SeeNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTOCSection(System.String,System.Type{})">RenderTOCSection</a></td><td>String</td><td>String,Type[]</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderType(System.Type)">RenderType</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeConstructors(System.Type)">RenderTypeConstructors</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeEvents(System.Type)">RenderTypeEvents</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeFields(System.Type)">RenderTypeFields</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeGenericArguments(System.Type)">RenderTypeGenericArguments</a></td><td>String</td><td>Type</td><td>
             Renders the type's generic arguments.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeMember(System.Reflection.MemberInfo)">RenderTypeMember</a></td><td>String</td><td>MemberInfo</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeMethods(System.Type)">RenderTypeMethods</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeProperties(System.Type)">RenderTypeProperties</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeTOCSection(System.Type,System.String,System.Reflection.MemberInfo{})">RenderTypeTOCSection</a></td><td>String</td><td>Type,String,MemberInfo[]</td><td></td></tr>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeMember(System.Reflection.MemberInfo)">RenderTypeMember</a></td><td>String</td><td>MemberInfo</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeMethods(System.Type)">RenderTypeMethods</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeProperties(System.Type)">RenderTypeProperties</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentGenerator.RenderTypeTOCSection(System.Type,System.String,System.Reflection.MemberInfo{})">RenderTypeTOCSection</a></td><td>String</td><td>Type,String,MemberInfo[]</td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -854,14 +892,15 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
             <tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForMember(System.Reflection.MemberInfo)">GetDocumentForMember</a></td><td><a href="#T:Dbarone.Net.CommentarioServer.MemberNode">MemberNode</a></td><td>MemberInfo</td><td>
             Gets the xml comment node for the specific member.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForType(System.Type)">GetDocumentForType</a></td><td><a href="#T:Dbarone.Net.CommentarioServer.MemberNode">MemberNode</a></td><td>Type</td><td>
+            </td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.DocumentNode.GetDocumentForType(System.Type)">GetDocumentForType</a></td><td><a href="#T:Dbarone.Net.CommentarioServer.MemberNode">MemberNode</a></td><td>Type</td><td>
             Gets the xml comment node for a specific type.
-            </td></tr>
+            </td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1029,22 +1068,23 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetMemberType(System.Reflection.MemberInfo)">GetMemberType</a></td><td>String</td><td>MemberInfo</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetMemberTypeName(System.Reflection.MemberInfo)">GetMemberTypeName</a></td><td>String</td><td>MemberInfo</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetSignature(System.Reflection.MethodInfo,System.Boolean)">GetSignature</a></td><td>String</td><td>MethodInfo,Boolean</td><td>
+            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetMemberType(System.Reflection.MemberInfo)">GetMemberType</a></td><td>String</td><td>MemberInfo</td><td></td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetMemberTypeName(System.Reflection.MemberInfo)">GetMemberTypeName</a></td><td>String</td><td>MemberInfo</td><td></td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetSignature(System.Reflection.MethodInfo,System.Boolean)">GetSignature</a></td><td>String</td><td>MethodInfo,Boolean</td><td>
             Gets the signature for a method.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetSignature(System.Reflection.ConstructorInfo,System.Boolean)">GetSignature</a></td><td>String</td><td>ConstructorInfo,Boolean</td><td>
+            </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetSignature(System.Reflection.ConstructorInfo,System.Boolean)">GetSignature</a></td><td>String</td><td>ConstructorInfo,Boolean</td><td>
             Gets the signature for a constructor method.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetTypeGenericArguments(System.Type)">GetTypeGenericArguments</a></td><td>String[]</td><td>Type</td><td>
+            </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.GetTypeGenericArguments(System.Type)">GetTypeGenericArguments</a></td><td>String[]</td><td>Type</td><td>
             Gets the type letter arguments for a generic type.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.IsGeneric(System.Type)">IsGeneric</a></td><td>Boolean</td><td>Type</td><td>
+            </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.IsGeneric(System.Type)">IsGeneric</a></td><td>Boolean</td><td>Type</td><td>
             Checks if a type is a generic type.
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.IsNullable(System.Type,System.Type&)">IsNullable</a></td><td>Boolean</td><td>Type,Type&</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.ToCommentId(System.Reflection.MemberInfo)">ToCommentId</a></td><td>String</td><td>MemberInfo</td><td>
+            </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.IsNullable(System.Type,System.Type&)">IsNullable</a></td><td>Boolean</td><td>Type,Type&</td><td></td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.ToCommentId(System.Reflection.MemberInfo)">ToCommentId</a></td><td>String</td><td>MemberInfo</td><td>
             Returns a comment id string for a given type member. Can be used to locate the comments from xml comments file. 
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.ToCommentId(System.Type)">ToCommentId</a></td><td>String</td><td>Type</td><td>
+            </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.ExtensionMethods.ToCommentId(System.Type)">ToCommentId</a></td><td>String</td><td>Type</td><td>
             Returns a comment id string for a type which can be used to locate the type comments from the xml comments file
-            </td></tr>
+            </td><td><span class="tag">Static</span></td></tr>
         </tbody>
     </table>
 </div>
@@ -1125,10 +1165,11 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderC(Dbarone.Net.CommentarioServer.CNode)">RenderC</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderCode(Dbarone.Net.CommentarioServer.CodeNode)">RenderCode</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CodeNode">CodeNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderDocument">RenderDocument</a></td><td>String</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderExample(Dbarone.Net.CommentarioServer.ExampleNode)">RenderExample</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">ExampleNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderException(Dbarone.Net.CommentarioServer.ExceptionNode)">RenderException</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">ExceptionNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderExceptions(Dbarone.Net.CommentarioServer.ExceptionNode{})">RenderExceptions</a></td><td>String</td><td>ExceptionNode[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderItems(System.Object{})">RenderItems</a></td><td>String</td><td>Object[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderList(Dbarone.Net.CommentarioServer.ListNode)">RenderList</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ListNode">ListNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderPara(Dbarone.Net.CommentarioServer.ParaNode)">RenderPara</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParaNode">ParaNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderParam(Dbarone.Net.CommentarioServer.ParamNode)">RenderParam</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParamNode">ParamNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderReturns(Dbarone.Net.CommentarioServer.ReturnsNode)">RenderReturns</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderSee(Dbarone.Net.CommentarioServer.SeeNode)">RenderSee</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.SeeNode">SeeNode</a></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTOCSection(System.String,System.Type{})">RenderTOCSection</a></td><td>String</td><td>String,Type[]</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderType(System.Type)">RenderType</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeConstructors(System.Type)">RenderTypeConstructors</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeEvents(System.Type)">RenderTypeEvents</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeFields(System.Type)">RenderTypeFields</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeGenericArguments(System.Type)">RenderTypeGenericArguments</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeMember(System.Reflection.MemberInfo)">RenderTypeMember</a></td><td>String</td><td>MemberInfo</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeMethods(System.Type)">RenderTypeMethods</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeProperties(System.Type)">RenderTypeProperties</a></td><td>String</td><td>Type</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeTOCSection(System.Type,System.String,System.Reflection.MemberInfo{})">RenderTypeTOCSection</a></td><td>String</td><td>Type,String,MemberInfo[]</td><td></td></tr>
+            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderC(Dbarone.Net.CommentarioServer.CNode)">RenderC</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CNode">CNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderCode(Dbarone.Net.CommentarioServer.CodeNode)">RenderCode</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.CodeNode">CodeNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderDocument">RenderDocument</a></td><td>String</td><td></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderExample(Dbarone.Net.CommentarioServer.ExampleNode)">RenderExample</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExampleNode">ExampleNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderException(Dbarone.Net.CommentarioServer.ExceptionNode)">RenderException</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ExceptionNode">ExceptionNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderExceptions(Dbarone.Net.CommentarioServer.ExceptionNode{})">RenderExceptions</a></td><td>String</td><td>ExceptionNode[]</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderItems(System.Object{})">RenderItems</a></td><td>String</td><td>Object[]</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderList(Dbarone.Net.CommentarioServer.ListNode)">RenderList</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ListNode">ListNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderPara(Dbarone.Net.CommentarioServer.ParaNode)">RenderPara</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParaNode">ParaNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderParam(Dbarone.Net.CommentarioServer.ParamNode)">RenderParam</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ParamNode">ParamNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderReturns(Dbarone.Net.CommentarioServer.ReturnsNode)">RenderReturns</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.ReturnsNode">ReturnsNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderSee(Dbarone.Net.CommentarioServer.SeeNode)">RenderSee</a></td><td>String</td><td><a href="#T:Dbarone.Net.CommentarioServer.SeeNode">SeeNode</a></td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTOCSection(System.String,System.Type{})">RenderTOCSection</a></td><td>String</td><td>String,Type[]</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderType(System.Type)">RenderType</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeConstructors(System.Type)">RenderTypeConstructors</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeEvents(System.Type)">RenderTypeEvents</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeFields(System.Type)">RenderTypeFields</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeGenericArguments(System.Type)">RenderTypeGenericArguments</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeMember(System.Reflection.MemberInfo)">RenderTypeMember</a></td><td>String</td><td>MemberInfo</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeMethods(System.Type)">RenderTypeMethods</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeProperties(System.Type)">RenderTypeProperties</a></td><td>String</td><td>Type</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.HtmlDocumentGenerator.RenderTypeTOCSection(System.Type,System.String,System.Reflection.MemberInfo{})">RenderTypeTOCSection</a></td><td>String</td><td>Type,String,MemberInfo[]</td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1614,13 +1655,14 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodBaseSignature.BuildArguments(System.Reflection.MethodBase,System.Boolean)">BuildArguments</a></td><td>String</td><td>MethodBase,Boolean</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodBaseSignature.BuildGenerics(System.Reflection.MethodBase)">BuildGenerics</a></td><td>String</td><td>MethodBase</td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodBaseSignature.GetAccessModifier(System.Reflection.MethodBase)">GetAccessModifier</a></td><td>String</td><td>MethodBase</td><td>
+            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodBaseSignature.BuildArguments(System.Reflection.MethodBase,System.Boolean)">BuildArguments</a></td><td>String</td><td>MethodBase,Boolean</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodBaseSignature.BuildGenerics(System.Reflection.MethodBase)">BuildGenerics</a></td><td>String</td><td>MethodBase</td><td></td><td></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodBaseSignature.GetAccessModifier(System.Reflection.MethodBase)">GetAccessModifier</a></td><td>String</td><td>MethodBase</td><td>
             Gets the method access modifier.
             https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/access-modifiers
-            </td></tr>
+            </td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1680,10 +1722,11 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodSignature.Build(System.Reflection.MethodInfo,System.Boolean)">Build</a></td><td>String</td><td>MethodInfo,Boolean</td><td></td></tr>
+            <tr><td><a href="#M:Dbarone.Net.CommentarioServer.MethodSignature.Build(System.Reflection.MethodInfo,System.Boolean)">Build</a></td><td>String</td><td>MethodInfo,Boolean</td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -2260,18 +2303,19 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
             <tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.Build(System.Type)">Build</a></td><td>String</td><td>Type</td><td>
-            Get a fully qualified signature for </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable{System.Type})">BuildGenerics</a></td><td>String</td><td>IEnumerable`1</td><td>
+            Get a fully qualified signature for </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.BuildGenerics(System.Collections.Generic.IEnumerable{System.Type})">BuildGenerics</a></td><td>String</td><td>IEnumerable`1</td><td>
             Takes an <a href="T:System.Collections.Generic.IEnumerable`1">System.Collections.Generic.IEnumerable`1</a> and creates a generic type signature (<string, string> for example)
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.GetQualifiedTypeName(System.Type)">GetQualifiedTypeName</a></td><td>String</td><td>Type</td><td>
+            </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.GetQualifiedTypeName(System.Type)">GetQualifiedTypeName</a></td><td>String</td><td>Type</td><td>
             Gets the fully qualified type name of .
             This will use any keywords in place of types where possible (string instead of System.String for example)
-            </td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.RemoveGenericTypeNameArgumentCount(System.String)">RemoveGenericTypeNameArgumentCount</a></td><td>String</td><td>String</td><td>
+            </td><td><span class="tag">Static</span></td></tr><tr><td><a href="#M:Dbarone.Net.CommentarioServer.TypeSignature.RemoveGenericTypeNameArgumentCount(System.String)">RemoveGenericTypeNameArgumentCount</a></td><td>String</td><td>String</td><td>
             This removes the `{argumentcount} from a the signature of a generic type
-            </td></tr>
+            </td><td><span class="tag">Static</span></td></tr>
         </tbody>
     </table>
 </div>
@@ -3331,7 +3375,10 @@ Object
 <pre><code>public static Dbarone.Net.CommentarioServer.DocumentGenerator Create(string assemblyPath, string outputPath, Dbarone.Net.CommentarioServer.OutputType outputType, bool allowOverwrite, string xmlCommentsPath, string readMePath, string stylesPath)</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Static factory method to create a new DocumentGenerator instance. 
+            
 
         
 
@@ -3353,44 +3400,57 @@ Object
     <tr>
         <td>assemblyPath</td>
         <td>String</td>
-        <td></td>
+        <td>The path to the assembly file.</td>
     </tr>
     <tr>
         <td>outputPath</td>
         <td>String</td>
-        <td></td>
+        <td>The path to the output documentation file.</td>
     </tr>
     <tr>
         <td>outputType</td>
         <td><a href="#T:Dbarone.Net.CommentarioServer.OutputType">OutputType</a></td>
-        <td></td>
+        <td>The documentation format type.</td>
     </tr>
     <tr>
         <td>allowOverwrite</td>
         <td>Boolean</td>
-        <td></td>
+        <td>Set to true to allow existing output documentation file to be overwritten. Otherwise an exception will be thrown if the output file exists.</td>
     </tr>
     <tr>
         <td>xmlCommentsPath</td>
         <td>String</td>
-        <td></td>
+        <td>The path to an xml comments file. This content will be merged with the reflected assembly information.</td>
     </tr>
     <tr>
         <td>readMePath</td>
         <td>String</td>
-        <td></td>
+        <td>The path to an optional readme file. This file should contain html content. If a file is specified, it will be included at the top of the documentation file.</td>
     </tr>
     <tr>
         <td>stylesPath</td>
         <td>String</td>
-        <td></td>
+        <td>The path to an optional styles file.</td>
     </tr>
         </tbody>
     </table>
 </div>
 
-        
+        <h3>Returns</h3>
+Returns a <a href="T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a> instance.
 
+        <h3>Exceptions</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Exception</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>T:System.Exception</td><td>Throws an exception if invalid parameters are provided.</td></tr>
+    </tbody>
+</table>
         
 
     </div>
@@ -3557,6 +3617,100 @@ Returns the base type, or null.
 
         <h3>Returns</h3>
 Returns an array of types that directly inherit from the specified type.
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetMemberTags(System.Reflection.MemberInfo)">Method: GetMemberTags</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
+
+        
+<h3>Signature</h3>
+<pre><code>protected string GetMemberTags(System.Reflection.MemberInfo member)</code></pre>
+            
+
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>member</td>
+        <td>MemberInfo</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.IsStatic(System.Reflection.MemberInfo)">Method: IsStatic</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
+
+        
+<h3>Signature</h3>
+<pre><code>protected bool IsStatic(System.Reflection.MemberInfo member)</code></pre>
+            
+
+        
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>member</td>
+        <td>MemberInfo</td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        
 
         
 
@@ -3862,7 +4016,10 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.ConstructorInfo[] GetConstructors(System.Type type)</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Gets the public or protected constructors for a type.
+            
 
         
 
@@ -3884,13 +4041,14 @@ Returns all public and protected members.
     <tr>
         <td>type</td>
         <td>Type</td>
-        <td></td>
+        <td>The type to get constructors for.</td>
     </tr>
         </tbody>
     </table>
 </div>
 
-        
+        <h3>Returns</h3>
+Returns all public and protected constructors.
 
         
 
@@ -3909,7 +4067,10 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.MethodInfo[] GetMethods(System.Type type)</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Gets the public or protected methods for a type.
+            
 
         
 
@@ -3931,13 +4092,14 @@ Returns all public and protected members.
     <tr>
         <td>type</td>
         <td>Type</td>
-        <td></td>
+        <td>The type to get methods for.</td>
     </tr>
         </tbody>
     </table>
 </div>
 
-        
+        <h3>Returns</h3>
+Returns all public and protected methods.
 
         
 
@@ -3956,7 +4118,10 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.FieldInfo[] GetFields(System.Type type)</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Gets the public or protected fields for a type.
+            
 
         
 
@@ -3978,13 +4143,14 @@ Returns all public and protected members.
     <tr>
         <td>type</td>
         <td>Type</td>
-        <td></td>
+        <td>The type to get fields for.</td>
     </tr>
         </tbody>
     </table>
 </div>
 
-        
+        <h3>Returns</h3>
+Returns all public and protected fields.
 
         
 
@@ -4003,7 +4169,10 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.PropertyInfo[] GetProperties(System.Type type)</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Gets the public or protected properties for a type.
+            
 
         
 
@@ -4025,13 +4194,14 @@ Returns all public and protected members.
     <tr>
         <td>type</td>
         <td>Type</td>
-        <td></td>
+        <td>The type to get properties for.</td>
     </tr>
         </tbody>
     </table>
 </div>
 
-        
+        <h3>Returns</h3>
+Returns all public and protected properties.
 
         
 
@@ -4050,7 +4220,10 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.EventInfo[] GetEvents(System.Type type)</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Gets the public or protected events for a type.
+            
 
         
 
@@ -4072,13 +4245,14 @@ Returns all public and protected members.
     <tr>
         <td>type</td>
         <td>Type</td>
-        <td></td>
+        <td>The type to get events for.</td>
     </tr>
         </tbody>
     </table>
 </div>
 
-        
+        <h3>Returns</h3>
+Returns all public and protected events.
 
         
 
@@ -4097,15 +4271,25 @@ Returns all public and protected members.
 <pre><code>protected string GetReadMe()</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Gets the optional readme content.
+            
+
+        <h3>Remarks</h3>
+
+            The readme content is optional and is specified as an optional file to be processed by Commentario.
+            If specified, the contents of the file is read. This contents typically gets added into the top of the
+            documentation. The contents must be the the appropriate format for the documentation output type.
+            For example, for html documentation output, the readme file must contain valid html.
+            
 
         
 
         
 
-        
-
-        
+        <h3>Returns</h3>
+Returns a string value of the readme contents.
 
         
 
@@ -4124,7 +4308,10 @@ Returns all public and protected members.
 <pre><code>protected System.Reflection.ParameterInfo[] GetMemberParameters(System.Reflection.MemberInfo member)</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Gets the parameters for a method.
+            
 
         
 
@@ -4146,6 +4333,57 @@ Returns all public and protected members.
     <tr>
         <td>member</td>
         <td>MemberInfo</td>
+        <td>The member to get parameters for. Member must be a <a href="T:System.Reflection.MethodInfo">System.Reflection.MethodInfo</a>.</td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        <h3>Returns</h3>
+Retuns an array of <a href="T:System.Reflection.ParameterInfo">System.Reflection.ParameterInfo</a> objects.
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetLinkForType(System.Type)">Method: GetLinkForType</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
+
+        
+<h3>Signature</h3>
+<pre><code>protected string GetLinkForType(System.Type type)</code></pre>
+            
+
+        <h3>Summary</h3>
+
+            Returns a hyperlink for a type.
+            
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>type</td>
+        <td>Type</td>
         <td></td>
     </tr>
         </tbody>
@@ -4153,6 +4391,57 @@ Returns all public and protected members.
 </div>
 
         
+
+        
+
+    </div>
+</div>
+
+<div class="member">
+    <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeForCommentId(System.String)">Method: GetTypeForCommentId</h1>
+    <div class="member-inner">
+
+        <h3>Declaring Type</h3>
+        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
+
+        
+<h3>Signature</h3>
+<pre><code>protected System.Type GetTypeForCommentId(string commentId)</code></pre>
+            
+
+        <h3>Summary</h3>
+
+            Returns a type matching a comment id.
+            
+
+        
+
+        
+
+        
+<h3>Parameters</h3>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+    <tr>
+        <td>commentId</td>
+        <td>String</td>
+        <td>The comment id.</td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+
+        <h3>Returns</h3>
+Returns the type matching the comment id.
 
         
 
@@ -4173,7 +4462,7 @@ Returns all public and protected members.
 
         <h3>Summary</h3>
 
-            Generates document.
+            Generates the documentation.
             
 
         
@@ -4201,7 +4490,10 @@ Returns all public and protected members.
 <pre><code>protected string RenderDocument()</code></pre>
             
 
-        
+        <h3>Summary</h3>
+
+            Abstract method to render document.
+            
 
         
 
@@ -4209,7 +4501,8 @@ Returns all public and protected members.
 
         
 
-        
+        <h3>Returns</h3>
+Returns a string representation of the document.
 
         
 
@@ -5250,107 +5543,6 @@ A string representing the generic arguments.
 </div>
 
 <div class="member">
-    <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetLinkForType(System.Type)">Method: GetLinkForType</h1>
-    <div class="member-inner">
-
-        <h3>Declaring Type</h3>
-        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
-
-        
-<h3>Signature</h3>
-<pre><code>protected string GetLinkForType(System.Type type)</code></pre>
-            
-
-        <h3>Summary</h3>
-
-            Returns a hyperlink for a type.
-            
-
-        
-
-        
-
-        
-<h3>Parameters</h3>
-<div class="table">
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-    <tr>
-        <td>type</td>
-        <td>Type</td>
-        <td></td>
-    </tr>
-        </tbody>
-    </table>
-</div>
-
-        
-
-        
-
-    </div>
-</div>
-
-<div class="member">
-    <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.GetTypeForCommentId(System.String)">Method: GetTypeForCommentId</h1>
-    <div class="member-inner">
-
-        <h3>Declaring Type</h3>
-        <a href="#T:Dbarone.Net.CommentarioServer.DocumentGenerator">Dbarone.Net.CommentarioServer.DocumentGenerator</a>
-
-        
-<h3>Signature</h3>
-<pre><code>protected System.Type GetTypeForCommentId(string commentId)</code></pre>
-            
-
-        <h3>Summary</h3>
-
-            Returns a type matching a comment id.
-            
-
-        
-
-        
-
-        
-<h3>Parameters</h3>
-<div class="table">
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-    <tr>
-        <td>commentId</td>
-        <td>String</td>
-        <td>The comment id.</td>
-    </tr>
-        </tbody>
-    </table>
-</div>
-
-        <h3>Returns</h3>
-Returns the type matching the comment id.
-
-        
-
-    </div>
-</div>
-
-<div class="member">
     <h2 id="M:Dbarone.Net.CommentarioServer.DocumentGenerator.#ctor(System.String,System.String,System.Boolean,System.String,System.String,System.String)">Constructor: .ctor</h1>
     <div class="member-inner">
 
@@ -5580,7 +5772,7 @@ Returns the type matching the comment id.
 
         <h3>Summary</h3>
 
-            The styles content.
+            The styles content. For html output, this must be valid css content.
             
 
         
@@ -5672,7 +5864,7 @@ Returns the type matching the comment id.
 </div>
 
 <div class="member">
-    <h2 id=":Dbarone.Net.CommentarioServer.DocumentGenerator.Dbarone#Net#CommentarioServer#DocumentGenerator+<>c__DisplayClass43_0">: <>c__DisplayClass43_0</h1>
+    <h2 id=":Dbarone.Net.CommentarioServer.DocumentGenerator.Dbarone#Net#CommentarioServer#DocumentGenerator+<>c__DisplayClass44_0">: <>c__DisplayClass44_0</h1>
     <div class="member-inner">
 
         <h3>Declaring Type</h3>
@@ -5696,7 +5888,7 @@ Returns the type matching the comment id.
 </div>
 
 <div class="member">
-    <h2 id=":Dbarone.Net.CommentarioServer.DocumentGenerator.Dbarone#Net#CommentarioServer#DocumentGenerator+<>c__DisplayClass85_0">: <>c__DisplayClass85_0</h1>
+    <h2 id=":Dbarone.Net.CommentarioServer.DocumentGenerator.Dbarone#Net#CommentarioServer#DocumentGenerator+<>c__DisplayClass62_0">: <>c__DisplayClass62_0</h1>
     <div class="member-inner">
 
         <h3>Declaring Type</h3>
@@ -12112,6 +12304,11 @@ The fully qualified name for
     </div>
 </div>
 
+
+        <!-- Footer / Commentario link -->
+        <div class="footer">
+            Documentation generated on 08-Jun-2024 15:15:50 using <a href="https://github.com/davidbarone/Commentario">Commentario</a>.
+        </div>
 
     </body>
     <!-- https://highlightjs.org/#usage -->

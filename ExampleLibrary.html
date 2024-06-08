@@ -256,6 +256,24 @@ tr:nth-child(odd) {
 }
 
 /* ---------------------------------------------
+Others
+------------------------------------------------ */
+
+.tag {
+    background-color: var(--neutral-700);
+    color: var(--neutral-200);
+    border-radius: 4px;
+    padding: 4px;
+    text-shadow: 2px 2px 5px var(--neutral-900);
+}
+
+.footer {
+    margin: 1em 0em;
+    font-style: italic;
+    font-size: small;
+}
+
+/* ---------------------------------------------
 Spacing
 ------------------------------------------------ */
 
@@ -307,7 +325,7 @@ and also to provide an example of the output of Commentario.</p>
             This class contains some members with more complex commentary.
             </td></tr><tr><td><a href="#T:ExampleLibrary.ConvertStringToIntDelegate">ConvertStringToIntDelegate</a></td><td>ExampleLibrary</td><td>
             A test delegate class.
-            </td></tr><tr><td><a href="#T:DummyDelegateHandler">DummyDelegateHandler</a></td><td></td><td>
+            </td></tr><tr><td><a href="#T:ExampleLibrary.DummyDelegateHandler">DummyDelegateHandler</a></td><td>ExampleLibrary</td><td>
             A dummy delegate (callback) event handler which specifies <a href="T:ExampleLibrary.DummyEventArgs">ExampleLibrary.DummyEventArgs</a> args. 
             </td></tr><tr><td><a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td><td>ExampleLibrary</td><td>
             A dummy event args object.
@@ -444,14 +462,15 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
             <tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatHasRemarks">MethodThatHasRemarks</a></td><td>String</td><td></td><td>
             This is a method that returns nothing.
-            </td></tr><tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">MethodThatThrowsTwoExceptionTypes</a></td><td>Void</td><td>Int32,Int32</td><td>
+            </td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ComplexComments.MethodThatThrowsTwoExceptionTypes(System.Int32,System.Int32)">MethodThatThrowsTwoExceptionTypes</a></td><td>Void</td><td>Int32,Int32</td><td>
             This is a method that throws 2 possible exceptions.
-            </td></tr>
+            </td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -517,10 +536,11 @@ MulticastDelegate
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">BeginInvoke</a></td><td>IAsyncResult</td><td>String,AsyncCallback,Object</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">EndInvoke</a></td><td>Int32</td><td>IAsyncResult</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Invoke</a></td><td>Int32</td><td>String</td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.BeginInvoke(System.String,System.AsyncCallback,System.Object)">BeginInvoke</a></td><td>IAsyncResult</td><td>String,AsyncCallback,Object</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.EndInvoke(System.IAsyncResult)">EndInvoke</a></td><td>Int32</td><td>IAsyncResult</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.ConvertStringToIntDelegate.Invoke(System.String)">Invoke</a></td><td>Int32</td><td>String</td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -529,14 +549,14 @@ MulticastDelegate
 </div>
 
 <div class="type">       
-    <h2 id="T:DummyDelegateHandler">Class: DummyDelegateHandler</h2>
+    <h2 id="T:ExampleLibrary.DummyDelegateHandler">Class: DummyDelegateHandler</h2>
     <div class="type-inner">
         <a href="#top">Back to top</a>
 
         
         <h3>Definition:</h3>
         <ul>
-            <li>Namespace: </li>
+            <li>Namespace: ExampleLibrary</li>
             <li>Assembly: ExampleLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</li>
         </ul>
         
@@ -570,7 +590,7 @@ MulticastDelegate
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:DummyDelegateHandler.#ctor(System.Object,System.IntPtr)">.ctor</a></td><td>Object,IntPtr</td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.DummyDelegateHandler.#ctor(System.Object,System.IntPtr)">.ctor</a></td><td>Object,IntPtr</td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -586,10 +606,11 @@ MulticastDelegate
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#M:DummyDelegateHandler.BeginInvoke(System.Object,ExampleLibrary.DummyEventArgs,System.AsyncCallback,System.Object)">BeginInvoke</a></td><td>IAsyncResult</td><td>Object,<a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a>,AsyncCallback,Object</td><td></td></tr><tr><td><a href="#M:DummyDelegateHandler.EndInvoke(System.IAsyncResult)">EndInvoke</a></td><td>Void</td><td>IAsyncResult</td><td></td></tr><tr><td><a href="#M:DummyDelegateHandler.Invoke(System.Object,ExampleLibrary.DummyEventArgs)">Invoke</a></td><td>Void</td><td>Object,<a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td><td></td></tr>
+            <tr><td><a href="#M:ExampleLibrary.DummyDelegateHandler.BeginInvoke(System.Object,ExampleLibrary.DummyEventArgs,System.AsyncCallback,System.Object)">BeginInvoke</a></td><td>IAsyncResult</td><td>Object,<a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a>,AsyncCallback,Object</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.DummyDelegateHandler.EndInvoke(System.IAsyncResult)">EndInvoke</a></td><td>Void</td><td>IAsyncResult</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.DummyDelegateHandler.Invoke(System.Object,ExampleLibrary.DummyEventArgs)">Invoke</a></td><td>Void</td><td>Object,<a href="#T:ExampleLibrary.DummyEventArgs">DummyEventArgs</a></td><td></td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1425,22 +1446,23 @@ Object
                 <th>Return Type</th>
                 <th>Parameters</th>
                 <th>Description</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
             <tr><td><a href="#M:ExampleLibrary.Test.Add(System.Int32,System.Int32)">Add</a></td><td>Int32</td><td>Int32,Int32</td><td>
             This method takes 2 integers and adds them.
-            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{T}(T)">GenericMethod</a></td><td>T</td><td>T</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">GenericMethod</a></td><td>TOutput</td><td>TInput,Boolean</td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesDummyEvent">MethodThatRaisesDummyEvent</a></td><td>Void</td><td></td><td>
-            This is a method which raises a dummy event, see: <a href="T:DummyDelegateHandler">DummyDelegateHandler</a>.
-            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException</a></td><td>Void</td><td></td><td>
+            </td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{T}(T)">GenericMethod</a></td><td>T</td><td>T</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.GenericMethod{TInput,TOutput}(TInput,System.Boolean)">GenericMethod</a></td><td>TOutput</td><td>TInput,Boolean</td><td></td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesDummyEvent">MethodThatRaisesDummyEvent</a></td><td>Void</td><td></td><td>
+            This is a method which raises a dummy event, see: <a href="T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>.
+            </td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodThatRaisesException">MethodThatRaisesException</a></td><td>Void</td><td></td><td>
             This is a method that throws an exception.
-            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples</a></td><td>Void</td><td></td><td>
+            </td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.MethodWithExamples">MethodWithExamples</a></td><td>Void</td><td></td><td>
                 This method has some examples.
-                </td></tr><tr><td><a href="#M:ExampleLibrary.Test.NothingFunction">NothingFunction</a></td><td>Void</td><td></td><td>
+                </td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.NothingFunction">NothingFunction</a></td><td>Void</td><td></td><td>
             This function does nothing and doesn't return a value.
-            </td></tr><tr><td><a href="#M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">ParameterWithMultipleParameters</a></td><td>Void</td><td>Int32,DateTime,Guid</td><td>
+            </td><td></td></tr><tr><td><a href="#M:ExampleLibrary.Test.ParameterWithMultipleParameters(System.Int32,System.DateTime,System.Guid)">ParameterWithMultipleParameters</a></td><td>Void</td><td>Int32,DateTime,Guid</td><td>
             An example method with multiple parameters.
-            </td></tr>
+            </td><td></td></tr>
         </tbody>
     </table>
 </div>
@@ -1456,7 +1478,7 @@ Object
             </tr>
         </thead>
         <tbody>
-            <tr><td><a href="#E:ExampleLibrary.Test.DummyEvent">DummyEvent</a></td><td><a href="#T:DummyDelegateHandler">DummyDelegateHandler</a></td><td>
+            <tr><td><a href="#E:ExampleLibrary.Test.DummyEvent">DummyEvent</a></td><td><a href="#T:ExampleLibrary.DummyDelegateHandler">DummyDelegateHandler</a></td><td>
             This is a dummy event.
             </td></tr>
         </tbody>
@@ -1773,11 +1795,11 @@ This method returns nothing.
 </div>
 
 <div class="member">
-    <h2 id="M:DummyDelegateHandler.Invoke(System.Object,ExampleLibrary.DummyEventArgs)">Method: Invoke</h1>
+    <h2 id="M:ExampleLibrary.DummyDelegateHandler.Invoke(System.Object,ExampleLibrary.DummyEventArgs)">Method: Invoke</h1>
     <div class="member-inner">
 
         <h3>Declaring Type</h3>
-        <a href="#T:DummyDelegateHandler">DummyDelegateHandler</a>
+        <a href="#T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>
 
         
 <h3>Signature</h3>
@@ -1825,11 +1847,11 @@ This method returns nothing.
 </div>
 
 <div class="member">
-    <h2 id="M:DummyDelegateHandler.BeginInvoke(System.Object,ExampleLibrary.DummyEventArgs,System.AsyncCallback,System.Object)">Method: BeginInvoke</h1>
+    <h2 id="M:ExampleLibrary.DummyDelegateHandler.BeginInvoke(System.Object,ExampleLibrary.DummyEventArgs,System.AsyncCallback,System.Object)">Method: BeginInvoke</h1>
     <div class="member-inner">
 
         <h3>Declaring Type</h3>
-        <a href="#T:DummyDelegateHandler">DummyDelegateHandler</a>
+        <a href="#T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>
 
         
 <h3>Signature</h3>
@@ -1887,11 +1909,11 @@ This method returns nothing.
 </div>
 
 <div class="member">
-    <h2 id="M:DummyDelegateHandler.EndInvoke(System.IAsyncResult)">Method: EndInvoke</h1>
+    <h2 id="M:ExampleLibrary.DummyDelegateHandler.EndInvoke(System.IAsyncResult)">Method: EndInvoke</h1>
     <div class="member-inner">
 
         <h3>Declaring Type</h3>
-        <a href="#T:DummyDelegateHandler">DummyDelegateHandler</a>
+        <a href="#T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>
 
         
 <h3>Signature</h3>
@@ -1934,11 +1956,11 @@ This method returns nothing.
 </div>
 
 <div class="member">
-    <h2 id="M:DummyDelegateHandler.#ctor(System.Object,System.IntPtr)">Constructor: .ctor</h1>
+    <h2 id="M:ExampleLibrary.DummyDelegateHandler.#ctor(System.Object,System.IntPtr)">Constructor: .ctor</h1>
     <div class="member-inner">
 
         <h3>Declaring Type</h3>
-        <a href="#T:DummyDelegateHandler">DummyDelegateHandler</a>
+        <a href="#T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>
 
         
 <h3>Signature</h3>
@@ -3413,7 +3435,7 @@ Returns the sum of a and b.
 </div>
 
 <div class="member">
-    <h2 id="M:ExampleLibrary.Test.add_DummyEvent(DummyDelegateHandler)">Method: add_DummyEvent</h1>
+    <h2 id="M:ExampleLibrary.Test.add_DummyEvent(ExampleLibrary.DummyDelegateHandler)">Method: add_DummyEvent</h1>
     <div class="member-inner">
 
         <h3>Declaring Type</h3>
@@ -3421,7 +3443,7 @@ Returns the sum of a and b.
 
         
 <h3>Signature</h3>
-<pre><code>public void add_DummyEvent(DummyDelegateHandler value)</code></pre>
+<pre><code>public void add_DummyEvent(ExampleLibrary.DummyDelegateHandler value)</code></pre>
             
 
         
@@ -3445,7 +3467,7 @@ Returns the sum of a and b.
             
     <tr>
         <td>value</td>
-        <td><a href="#T:DummyDelegateHandler">DummyDelegateHandler</a></td>
+        <td><a href="#T:ExampleLibrary.DummyDelegateHandler">DummyDelegateHandler</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -3460,7 +3482,7 @@ Returns the sum of a and b.
 </div>
 
 <div class="member">
-    <h2 id="M:ExampleLibrary.Test.remove_DummyEvent(DummyDelegateHandler)">Method: remove_DummyEvent</h1>
+    <h2 id="M:ExampleLibrary.Test.remove_DummyEvent(ExampleLibrary.DummyDelegateHandler)">Method: remove_DummyEvent</h1>
     <div class="member-inner">
 
         <h3>Declaring Type</h3>
@@ -3468,7 +3490,7 @@ Returns the sum of a and b.
 
         
 <h3>Signature</h3>
-<pre><code>public void remove_DummyEvent(DummyDelegateHandler value)</code></pre>
+<pre><code>public void remove_DummyEvent(ExampleLibrary.DummyDelegateHandler value)</code></pre>
             
 
         
@@ -3492,7 +3514,7 @@ Returns the sum of a and b.
             
     <tr>
         <td>value</td>
-        <td><a href="#T:DummyDelegateHandler">DummyDelegateHandler</a></td>
+        <td><a href="#T:ExampleLibrary.DummyDelegateHandler">DummyDelegateHandler</a></td>
         <td></td>
     </tr>
         </tbody>
@@ -3520,7 +3542,7 @@ Returns the sum of a and b.
 
         <h3>Summary</h3>
 
-            This is a method which raises a dummy event, see: <a href="T:DummyDelegateHandler">DummyDelegateHandler</a>.
+            This is a method which raises a dummy event, see: <a href="T:ExampleLibrary.DummyDelegateHandler">ExampleLibrary.DummyDelegateHandler</a>.
             
 
         
@@ -3680,6 +3702,11 @@ Returns the sum of a and b.
     </div>
 </div>
 
+
+        <!-- Footer / Commentario link -->
+        <div class="footer">
+            Documentation generated on 08-Jun-2024 15:15:50 using <a href="https://github.com/davidbarone/Commentario">Commentario</a>.
+        </div>
 
     </body>
     <!-- https://highlightjs.org/#usage -->

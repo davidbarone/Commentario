@@ -52,7 +52,7 @@ public abstract class DocumentGenerator
     public string? StylesPath { get; set; } = default!;
 
     /// <summary>
-    /// The styles content.
+    /// The styles content. For html output, this must be valid css content.
     /// </summary>
     protected string Styles { init; get; } = default!;
 
@@ -71,7 +71,7 @@ public abstract class DocumentGenerator
     /// <param name="assemblyPath">The path to the assembly file.</param>
     /// <param name="outputPath">The path to the output documentation file.</param>
     /// <param name="outputType">The documentation format type.</param>
-    /// <param name="allowOverwrite">Set to true to allow existing output documentation file to be overwritten. Otherwise an exception will be thrown if the output file exists.
+    /// <param name="allowOverwrite">Set to true to allow existing output documentation file to be overwritten. Otherwise an exception will be thrown if the output file exists.</param>
     /// <param name="xmlCommentsPath">The path to an xml comments file. This content will be merged with the reflected assembly information.</param>
     /// <param name="readMePath">The path to an optional readme file. This file should contain html content. If a file is specified, it will be included at the top of the documentation file.</param>
     /// <param name="stylesPath">The path to an optional styles file.</param>
@@ -128,7 +128,7 @@ public abstract class DocumentGenerator
 
     #endregion
 
-    #region Methods
+    #region Private Methods
 
     private void ValidateParameters()
     {
@@ -148,7 +148,40 @@ public abstract class DocumentGenerator
         }
     }
 
+    private bool IsCompilerGenerated(Type type)
+    {
+        var attr = type.CustomAttributes.Select(t => t.AttributeType).Where(t => t.Name == "CompilerGeneratedAttribute").ToArray();
+        return attr.Any();
+    }
+
+    private bool IsPrivate(MemberInfo member)
+    {
+        // returns true for public + protected members.
+        if (member.MemberType == MemberTypes.Method)
+        {
+            return (member as MethodBase)!.IsPrivate;
+        }
+        else if (member.MemberType == MemberTypes.Property)
+        {
+            return (member as PropertyInfo)!.GetMethod!.IsPrivate;
+        }
+        else if (member.MemberType == MemberTypes.Constructor)
+        {
+            return (member as ConstructorInfo)!.IsPrivate;
+        }
+        else if (member.MemberType == MemberTypes.Field)
+        {
+            return (member as FieldInfo)!.IsPrivate;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     #endregion
+
+    #region Protected helper methods
 
     /// <summary>
     /// Gets the assembly referenced by the <c>AssemblyPath</c> parameter.
@@ -176,12 +209,6 @@ public abstract class DocumentGenerator
         Assembly assembly = mlc.LoadFromAssemblyPath(this.AssemblyPath);
         return assembly;
 
-    }
-
-    private bool IsCompilerGenerated(Type type)
-    {
-        var attr = type.CustomAttributes.Select(t => t.AttributeType).Where(t => t.Name == "CompilerGeneratedAttribute").ToArray();
-        return attr.Any();
     }
 
     /// <summary>
@@ -218,6 +245,42 @@ public abstract class DocumentGenerator
     {
         return this.GetTypes()
             .Where(t => t.BaseType != null && (t.BaseType.Name == type.Name)).ToArray();
+    }
+
+    protected string GetMemberTags(MemberInfo member)
+    {
+        if (IsStatic(member))
+        {
+            return @"<span class=""tag"">Static</span>";
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+    protected bool IsStatic(MemberInfo member)
+    {
+        if (member is MethodBase)
+        {
+            return (member as MethodBase)!.IsStatic;
+        }
+        else if (member is PropertyInfo)
+        {
+            return (member as PropertyInfo)!.GetGetMethod()!.IsStatic;
+        }
+        else if (member is FieldInfo)
+        {
+            return (member as FieldInfo)!.IsStatic;
+        }
+        else if (member is ConstructorInfo)
+        {
+            return (member as ConstructorInfo)!.IsStatic;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /// <summary>
@@ -324,31 +387,6 @@ public abstract class DocumentGenerator
         return GetTypes().Where(t => t.IsEnum).ToArray();
     }
 
-    private bool IsPrivate(MemberInfo member)
-    {
-        // returns true for public + protected members.
-        if (member.MemberType == MemberTypes.Method)
-        {
-            return (member as MethodBase).IsPrivate;
-        }
-        else if (member.MemberType == MemberTypes.Property)
-        {
-            return (member as PropertyInfo).GetMethod.IsPrivate;
-        }
-        else if (member.MemberType == MemberTypes.Constructor)
-        {
-            return (member as ConstructorInfo).IsPrivate;
-        }
-        else if (member.MemberType == MemberTypes.Field)
-        {
-            return (member as FieldInfo).IsPrivate;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     /// <summary>
     /// Gets public or protected members for a type.
     /// </summary>
@@ -360,12 +398,22 @@ public abstract class DocumentGenerator
             .Where(m => !IsPrivate(m)).ToArray();
     }
 
+    /// <summary>
+    /// Gets the public or protected constructors for a type.
+    /// </summary>
+    /// <param name="type">The type to get constructors for.</param>
+    /// <returns>Returns all public and protected constructors.</returns>
     protected ConstructorInfo[] GetConstructors(Type type)
     {
         return type.GetConstructors(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static)
         .Where(c => !IsPrivate(c)).ToArray();
     }
 
+    /// <summary>
+    /// Gets the public or protected methods for a type.
+    /// </summary>
+    /// <param name="type">The type to get methods for.</param>
+    /// <returns>Returns all public and protected methods.</returns>
     protected MethodInfo[] GetMethods(Type type)
     {
         // ignore getter/setter methods.
@@ -375,12 +423,22 @@ public abstract class DocumentGenerator
             .ToArray();
     }
 
+    /// <summary>
+    /// Gets the public or protected fields for a type.
+    /// </summary>
+    /// <param name="type">The type to get fields for.</param>
+    /// <returns>Returns all public and protected fields.</returns>
     protected FieldInfo[] GetFields(Type type)
     {
         return type.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static)
                 .Where(f => !IsPrivate(f)).ToArray();
     }
 
+    /// <summary>
+    /// Gets the public or protected properties for a type.
+    /// </summary>
+    /// <param name="type">The type to get properties for.</param>
+    /// <returns>Returns all public and protected properties.</returns>
     protected PropertyInfo[] GetProperties(Type type)
     {
         return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static)
@@ -388,12 +446,27 @@ public abstract class DocumentGenerator
 
     }
 
+    /// <summary>
+    /// Gets the public or protected events for a type.
+    /// </summary>
+    /// <param name="type">The type to get events for.</param>
+    /// <returns>Returns all public and protected events.</returns>
     protected EventInfo[] GetEvents(Type type)
     {
         return type.GetEvents(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static)
                 .Where(e => !IsPrivate(e)).ToArray();
     }
 
+    /// <summary>
+    /// Gets the optional readme content.
+    /// </summary>
+    /// <remarks>
+    /// The readme content is optional and is specified as an optional file to be processed by Commentario.
+    /// If specified, the contents of the file is read. This contents typically gets added into the top of the
+    /// documentation. The contents must be the the appropriate format for the documentation output type.
+    /// For example, for html documentation output, the readme file must contain valid html.
+    /// </remarks>
+    /// <returns>Returns a string value of the readme contents.</returns>
     protected string GetReadMe()
     {
         if (!string.IsNullOrEmpty(this.ReadMePath) && File.Exists(this.ReadMePath))
@@ -406,6 +479,11 @@ public abstract class DocumentGenerator
         }
     }
 
+    /// <summary>
+    /// Gets the parameters for a method.
+    /// </summary>
+    /// <param name="member">The member to get parameters for. Member must be a <see cref="MethodInfo"/>.</param>
+    /// <returns>Retuns an array of <see cref="ParameterInfo"/> objects.</returns>
     protected ParameterInfo[] GetMemberParameters(MemberInfo member)
     {
         var method = member as MethodInfo;
@@ -420,7 +498,39 @@ public abstract class DocumentGenerator
     }
 
     /// <summary>
-    /// Generates document.
+    /// Returns a hyperlink for a type.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    protected string GetLinkForType(Type type)
+    {
+        var types = this.GetTypes();
+        if (types.Select(t => t.ToCommentId()).Contains(type.ToCommentId()))
+        {
+            return @$"<a href=""#{type.ToCommentId()}"">{type.Name}</a>";
+        }
+        else
+        {
+            return type.Name;
+        }
+    }
+
+    /// <summary>
+    /// Returns a type matching a comment id.
+    /// </summary>
+    /// <param name="commentId">The comment id.</param>
+    /// <returns>Returns the type matching the comment id.</returns>
+    protected Type? GetTypeForCommentId(string commentId)
+    {
+        return this.GetTypes().FirstOrDefault(t => t.ToCommentId().Equals(commentId, StringComparison.OrdinalIgnoreCase));
+    }
+
+    #endregion
+
+    #region Public methods
+
+    /// <summary>
+    /// Generates the documentation.
     /// </summary>
     public void GenerateDocument()
     {
@@ -434,6 +544,14 @@ public abstract class DocumentGenerator
         File.WriteAllText(this.OutputPath, RenderDocument());
     }
 
+    #endregion
+
+    #region Abstract Members
+
+    /// <summary>
+    /// Abstract method to render document.
+    /// </summary>
+    /// <returns>Returns a string representation of the document.</returns>
     protected abstract string RenderDocument();
     protected abstract string RenderTOCSection(string header, Type[] types);
     protected abstract string RenderType(Type type);
@@ -464,31 +582,6 @@ public abstract class DocumentGenerator
     /// <returns>A string representing the generic arguments.</returns>
     protected abstract string RenderTypeGenericArguments(Type type);
 
-    /// <summary>
-    /// Returns a hyperlink for a type.
-    /// </summary>
-    /// <param name="type"></param>
-    /// <returns></returns>
-    protected string GetLinkForType(Type type)
-    {
-        var types = this.GetTypes();
-        if (types.Select(t => t.ToCommentId()).Contains(type.ToCommentId()))
-        {
-            return @$"<a href=""#{type.ToCommentId()}"">{type.Name}</a>";
-        }
-        else
-        {
-            return type.Name;
-        }
-    }
+    #endregion
 
-    /// <summary>
-    /// Returns a type matching a comment id.
-    /// </summary>
-    /// <param name="commentId">The comment id.</param>
-    /// <returns>Returns the type matching the comment id.</returns>
-    protected Type? GetTypeForCommentId(string commentId)
-    {
-        return this.GetTypes().FirstOrDefault(t => t.ToCommentId().Equals(commentId, StringComparison.OrdinalIgnoreCase));
-    }
 }
