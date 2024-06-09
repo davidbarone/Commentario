@@ -37,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
 			outputPath = outputPath.replace('${workspaceFolder}', workspaceFolderString);
 		}
 
-		var allowOverwrite: string | undefined = vscode.workspace.getConfiguration().get("commentario.allowOverwrite");
+		var allowOverwrite: boolean | undefined = vscode.workspace.getConfiguration().get("commentario.allowOverwrite");
 
 		var readMePath: string | undefined = vscode.workspace.getConfiguration().get("commentario.readMePath");
 		if (readMePath !== undefined && readMePath.trim() !== "") {
@@ -67,7 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		var outputType: string | undefined = vscode.workspace.getConfiguration().get("commentario.outputType");
-		var debugMode: string | undefined = vscode.workspace.getConfiguration().get("commentario.debugMode");
+		var debugMode: boolean | undefined = vscode.workspace.getConfiguration().get("commentario.debugMode");
 
 		var outputChannel = vscode.window.createOutputChannel("Commentario");
 		outputChannel.show();
@@ -111,11 +111,11 @@ export function activate(context: vscode.ExtensionContext) {
 			cmd = `${cmd} -t ${outputType}`;
 		}
 
-		if (allowOverwrite === "true") {
+		if (allowOverwrite === true) {
 			cmd = `${cmd} -o`;
 		}
 
-		if (debugMode === "true") {
+		if (debugMode === true) {
 			cmd = `${cmd} -d`;
 		}
 

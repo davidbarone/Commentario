@@ -115,10 +115,10 @@ function activate(context) {
         if (outputType !== undefined) {
             cmd = `${cmd} -t ${outputType}`;
         }
-        if (allowOverwrite === "true") {
+        if (allowOverwrite === true) {
             cmd = `${cmd} -o`;
         }
-        if (debugMode === "true") {
+        if (debugMode === true) {
             cmd = `${cmd} -d`;
         }
         outputChannel.appendLine("");
